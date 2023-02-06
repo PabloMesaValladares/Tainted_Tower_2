@@ -12,7 +12,7 @@ public class DashState : State
     float dashUpwardForce;
     float dashDuration;
     float dashStop;
-
+    Vector3 previousInput;
     public DashState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
         character = _character;
@@ -43,7 +43,14 @@ public class DashState : State
         base.HandleInput();
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
-        velocity = new Vector3(input.x, 0, input.y);
+        Vector3 inputVector = new Vector3(input.x, 0, input.y);
+        if (inputVector != Vector3.zero)
+        {
+            velocity = inputVector;
+            previousInput = inputVector;
+        }
+        else
+            velocity = previousInput;
         velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
         velocity.y = 0f;
 

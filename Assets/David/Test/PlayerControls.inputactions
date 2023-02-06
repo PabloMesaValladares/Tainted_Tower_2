@@ -371,7 +371,7 @@
                 {
                     "name": "",
                     "id": "fefc0766-e7da-4ab6-a0da-08f0215a0e64",
-                    "path": "<XInputController>/rightTrigger",
+                    "path": "<XInputController>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -382,7 +382,7 @@
                 {
                     "name": "",
                     "id": "d4164cd0-30ee-46fb-9650-e307713c85af",
-                    "path": "<DualShockGamepad>/rightTrigger",
+                    "path": "<DualShockGamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -536,7 +536,7 @@
                 {
                     "name": "",
                     "id": "1aaf418c-613f-49a6-a869-9419d6e9878b",
-                    "path": "<XInputController>/buttonNorth",
+                    "path": "<XInputController>/buttonWest",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "",
@@ -570,6 +570,28 @@
                     "name": "",
                     "id": "32397e1c-667e-4e03-81c2-ba6200e0db3c",
                     "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mark",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "01ce36c3-b932-47a2-84b2-f2d651cc3b6a",
+                    "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mark",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f497118-1547-402e-8f34-2c4b3caf22d7",
+                    "path": "<DualShockGamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -7,6 +7,7 @@ using Cinemachine;
 
 public class MarkEnemy : MonoBehaviour
 {
+    [SerializeField]
     GameObject enemy;
     GameObject player;
     EnemyController enemyController;
@@ -28,15 +29,7 @@ public class MarkEnemy : MonoBehaviour
     {
         if(markAction.IsPressed())
         {
-            if (enemy == null)
-                enemy = enemyController.GetCloseEnemy();
-            if(enemy != null) 
-            { 
-                c_VirtualCamera.m_LookAt = enemy.transform;
-                Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
-                transform.LookAt(posToLookAt);
-            }
-            else c_VirtualCamera.m_LookAt = this.transform;
+            markEnemy();
         }
         else
         {
@@ -45,6 +38,30 @@ public class MarkEnemy : MonoBehaviour
         }
     }
 
+    void markEnemy()
+    {
+        if (enemy == null)
+            enemy = enemyController.GetCloseEnemy();
+        if (enemy != null)
+        {
+            CheckUpDown();
+        }
+        else c_VirtualCamera.m_LookAt = this.transform;
+    }
+
+    void CheckUpDown()
+    {
+        if (enemy.transform.position.y > transform.position.y + enemyController.maxUpDownDist || enemy.transform.position.y < transform.position.y - enemyController.maxUpDownDist)
+        {
+            enemy = null;
+        }
+        else
+        {
+            c_VirtualCamera.m_LookAt = enemy.transform;
+            Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
+            transform.LookAt(posToLookAt);
+        }
+    }
     public GameObject returnEnemy()
     {
         return enemy;
