@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     [Range(0, 1)]
     public float airControl = 0.5f;
 
+    [Header("Damage")]
+    public GameObject weapon;
+
+    [HideInInspector]
     public StateMachine movementSM;
     public StandingState standing;
     public JumpingState jumping;
@@ -100,5 +104,14 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         movementSM.currentState.PhysicsUpdate();
+    }
+    
+    public void AttackEnded()
+    {
+        weapon.GetComponent<DamageDealer>().EndDealDamage();
+    }
+    public void StartAttack()
+    {
+        weapon.GetComponent<DamageDealer>().StartDealDamage();
     }
 }

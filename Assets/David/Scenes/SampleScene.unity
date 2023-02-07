@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.53
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 0
+    agentClimb: 0.02
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.17666666
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 79595a7140b3e004f9cae9e66ae17fdf, type: 2}
 --- !u!1 &40647491
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +997,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  attackCD: 3
+  attackRange: 1
+  aggroRange: 4
+--- !u!195 &371815066
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371815058}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.85
+  m_BaseOffset: -0.03
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &529051893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2275,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 899007669}
+    - targetCorrespondingSourceObject: {fileID: 4082406516375968, guid: 04b20f479b608564abcf7fddcbd051b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1149534666}
   m_SourcePrefab: {fileID: 100100000, guid: 04b20f479b608564abcf7fddcbd051b8, type: 3}
 --- !u!1 &831782856
 GameObject:
@@ -2709,7 +2738,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.1206646, y: 0.0000000042701642, z: -5.190502e-10, w: 0.99269336}
+  m_LocalRotation: {x: 0.1206646, y: -0.000000004270166, z: 5.1905036e-10, w: 0.99269336}
   m_LocalPosition: {x: 4.17385, y: 10.609, z: -18.253698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2853,7 +2882,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014437546}
-  m_LocalRotation: {x: 0.12066459, y: 0.000000004270164, z: -5.190502e-10, w: 0.99269336}
+  m_LocalRotation: {x: 0.12066459, y: -0.0000000042701656, z: 5.1905036e-10, w: 0.99269336}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2862,6 +2891,55 @@ Transform:
   m_Father: {fileID: 1192157763}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1149534665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1149534666}
+  - component: {fileID: 1149534667}
+  m_Layer: 9
+  m_Name: SwordDamageDealer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1149534666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149534665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.019, y: 1.019, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1471049487}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1149534667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149534665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6159334108cbaab4a9cdf855e093003f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layersToReact:
+    serializedVersion: 2
+    m_Bits: 256
+  weaponLength: 0.99
+  weaponDamage: 2
 --- !u!1 &1168007400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,19 +3308,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 800224480}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1471049483
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &1471049487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4082406516375968, guid: 04b20f479b608564abcf7fddcbd051b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 800224480}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471049479}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.94, z: 0.04}
-  m_Center: {x: 0, y: 0.61, z: 0}
 --- !u!1 &1569009879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,7 +3783,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655616697}
-  m_LocalRotation: {x: 0.10263582, y: -0.000000004278879, z: 4.4149776e-10, w: 0.994719}
+  m_LocalRotation: {x: 0.10263582, y: 0.000000004278879, z: -4.4149776e-10, w: 0.994719}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3788,6 +3859,7 @@ MonoBehaviour:
   velocityDampTime: 0.21
   rotationDampTime: 0.1
   airControl: 0.4
+  weapon: {fileID: 1149534665}
   movementSM: {fileID: 0}
   gravityValue: -9.81
   normalColliderHeight: 0
@@ -3798,7 +3870,7 @@ MonoBehaviour:
   playerVelocity: {x: 0, y: 0, z: 0}
   layersToReact:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 64
   dashController: {fileID: 0}
   ground: {fileID: 0}
 --- !u!143 &1846291762
