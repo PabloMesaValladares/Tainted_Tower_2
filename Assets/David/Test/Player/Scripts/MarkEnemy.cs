@@ -34,7 +34,7 @@ public class MarkEnemy : MonoBehaviour
         else
         {
             enemy = null;
-            c_VirtualCamera.m_LookAt = this.transform;
+            //c_VirtualCamera.m_LookAt = this.transform;
         }
     }
 

@@ -23,11 +23,11 @@ public class StatController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G))
+        /*if(Input.GetKeyDown(KeyCode.G))
         {
             print("strength: " + strength);
             print("strength after: " + TotalStat(strength));
-        }
+        }*/
     }
 
     public int CalculateDmg(int defense, int dmg)
