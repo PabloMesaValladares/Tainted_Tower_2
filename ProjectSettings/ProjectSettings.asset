@@ -779,7 +779,24 @@ PlayerSettings:
   webGLMemoryLinearGrowthStep: 16
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: TextMeshPro
+    CloudRendering: TextMeshPro
+    EmbeddedLinux: TextMeshPro
+    GameCoreScarlett: TextMeshPro
+    GameCoreXboxOne: TextMeshPro
+    Lumin: TextMeshPro
+    Nintendo Switch: TextMeshPro
+    PS4: TextMeshPro
+    PS5: TextMeshPro
+    QNX: TextMeshPro
+    Stadia: TextMeshPro
+    Standalone: TextMeshPro
+    WebGL: TextMeshPro
+    Windows Store Apps: TextMeshPro
+    XboxOne: TextMeshPro
+    iPhone: TextMeshPro
+    tvOS: TextMeshPro
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
