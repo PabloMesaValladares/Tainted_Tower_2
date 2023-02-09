@@ -6,6 +6,10 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float health = 3;
+    [SerializeField] GameObject hitVFX;
+    [SerializeField] GameObject ragdoll;
+    [SerializeField] float lookAtPlayerSpeed;
+    public GameObject head;
 
     [Header("Combat")]
     [SerializeField] float attackCD = 3f;
@@ -15,52 +19,99 @@ public class Enemy : MonoBehaviour
     GameObject player;
     NavMeshAgent agent;
     Animator animator;
-
-    float timePassed;//Entre ataques
+    float timePassed;
     float newDestinationCD = 0.5f;
 
-    private void Start()
+    void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
-        if(timePassed >= attackCD)
+        if (player == null)
         {
-            if(Vector3.Distance(player.transform.position, transform.position) <= attackRange)
+            return;
+        }
+
+        if (timePassed >= attackCD)
+        {
+            if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
             {
                 animator.SetTrigger("attack");
                 timePassed = 0;
             }
         }
         timePassed += Time.deltaTime;
-        if(newDestinationCD <= 0 && Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
+
+        if (newDestinationCD <= 0 && Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
         {
+            LookAtPlayer();
             newDestinationCD = 0.5f;
             agent.SetDestination(player.transform.position);
         }
-        newDestinationCD += Time.deltaTime;
-        transform.LookAt(player.transform.position);
+        newDestinationCD -= Time.deltaTime;
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            print(true);
+            player = collision.gameObject;
+        }
+    }
+
+    void LookAtPlayer()
+    {
+        Vector3 playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        Vector3 lookPoint = Vector3.Lerp(playerPos, transform.position, lookAtPlayerSpeed);
+        transform.LookAt(lookPoint);
+    }
+
+    void Die()
+    {
+        //Instantiate(ragdoll, transform.position, transform.rotation);
+        //Destroy(this.gameObject);
     }
 
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
         animator.SetTrigger("damage");
+        //CameraShake.Instance.ShakeCamera(2f, 0.2f);
 
-        if (health < 0)
+        if (health <= 0)
         {
             Die();
         }
     }
-
-    void Die()
+    public void StartDealDamage()
     {
-        //Destroy(this.gameObject);
+        //GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
+    }
+    public void EndDealDamage()
+    {
+        //GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
+    }
+
+    public void HitVFX(Vector3 hitPosition)
+    {
+        GameObject hit = Instantiate(hitVFX, hitPosition, Quaternion.identity);
+        Destroy(hit, 3f);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, aggroRange);
     }
 }

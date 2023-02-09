@@ -28,10 +28,8 @@ public class DashState : State
         dashDuration = character.dashController.dashDuration;
         dashStop = character.dashController.dashStop;
         character.dashController.keepMomentum = true;
-
-        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
-        velocity.y = 0f;
-
+        velocity = Vector3.zero;
+        previousInput = Vector3.zero;
         orientation = character.transform;
     }
     public override void LogicUpdate()
