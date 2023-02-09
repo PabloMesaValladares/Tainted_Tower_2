@@ -5077,31 +5077,176 @@ MonoBehaviour:
     UserAgreesToHaveItInsideThePluginsFolder: 0
     GoogleLiveSyncIsUptoDate: 1
     mTerms:
-    - Term: Windowed
+    - Term: None
       TermType: 0
       Description: 
       Languages:
-      - es
-      - da
-      - rty
+      - .
+      - .
+      - .
       Flags: 000000
       Languages_Touch: []
-    - Term: Juan
+    - Term: Dialogos/Buenos Dias
       TermType: 0
       Description: 
       Languages:
-      - algo
-      - difere
+      - Buenos Dias
+      - Good morning
+      - "\u304A\u306F\u3088\u3046"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos/Erase
+      TermType: 0
+      Description: 
+      Languages:
+      - Erase una vez, hace mucho mucho tiempo, una prueba de dialogo fue creada
+        en un excel.
+      - Once upon a long time, a long time, a dialogue test was created in an Excel.
+      - "\u9577\u3044\u9593\u3001\u9577\u3044\u9593\u3001\u30C0\u30A4\u30A2\u30ED\u30B0\u30C6\u30B9\u30C8\u304CExcel\u3067\u4F5C\u6210\u3055\u308C\u307E\u3057\u305F\u3002"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos/Albion
+      TermType: 0
+      Description: 
+      Languages:
+      - Albion Online es un MMORPG
+      - Albion Online is a MMORPG
+      - "Albion Online\u306FMMORPG\u3067\u3059"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos/
+      TermType: 0
+      Description: 
+      Languages:
       - 
+      - '#VALUE!'
+      - '#VALUE!'
       Flags: 000000
       Languages_Touch: []
-    - Term: Dialogues/Screen Mode
+    - Term: Interfaz/Windowed
       TermType: 0
       Description: 
       Languages:
-      - Modo De Pantalla
-      - Screen Mode
-      - "\u753B\u9762\u30E2\u30FC\u30C9"
+      - Ventana
+      - Window
+      - "\u7A93"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/FullScreen Windowed
+      TermType: 0
+      Description: 
+      Languages:
+      - Ventana Completa
+      - FullScreen Window
+      - "\u5B8C\u5168\u306A\u30A6\u30A3\u30F3\u30C9\u30A6"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/FullScreen
+      TermType: 0
+      Description: 
+      Languages:
+      - Pantalla Completa
+      - FullScreen
+      - "\u5168\u753B\u9762\u8868\u793A"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Exit
+      TermType: 0
+      Description: 
+      Languages:
+      - Salir
+      - Go out
+      - "\u5916\u51FA"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Menu
+      TermType: 0
+      Description: 
+      Languages:
+      - Hacia el Menu
+      - Towards the menu
+      - "\u30E1\u30CB\u30E5\u30FC\u306B\u5411\u304B\u3063\u3066"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Options
+      TermType: 0
+      Description: 
+      Languages:
+      - Opciones
+      - Options
+      - "\u30AA\u30D7\u30B7\u30E7\u30F3"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Language
+      TermType: 0
+      Description: 
+      Languages:
+      - Idioma
+      - Language
+      - "\u8A00\u8A9E"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Screen
+      TermType: 0
+      Description: 
+      Languages:
+      - Pantalla
+      - Screen
+      - "\u753B\u9762"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Quality
+      TermType: 0
+      Description: 
+      Languages:
+      - Graficos
+      - Quality
+      - "\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF\u30B9"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Low
+      TermType: 0
+      Description: 
+      Languages:
+      - Bajos
+      - Low
+      - "\u4F4E\u3044"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Medium
+      TermType: 0
+      Description: 
+      Languages:
+      - Medios
+      - Medium
+      - "\u30E1\u30C7\u30A3\u30A2"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/High
+      TermType: 0
+      Description: 
+      Languages:
+      - Altos
+      - High
+      - "\u9AD8\u3044"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Resolucion
+      TermType: 0
+      Description: 
+      Languages:
+      - Resolucion
+      - Resolution
+      - "\u89E3\u6C7A"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Frames
+      TermType: 0
+      Description: 
+      Languages:
+      - Frames
+      - Frames
+      - "\u30D5\u30EC\u30FC\u30E0"
       Flags: 000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
@@ -5122,7 +5267,7 @@ MonoBehaviour:
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbxEK0HZ66L7RG2RSIYnooApwG-T8Ae1W88jEVM1mcNmh0N00TCSzeVjUv4socKn6tC2CQ/exec
     Google_SpreadsheetKey: 1uU9DwWXl0RDWynSEHlgCvMQbRtHVqZ8rq__g3U4VnG8
     Google_SpreadsheetName: I2Loc TaintedMenus Assets/Scenes/MainMenu.unity LocalizationManager
-    Google_LastUpdatedVersion: 1675932863628
+    Google_LastUpdatedVersion: 1675943316553
     Google_Password: change_this
     GoogleUpdateFrequency: 3
     GoogleInEditorCheckFrequency: 2
@@ -5416,6 +5561,7 @@ GameObject:
   - component: {fileID: 529457294}
   - component: {fileID: 529457296}
   - component: {fileID: 529457295}
+  - component: {fileID: 529457297}
   m_Layer: 5
   m_Name: ResolText
   m_TagString: Untagged
@@ -5463,7 +5609,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resolution
+  m_text: Resolucion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -5541,6 +5687,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529457293}
   m_CullTransparentMesh: 1
+--- !u!114 &529457297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529457293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Interfaz/Resolucion
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1045129597}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
 --- !u!1 &542861406
 GameObject:
   m_ObjectHideFlags: 0
@@ -6806,6 +6990,7 @@ GameObject:
   - component: {fileID: 705233711}
   - component: {fileID: 705233713}
   - component: {fileID: 705233712}
+  - component: {fileID: 705233714}
   m_Layer: 5
   m_Name: FramText
   m_TagString: Untagged
@@ -6931,6 +7116,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705233710}
   m_CullTransparentMesh: 1
+--- !u!114 &705233714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705233710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Interfaz/Frames
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1207516988}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
 --- !u!1 &717275509
 GameObject:
   m_ObjectHideFlags: 0
@@ -7568,10 +7791,9 @@ GameObject:
   - component: {fileID: 826033515}
   - component: {fileID: 826033514}
   - component: {fileID: 826033513}
-  - component: {fileID: 826033512}
   - component: {fileID: 826033516}
   m_Layer: 5
-  m_Name: Quality Dropdown
+  m_Name: Screen Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7600,24 +7822,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.014, y: 0.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &826033512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826033510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 826033513}
-  resolutionOptions: {fileID: 0}
-  qualityLevels: []
-  frameCap: 0
 --- !u!114 &826033513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7677,9 +7881,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 826033512}
+      - m_Target: {fileID: 1166317121}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
-        m_MethodName: ChangeQuality
+        m_MethodName: ChangeScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7741,8 +7945,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Terms:
-  - Windowed
-  - Juan
+  - Interfaz/Windowed
+  - Interfaz/FullScreen Windowed
+  - Interfaz/FullScreen
 --- !u!1 &828925130
 GameObject:
   m_ObjectHideFlags: 0
@@ -9289,6 +9494,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040123515}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1045129597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTarget: {fileID: 529457295}
+  mAlignment_RTL: 260
+  mAlignment_LTR: 257
+  mAlignmentWasRTL: 0
+  mInitializeAlignment: 0
 --- !u!1 &1050388536
 GameObject:
   m_ObjectHideFlags: 0
@@ -9981,7 +10203,7 @@ GameObject:
   - component: {fileID: 1109025248}
   - component: {fileID: 1109025247}
   - component: {fileID: 1109025246}
-  - component: {fileID: 1109025245}
+  - component: {fileID: 1109025249}
   m_Layer: 5
   m_Name: Quality Dropdown
   m_TagString: Untagged
@@ -10012,24 +10234,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.014, y: 0.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1109025245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109025243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 1109025246}
-  resolutionOptions: {fileID: 0}
-  qualityLevels: []
-  frameCap: 0
 --- !u!114 &1109025246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10089,7 +10293,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1109025245}
+      - m_Target: {fileID: 1166317121}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
         m_MethodName: ChangeQuality
         m_Mode: 1
@@ -10140,6 +10344,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109025243}
   m_CullTransparentMesh: 1
+--- !u!114 &1109025249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109025243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5379d3aeaf18a24fa23c26a749edfe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Terms:
+  - Interfaz/Low
+  - Interfaz/Medium
+  - Interfaz/High
 --- !u!1 &1138093928
 GameObject:
   m_ObjectHideFlags: 0
@@ -10434,10 +10654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 826033513}
-  resolutionOptions: {fileID: 0}
+  screenOptions: {fileID: 826033513}
+  frameOptions: {fileID: 1599973969}
+  qualityOptions: {fileID: 1109025246}
+  resolutionOptions: {fileID: 1184769722}
   qualityLevels:
   - {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
   - {fileID: 11400000, guid: e1260c1148f6143b28bae5ace5e9c5d1, type: 2}
@@ -10709,9 +10929,8 @@ GameObject:
   - component: {fileID: 1184769724}
   - component: {fileID: 1184769723}
   - component: {fileID: 1184769722}
-  - component: {fileID: 1184769721}
   m_Layer: 5
-  m_Name: Quality Dropdown
+  m_Name: Resolution Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10740,24 +10959,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.014, y: 0.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1184769721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184769719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 1184769722}
-  resolutionOptions: {fileID: 0}
-  qualityLevels: []
-  frameCap: 0
 --- !u!114 &1184769722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10808,36 +11009,46 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: 320 x 240
-      m_Image: {fileID: 0}
     - m_Text: 640 x 480
-      m_Image: {fileID: 0}
-    - m_Text: 854 x 480
       m_Image: {fileID: 0}
     - m_Text: 800 x 600
       m_Image: {fileID: 0}
-    - m_Text: 960 x 540
+    - m_Text: 1024 x 768
+      m_Image: {fileID: 0}
+    - m_Text: 1128 x 634
       m_Image: {fileID: 0}
     - m_Text: 1280 x 720
       m_Image: {fileID: 0}
-    - m_Text: 1400 x 1050
+    - m_Text: 1280 x 1024
+      m_Image: {fileID: 0}
+    - m_Text: 1366 x 768
+      m_Image: {fileID: 0}
+    - m_Text: 1600 x 900
       m_Image: {fileID: 0}
     - m_Text: 1600 x 1200
+      m_Image: {fileID: 0}
+    - m_Text: 1680 x 1050
       m_Image: {fileID: 0}
     - m_Text: 1920 x 1080
       m_Image: {fileID: 0}
     - m_Text: 1920 x 1200
       m_Image: {fileID: 0}
+    - m_Text: 2048 x 1536
+      m_Image: {fileID: 0}
     - m_Text: 2560 x 1440
+      m_Image: {fileID: 0}
+    - m_Text: 3072 x 1728
+      m_Image: {fileID: 0}
+    - m_Text: 3200 x 1800
       m_Image: {fileID: 0}
     - m_Text: 3840 x 2160
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1184769721}
+      - m_Target: {fileID: 1166317121}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
-        m_MethodName: ChangeQuality
+        m_MethodName: ChangeResolution
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11217,6 +11428,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204254984}
   m_CullTransparentMesh: 1
+--- !u!114 &1207516988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTarget: {fileID: 705233712}
+  mAlignment_RTL: 260
+  mAlignment_LTR: 257
+  mAlignmentWasRTL: 0
+  mInitializeAlignment: 0
 --- !u!1 &1209413038
 GameObject:
   m_ObjectHideFlags: 0
@@ -12751,6 +12979,7 @@ GameObject:
   - component: {fileID: 1417392938}
   - component: {fileID: 1417392940}
   - component: {fileID: 1417392939}
+  - component: {fileID: 1417392941}
   m_Layer: 5
   m_Name: QualText
   m_TagString: Untagged
@@ -12798,7 +13027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quality
+  m_text: Graficos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -12876,6 +13105,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417392937}
   m_CullTransparentMesh: 1
+--- !u!114 &1417392941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417392937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Interfaz/Quality
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1850384164}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
 --- !u!1 &1420277562
 GameObject:
   m_ObjectHideFlags: 0
@@ -14337,7 +14604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Modo De Pantalla
+  m_text: Pantalla
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -14427,7 +14694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTerm: Dialogues/Screen Mode
+  mTerm: Interfaz/Screen
   mTermSecondary: 
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
@@ -14465,9 +14732,8 @@ GameObject:
   - component: {fileID: 1599973971}
   - component: {fileID: 1599973970}
   - component: {fileID: 1599973969}
-  - component: {fileID: 1599973968}
   m_Layer: 5
-  m_Name: Quality Dropdown
+  m_Name: Frames Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14496,24 +14762,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.014, y: 0.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1599973968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599973966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 1599973969}
-  resolutionOptions: {fileID: 0}
-  qualityLevels: []
-  frameCap: 0
 --- !u!114 &1599973969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14568,7 +14816,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: 60 Fps
       m_Image: {fileID: 0}
-    - m_Text: 1200 Fps
+    - m_Text: 120 Fps
       m_Image: {fileID: 0}
     - m_Text: 240 Fps
       m_Image: {fileID: 0}
@@ -14577,9 +14825,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1599973968}
+      - m_Target: {fileID: 1166317121}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
-        m_MethodName: ChangeQuality
+        m_MethodName: ChangeFrames
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15419,7 +15667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.55, y: 2.92}
+  m_AnchoredPosition: {x: 0.07, y: 2.92}
   m_SizeDelta: {x: 1920.857, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1654613783
@@ -15684,7 +15932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 320 x 240
+  m_text: 640 x 480
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16851,6 +17099,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832535274}
   m_CullTransparentMesh: 1
+--- !u!114 &1850384164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTarget: {fileID: 1417392939}
+  mAlignment_RTL: 260
+  mAlignment_LTR: 257
+  mAlignmentWasRTL: 0
+  mInitializeAlignment: 0
 --- !u!1 &1884071995
 GameObject:
   m_ObjectHideFlags: 0
