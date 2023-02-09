@@ -11,17 +11,21 @@ public class MarkEnemy : MonoBehaviour
     GameObject enemy;
     GameObject player;
     EnemyController enemyController;
-    //Camara
-    public CinemachineFreeLook c_VirtualCamera;
 
     [HideInInspector]
     public InputAction markAction;
+    CameraMove move;
+
+
+    public float DistanceToCheck;
+    public float maxUpDownDist;
 
     // Start is called before the first frame update
     void Start()
     {
         markAction = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions["Mark"];
         enemyController = GetComponent<EnemyController>();
+        move = GetComponent<CameraMove>();
     }
 
     // Update is called once per frame
@@ -34,30 +38,40 @@ public class MarkEnemy : MonoBehaviour
         else
         {
             enemy = null;
-            c_VirtualCamera.m_LookAt = this.transform;
+            move.ChangeLookAtObjective(this.gameObject);
         }
     }
 
     void markEnemy()
     {
-        if (enemy == null)
-            enemy = enemyController.GetCloseEnemy();
+        enemy = enemyController.GetCloseEnemy();
+
         if (enemy != null)
         {
             CheckUpDown();
         }
-        else c_VirtualCamera.m_LookAt = this.transform;
+        else move.ChangeLookAtObjective(this.gameObject);
     }
 
     void CheckUpDown()
     {
-        if (enemy.transform.position.y > transform.position.y + enemyController.maxUpDownDist || enemy.transform.position.y < transform.position.y - enemyController.maxUpDownDist)
+        float distPlayerEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+        Debug.Log("Distancia es " + distPlayerEnemy);
+
+        if (distPlayerEnemy > DistanceToCheck)
         {
             enemy = null;
+            move.ChangeLookAtObjective(this.gameObject);
         }
+        else if (enemy.transform.position.y > transform.position.y + maxUpDownDist || enemy.transform.position.y < transform.position.y - maxUpDownDist)
+        {
+            enemy = null; 
+            move.ChangeLookAtObjective(this.gameObject);
+        }
+        
         else
         {
-            c_VirtualCamera.m_LookAt = enemy.transform;
+            move.ChangeLookAtObjective(enemy);
             Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
             transform.LookAt(posToLookAt);
         }

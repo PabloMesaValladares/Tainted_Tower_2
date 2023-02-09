@@ -7,8 +7,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     List<GameObject> Enemies;
 
-    public float DistanceToCheck;
-    public float maxUpDownDist;
 
     [Header("Debug")]
     [SerializeField] float distPlayerEnemy;
@@ -35,17 +33,12 @@ public class EnemyController : MonoBehaviour
         {
             distPlayerEnemy = Vector3.Distance(transform.position, Enemies[i].transform.position);
             distPlayerClosest = Vector3.Distance(transform.position, closest.transform.position);
-           if (distPlayerEnemy < DistanceToCheck)
+
+            if (distPlayerEnemy < distPlayerClosest)
             {
-                if (distPlayerEnemy < distPlayerClosest)
-                {
-                    closest = Enemies[i];
-                }
+                closest = Enemies[i];
             }
-        }
-        if(closest.transform.position.y > transform.position.y + maxUpDownDist || closest.transform.position.y < transform.position.y - maxUpDownDist)
-        {
-            return null;
+            
         }
         return closest;
     }

@@ -11,6 +11,8 @@ public class ThirdPersonCam : MonoBehaviour
     public Transform playerObj;
     public Rigidbody rb;
 
+    public float speed;
+
     public float rotationSpeed;
 
     public Transform combatLookAt;
@@ -50,6 +52,9 @@ public class ThirdPersonCam : MonoBehaviour
             float horizontalInput = UnityEngine.InputSystem.Mouse.current.delta.x.ReadValue();
             float verticalInput = UnityEngine.InputSystem.Mouse.current.delta.y.ReadValue();
             Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+            Debug.Log("Input horizontal es igual a" + horizontalInput);
+            Debug.Log("Input vertical es igual a" + verticalInput);
 
             if (inputDir != Vector3.zero)
                 playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
