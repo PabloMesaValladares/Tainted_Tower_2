@@ -10,6 +10,10 @@ public class MarkEnemy : MonoBehaviour
     [SerializeField]
     GameObject enemy;
     GameObject player;
+    [SerializeField]
+    GameObject camera;
+    [SerializeField]
+    GameObject Player;
     EnemyController enemyController;
 
     [HideInInspector]
@@ -25,7 +29,7 @@ public class MarkEnemy : MonoBehaviour
     {
         markAction = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions["Mark"];
         enemyController = GetComponent<EnemyController>();
-        move = GetComponent<CameraMove>();
+        move = camera.GetComponent<CameraMove>();
     }
 
     // Update is called once per frame
@@ -38,7 +42,7 @@ public class MarkEnemy : MonoBehaviour
         else
         {
             enemy = null;
-            move.ChangeLookAtObjective(this.gameObject);
+            move.ChangeLookAtObjective(Player);
         }
     }
 
@@ -50,7 +54,7 @@ public class MarkEnemy : MonoBehaviour
         {
             CheckUpDown();
         }
-        else move.ChangeLookAtObjective(this.gameObject);
+        else move.ChangeLookAtObjective(Player);
     }
 
     void CheckUpDown()
@@ -61,12 +65,12 @@ public class MarkEnemy : MonoBehaviour
         if (distPlayerEnemy > DistanceToCheck)
         {
             enemy = null;
-            move.ChangeLookAtObjective(this.gameObject);
+            move.ChangeLookAtObjective(Player);
         }
         else if (enemy.transform.position.y > transform.position.y + maxUpDownDist || enemy.transform.position.y < transform.position.y - maxUpDownDist)
         {
             enemy = null; 
-            move.ChangeLookAtObjective(this.gameObject);
+            move.ChangeLookAtObjective(Player);
         }
         
         else
