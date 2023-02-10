@@ -4,31 +4,10 @@ using UnityEngine;
 
 public class Storm : MonoBehaviour
 {
-    public float timer;
-    [SerializeField] private float time;
+    public bool firstHitDone;
 
-    private void Awake()
+    public void DamageOverTime()
     {
-        time = timer;
-    }
 
-    private void Update()
-    {
-        if(UpdateTimer() == 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private float UpdateTimer()
-    {
-        time -= Time.deltaTime;
-
-        if (time <= 0)
-        {
-            time = 0;
-        }
-
-        return time;
     }
 }
