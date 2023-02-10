@@ -68,69 +68,49 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (resolutionOptions.value == 0)
         {
-            Screen.SetResolution(640, 480, false);
+            Screen.SetResolution(320, 240, false);
         }
         else if (resolutionOptions.value == 1)
         {
-            Screen.SetResolution(800, 600, false);
+            Screen.SetResolution(640, 480, false);
         }
         else if (resolutionOptions.value == 2)
         {
-            Screen.SetResolution(1024, 768, false);
+            Screen.SetResolution(854, 480, false);
         }
         else if (resolutionOptions.value == 3)
         {
-            Screen.SetResolution(1128, 634, false);
+            Screen.SetResolution(800, 600, false);
         }
         else if (resolutionOptions.value == 4)
         {
-            Screen.SetResolution(1280, 720, false);
+            Screen.SetResolution(960, 540, false);
         }
         else if (resolutionOptions.value == 5)
         {
-            Screen.SetResolution(1280, 1024, false);
+            Screen.SetResolution(1280, 720, false);
         }
         else if (resolutionOptions.value == 6)
         {
-            Screen.SetResolution(1366, 768, false);
+            Screen.SetResolution(1400, 1050, false);
         }
         else if (resolutionOptions.value == 7)
         {
-            Screen.SetResolution(1600, 900, false);
+            Screen.SetResolution(1600, 1200, false);
         }
         else if (resolutionOptions.value == 8)
         {
-            Screen.SetResolution(1600, 1200, false);
+            Screen.SetResolution(1920, 1080, false);
         }
         else if (resolutionOptions.value == 9)
         {
-            Screen.SetResolution(1680, 1050, false);
+            Screen.SetResolution(1920, 1200, false);
         }
         else if (resolutionOptions.value == 10)
         {
-            Screen.SetResolution(1920, 1080, false);
-        }
-        else if (resolutionOptions.value == 11)
-        {
-            Screen.SetResolution(1920, 1200, false);
-        }
-        else if (resolutionOptions.value == 12)
-        {
-            Screen.SetResolution(2048, 1536, false);
-        }
-        else if (resolutionOptions.value == 13)
-        {
             Screen.SetResolution(2560, 1440, false);
         }
-        else if (resolutionOptions.value == 14)
-        {
-            Screen.SetResolution(3072, 1728, false);
-        }
-        else if (resolutionOptions.value == 15)
-        {
-            Screen.SetResolution(3200, 1800, false);
-        }
-        else if (resolutionOptions.value == 16)
+        else if (resolutionOptions.value == 11)
         {
             Screen.SetResolution(3840, 2160, false);
         }
