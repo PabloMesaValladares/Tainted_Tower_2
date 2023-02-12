@@ -11,7 +11,7 @@ public class MarkEnemy : MonoBehaviour
     GameObject enemy;
     GameObject player;
     [SerializeField]
-    GameObject camera;
+    CinemachineFreeLook camera;
     [SerializeField]
     GameObject Player;
     EnemyController enemyController;
@@ -42,7 +42,7 @@ public class MarkEnemy : MonoBehaviour
         else
         {
             enemy = null;
-            move.ChangeLookAtObjective(Player);
+            camera.LookAt = Player.transform;
         }
     }
 
@@ -54,28 +54,29 @@ public class MarkEnemy : MonoBehaviour
         {
             CheckUpDown();
         }
-        else move.ChangeLookAtObjective(Player);
+        else
+            camera.LookAt = Player.transform;
     }
 
     void CheckUpDown()
     {
         float distPlayerEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-        Debug.Log("Distancia es " + distPlayerEnemy);
+        //Debug.Log("Distancia es " + distPlayerEnemy);
 
         if (distPlayerEnemy > DistanceToCheck)
         {
             enemy = null;
-            move.ChangeLookAtObjective(Player);
+            camera.LookAt = Player.transform;
         }
         else if (enemy.transform.position.y > transform.position.y + maxUpDownDist || enemy.transform.position.y < transform.position.y - maxUpDownDist)
         {
-            enemy = null; 
-            move.ChangeLookAtObjective(Player);
+            enemy = null;
+            camera.LookAt = Player.transform;
         }
         
         else
         {
-            move.ChangeLookAtObjective(enemy);
+            camera.LookAt = enemy.transform;
             Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
             transform.LookAt(posToLookAt);
         }

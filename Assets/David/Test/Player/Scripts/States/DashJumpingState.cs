@@ -32,14 +32,10 @@ public class DashJumpingState : State
         dashStop = 0;
         gravityVelocity.y = 0;
         character.dashController.keepMomentum = true;
-
-
-        velocity = new Vector3(input.x, 0, input.y);
-
-        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
-        velocity.y = 0f;
-
+        velocity = Vector3.zero;
+        previousInput = Vector3.zero;
         orientation = character.transform;
+        input = moveAction.ReadValue<Vector2>();
     }
     public override void LogicUpdate()
     {
@@ -50,7 +46,9 @@ public class DashJumpingState : State
     public override void HandleInput()
     {
         base.HandleInput(); 
+        //input = moveAction.ReadValue<Vector2>();
         Vector3 inputVector = new Vector3(input.x, 0, input.y);
+        
         if (inputVector != Vector3.zero)
         {
             velocity = inputVector;
@@ -58,7 +56,7 @@ public class DashJumpingState : State
         }
         else
             velocity = previousInput;
-        velocity = new Vector3(input.x, 0, input.y);
+
         velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
         velocity.y = 0f;
 
