@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DashController : MonoBehaviour
 {
+    [SerializeField]
     bool dash;
     [Header("Dash")]
     public float dashForce;
@@ -34,18 +35,6 @@ public class DashController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!dash)
-        {
-            if(dashCooldownTimer < dashCooldown)
-            {
-                dashCooldownTimer += Time.deltaTime;
-            }
-            else
-            {
-                dash = true;
-                dashCooldownTimer = 0;
-            }
-        }
     }
 
     public bool checkIfDash()
@@ -53,8 +42,14 @@ public class DashController : MonoBehaviour
         return dash;
     }
     
+    void ResetDash()
+    {
+        dash = true;
+    }
+
     public void startCooldown()
     {
         dash = false;
+        Invoke(nameof(ResetDash), dashCooldown);
     }
 }

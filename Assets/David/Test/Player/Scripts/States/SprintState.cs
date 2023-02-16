@@ -48,6 +48,12 @@ public class SprintState : State
 
         velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
         velocity.y = 0f;
+
+        if (jumpAction.triggered)
+        {
+            sprintJump = true;
+
+        }
         if (!sprintAction.IsPressed() || input.sqrMagnitude == 0f)
         {
             sprint = false;
@@ -59,11 +65,6 @@ public class SprintState : State
         if (dashAction.triggered)
         {
             dash = character.dashController.checkIfDash();
-        }
-        if (jumpAction.triggered)
-        {
-            sprintJump = true;
-
         }
 
     }
@@ -86,15 +87,17 @@ public class SprintState : State
 
         if (sprintJump)
         {
-            stateMachine.ChangeState(character.jumping);
+            stateMachine.ChangeState(character.sprintjumping);
         }
-        else if (dash)
+        
+        if (dash)
         {
             stateMachine.ChangeState(character.dashing);
             character.dashController.previousSpeed = playerSpeed;
             character.dashController.startCooldown();
         }
-        else if (!grounded)
+        
+        if (!grounded)
             stateMachine.ChangeState(character.falling);
     }
 

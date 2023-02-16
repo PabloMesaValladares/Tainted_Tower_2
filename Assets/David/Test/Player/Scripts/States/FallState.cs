@@ -11,7 +11,8 @@ public class FallState : State
     bool dash;
 
     Vector3 airVelocity;
-    float dashVelocity;
+    Vector3 dashVelocity;
+    float dashForce;
 
     public FallState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
@@ -29,7 +30,8 @@ public class FallState : State
         playerSpeed = character.playerSpeed;
         gravityVelocity.y = 0;
         
-        dashVelocity = character.dashController.dashForce;
+        dashVelocity = character.dashController.LastDashSpeed;
+        dashForce = character.dashController.dashForce;
 
         character.animator.SetFloat("speed", 0);
         character.animator.SetTrigger("fall");
@@ -57,6 +59,7 @@ public class FallState : State
         {
             character.animator.SetTrigger("move");
             stateMachine.ChangeState(character.standing);
+            character.dashController.keepMomentum = false;
         }
 
 
@@ -84,10 +87,12 @@ public class FallState : State
 
             if (character.dashController.keepMomentum)
             {
-                playerSpeed = character.playerSpeed + dashVelocity;
+                velocity = dashVelocity;
+                velocity.y = 0f;
+                playerSpeed = dashForce;
+                dashForce -= Time.deltaTime / character.velocityDampTime;
 
-                dashVelocity -= Time.deltaTime / character.velocityDampTime;
-                if (dashVelocity <= 0)
+                if (dashForce <= 0)
                 {
                     character.dashController.keepMomentum = false;
                     playerSpeed = character.playerSpeed;

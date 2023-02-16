@@ -22,6 +22,8 @@ public class ThirdPersonCam : MonoBehaviour
     public GameObject topDownCam;
 
     public CameraStyle currentStyle;
+
+    UnityEngine.InputSystem.PlayerInput playerInput;
     public enum CameraStyle
     {
         Basic,
@@ -33,6 +35,7 @@ public class ThirdPersonCam : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        playerInput = player.GetComponent<PlayerInput>();
     }
 
     private void Update()
@@ -49,8 +52,8 @@ public class ThirdPersonCam : MonoBehaviour
         // roate player object
         if(currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown)
         {
-            float horizontalInput = UnityEngine.InputSystem.Mouse.current.delta.x.ReadValue();
-            float verticalInput = UnityEngine.InputSystem.Mouse.current.delta.y.ReadValue();
+            float horizontalInput = playerInput.actions["Look"].ReadValue<Vector2>().x;
+            float verticalInput = playerInput.actions["Look"].ReadValue<Vector2>().y;
             Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
             Debug.Log("Input horizontal es igual a" + horizontalInput);

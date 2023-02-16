@@ -75,6 +75,8 @@ public class DashJumpingState : State
         }
         else
         {
+            character.dashController.LastDashSpeed = forceToApply;
+            character.dashController.dashForce = dashForce;
             stateMachine.ChangeState(character.falling);
         }
         grounded = character.controller.isGrounded;

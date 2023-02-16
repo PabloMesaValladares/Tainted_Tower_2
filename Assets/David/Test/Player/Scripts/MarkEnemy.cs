@@ -9,9 +9,9 @@ public class MarkEnemy : MonoBehaviour
 {
     [SerializeField]
     GameObject enemy;
-    GameObject player;
+    public GameObject markPos;
     [SerializeField]
-    CinemachineFreeLook camera;
+    CinemachineVirtualCamera camera;
     [SerializeField]
     GameObject Player;
     EnemyController enemyController;
@@ -41,8 +41,7 @@ public class MarkEnemy : MonoBehaviour
         }
         else
         {
-            enemy = null;
-            camera.LookAt = Player.transform;
+            ResetCamera();
         }
     }
 
@@ -52,10 +51,16 @@ public class MarkEnemy : MonoBehaviour
 
         if (enemy != null)
         {
-            CheckUpDown();
+            camera.LookAt = enemy.transform;
+            Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
+            transform.LookAt(posToLookAt);
         }
         else
-            camera.LookAt = Player.transform;
+        {
+            Vector3 posToLookAt = new Vector3(markPos.transform.position.x, transform.position.y, markPos.transform.position.z);
+            transform.LookAt(markPos.transform);
+        }
+        camera.Priority = 15;
     }
 
     void CheckUpDown()
@@ -65,24 +70,27 @@ public class MarkEnemy : MonoBehaviour
 
         if (distPlayerEnemy > DistanceToCheck)
         {
-            enemy = null;
-            camera.LookAt = Player.transform;
-        }
-        else if (enemy.transform.position.y > transform.position.y + maxUpDownDist || enemy.transform.position.y < transform.position.y - maxUpDownDist)
-        {
-            enemy = null;
-            camera.LookAt = Player.transform;
+            ResetCamera();
         }
         
         else
         {
-            camera.LookAt = enemy.transform;
+            if (enemy != null)
+                camera.LookAt = enemy.transform;
             Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
+            camera.Priority += 10;
             transform.LookAt(posToLookAt);
         }
     }
     public GameObject returnEnemy()
     {
         return enemy;
+    }
+
+    void ResetCamera()
+    {
+        enemy = null;
+        camera.Priority = 5;
+        camera.LookAt = markPos.transform;
     }
 }
