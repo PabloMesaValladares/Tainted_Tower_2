@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class AttackSO : ScriptableObject
 {
-    public abstract void Execute(); 
+    public float delay;
+    public abstract void Execute();
 }

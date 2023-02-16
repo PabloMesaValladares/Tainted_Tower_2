@@ -251,6 +251,8 @@ GameObject:
   m_Component:
   - component: {fileID: 187851175}
   - component: {fileID: 187851174}
+  - component: {fileID: 187851176}
+  - component: {fileID: 187851177}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -275,7 +277,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cdde3a86e3f2c454f9b34785154efb79, type: 2}
   - {fileID: 11400000, guid: b0c68dc7341a6ac40838cde4d200d4b5, type: 2}
   index: 0
-  time: 0
   random: 0
 --- !u!4 &187851175
 Transform:
@@ -292,6 +293,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187851176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187851173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92aa907c9553b2f47828d0ff010c4d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &187851177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187851173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 6cb62a9a0b12ae440bdb179545f0d884,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &265143480
 GameObject:
   m_ObjectHideFlags: 0

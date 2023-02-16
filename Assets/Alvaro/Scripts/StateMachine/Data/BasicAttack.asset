@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fd8568029623d4283f912ca39c5dc2, type: 3}
   m_Name: BasicAttack
   m_EditorClassIdentifier: 
+  delay: 3

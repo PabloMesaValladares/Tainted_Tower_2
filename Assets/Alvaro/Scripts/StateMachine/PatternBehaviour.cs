@@ -7,38 +7,41 @@ public class PatternBehaviour : MonoBehaviour
     [SerializeField] private AttackSO[] attack;
 
     public int index = 0;
-    public float time;
     public bool random;
 
-    private void Start()
-    {
-        InvokeRepeating("Pattern", 2.0f, 2.0f);
-    }
-
-
-    void Pattern()
+    public void Pattern()
     {
         if (random)
         {
-            attack[GetNextAttack()].Execute();
-            return;
+            GetNextAttack();
+            attack[index].Execute();
+            StartCoroutine(CallNextAttack(attack[index].delay));
         }
         else
         {
             if (index < attack.Length)
             {
                 attack[index].Execute();
+                StartCoroutine(CallNextAttack(attack[index].delay));
                 index++;
             }
             else
+            {
                 index = 0;
+                StartCoroutine(CallNextAttack(attack[attack.Length - 1].delay));
+            }
         }
     }
 
-    int GetNextAttack()
+    void GetNextAttack()
     {
-        int rand = Random.Range(0, attack.Length); 
-        
-        return rand;
+        index = Random.Range(0, attack.Length); 
+    }
+
+    public IEnumerator CallNextAttack(float d)
+    {
+        yield return new WaitForSeconds(d);
+
+        Pattern();
     }
 }
