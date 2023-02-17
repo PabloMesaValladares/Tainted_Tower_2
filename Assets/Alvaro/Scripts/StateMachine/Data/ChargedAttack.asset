@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ChargedAttack
   m_EditorClassIdentifier: 
   delay: 4
+  pName: Storm
   type: 1
