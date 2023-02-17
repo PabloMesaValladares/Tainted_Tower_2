@@ -10,8 +10,13 @@ public class MarkEnemy : MonoBehaviour
     [SerializeField]
     GameObject enemy;
     public GameObject markPos;
+
+    public GameObject pointerCanvas;
+
     [SerializeField]
-    CinemachineVirtualCamera camera;
+    CinemachineVirtualCamera enemyCamera;
+    [SerializeField]
+    CinemachineFreeLook MarkCamera;
     [SerializeField]
     GameObject Player;
     EnemyController enemyController;
@@ -29,7 +34,6 @@ public class MarkEnemy : MonoBehaviour
     {
         markAction = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions["Mark"];
         enemyController = GetComponent<EnemyController>();
-        move = camera.GetComponent<CameraMove>();
     }
 
     // Update is called once per frame
@@ -48,40 +52,33 @@ public class MarkEnemy : MonoBehaviour
     void markEnemy()
     {
         enemy = enemyController.GetCloseEnemy();
-
+        float dist = 0;
         if (enemy != null)
         {
-            camera.LookAt = enemy.transform;
-            Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
-            transform.LookAt(posToLookAt);
+            float distPlayerEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if (distPlayerEnemy <= DistanceToCheck)
+            {
+                enemyCamera.LookAt = enemy.transform;
+                Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
+                transform.LookAt(posToLookAt);
+                enemyCamera.m_Lens.FieldOfView = 20 + dist;
+
+                MarkCamera.Priority = 5;
+                enemyCamera.Priority = 15;
+            }
+            else
+                enemy = null;
         }
         else
         {
-            Vector3 posToLookAt = new Vector3(markPos.transform.position.x, transform.position.y, markPos.transform.position.z);
-            transform.LookAt(markPos.transform);
-        }
-        camera.Priority = 15;
-    }
-
-    void CheckUpDown()
-    {
-        float distPlayerEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-        //Debug.Log("Distancia es " + distPlayerEnemy);
-
-        if (distPlayerEnemy > DistanceToCheck)
-        {
-            ResetCamera();
-        }
-        
-        else
-        {
-            if (enemy != null)
-                camera.LookAt = enemy.transform;
-            Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
-            camera.Priority += 10;
-            transform.LookAt(posToLookAt);
+            enemyCamera.Priority = 5;
+            MarkCamera.Priority = 15;
+            pointerCanvas.SetActive(true);
+           
         }
     }
+
     public GameObject returnEnemy()
     {
         return enemy;
@@ -90,7 +87,15 @@ public class MarkEnemy : MonoBehaviour
     void ResetCamera()
     {
         enemy = null;
-        camera.Priority = 5;
-        camera.LookAt = markPos.transform;
+        enemyCamera.Priority = 5;
+        MarkCamera.Priority  = 5;
+        MarkCamera.LookAt = markPos.transform;
+        pointerCanvas.SetActive(false);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, DistanceToCheck);
     }
 }

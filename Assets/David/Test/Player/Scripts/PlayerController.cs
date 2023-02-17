@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public DashJumpingState dashjumping;
     public FallState falling;
     public AttackState attacking;
+    public GrappleState grappling;
 
     [HideInInspector]
     public float gravityValue = -9.81f;
@@ -82,6 +83,7 @@ public class PlayerController : MonoBehaviour
         dashjumping = new DashJumpingState(this, movementSM);
         falling = new FallState(this, movementSM);
         attacking = new AttackState(this, movementSM);
+        grappling = new GrappleState(this, movementSM);
 
         dashController = GetComponent<DashController>();
         ground = GetComponent<GroundCheck>();
@@ -106,6 +108,11 @@ public class PlayerController : MonoBehaviour
         movementSM.currentState.PhysicsUpdate();
     }
     
+    public void changeState(State state)
+    {
+        movementSM.ChangeState(state);
+    }
+
     public void AttackEnded()
     {
         weapon.GetComponent<DamageDealer>().EndDealDamage();

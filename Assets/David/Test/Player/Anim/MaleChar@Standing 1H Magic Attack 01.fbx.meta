@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: dd8bb7d12e811734d819e5b5e5024fdb
+guid: 51a009be5993f6f42a5587375d650b70
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Standing Melee Attack 360 High
+    second: Standing 1H Magic Attack 01
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,11 +36,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Standing Melee Attack 360 High
+      name: Standing 1H Magic Attack 01
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 95
+      lastFrame: 69
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -56,19 +56,19 @@ ModelImporter:
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
-      mirror: 1
+      mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.58596456
-        functionName: AttackEnded
+      - time: 0.51638556
+        functionName: StartGrapple
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.26506025
-        functionName: StartAttack
+      - time: 1
+        functionName: StopGrapple
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

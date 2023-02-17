@@ -12,6 +12,9 @@ public class Grappling : MonoBehaviour
     public LayerMask whatIsGrappleable;
     public LineRenderer lr;
 
+    private PlayerController controller;
+    private GrappleState grappling;
+
     [Header("Grappling")]
     public float maxGrappleDistance;
     public float grappleDelayTime;
@@ -30,12 +33,17 @@ public class Grappling : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         grappleAction = playerInput.actions["Grapple"];
+        player = this.gameObject;
+
+        controller = player.GetComponent<PlayerController>();
+        grappling = controller.grappling;
     }
 
     private void Update()
     {
         if (grappleAction.triggered)
-            StartGrapple();
+            controller.changeState(grappling);
+
 
         if (grapplingCdTimer > 0)
             grapplingCdTimer -= Time.deltaTime;
@@ -83,6 +91,9 @@ public class Grappling : MonoBehaviour
         grapplingCdTimer = grapplingCd;
 
         lr.enabled = false;
+
+
+        controller.changeState(controller.standing);
     }
 
 }

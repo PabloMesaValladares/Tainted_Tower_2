@@ -18,6 +18,7 @@ public class State
     public InputAction sprintAction;
     public InputAction dashAction;
     public InputAction attackAction;
+    public InputAction grappleAction;
 
     public State(PlayerController _character, StateMachine _stateMachine)
     {
@@ -30,6 +31,7 @@ public class State
         sprintAction = character.playerInput.actions["Sprint"];
         dashAction = character.playerInput.actions["Dash"];
         attackAction = character.playerInput.actions["Attack"];
+        grappleAction = character.playerInput.actions["Grapple"];
     }
 
     public virtual void Enter()

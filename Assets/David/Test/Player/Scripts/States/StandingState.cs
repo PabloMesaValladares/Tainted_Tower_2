@@ -21,6 +21,8 @@ public class StandingState : State
     bool crouch;
     bool dash;
     bool attack;
+    bool grapple;
+
     public StandingState(PlayerController _character, StateMachine _stateMachine):base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -35,6 +37,7 @@ public class StandingState : State
         crouch = false;
         attack = false;
         sprint = false;
+        grapple = false;
         grounded = character.ground.returnCheck();
         input = Vector2.zero;
         velocity = Vector3.zero;
@@ -77,9 +80,11 @@ public class StandingState : State
         if (attackAction.triggered)
             attack = true;
 
+
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
         velocity = new Vector3(input.x, 0, input.y);
+
 
         velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
         velocity.y = 0f;
@@ -106,6 +111,7 @@ public class StandingState : State
             stateMachine.ChangeState(character.falling);
         if (attack)
             stateMachine.ChangeState(character.attacking);
+
     }
 
     public override void PhysicsUpdate()
@@ -133,11 +139,12 @@ public class StandingState : State
             }
         }
 
-
         currentVelocity = Vector3.SmoothDamp(currentVelocity, velocity, ref cVelocity, character.velocityDampTime);
 
 
         character.controller.Move(currentVelocity * Time.deltaTime * playerSpeed + gravityVelocity * Time.deltaTime);//Mueve el personaje a cuerdo a la velocidad
+
+
 
         if (velocity.sqrMagnitude > 0)
             character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(velocity), character.rotationDampTime);
