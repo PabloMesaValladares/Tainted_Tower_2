@@ -34,6 +34,9 @@ public class MarkEnemy : MonoBehaviour
     {
         markAction = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions["Mark"];
         enemyController = GetComponent<EnemyController>();
+
+        enemyCamera.gameObject.SetActive(false);
+        MarkCamera.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -64,15 +67,23 @@ public class MarkEnemy : MonoBehaviour
                 transform.LookAt(posToLookAt);
                 enemyCamera.m_Lens.FieldOfView = 20 + dist;
 
-                MarkCamera.Priority = 5;
+
+                MarkCamera.gameObject.SetActive(false);
+                enemyCamera.gameObject.SetActive(true);
                 enemyCamera.Priority = 15;
             }
             else
-                enemy = null;
+            {
+                enemyCamera.gameObject.SetActive(false);
+                MarkCamera.gameObject.SetActive(true);
+                MarkCamera.Priority = 15;
+                pointerCanvas.SetActive(true);
+            }
         }
         else
         {
-            enemyCamera.Priority = 5;
+            enemyCamera.gameObject.SetActive(false);
+            MarkCamera.gameObject.SetActive(true);
             MarkCamera.Priority = 15;
             pointerCanvas.SetActive(true);
            
@@ -86,6 +97,8 @@ public class MarkEnemy : MonoBehaviour
 
     void ResetCamera()
     {
+        enemyCamera.gameObject.SetActive(false);
+        MarkCamera.gameObject.SetActive(false);
         enemy = null;
         enemyCamera.Priority = 5;
         MarkCamera.Priority  = 5;

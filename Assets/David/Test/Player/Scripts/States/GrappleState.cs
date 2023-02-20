@@ -7,6 +7,8 @@ using UnityEngine.TextCore.Text;
 public class GrappleState : State
 {
 
+    float playerSpeed;
+    bool dash;
     public GrappleState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -15,14 +17,25 @@ public class GrappleState : State
 
     public override void Enter()
     {
+        dash = false;
+        playerSpeed = character.playerSpeed;
         character.animator.SetTrigger("grapple");
     }
     public override void HandleInput()
     {
-
+        if (dashAction.triggered)
+        {
+            dash = character.dashController.checkIfDash();
+        }
     }
     public override void LogicUpdate()
     {
+        if (dash)
+        {
+            stateMachine.ChangeState(character.dashing);
+            character.dashController.previousSpeed = playerSpeed;
+            character.dashController.startCooldown();
+        }
 
     }
     public override void PhysicsUpdate()

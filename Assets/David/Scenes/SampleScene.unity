@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 67312312}
   - component: {fileID: 67312311}
   - component: {fileID: 67312310}
+  - component: {fileID: 67312313}
   m_Layer: 11
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -389,6 +390,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67312308}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &67312313
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67312308}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &114059315
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +633,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 200
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -773,7 +790,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361508539}
-  m_LocalRotation: {x: 0.21936242, y: 0.027285382, z: -0.0061373315, w: 0.97524256}
+  m_LocalRotation: {x: 0.21936242, y: 0.027285403, z: -0.006137336, w: 0.97524256}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1613,7 +1630,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636233423}
-  m_LocalRotation: {x: 0.30517742, y: 0.000000016385558, z: -0.0000000052509983, w: 0.95229554}
+  m_LocalRotation: {x: 0.30517742, y: -0.000000016385558, z: 0.0000000052509983, w: 0.95229554}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2936,7 +2953,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860749404}
-  m_LocalRotation: {x: 0.051852487, y: -0.057631973, z: 0.002997396, w: 0.9969859}
+  m_LocalRotation: {x: 0.051852465, y: -0.057631996, z: 0.0029973956, w: 0.9969859}
   m_LocalPosition: {x: 5.61385, y: 11.74, z: -21.253698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3211,7 +3228,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.21936245, y: 0.027285364, z: -0.0061373287, w: 0.97524256}
+  m_LocalRotation: {x: 0.21936245, y: 0.027285425, z: -0.006137342, w: 0.97524256}
   m_LocalPosition: {x: 4.17385, y: 14.69, z: -16.253698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3755,7 +3772,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 200
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -3881,7 +3898,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277178297}
-  m_LocalRotation: {x: 0.33051732, y: 0.026394108, z: -0.009247238, w: 0.9433855}
+  m_LocalRotation: {x: 0.33051732, y: 0.026394077, z: -0.009247228, w: 0.9433855}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4817,7 +4834,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809623574}
-  m_LocalRotation: {x: 0.021247348, y: -0.033532754, z: 0.0007130443, w: 0.9992115}
+  m_LocalRotation: {x: 0.021247348, y: -0.033532787, z: 0.0007130451, w: 0.9992115}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5037,15 +5054,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aeca1e4fd2f4c4eb2bc8712263fe50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 718561967}
+  cam: {fileID: 963194228}
   gunTip: {fileID: 718561967}
+  offset: {x: 0, y: 0.11, z: 0}
   whatIsGrappleable:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2304
   lr: {fileID: 963194232}
-  maxGrappleDistance: 8
-  grappleDelayTime: 0
-  grapplingCd: 3
+  maxGrappleDistance: 100
+  grappleDelayTime: 1
+  overshootYAxis: 0
+  grapplingCd: 0
   grappleAction:
     m_Name: Grapple
     m_Type: 0
