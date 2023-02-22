@@ -36,7 +36,7 @@ public class State
 
     public virtual void Enter()
     {
-        //Debug.Log("Entro en estado " + this.ToString());
+        Debug.Log("Entro en estado " + this.ToString());
     }
     public virtual void HandleInput()
     {

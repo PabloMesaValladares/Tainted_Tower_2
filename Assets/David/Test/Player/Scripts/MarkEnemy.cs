@@ -14,6 +14,8 @@ public class MarkEnemy : MonoBehaviour
     public GameObject pointerCanvas;
 
     [SerializeField]
+    CinemachineFreeLook normalCamera;
+    [SerializeField]
     CinemachineVirtualCamera enemyCamera;
     [SerializeField]
     CinemachineFreeLook MarkCamera;
@@ -55,7 +57,8 @@ public class MarkEnemy : MonoBehaviour
     void markEnemy()
     {
         enemy = enemyController.GetCloseEnemy();
-        float dist = 0;
+        float dist = 0; 
+        normalCamera.gameObject.SetActive(false);
         if (enemy != null)
         {
             float distPlayerEnemy = Vector3.Distance(transform.position, enemy.transform.position);
@@ -97,6 +100,7 @@ public class MarkEnemy : MonoBehaviour
 
     void ResetCamera()
     {
+        normalCamera.gameObject.SetActive(true);
         enemyCamera.gameObject.SetActive(false);
         MarkCamera.gameObject.SetActive(false);
         enemy = null;

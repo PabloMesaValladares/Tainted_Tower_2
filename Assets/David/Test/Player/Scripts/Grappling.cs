@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public class Grappling : MonoBehaviour
 {
     [Header("References")]
     private GameObject player;
+    public CinemachineFreeLook[] cinemachineCam;
     public Transform cam;
     public Transform gunTip;
     public Vector3 offset;
     public LayerMask whatIsGrappleable;
     public LineRenderer lr;
+    public float grappleFov;
+    public float[] normalFov;
 
     private PlayerController controller;
     private GrappleState grappling;
+    private GrabMoveState grapplemoving;
 
     [Header("Grappling")]
     public float maxGrappleDistance;
@@ -40,7 +45,11 @@ public class Grappling : MonoBehaviour
 
         controller = player.GetComponent<PlayerController>();
         grappling = controller.grappling;
+        grapplemoving = controller.grapplemoving;
         markpos = GetComponent<MarkEnemy>().markPos;
+        normalFov = new float[cinemachineCam.Length];
+        for (int i = 0; i < cinemachineCam.Length; i++)
+            normalFov[i] = cinemachineCam[i].m_Lens.FieldOfView;
     }
 
     private void Update()
@@ -67,40 +76,25 @@ public class Grappling : MonoBehaviour
         RaycastHit hit;
 
         Vector3 posToGrab = cam.forward + offset;
-
         if(Physics.Raycast(markpos.transform.position, posToGrab, out hit, maxGrappleDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;
+            gameObject.transform.LookAt(new Vector3(grapplePoint.x, gameObject.transform.position.y, grapplePoint.z));
             Debug.Log("Pillado");
-            Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+            Invoke(nameof(ChangeToMove), grappleDelayTime);
         }
         else
         {
             grapplePoint = markpos.transform.position + posToGrab * maxGrappleDistance;
-
-            //Invoke(nameof(StopGrapple), grappleDelayTime);
+            gameObject.transform.LookAt(new Vector3(grapplePoint.x, gameObject.transform.position.y, grapplePoint.z));
+            Invoke(nameof(StopGrapple), grappleDelayTime);
         }
 
         lr.enabled = true;
         lr.SetPosition(1, grapplePoint);
     }
 
-    private void ExecuteGrapple()
-    {
-
-        Vector3 lowestPoint = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
-
-        float grapplePointRelativeYPos = grapplePoint.y - lowestPoint.y;
-        float highestPointOnArc = grapplePointRelativeYPos + overshootYAxis;
-
-        if (grapplePointRelativeYPos < 0) highestPointOnArc = overshootYAxis;
-
-        JumpToPosition(grapplePoint, highestPointOnArc);
-
-        Invoke(nameof(StopGrapple), 1f);
-    }
-
-    private void StopGrapple()
+    public void StopGrapple()
     {
         grapple = false;
 
@@ -110,42 +104,18 @@ public class Grappling : MonoBehaviour
 
 
         controller.changeState(controller.standing);
+        for (int i = 0; i < cinemachineCam.Length; i++)
+            cinemachineCam[i].m_Lens.FieldOfView = normalFov[i];
     }
 
-    private bool enableMovementOnNextTouch;
-    public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
+    void ChangeToMove()
     {
-
-        velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
-        Invoke(nameof(SetVelocity), 0.1f);
-
-        Invoke(nameof(ResetRestrictions), 3f);
+        for (int i = 0; i < cinemachineCam.Length; i++)
+            cinemachineCam[i].m_Lens.FieldOfView = normalFov[i];
+        controller.changeState(grapplemoving);
     }
-
-    private Vector3 velocityToSet;
-    private void SetVelocity()
+    public Vector3 GetGrapplePoint()
     {
-        enableMovementOnNextTouch = true;
-        GetComponent<CharacterController>().Move(velocityToSet * Time.deltaTime);
-
-        //cam.DoFov(grappleFov);
-    }
-
-    public void ResetRestrictions()
-    {
-        //activeGrapple = false;
-        //cam.DoFov(85f);
-    }
-    public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
-    {
-        float gravity = Physics.gravity.y;
-        float displacementY = endPoint.y - startPoint.y;
-        Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
-
-        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
-        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity)
-            + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
-
-        return velocityXZ + velocityY;
-    }
+        return grapplePoint; 
+    }    
 }

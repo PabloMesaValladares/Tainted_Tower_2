@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     public FallState falling;
     public AttackState attacking;
     public GrappleState grappling;
+    public GrabMoveState grapplemoving;
+
 
     [HideInInspector]
     public float gravityValue = -9.81f;
@@ -84,6 +86,7 @@ public class PlayerController : MonoBehaviour
         falling = new FallState(this, movementSM);
         attacking = new AttackState(this, movementSM);
         grappling = new GrappleState(this, movementSM);
+        grapplemoving = new GrabMoveState(this, movementSM);
 
         dashController = GetComponent<DashController>();
         ground = GetComponent<GroundCheck>();

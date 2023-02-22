@@ -306,8 +306,8 @@ GameObject:
   - component: {fileID: 67312310}
   - component: {fileID: 67312313}
   m_Layer: 11
-  m_Name: Cube (8)
-  m_TagString: Untagged
+  m_Name: GrabPoint
+  m_TagString: GrabPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -790,7 +790,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361508539}
-  m_LocalRotation: {x: 0.21936242, y: 0.027285403, z: -0.006137336, w: 0.97524256}
+  m_LocalRotation: {x: 0.21936242, y: 0.027285382, z: -0.0061373315, w: 0.97524256}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -816,6 +816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803820806472684270, guid: fcc7e72ef9922724c9dbe91fe1141293,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3288468337185982548, guid: fcc7e72ef9922724c9dbe91fe1141293,
         type: 3}
@@ -1455,7 +1460,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598391422}
-  m_LocalRotation: {x: 0.0067646457, y: -0.033539563, z: 0.00022701618, w: 0.9994145}
+  m_LocalRotation: {x: 0.0067646457, y: -0.033539597, z: 0.00022701643, w: 0.9994145}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1630,7 +1635,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636233423}
-  m_LocalRotation: {x: 0.30517742, y: -0.000000016385558, z: 0.0000000052509983, w: 0.95229554}
+  m_LocalRotation: {x: 0.30517742, y: -0.00000001638556, z: 0.0000000052509987, w: 0.95229554}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2953,7 +2958,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860749404}
-  m_LocalRotation: {x: 0.051852465, y: -0.057631996, z: 0.0029973956, w: 0.9969859}
+  m_LocalRotation: {x: 0.051852487, y: -0.05763197, z: 0.0029973956, w: 0.9969859}
   m_LocalPosition: {x: 5.61385, y: 11.74, z: -21.253698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3228,7 +3233,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.21936245, y: 0.027285425, z: -0.006137342, w: 0.97524256}
+  m_LocalRotation: {x: 0.21936245, y: 0.027285364, z: -0.0061373287, w: 0.97524256}
   m_LocalPosition: {x: 4.17385, y: 14.69, z: -16.253698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3748,7 +3753,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.5
     m_SpeedMode: 0
-    m_MaxSpeed: 2
+    m_MaxSpeed: 1
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -3772,7 +3777,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 200
+    m_MaxSpeed: 100
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -3898,7 +3903,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277178297}
-  m_LocalRotation: {x: 0.33051732, y: 0.026394077, z: -0.009247228, w: 0.9433855}
+  m_LocalRotation: {x: 0.33051732, y: 0.026394108, z: -0.009247238, w: 0.9433855}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5012,6 +5017,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   markPos: {fileID: 961699831}
   pointerCanvas: {fileID: 2051797146}
+  normalCamera: {fileID: 259876838}
   enemyCamera: {fileID: 860749405}
   MarkCamera: {fileID: 1214664160}
   Player: {fileID: 1846291757}
@@ -5054,13 +5060,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aeca1e4fd2f4c4eb2bc8712263fe50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachineCam:
+  - {fileID: 259876838}
+  - {fileID: 1214664160}
   cam: {fileID: 963194228}
   gunTip: {fileID: 718561967}
-  offset: {x: 0, y: 0.11, z: 0}
+  offset: {x: 0, y: 0, z: 0}
   whatIsGrappleable:
     serializedVersion: 2
     m_Bits: 2304
   lr: {fileID: 963194232}
+  grappleFov: 80
+  normalFov: []
   maxGrappleDistance: 100
   grappleDelayTime: 1
   overshootYAxis: 0
