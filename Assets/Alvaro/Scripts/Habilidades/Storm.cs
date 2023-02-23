@@ -6,23 +6,37 @@ public class Storm : MonoBehaviour
 {
     public bool firstHit;
     public float tickInterval;
+    public float stormDuration;
     GameObject _go;
+    Timer _timer;
     new Collider collider;
+
+    private void Awake()
+    {
+        collider = GetComponent<Collider>();
+        _go = GameObject.FindGameObjectWithTag("Player");
+        _timer = GetComponent<Timer>();
+    }
 
     private void OnEnable()
     {
-        collider = GetComponent<Collider>();
         collider.enabled = false;
 
-        _go = GameObject.FindGameObjectWithTag("Player");
         transform.position = _go.transform.position;
+
+        _timer.StartTimer(stormDuration);
 
         StartCoroutine("StartDelay");
     }
 
+    private void OnDisable()
+    {
+        StopCoroutine("DamageTick");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        TryGetComponent<TestController>(out TestController _tc);
+        //TryGetComponent<TestController>(out TestController _tc);
             DamageOverTime();
     }
 
@@ -37,8 +51,6 @@ public class Storm : MonoBehaviour
         {
             print("big damage " + _go.name);
             firstHit = false;
-
-            return;
         }
 
         StartCoroutine("DamageTick");
@@ -53,9 +65,13 @@ public class Storm : MonoBehaviour
 
     IEnumerator StartDelay()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
 
         collider.enabled = true;
     }
 
+    void DisableObject()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2729694834760289248}
   - component: {fileID: 2936434549621114731}
   - component: {fileID: -520928558967882710}
+  - component: {fileID: 6726397068698356717}
   - component: {fileID: 1847081147326195324}
   - component: {fileID: 3576283203369332274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Storm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,8 +61,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15686cf0cf3eb74bad2a41e632aefc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstHit: 0
+  firstHit: 1
   tickInterval: 0.2
+  stormDuration: 6
+--- !u!114 &6726397068698356717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5122448538454444249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c4c644d56b42344bf40bf2415c90f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerHasStopped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5122448538454444249}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &1847081147326195324
 MeshFilter:
   m_ObjectHideFlags: 0

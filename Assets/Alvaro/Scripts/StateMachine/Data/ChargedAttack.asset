@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0cb19601c490de43bcf4ed916314e7d, type: 3}
   m_Name: ChargedAttack
   m_EditorClassIdentifier: 
-  delay: 4
+  delay: 12
   pName: Storm
   type: 1

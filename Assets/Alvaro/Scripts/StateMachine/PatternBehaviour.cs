@@ -11,6 +11,23 @@ public class PatternBehaviour : MonoBehaviour
 
     public void Pattern()
     {
+        UpdateIndex();
+    }
+
+    void GetNextAttack()
+    {
+        index = Random.Range(0, attack.Length); 
+    }
+
+    public IEnumerator CallNextAttack(float d)
+    {
+        yield return new WaitForSeconds(d);
+
+        Pattern();
+    }
+
+    private void UpdateIndex()
+    {
         if (random)
         {
             GetNextAttack();
@@ -31,17 +48,5 @@ public class PatternBehaviour : MonoBehaviour
                 StartCoroutine(CallNextAttack(attack[attack.Length - 1].delay));
             }
         }
-    }
-
-    void GetNextAttack()
-    {
-        index = Random.Range(0, attack.Length); 
-    }
-
-    public IEnumerator CallNextAttack(float d)
-    {
-        yield return new WaitForSeconds(d);
-
-        Pattern();
     }
 }

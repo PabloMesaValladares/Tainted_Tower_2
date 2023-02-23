@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
@@ -8,13 +9,15 @@ public class Timer : MonoBehaviour
     private float stopw;
     private bool started;
 
+    public UnityEvent timerHasStopped;
+
     public void StartTimer(float t)
     {
         time = t;
         started = true;
     }
 
-    public float UpdateTimer()
+    private void Update()
     {
         if (started)
             time -= Time.deltaTime;
@@ -23,9 +26,9 @@ public class Timer : MonoBehaviour
         {
             time = 0;
             started = false;
+            timerHasStopped.Invoke();
         }
 
-        return time;
     }
 
     public float UpdateStopWatch(bool state)
