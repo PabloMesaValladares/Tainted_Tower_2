@@ -8,7 +8,7 @@ public class ChargedAttack : AttackSO
     public string pName;
     public int type;   
     GameObject _go;
-
+    
     public override void Execute()
     {
         _go = PoolingManager.Instance.GetPooledObject(pName);
