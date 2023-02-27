@@ -28,7 +28,6 @@ public class Timer : MonoBehaviour
             started = false;
             timerHasStopped.Invoke();
         }
-
     }
 
     public float UpdateStopWatch(bool state)

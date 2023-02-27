@@ -62,8 +62,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstHit: 1
-  tickInterval: 0.2
+  tickInterval: 0.4
   stormDuration: 6
+  bigDmg:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8505264566658624162, guid: 48fd65bc4083d8c49b02246df58e74e0,
+          type: 3}
+        m_TargetAssemblyTypeName: HealthBehaviour, Assembly-CSharp
+        m_MethodName: Hurt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 250
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  smolDmg:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: f15f34d340b00a94eb76f3ea175e333c, type: 3}
+        m_TargetAssemblyTypeName: HealthBehaviour, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6726397068698356717
 MonoBehaviour:
   m_ObjectHideFlags: 0
