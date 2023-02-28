@@ -17,6 +17,8 @@ TagManager:
   - EnemyDetector
   - CameraIgnore
   - GrabPoint
+  - EnemyAbility
+  - 
   - 
   - 
   - 
