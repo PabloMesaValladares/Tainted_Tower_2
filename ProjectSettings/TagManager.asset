@@ -8,15 +8,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Traps
-  - ground
-  - 
-  - 
-  - 
-  - 
+  - Scenario
+  - Player
+  - Enemy
+  - EnemyDetector
+  - CameraIgnore
+  - GrabPoint
   - 
   - 
   - 

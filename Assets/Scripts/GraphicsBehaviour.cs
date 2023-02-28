@@ -1,23 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 using TMPro;
 
 public class GraphicsBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Dropdown screenOptions, frameOptions, qualityOptions, resolutionOptions;
-
-    public RenderPipelineAsset[] qualityLevels;
-
+    private TMP_Dropdown screenOptions, frameOptions, vsyncOptions, qualityOptions, resolutionOptions, shadowOptions, antialiasingOptions, particleOptions;
     [SerializeField]
-    private int frameCap;
+    private int frameCap, vSync, aliasing, disParticle;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-       qualityOptions.value = QualitySettings.GetQualityLevel();
+        QualitySettings.vSyncCount = 0;
     }
 
     // Update is called once per frame
@@ -46,21 +42,27 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (qualityOptions.value == 0)
         {
-            QualitySettings.SetQualityLevel(0);
-            QualitySettings.masterTextureLimit = 3;
+            QualitySettings.SetQualityLevel(2);
+            QualitySettings.masterTextureLimit = 2;
             QualitySettings.skinWeights = SkinWeights.TwoBones;
+            QualitySettings.lodBias = 0;
+            QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
         }
         else if (qualityOptions.value == 1)
         {
             QualitySettings.SetQualityLevel(1);
             QualitySettings.masterTextureLimit = 1;
             QualitySettings.skinWeights = SkinWeights.FourBones;
+            QualitySettings.lodBias = 1;
+            QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
         }
         else if (qualityOptions.value == 2)
         {
-            QualitySettings.SetQualityLevel(2);
+            QualitySettings.SetQualityLevel(0);
             QualitySettings.masterTextureLimit = 0;
             QualitySettings.skinWeights = SkinWeights.Unlimited;
+            QualitySettings.lodBias = 2;
+            QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
         }
     }
 
@@ -141,4 +143,79 @@ public class GraphicsBehaviour : MonoBehaviour
 
         Application.targetFrameRate = frameCap;
     }
+
+    public void ChangeVsync()
+    {
+        if (vsyncOptions.value == 0)
+        {
+            vSync = 0;
+        }
+        else if (vsyncOptions.value == 1)
+        {
+            vSync = 1;
+        }
+        else if (vsyncOptions.value == 2)
+        {
+            vSync = 2;
+        }
+        
+        QualitySettings.vSyncCount = vSync;
+    }
+
+    public void ChangeAliasing()
+    {
+        if (antialiasingOptions.value == 0)
+        {
+            aliasing = 0;
+        }
+        else if (antialiasingOptions.value == 1)
+        {
+            aliasing = 2;
+        }
+        else if (antialiasingOptions.value == 2)
+        {
+            aliasing = 4;
+        }
+        else if (antialiasingOptions.value == 3)
+        {
+            aliasing = 8;
+        }
+
+        QualitySettings.antiAliasing = aliasing;
+
+    }
+
+    public void ChangeParticle()
+    {
+        if (particleOptions.value == 0)
+        {
+            disParticle = 1;
+            QualitySettings.particleRaycastBudget = 0;
+            QualitySettings.softParticles = false;
+
+        }
+        else if (particleOptions.value == 1)
+        {
+            disParticle = 0;
+            QualitySettings.particleRaycastBudget = 16;
+            QualitySettings.softParticles = false;
+        }
+        else if (particleOptions.value == 2)
+        {
+            disParticle = 0;
+            QualitySettings.particleRaycastBudget = 256;
+            QualitySettings.softParticles = true;
+        }
+        else if (particleOptions.value == 2)
+        {
+            disParticle = 0;
+            QualitySettings.particleRaycastBudget = 4096;
+            QualitySettings.softParticles = true;
+        }
+
+        QualitySettings.antiAliasing = aliasing;
+
+    }
+
+    //Sombras, Resolucion, particulas, anti aliasing, skin Weights + Lod Bias
 }
