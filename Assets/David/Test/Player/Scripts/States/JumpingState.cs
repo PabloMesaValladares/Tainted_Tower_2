@@ -14,6 +14,12 @@ public class JumpingState : State
 
     Vector3 playerPrevPos;
 
+    Rigidbody rb;
+    float jumpForce;
+    float airMultiplier;
+    Vector3 moveDirection;
+    Transform orientation;
+
     public JumpingState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -26,12 +32,14 @@ public class JumpingState : State
         grounded = false;
         dash = false;
         gravityValue = character.gravityValue;
-        jumpHeight = character.jumpHeight;
-        playerSpeed = character.playerSpeed;
+        jumpHeight = character.jumpForce;
+        playerSpeed = character.walkSpeed;
         gravityVelocity.y = 0;
         playerPrevPos = character.transform.position;
         character.animator.SetFloat("speed", 0);
         character.animator.SetTrigger("jump");
+
+        grounded = character.ground.returnCheck();
         Jump();
     }
 
@@ -42,12 +50,19 @@ public class JumpingState : State
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
 
-        if (dashAction.triggered)
-        {
-            dash = character.dashController.checkIfDash();
-        }
+        //if (dashAction.triggered)
+        //{
+        //    dash = character.dashController.checkIfDash();
+        //}
 
+        velocity = character.playerVelocity;
+        airVelocity = new Vector3(input.x, 0, input.y);
 
+        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
+        velocity.y = 0f;
+
+        airVelocity = airVelocity.x * character.cameraTransform.right.normalized + airVelocity.z * character.cameraTransform.forward.normalized;
+        airVelocity.y = 0f;
     }
 
     public override void LogicUpdate()
@@ -82,16 +97,16 @@ public class JumpingState : State
             airVelocity = airVelocity.x * character.cameraTransform.right.normalized + airVelocity.z * character.cameraTransform.forward.normalized;
             airVelocity.y = 0f;
 
-            character.controller.Move(gravityVelocity * Time.deltaTime + (airVelocity * character.airControl + velocity * (1 - character.airControl)) * playerSpeed * Time.deltaTime);
+            //character.controller.Move(gravityVelocity * Time.deltaTime + (airVelocity * character.airControl + velocity * (1 - character.airControl)) * playerSpeed * Time.deltaTime);
         }
-        if(character.transform.position.y < playerPrevPos.y )
+        if (character.transform.position.y < playerPrevPos.y)
         {
             character.animator.SetTrigger("fall");
             stateMachine.ChangeState(character.falling);
         }
         playerPrevPos = character.transform.position;
         gravityVelocity.y += gravityValue * Time.deltaTime;
-        grounded = character.controller.isGrounded;
+
     }
 
     public override void Exit()
@@ -101,7 +116,10 @@ public class JumpingState : State
 
     void Jump()
     {
-        gravityVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        Debug.Log(gravityVelocity.y);
+        rb.AddForce(character.transform.up * jumpForce, ForceMode.Impulse);
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        //gravityVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+        //Debug.Log(gravityVelocity.y);
     }
 }

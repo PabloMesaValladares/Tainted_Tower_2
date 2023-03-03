@@ -7,9 +7,7 @@ using UnityEngine.TextCore.Text;
 public class StandingState : State
 {
     float gravityValue;
-    Vector3 currentVelocity;
     bool grounded;
-    float playerSpeed;
 
     Vector3 cVelocity;
     float dashVelocity;
@@ -23,6 +21,17 @@ public class StandingState : State
     bool attack;
     bool grapple;
 
+    Rigidbody rb;
+    float playerSpeed;
+    Vector3 moveDirection;
+    Transform orientation;
+    GameObject playerObj;
+
+    RaycastHit slopeHit;
+    float playerHeight;
+    float maxSlopeAngle;
+    float groundDrag;
+
     public StandingState(PlayerController _character, StateMachine _stateMachine):base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -32,68 +41,75 @@ public class StandingState : State
     public override void Enter()//Iniciar las variables
     {
         base.Enter();
+        //character.animator.ResetTrigger("land");
+        //character.animator.ResetTrigger("dash");
+        //character.animator.ResetTrigger("jump");
+        //character.animator.ResetTrigger("crouch");
+        //character.animator.ResetTrigger("fall");
+        //character.animator.SetTrigger("move");
         dash = false;
         jump = false;
         crouch = false;
         attack = false;
         sprint = false;
         grapple = false;
+
         grounded = character.ground.returnCheck();
         input = Vector2.zero;
         velocity = Vector3.zero;
-        currentVelocity = Vector3.zero;
+        moveDirection = Vector3.zero;
         gravityVelocity.y = 0;
+
 
         dashVelocity = character.dashController.dashForce;
 
-        playerSpeed = character.playerSpeed;
+        rb = character.rb;
+        orientation = character.orientation;
+        moveSpeed = character.walkSpeed;
         gravityValue = character.gravityValue;
-        character.animator.ResetTrigger("land");
-        character.animator.ResetTrigger("dash");
-        character.animator.ResetTrigger("jump");
-        character.animator.ResetTrigger("crouch");
-        character.animator.ResetTrigger("fall");
-        character.animator.SetTrigger("move");
-            
+        playerHeight = character.ground.normalColliderHeight;
+        maxSlopeAngle = character.maxSlopeAngle;
+        playerObj = character.playerObj;
+        groundDrag = character.groundDrag;
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
     {
         base.HandleInput();
 
-        if(jumpAction.triggered)
-        {
-            jump = true;
-        }
-        if(crouchAction.triggered)
-        {
-            crouch = true;
-        }
-        if(sprintAction.triggered)
-        {
-            sprint = true;
-        }
-        if (dashAction.triggered)
-        {
-            dash = character.dashController.checkIfDash();
-        }
-        if (attackAction.triggered)
-            attack = true;
+        //if(jumpAction.triggered)
+        //{
+        //    jump = true;
+        //}
+        //if(crouchAction.triggered)
+        //{
+        //    crouch = true;
+        //}
+        //if(sprintAction.triggered)
+        //{
+        //    sprint = true;
+        //}
+        //if (dashAction.triggered)
+        //{
+        //    dash = character.dashController.checkIfDash();
+        //}
+        //if (attackAction.triggered)
+        //    attack = true;
 
 
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
         velocity = new Vector3(input.x, 0, input.y);
 
-
-        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
-        velocity.y = 0f;
+        grounded = character.ground.returnCheck();
+        //velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
+        SpeedControl();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        character.animator.SetFloat("speed", input.magnitude, character.speedDampTime, Time.deltaTime);//Cambiamos la velocidad del animator para cambiar su animacion
+        //character.animator.SetFloat("speed", input.magnitude, character.speedDampTime, Time.deltaTime);//Cambiamos la velocidad del animator para cambiar su animacion
 
         if (sprint)//cambia al estado dependiendo de la variable
             stateMachine.ChangeState(character.sprinting);
@@ -107,50 +123,72 @@ public class StandingState : State
             character.dashController.previousSpeed = playerSpeed;
             character.dashController.startCooldown();
         }
-        if(!grounded)
-            stateMachine.ChangeState(character.falling);
+        //if(!grounded)
+        //    stateMachine.ChangeState(character.falling);
         if (attack)
             stateMachine.ChangeState(character.attacking);
 
+
+        rb.drag = groundDrag;
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
 
-        gravityVelocity.y += gravityValue * Time.deltaTime;
+        moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
+        moveDirection.y = 0;
 
+        Debug.Log("moveSpeed = " + moveSpeed);
 
-        grounded = character.ground.returnCheck();
+        Debug.Log("moveDirection x = " + moveDirection.x);
 
-        if (grounded && gravityVelocity.y < 0)
-            gravityVelocity.y = 0f;
+        Debug.Log("moveDirection y = " + moveDirection.z);
 
-
-        if (character.dashController.keepMomentum)
+        if (OnSlope())
         {
-            playerSpeed = character.playerSpeed + dashVelocity;
+            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
 
-            dashVelocity -= Time.deltaTime / character.velocityDampTime;
-            if (dashVelocity <= 0)
-            {
-                character.dashController.keepMomentum = false;
-                playerSpeed = character.playerSpeed;
-            }
+            if (rb.velocity.y > 0)
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
 
-        currentVelocity = Vector3.SmoothDamp(currentVelocity, velocity, ref cVelocity, character.velocityDampTime);
-
-
-        character.controller.Move(currentVelocity * Time.deltaTime * playerSpeed + gravityVelocity * Time.deltaTime);//Mueve el personaje a cuerdo a la velocidad
-
+        //on ground
+        else
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
 
         if (velocity.sqrMagnitude > 0)
-            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(velocity), character.rotationDampTime);
+            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
 
+        rb.useGravity = !OnSlope();
     }
-    
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if(flatVel.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+    }
+    private bool OnSlope()
+    {
+        if (Physics.Raycast(character.transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
+
+        return false;
+    }
+
+    private Vector3 GetSlopeMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+    }
 
     public override void Exit()
     {

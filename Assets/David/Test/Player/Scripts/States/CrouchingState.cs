@@ -31,9 +31,6 @@ public class CrouchingState : State
         gravityVelocity.y = 0;
 
         playerSpeed = character.crouchSpeed;
-        character.controller.height = character.crouchColliderHeight;
-        character.controller.center = new Vector3(0f, character.crouchColliderHeight / 2f, 0f);
-        grounded = character.controller.isGrounded;
         gravityValue = character.gravityValue;
 
 
@@ -42,8 +39,6 @@ public class CrouchingState : State
     public override void Exit()
     {
         base.Exit();
-        character.controller.height = character.normalColliderHeight;
-        character.controller.center = new Vector3(0f, character.normalColliderHeight / 2f, 0f);
         gravityVelocity.y = 0f;
         character.playerVelocity = new Vector3(input.x, 0, input.y);
         character.animator.SetTrigger("move");
@@ -78,16 +73,16 @@ public class CrouchingState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        belowCeiling = CheckCollisionOverlap(character.transform.position + Vector3.up * character.normalColliderHeight);
+        //belowCeiling = CheckCollisionOverlap(character.transform.position + Vector3.up * character.normalColliderHeight);
         gravityVelocity.y += gravityValue * Time.deltaTime;
-        grounded = character.controller.isGrounded;
+        //grounded = character.controller.isGrounded;
         if (grounded && gravityVelocity.y < 0)
         {
             gravityVelocity.y = 0f;
         }
         currentVelocity = Vector3.Lerp(currentVelocity, velocity, character.velocityDampTime);
 
-        character.controller.Move(currentVelocity * Time.deltaTime * playerSpeed + gravityVelocity * Time.deltaTime);
+        //character.controller.Move(currentVelocity * Time.deltaTime * playerSpeed + gravityVelocity * Time.deltaTime);
 
         if (velocity.magnitude > 0)
         {
@@ -98,17 +93,18 @@ public class CrouchingState : State
     public bool CheckCollisionOverlap(Vector3 targetPositon)
     {
         RaycastHit hit;
-
         Vector3 direction = targetPositon - character.transform.position;
-        if (Physics.Raycast(character.transform.position, direction, out hit, character.normalColliderHeight, character.layersToReact))
-        {
-            Debug.DrawRay(character.transform.position, direction * hit.distance, Color.yellow);
-            return true;
-        }
-        else
-        {
-            Debug.DrawRay(character.transform.position, direction * character.normalColliderHeight, Color.white);
-            return false;
-        }
+        //if (Physics.Raycast(character.transform.position, direction, out hit, character.normalColliderHeight, character.layersToReact))
+        //{
+        //    Debug.DrawRay(character.transform.position, direction * hit.distance, Color.yellow);
+        //    return true;
+        //}
+        //else
+        //{
+        //    Debug.DrawRay(character.transform.position, direction * character.normalColliderHeight, Color.white);
+        //    return false;
+        //}
+
+        return false;
     }
 }

@@ -56,11 +56,13 @@ public class ThirdPersonCam : MonoBehaviour
             float verticalInput = playerInput.actions["Look"].ReadValue<Vector2>().y;
             Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-            Debug.Log("Input horizontal es igual a" + horizontalInput);
-            Debug.Log("Input vertical es igual a" + verticalInput);
+            //Debug.Log("Input horizontal es igual a" + horizontalInput);
+            //Debug.Log("Input vertical es igual a" + verticalInput);
 
             if (inputDir != Vector3.zero)
+            {
                 playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
+            }    
         }
 
         else if(currentStyle == CameraStyle.Combat)

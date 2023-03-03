@@ -18,7 +18,7 @@ public class GrappleState : State
     public override void Enter()
     {
         dash = false;
-        playerSpeed = character.playerSpeed;
+        playerSpeed = character.sprintSpeed;
         character.animator.SetTrigger("grapple");
     }
     public override void HandleInput()

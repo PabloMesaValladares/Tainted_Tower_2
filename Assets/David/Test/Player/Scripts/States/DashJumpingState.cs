@@ -70,7 +70,7 @@ public class DashJumpingState : State
 
         if (dashDuration > dashStop)
         {
-            character.controller.Move(forceToApply * dashForce * Time.deltaTime);
+            //character.controller.Move(forceToApply * dashForce * Time.deltaTime);
             dashStop += Time.deltaTime;
         }
         else
@@ -79,7 +79,7 @@ public class DashJumpingState : State
             character.dashController.dashForce = dashForce;
             stateMachine.ChangeState(character.falling);
         }
-        grounded = character.controller.isGrounded;
+        //grounded = character.controller.isGrounded;
     }
     public override void Exit()
     {

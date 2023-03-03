@@ -26,7 +26,7 @@ public class GrabMoveState : State
     {
         dash = false;
         stop = false;
-        playerSpeed = character.playerSpeed;
+        playerSpeed = character.sprintSpeed;
         character.animator.SetTrigger("dash"); 
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;

@@ -87,8 +87,8 @@ public class AttackState : State
             {
                 forceToApply = orientation.forward * dashForce + Vector3.up * dashUpwardForce;
 
-                if (Vector3.Distance(character.transform.position, enemy.transform.position) > 1.5f)
-                    character.controller.Move(forceToApply * dashForce * Time.deltaTime);
+                //if (Vector3.Distance(character.transform.position, enemy.transform.position) > 1.5f)
+                    //character.controller.Move(forceToApply * dashForce * Time.deltaTime);
             }
         }
     }

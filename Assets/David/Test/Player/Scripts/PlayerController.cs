@@ -5,15 +5,35 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Controls")]
-    public float playerSpeed = 5.0f;
-    public float crouchSpeed = 2.0f;
-    public float sprintSpeed = 7.0f;
-    public float markSpeed = 8.0f;
-    public float jumpHeight = 0.8f;
-    public float gravityMultiplier = 2;
-    public float rotationSpeed = 5f;
-    public float crouchColliderHeight = 1.35f;
+    public GameObject playerObj;
+
+    [Header("Movement")]
+    public Transform orientation;
+    public float walkSpeed;
+    public float sprintSpeed;
+
+    public float groundDrag;
+
+    [Header("Jumping")]
+    public float jumpForce;
+    public float jumpCooldown;
+    public float airMultiplier;
+
+    [Header("Crouching")]
+    public float crouchSpeed;
+    public float crouchYScale;
+    private float startYScale;
+
+    [Header("Slope Handling")]
+    public float maxSlopeAngle;
+    private RaycastHit slopeHit;
+    private bool exitingSlope;
+
+    [HideInInspector]
+    public Rigidbody rb;
+
+    [Header("Damage")]
+    public GameObject weapon;
 
     [Header("Animation Smoothing")]
     [Range(0, 1)]
@@ -24,9 +44,6 @@ public class PlayerController : MonoBehaviour
     public float rotationDampTime = 0.2f;
     [Range(0, 1)]
     public float airControl = 0.5f;
-
-    [Header("Damage")]
-    public GameObject weapon;
 
     [HideInInspector]
     public StateMachine movementSM;
@@ -47,10 +64,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public float gravityValue = -9.81f;
     [HideInInspector]
-    public float normalColliderHeight;
-    [HideInInspector]
-    public CharacterController controller;
-    [HideInInspector]
     public UnityEngine.InputSystem.PlayerInput playerInput;
     [HideInInspector]
     public Transform cameraTransform;
@@ -69,8 +82,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         playerInput = GetComponent<UnityEngine.InputSystem.PlayerInput>();
         cameraTransform = Camera.main.transform;
 
@@ -91,16 +103,18 @@ public class PlayerController : MonoBehaviour
         dashController = GetComponent<DashController>();
         ground = GetComponent<GroundCheck>();
 
-        movementSM.Initialize(standing);
 
-        normalColliderHeight = controller.height;
-        gravityValue *= gravityMultiplier;
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+
+        movementSM.Initialize(standing);
+        Screen.lockCursor = true;
+        //normalColliderHeight = controller.height;
+        //gravityValue *= gravityMultiplier;
     }
 
     private void Update()
     {
-        Screen.lockCursor = true;
-
         movementSM.currentState.HandleInput();
 
         movementSM.currentState.LogicUpdate();

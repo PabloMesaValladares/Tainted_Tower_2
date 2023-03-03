@@ -14,6 +14,8 @@ public class FallState : State
     Vector3 dashVelocity;
     float dashForce;
 
+    Rigidbody rb;
+
     public FallState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -26,12 +28,13 @@ public class FallState : State
         grounded = false;
         dash = false;
         gravityValue = character.gravityValue;
-        jumpHeight = character.jumpHeight;
-        playerSpeed = character.playerSpeed;
+        jumpHeight = character.jumpForce;
+        playerSpeed = character.walkSpeed;
         gravityVelocity.y = 0;
         
         dashVelocity = character.dashController.LastDashSpeed;
         dashForce = character.dashController.dashForce;
+
 
         character.animator.SetFloat("speed", 0);
         character.animator.SetTrigger("fall");
@@ -49,7 +52,14 @@ public class FallState : State
             dash = character.dashController.checkIfDash();
         }
 
+        velocity = character.playerVelocity;
+        airVelocity = new Vector3(input.x, 0, input.y);
 
+        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
+        velocity.y = 0f;
+
+        airVelocity = airVelocity.x * character.cameraTransform.right.normalized + airVelocity.z * character.cameraTransform.forward.normalized;
+        airVelocity.y = 0f;
     }
 
     public override void LogicUpdate()
@@ -63,44 +73,48 @@ public class FallState : State
         }
 
 
-        if (dash)
-        {
-            stateMachine.ChangeState(character.dashjumping);
-            character.dashController.startCooldown();
-        }
+        //if (dash)
+        //{
+        //    stateMachine.ChangeState(character.dashjumping);
+        //    character.dashController.startCooldown();
+        //}
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
 
-        if (!grounded)
-        {
-            velocity = character.playerVelocity;
-            airVelocity = new Vector3(input.x, 0, input.y);
+        //if (!grounded)
+        //{
+        //    velocity = character.playerVelocity;
+        //    airVelocity = new Vector3(input.x, 0, input.y);
 
-            velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
-            velocity.y = 0f;
+        //    velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
+        //    velocity.y = 0f;
 
-            airVelocity = airVelocity.x * character.cameraTransform.right.normalized + airVelocity.z * character.cameraTransform.forward.normalized;
-            airVelocity.y = 0f;
+        //    airVelocity = airVelocity.x * character.cameraTransform.right.normalized + airVelocity.z * character.cameraTransform.forward.normalized;
+        //    airVelocity.y = 0f;
 
-            if (character.dashController.keepMomentum)
-            {
-                velocity = dashVelocity;
-                velocity.y = 0f;
-                playerSpeed = dashForce;
-                dashForce -= Time.deltaTime / character.velocityDampTime;
+        //    if (character.dashController.keepMomentum)
+        //    {
+        //        velocity = dashVelocity;
+        //        velocity.y = 0f;
+        //        playerSpeed = dashForce;
+        //        dashForce -= Time.deltaTime / character.velocityDampTime;
 
-                if (dashForce <= 0)
-                {
-                    character.dashController.keepMomentum = false;
-                    playerSpeed = character.playerSpeed;
-                }
-            }
-            character.controller.Move(gravityVelocity * Time.deltaTime + (airVelocity * character.airControl + velocity * (1 - character.airControl)) * playerSpeed * Time.deltaTime);
-        }
-        gravityVelocity.y += gravityValue * Time.deltaTime;
+        //        if (dashForce <= 0)
+        //        {
+        //            character.dashController.keepMomentum = false;
+        //            playerSpeed = character.playerSpeed;
+        //        }
+        //    }
+        //    character.controller.Move(gravityVelocity * Time.deltaTime + (airVelocity * character.airControl + velocity * (1 - character.airControl)) * playerSpeed * Time.deltaTime);
+        //}
+        //gravityVelocity.y += gravityValue * Time.deltaTime;
+
+        rb.drag = 0;
+
+        rb.AddForce(airVelocity * playerSpeed * 10f, ForceMode.Force);
         grounded = character.ground.returnCheck();
     }
 

@@ -62,7 +62,7 @@ public class DashState : State
 
         if (dashDuration > dashStop)
         {
-            character.controller.Move(forceToApply * dashForce * Time.deltaTime);
+            //character.controller.Move(forceToApply * dashForce * Time.deltaTime);
             dashStop += Time.deltaTime;
         }
         else
