@@ -25,12 +25,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     public void moveRB(Vector3 cV, float speed)
     {
-        rb.AddForce(cV * speed * 10f, ForceMode.Force);
-    }
-
-    public void JumpRB(Vector3 cV, float speed, float force)
-    {
-        rb.AddForce(cV * speed * 10f * force, ForceMode.Force);
+        rb.AddForce(cV * speed, ForceMode.Force);
     }
 
 }

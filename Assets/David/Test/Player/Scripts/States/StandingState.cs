@@ -71,24 +71,25 @@ public class StandingState : State
         maxSlopeAngle = character.maxSlopeAngle;
         playerObj = character.playerObj;
         groundDrag = character.groundDrag;
+        rb.drag = groundDrag;
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
     {
         base.HandleInput();
 
-        //if(jumpAction.triggered)
-        //{
-        //    jump = true;
-        //}
-        //if(crouchAction.triggered)
-        //{
-        //    crouch = true;
-        //}
-        //if(sprintAction.triggered)
-        //{
-        //    sprint = true;
-        //}
+        if (jumpAction.triggered)
+        {
+            jump = true;
+        }
+        if (crouchAction.triggered)
+        {
+            crouch = true;
+        }
+        if (sprintAction.triggered)
+        {
+            sprint = true;
+        }
         //if (dashAction.triggered)
         //{
         //    dash = character.dashController.checkIfDash();
@@ -123,13 +124,12 @@ public class StandingState : State
             character.dashController.previousSpeed = playerSpeed;
             character.dashController.startCooldown();
         }
-        //if(!grounded)
-        //    stateMachine.ChangeState(character.falling);
+        if (!grounded)
+            stateMachine.ChangeState(character.falling);
         if (attack)
             stateMachine.ChangeState(character.attacking);
 
 
-        rb.drag = groundDrag;
     }
 
     public override void PhysicsUpdate()
@@ -139,15 +139,10 @@ public class StandingState : State
         moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         moveDirection.y = 0;
 
-        Debug.Log("moveSpeed = " + moveSpeed);
-
-        Debug.Log("moveDirection x = " + moveDirection.x);
-
-        Debug.Log("moveDirection y = " + moveDirection.z);
 
         if (OnSlope())
         {
-            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
+            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 15f, ForceMode.Force);
 
             if (rb.velocity.y > 0)
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
@@ -176,8 +171,9 @@ public class StandingState : State
     }
     private bool OnSlope()
     {
-        if (Physics.Raycast(character.transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
+        if (Physics.Raycast(character.transform.position, Vector3.down, out slopeHit, playerHeight * 1.5f + 0.3f))
         {
+            Debug.DrawRay(character.transform.position, Vector3.down * (playerHeight * 0.5f + 0.3f), Color.yellow);
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
             return angle < maxSlopeAngle && angle != 0;
         }

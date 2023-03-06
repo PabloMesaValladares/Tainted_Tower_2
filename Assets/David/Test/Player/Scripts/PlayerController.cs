@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [Header("Crouching")]
     public float crouchSpeed;
     public float crouchYScale;
-    private float startYScale;
+    public float startYScale;
 
     [Header("Slope Handling")]
     public float maxSlopeAngle;
@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public Rigidbody rb;
+    public PlayerMovementBehaviour playerMovement;
 
     [Header("Damage")]
     public GameObject weapon;
@@ -103,9 +104,12 @@ public class PlayerController : MonoBehaviour
         dashController = GetComponent<DashController>();
         ground = GetComponent<GroundCheck>();
 
+        startYScale = transform.localScale.y;
 
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        playerMovement = GetComponent<PlayerMovementBehaviour>();
 
         movementSM.Initialize(standing);
         Screen.lockCursor = true;

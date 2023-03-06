@@ -8,13 +8,25 @@ public class SprintState : State
     float gravityValue;
     Vector3 currentVelocity;
 
+    float playerSpeed;
     bool grounded;
     bool sprint;
     bool dash;
-    float playerSpeed;
     bool sprintJump;
     Vector3 cVelocity;
     float dashVelocity;
+
+    Rigidbody rb;
+    Vector3 moveDirection;
+    Transform orientation;
+    GameObject playerObj;
+
+    RaycastHit slopeHit;
+    float playerHeight;
+    float maxSlopeAngle;
+    float groundDrag;
+    float moveSpeed;
+
     public SprintState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
         character = _character;
@@ -33,27 +45,36 @@ public class SprintState : State
         currentVelocity = Vector3.zero;
         gravityVelocity.y = 0;
 
-        playerSpeed = character.sprintSpeed;
         grounded = character.ground.returnCheck();
         gravityValue = character.gravityValue;
 
         dashVelocity = character.dashController.dashForce;
+
+        rb = character.rb;
+        orientation = character.orientation;
+        moveSpeed = character.sprintSpeed;
+        gravityValue = character.gravityValue;
+        playerHeight = character.ground.normalColliderHeight;
+        maxSlopeAngle = character.maxSlopeAngle;
+        playerObj = character.playerObj;
+        groundDrag = character.groundDrag;
     }
 
     public override void HandleInput()
     {
         base.Enter();
-        input = moveAction.ReadValue<Vector2>();
+        input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
+
         velocity = new Vector3(input.x, 0, input.y);
 
-        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
-        velocity.y = 0f;
+        grounded = character.ground.returnCheck(); 
+        SpeedControl();
 
-        if (jumpAction.triggered)
-        {
-            sprintJump = true;
-
-        }
+        //if (jumpAction.triggered)
+        //{
+        //    sprintJump = true;
+        //
+        //}
         if (!sprintAction.IsPressed() || input.sqrMagnitude == 0f)
         {
             sprint = false;
@@ -62,10 +83,10 @@ public class SprintState : State
         {
             sprint = true;
         }
-        if (dashAction.triggered)
-        {
-            dash = character.dashController.checkIfDash();
-        }
+        //if (dashAction.triggered)
+        //{
+        //    dash = character.dashController.checkIfDash();
+        //}
 
     }
 
@@ -73,12 +94,12 @@ public class SprintState : State
     {
         if (sprint)
         {
-            if(!character.dashController.keepMomentum)
-            character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
-            else
-            {
-                character.animator.SetFloat("speed", 1.5f);
-            }
+            //if(!character.dashController.keepMomentum)
+            //character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
+            //else
+            //{
+            //    character.animator.SetFloat("speed", 1.5f);
+            //}
         }
         else
         {
@@ -97,42 +118,62 @@ public class SprintState : State
             character.dashController.startCooldown();
         }
         
-        if (!grounded)
-            stateMachine.ChangeState(character.falling);
+        //if (!grounded)
+        //    stateMachine.ChangeState(character.falling);
+
+        
+        rb.drag = groundDrag;
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        gravityVelocity.y += gravityValue * Time.deltaTime;
+        moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
+        moveDirection.y = 0;
 
-        grounded = character.ground.returnCheck();
 
-        if (grounded && gravityVelocity.y < 0)
+        if (OnSlope())
         {
-            gravityVelocity.y = 0f;
+            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 15f, ForceMode.Force);
+
+            if (rb.velocity.y > 0)
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
 
-        if (character.dashController.keepMomentum)
-        {
-            playerSpeed = character.sprintSpeed + dashVelocity;
-
-            dashVelocity -= Time.deltaTime / character.velocityDampTime;
-            if (dashVelocity <= 0)
-            {
-                character.dashController.keepMomentum = false;
-                playerSpeed = character.sprintSpeed;
-            }
-        }
-        currentVelocity = Vector3.SmoothDamp(currentVelocity, velocity, ref cVelocity, character.velocityDampTime);
-
-        //character.controller.Move(currentVelocity * Time.deltaTime * playerSpeed + gravityVelocity * Time.deltaTime);
+        //on ground
+        else
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
 
         if (velocity.sqrMagnitude > 0)
+            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
+
+        rb.useGravity = !OnSlope();
+    }
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > moveSpeed)
         {
-            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(velocity), character.rotationDampTime);
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
+    }
+    private bool OnSlope()
+    {
+        if (Physics.Raycast(character.transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
+
+        return false;
+    }
+
+    private Vector3 GetSlopeMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
 }
