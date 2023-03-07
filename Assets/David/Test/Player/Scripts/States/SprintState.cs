@@ -83,10 +83,10 @@ public class SprintState : State
         {
             sprint = true;
         }
-        //if (dashAction.triggered)
-        //{
-        //    dash = character.dashController.checkIfDash();
-        //}
+        if (dashAction.triggered)
+        {
+            dash = character.dashController.checkIfDash();
+        }
 
     }
 

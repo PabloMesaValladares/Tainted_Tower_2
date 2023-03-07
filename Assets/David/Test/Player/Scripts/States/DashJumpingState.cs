@@ -15,6 +15,8 @@ public class DashJumpingState : State
     bool grounded;
 
 
+    float maxYSpeed;
+    Rigidbody rb;
     public DashJumpingState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
         character = _character;
@@ -25,30 +27,33 @@ public class DashJumpingState : State
     {
         base.Enter();
         grounded = false;
-        character.animator.SetTrigger("dash");
-        dashForce = 5f;
-        dashUpwardForce = 0;
-        dashDuration = 0.25f;
-        dashStop = 0;
-        gravityVelocity.y = 0;
+
+        dashForce = character.dashController.dashForce;
+        dashUpwardForce = character.dashController.dashUpwardForce;
+        dashDuration = character.dashController.dashDuration;
+        dashStop = character.dashController.dashStop;
         character.dashController.keepMomentum = true;
         velocity = Vector3.zero;
         previousInput = Vector3.zero;
         orientation = character.transform;
-        input = moveAction.ReadValue<Vector2>();
+
+        maxYSpeed = character.dashController.maxYSpeed;
+
+        rb = character.rb;
+        rb.drag = 0;
     }
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         if (grounded)
-            stateMachine.ChangeState(character.landing);
+            stateMachine.ChangeState(character.standing);
     }
     public override void HandleInput()
     {
-        base.HandleInput(); 
-        //input = moveAction.ReadValue<Vector2>();
+        base.HandleInput();
+        input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
+
         Vector3 inputVector = new Vector3(input.x, 0, input.y);
-        
         if (inputVector != Vector3.zero)
         {
             velocity = inputVector;
@@ -57,8 +62,10 @@ public class DashJumpingState : State
         else
             velocity = previousInput;
 
-        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
+
+        velocity = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         velocity.y = 0f;
+        SpeedControl();
 
     }
     public override void PhysicsUpdate()
@@ -70,7 +77,7 @@ public class DashJumpingState : State
 
         if (dashDuration > dashStop)
         {
-            //character.controller.Move(forceToApply * dashForce * Time.deltaTime);
+            rb.AddForce(forceToApply, ForceMode.Impulse);
             dashStop += Time.deltaTime;
         }
         else
@@ -85,5 +92,22 @@ public class DashJumpingState : State
     {
         base.Exit();
 
+    }
+
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > dashForce)
+        {
+            Vector3 limitedVel = flatVel.normalized * dashForce;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+
+        if (rb.velocity.y > maxYSpeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, maxYSpeed, rb.velocity.z);
+        }
     }
 }

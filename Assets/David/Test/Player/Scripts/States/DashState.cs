@@ -12,7 +12,11 @@ public class DashState : State
     float dashUpwardForce;
     float dashDuration;
     float dashStop;
+    float maxYSpeed;
     Vector3 previousInput;
+
+    Rigidbody rb;
+
     public DashState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
         character = _character;
@@ -22,7 +26,8 @@ public class DashState : State
     public override void Enter()
     {
         base.Enter();
-        character.animator.SetTrigger("dash");
+        //character.animator.SetTrigger("dash");
+
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;
         dashDuration = character.dashController.dashDuration;
@@ -31,6 +36,11 @@ public class DashState : State
         velocity = Vector3.zero;
         previousInput = Vector3.zero;
         orientation = character.transform;
+
+        maxYSpeed = character.dashController.maxYSpeed;
+
+        rb = character.rb;
+        rb.drag = 0;
     }
     public override void LogicUpdate()
     {
@@ -49,8 +59,11 @@ public class DashState : State
         }
         else
             velocity = previousInput;
-        velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
+
+
+        velocity = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         velocity.y = 0f;
+        SpeedControl();
 
     }
     public override void PhysicsUpdate()
@@ -62,12 +75,12 @@ public class DashState : State
 
         if (dashDuration > dashStop)
         {
-            //character.controller.Move(forceToApply * dashForce * Time.deltaTime);
+            rb.AddForce(forceToApply, ForceMode.Impulse);
             dashStop += Time.deltaTime;
         }
         else
         {
-            character.animator.SetTrigger("move");
+            //character.animator.SetTrigger("move");
             character.dashController.LastDashSpeed = forceToApply;
 
             if (character.dashController.previousSpeed == character.sprintSpeed)
@@ -83,6 +96,22 @@ public class DashState : State
     public override void Exit()
     {
         base.Exit();
+    }
 
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > dashForce)
+        {
+            Vector3 limitedVel = flatVel.normalized * dashForce;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+
+        if(rb.velocity.y > maxYSpeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, maxYSpeed, rb.velocity.z);
+        }
     }
 }

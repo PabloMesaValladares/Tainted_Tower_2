@@ -63,10 +63,10 @@ public class FallState : State
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
 
-        //if (dashAction.triggered)
-        //{
-        //    dash = character.dashController.checkIfDash();
-        //}
+        if (dashAction.triggered)
+        {
+            dash = character.dashController.checkIfDash();
+        }
 
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
@@ -89,11 +89,11 @@ public class FallState : State
         }
 
 
-        //if (dash)
-        //{
-        //    stateMachine.ChangeState(character.dashjumping);
-        //    character.dashController.startCooldown();
-        //}
+        if (dash)
+        {
+            stateMachine.ChangeState(character.dashjumping);
+            character.dashController.startCooldown();
+        }
     }
 
     public override void PhysicsUpdate()

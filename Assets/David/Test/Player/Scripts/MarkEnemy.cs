@@ -37,6 +37,8 @@ public class MarkEnemy : MonoBehaviour
         markAction = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions["Mark"];
         enemyController = GetComponent<EnemyController>();
 
+        enemy = null;
+
         enemyCamera.gameObject.SetActive(false);
         MarkCamera.gameObject.SetActive(false);
     }

@@ -16,6 +16,11 @@ public class GrabMoveState : State
     float overshootYAxis;
     bool stop;
 
+    Rigidbody rb;
+
+    float counter;
+    
+
     public GrabMoveState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -27,12 +32,18 @@ public class GrabMoveState : State
         dash = false;
         stop = false;
         playerSpeed = character.sprintSpeed;
-        character.animator.SetTrigger("dash"); 
+        //character.animator.SetTrigger("dash"); 
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;
         overshootYAxis = character.GetComponent<Grappling>().overshootYAxis;
         grapplePoint = character.GetComponent<Grappling>().GetGrapplePoint(); 
         orientation = character.transform;
+
+        rb = character.rb;
+
+        counter = -1;
+
+        ExecuteGrapple();
     }
     public override void HandleInput()
     {
@@ -58,13 +69,12 @@ public class GrabMoveState : State
     }
     public override void PhysicsUpdate()
     {
-        ExecuteGrapple();
-        float dist = Vector3.Distance(character.transform.position, grapplePoint);
-        Debug.Log(dist);
-        if (dist < 1.1)
+        if (counter > 3)
+        {
             stop = true;
-
-
+        }
+        else
+            counter += Time.deltaTime;
     }
     public override void Exit()
     {
@@ -91,15 +101,14 @@ public class GrabMoveState : State
 
         velocityToSet = CalculateJumpVelocity(character.transform.position, targetPosition, trajectoryHeight);
 
-        character.GetComponent<CharacterController>().Move(velocityToSet * dashForce * Time.deltaTime);
+        SetVelocity();
+
     }
 
     private void SetVelocity()
     {
         enableMovementOnNextTouch = true;
-        character.GetComponent<CharacterController>().Move(velocityToSet * Time.deltaTime);
-
-        //cam.DoFov(grappleFov);
+        rb.velocity = velocityToSet;
     }
 
     public void ResetRestrictions()

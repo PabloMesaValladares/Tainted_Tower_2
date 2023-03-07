@@ -90,10 +90,10 @@ public class StandingState : State
         {
             sprint = true;
         }
-        //if (dashAction.triggered)
-        //{
-        //    dash = character.dashController.checkIfDash();
-        //}
+        if (dashAction.triggered)
+        {
+            dash = character.dashController.checkIfDash();
+        }
         //if (attackAction.triggered)
         //    attack = true;
 
