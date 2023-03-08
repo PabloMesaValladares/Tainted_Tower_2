@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     private RaycastHit slopeHit;
     private bool exitingSlope;
 
+    [Header("Change Stats")]
+    public float reverseTimer;
+
     [HideInInspector]
     public Rigidbody rb;
     public PlayerMovementBehaviour playerMovement;

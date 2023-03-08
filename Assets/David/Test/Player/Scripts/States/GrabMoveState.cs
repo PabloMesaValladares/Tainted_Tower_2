@@ -19,7 +19,8 @@ public class GrabMoveState : State
     Rigidbody rb;
 
     float counter;
-    
+    bool moving;
+
 
     public GrabMoveState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
@@ -29,6 +30,7 @@ public class GrabMoveState : State
 
     public override void Enter()
     {
+        moving = true;
         dash = false;
         stop = false;
         playerSpeed = character.sprintSpeed;
@@ -69,12 +71,14 @@ public class GrabMoveState : State
     }
     public override void PhysicsUpdate()
     {
-        if (counter > 3)
+        if (moving == false)
         {
             stop = true;
         }
         else
-            counter += Time.deltaTime;
+        {
+            ExecuteGrapple();
+        }
     }
     public override void Exit()
     {
@@ -83,7 +87,6 @@ public class GrabMoveState : State
 
     private void ExecuteGrapple()
     {
-
         Vector3 lowestPoint = new Vector3(character.transform.position.x, character.transform.position.y - 1f, character.transform.position.z);
 
         float grapplePointRelativeYPos = grapplePoint.y - lowestPoint.y;
@@ -100,22 +103,17 @@ public class GrabMoveState : State
     {
 
         velocityToSet = CalculateJumpVelocity(character.transform.position, targetPosition, trajectoryHeight);
-
-        SetVelocity();
-
-    }
-
-    private void SetVelocity()
-    {
-        enableMovementOnNextTouch = true;
         rb.velocity = velocityToSet;
+
+
+        if (counter > 3)
+        {
+            moving = false;
+        }
+        else
+            counter += Time.deltaTime;
     }
 
-    public void ResetRestrictions()
-    {
-        //activeGrapple = false;
-        //cam.DoFov(85f);
-    }
     public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
     {
         float gravity = Physics.gravity.y;

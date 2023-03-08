@@ -32,6 +32,12 @@ public class StandingState : State
     float maxSlopeAngle;
     float groundDrag;
 
+    bool reverse;
+    float counterReverse;
+    float timerReverse;
+
+    MarkEnemy mark;
+
     public StandingState(PlayerController _character, StateMachine _stateMachine):base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -72,6 +78,12 @@ public class StandingState : State
         playerObj = character.playerObj;
         groundDrag = character.groundDrag;
         rb.drag = groundDrag;
+
+        counterReverse = 0;
+
+        mark = character.GetComponent<MarkEnemy>();
+
+        timerReverse = character.reverseTimer;
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
@@ -101,6 +113,19 @@ public class StandingState : State
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
         velocity = new Vector3(input.x, 0, input.y);
+
+        if(reverse)
+        {
+            velocity = new Vector3(-input.x, 0, -input.y);
+
+            counterReverse += Time.deltaTime;
+
+            if (counterReverse > timerReverse)
+                reverse = false;
+        }
+
+        if (testAction.triggered)
+            ReverseControls();
 
         grounded = character.ground.returnCheck();
         //velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
@@ -196,4 +221,18 @@ public class StandingState : State
             character.transform.rotation = Quaternion.LookRotation(velocity);
     }
 
+    public override void ReverseControls()
+    {
+        base.ReverseControls();
+
+        reverse = true;
+    }
+
+    public override void ChangeAttributes(float s)
+    {
+        base.ChangeAttributes(s);
+
+        moveSpeed += s;
+
+    }
 }
