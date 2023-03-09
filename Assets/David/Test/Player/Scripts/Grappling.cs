@@ -8,10 +8,10 @@ public class Grappling : MonoBehaviour
 {
     [Header("References")]
     private GameObject player;
-    public CinemachineFreeLook[] cinemachineCam;
     public Transform cam;
     public Transform gunTip;
     public Transform markpos;
+    Transform posToGo;
     public Vector3 offset;
     public LayerMask whatIsGrappleable;
     public LineRenderer lr;
@@ -49,9 +49,7 @@ public class Grappling : MonoBehaviour
         controller = player.GetComponent<PlayerController>();
         grappling = controller.grappling;
         grapplemoving = controller.grapplemoving;
-        normalFov = new float[cinemachineCam.Length];
-        for (int i = 0; i < cinemachineCam.Length; i++)
-            normalFov[i] = cinemachineCam[i].m_Lens.FieldOfView;
+        posToGo = markpos;
     }
 
     private void Update()
@@ -79,10 +77,10 @@ public class Grappling : MonoBehaviour
 
         RaycastHit hit;
 
-        Vector3 posToGrab = markpos.transform.position - gunTip.position;
+        Vector3 posToGrab = posToGo.position - gunTip.position;
         if(Physics.Raycast(gunTip.position, posToGrab, out hit, maxGrappleDistance, whatIsGrappleable))
         {
-            grapplePoint = hit.point;
+            grapplePoint = hit.point + offset;
             Debug.Log("Pillado");
             ChangeToMove();
         }
@@ -105,17 +103,23 @@ public class Grappling : MonoBehaviour
         grapplingCdTimer = grapplingCd;
 
         lr.enabled = false;
+        
+    }
 
+    public void ChangePosToGo(Transform pos)
+    {
+        posToGo = pos;
+    }
 
-        controller.changeState(controller.standing);
-        for (int i = 0; i < cinemachineCam.Length; i++)
-            cinemachineCam[i].m_Lens.FieldOfView = normalFov[i];
+    public void ResetPosToGo()
+    {
+        posToGo = markpos;
     }
 
     void ChangeToMove()
     {
-        for (int i = 0; i < cinemachineCam.Length; i++)
-            cinemachineCam[i].m_Lens.FieldOfView = normalFov[i];
+
+        lr.enabled = false;
 
         gameObject.transform.LookAt(new Vector3(grapplePoint.x, gameObject.transform.position.y, grapplePoint.z));
         controller.changeState(grappling);

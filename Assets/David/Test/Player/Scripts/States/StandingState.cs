@@ -38,6 +38,7 @@ public class StandingState : State
 
     MarkEnemy mark;
 
+    float jumpForce;
     public StandingState(PlayerController _character, StateMachine _stateMachine):base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -84,6 +85,9 @@ public class StandingState : State
         mark = character.GetComponent<MarkEnemy>();
 
         timerReverse = character.reverseTimer;
+
+
+        jumpForce = character.jumpForce;
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
@@ -92,7 +96,10 @@ public class StandingState : State
 
         if (jumpAction.triggered)
         {
-            jump = true;
+            if (OnSlope())
+                Jump(jumpForce * 1.5f);
+            else
+                jump = true;
         }
         if (crouchAction.triggered)
         {
@@ -234,5 +241,16 @@ public class StandingState : State
 
         moveSpeed += s;
 
+    }
+
+
+    void Jump(float jumpF)
+    {
+
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        rb.AddForce(character.transform.up * jumpF, ForceMode.Impulse);
+
+        character.changeState(character.falling);
     }
 }

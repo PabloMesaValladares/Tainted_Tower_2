@@ -13,6 +13,7 @@ public class GrabMoveState : State
     float playerSpeed;
     bool dash;
     Vector3 grapplePoint;
+    Vector3 Offset;
     float overshootYAxis;
     bool stop;
 
@@ -42,6 +43,8 @@ public class GrabMoveState : State
         orientation = character.transform;
 
         rb = character.rb;
+        rb.drag = 0;
+        rb.useGravity = true;
 
         counter = -1;
 
@@ -49,10 +52,11 @@ public class GrabMoveState : State
     }
     public override void HandleInput()
     {
-        //if (dashAction.triggered)
-        //{
-        //    dash = character.dashController.checkIfDash();
-        //}
+        if (dashAction.triggered)
+        {
+            character.GetComponent<Grappling>().StopGrapple();
+            dash = character.dashController.checkIfDash();
+        }
 
     }
     public override void LogicUpdate()
@@ -69,16 +73,25 @@ public class GrabMoveState : State
             character.GetComponent<Grappling>().StopGrapple();
         }
     }
+    float dist;
+
     public override void PhysicsUpdate()
     {
         if (moving == false)
         {
             stop = true;
         }
-        else
+
+        dist = Vector3.Distance(grapplePoint, character.transform.position);
+
+        Debug.Log(dist);
+
+        if (dist < 4)
         {
-            ExecuteGrapple();
+            moving = false;
         }
+        else
+            counter += Time.deltaTime;
     }
     public override void Exit()
     {
@@ -103,15 +116,12 @@ public class GrabMoveState : State
     {
 
         velocityToSet = CalculateJumpVelocity(character.transform.position, targetPosition, trajectoryHeight);
+
+        Debug.Log(velocityToSet);
+
         rb.velocity = velocityToSet;
 
-
-        if (counter > 3)
-        {
-            moving = false;
-        }
-        else
-            counter += Time.deltaTime;
+        
     }
 
     public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)

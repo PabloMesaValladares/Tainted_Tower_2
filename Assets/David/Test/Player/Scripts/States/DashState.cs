@@ -41,6 +41,7 @@ public class DashState : State
 
         rb = character.rb;
         rb.drag = 0;
+        rb.useGravity = true;
     }
     public override void LogicUpdate()
     {

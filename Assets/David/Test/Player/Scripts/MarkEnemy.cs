@@ -17,9 +17,7 @@ public class MarkEnemy : MonoBehaviour
     [SerializeField]
     CinemachineFreeLook normalCamera;
     [SerializeField]
-    CinemachineVirtualCamera enemyCamera;
-    [SerializeField]
-    CinemachineVirtualCamera MarkCamera;
+    CinemachineVirtualCamera AimCamera;
     [SerializeField]
     GameObject Player;
     EnemyController enemyController;
@@ -30,11 +28,12 @@ public class MarkEnemy : MonoBehaviour
     public InputAction lookAction;
     CameraMove move;
 
+    public LayerMask markable;
 
     Vector3 markPosResetPos;
 
     public float DistanceToCheck;
-    public float maxUpDownDist;
+    public float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -45,23 +44,51 @@ public class MarkEnemy : MonoBehaviour
 
         enemy = null;
 
+        markPosResetPos = transform.position + (transform.forward * DistanceToCheck);
 
-        enemyCamera.gameObject.SetActive(false);
-        MarkCamera.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        markPosResetPos = transform.position + (transform.forward * DistanceToCheck);
         marking = markAction.IsPressed();
 
         if(marking)
         {
-            markEnemy();
+            Mark();
         }
         else
         {
             ResetCamera();
+        }
+    }
+
+    void Mark()
+    {
+        AimCamera.gameObject.SetActive(true);
+        normalCamera.gameObject.SetActive(false);
+        pointerCanvas.SetActive(true);
+        RaycastHit hit; 
+        MarkCameraMovement();
+
+        Vector2 look = lookAction.ReadValue<Vector2>();
+
+        Vector3 lookPos = new Vector3(look.y, look.x, 0);
+
+        //markPos.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, transform.position.z));
+
+        normalCamera.m_Lens.FieldOfView = 20;
+        normalCamera.m_LookAt = markPos.transform;
+
+        Vector3 posToGrab = markPos.transform.position - transform.position;
+        if (Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, DistanceToCheck, markable))
+        {
+            Debug.DrawRay(transform.position, hit.point, Color.green);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, posToGrab, Color.black);
         }
     }
 
@@ -76,15 +103,8 @@ public class MarkEnemy : MonoBehaviour
 
             if (distPlayerEnemy <= DistanceToCheck)
             {
-                enemyCamera.LookAt = enemy.transform;
                 Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
                 transform.LookAt(posToLookAt);
-                enemyCamera.m_Lens.FieldOfView = 20 + dist;
-
-
-                MarkCamera.gameObject.SetActive(false);
-                enemyCamera.gameObject.SetActive(true);
-                enemyCamera.Priority = 15;
             }
             else
             {
@@ -104,28 +124,25 @@ public class MarkEnemy : MonoBehaviour
 
     void MarkCameraMovement()
     {
-        enemyCamera.gameObject.SetActive(false);
-        MarkCamera.gameObject.SetActive(true);
-        MarkCamera.Priority = 15;
         pointerCanvas.SetActive(true);
+
     }
 
     void ResetCamera()
     {
+        AimCamera.gameObject.SetActive(false);
         normalCamera.gameObject.SetActive(true);
-        enemyCamera.gameObject.SetActive(false);
-        MarkCamera.gameObject.SetActive(false);
         enemy = null;
-        enemyCamera.Priority = 5;
-        MarkCamera.Priority  = 5;
-        //MarkCamera.LookAt = markPos.transform;
+        normalCamera.m_Lens.FieldOfView = 40;
+        normalCamera.LookAt = this.transform;
         pointerCanvas.SetActive(false);
+        markPos.transform.position = markPosResetPos;
 
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, DistanceToCheck);
     }
 }
