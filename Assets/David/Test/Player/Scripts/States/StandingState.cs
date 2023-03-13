@@ -170,6 +170,12 @@ public class StandingState : State
 
         moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         moveDirection.y = 0;
+        
+        if(mark.marking)
+        {
+            moveDirection = character.transform.forward.normalized * velocity.z + character.transform.right.normalized * velocity.x;
+            moveDirection.y = 0;
+        }
 
 
         if (OnSlope())
@@ -185,9 +191,17 @@ public class StandingState : State
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
 
-        if (velocity.sqrMagnitude > 0)
-            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
+        if(mark.marking)
+        {
+            Quaternion targetRotation = Quaternion.Euler(0, character.cameraTransform.eulerAngles.y, 0);
+            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, targetRotation, character.rotationDampTime);
+        }
+        else
+        {
+            if (velocity.sqrMagnitude > 0)
+                character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
 
+        }
         rb.useGravity = !OnSlope();
     }
 

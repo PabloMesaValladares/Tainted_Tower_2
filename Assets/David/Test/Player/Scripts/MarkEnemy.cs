@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
 using Cinemachine;
-
+using UnityEngine.Events;
 public class MarkEnemy : MonoBehaviour
 {
     [SerializeField]
@@ -15,7 +15,7 @@ public class MarkEnemy : MonoBehaviour
     public GameObject pointerCanvas;
 
     [SerializeField]
-    CinemachineFreeLook normalCamera;
+    CinemachineVirtualCamera normalCamera;
     [SerializeField]
     CinemachineVirtualCamera AimCamera;
     [SerializeField]
@@ -34,6 +34,11 @@ public class MarkEnemy : MonoBehaviour
 
     public float DistanceToCheck;
     public float moveSpeed;
+    public GameObject markedObject;
+
+
+    public UnityEvent<Transform> sendMarked;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +49,7 @@ public class MarkEnemy : MonoBehaviour
 
         enemy = null;
 
-        markPosResetPos = transform.position + (transform.forward * DistanceToCheck);
+        Player = GameObject.FindGameObjectWithTag("Player");
 
     }
 
@@ -72,22 +77,15 @@ public class MarkEnemy : MonoBehaviour
         RaycastHit hit; 
         MarkCameraMovement();
 
-        Vector2 look = lookAction.ReadValue<Vector2>();
-
-        Vector3 lookPos = new Vector3(look.y, look.x, 0);
-
-        //markPos.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, transform.position.z));
-
-        normalCamera.m_Lens.FieldOfView = 20;
-        normalCamera.m_LookAt = markPos.transform;
-
-        Vector3 posToGrab = markPos.transform.position - transform.position;
+        Vector3 posToGrab = markPos.transform.position;
         if (Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, DistanceToCheck, markable))
         {
+            sendMarked.Invoke(hit.collider.gameObject.transform);
             Debug.DrawRay(transform.position, hit.point, Color.green);
         }
         else
         {
+            sendMarked.Invoke(markPos.transform);
             Debug.DrawRay(transform.position, posToGrab, Color.black);
         }
     }
@@ -133,10 +131,7 @@ public class MarkEnemy : MonoBehaviour
         AimCamera.gameObject.SetActive(false);
         normalCamera.gameObject.SetActive(true);
         enemy = null;
-        normalCamera.m_Lens.FieldOfView = 40;
-        normalCamera.LookAt = this.transform;
         pointerCanvas.SetActive(false);
-        markPos.transform.position = markPosResetPos;
 
     }
 
