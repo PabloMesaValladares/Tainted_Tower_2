@@ -37,7 +37,9 @@ public class MarkEnemy : MonoBehaviour
     public GameObject markedObject;
 
 
+    Camera Cam;
     public UnityEvent<Transform> sendMarked;
+    public UnityEvent ResetMarked;
 
 
     // Start is called before the first frame update
@@ -50,6 +52,7 @@ public class MarkEnemy : MonoBehaviour
         enemy = null;
 
         Player = GameObject.FindGameObjectWithTag("Player");
+        Cam = Camera.main;
 
     }
 
@@ -77,17 +80,21 @@ public class MarkEnemy : MonoBehaviour
         RaycastHit hit; 
         MarkCameraMovement();
 
-        Vector3 posToGrab = markPos.transform.position;
-        if (Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, DistanceToCheck, markable))
+        Vector3 posToGrab = Cam.transform.forward;
+        //Vector3 posToGrab = Cam.ScreenToWorldPoint(new Vector3(markPos.transform.position.x, markPos.transform.position.y, Cam.nearClipPlane));
+        if (Physics.Raycast(transform.position, posToGrab, out hit, DistanceToCheck, markable))
         {
-            sendMarked.Invoke(hit.collider.gameObject.transform);
+            markedObject = hit.collider.gameObject;
             Debug.DrawRay(transform.position, hit.point, Color.green);
+            sendMarked.Invoke(markedObject.transform);
         }
         else
         {
-            sendMarked.Invoke(markPos.transform);
+            markedObject = null;
             Debug.DrawRay(transform.position, posToGrab, Color.black);
+            ResetMarked.Invoke();
         }
+
     }
 
     void markEnemy()

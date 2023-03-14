@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112176244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82.6, y: 21.15, z: -17}
+  m_LocalPosition: {x: 82.6, y: 31.5, z: 19}
   m_LocalScale: {x: 13.950124, y: 1, z: 9.379951}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -276,6 +276,116 @@ MonoBehaviour:
   combatCam: {fileID: 0}
   topDownCam: {fileID: 0}
   currentStyle: 0
+--- !u!1 &124380228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124380229}
+  - component: {fileID: 124380233}
+  - component: {fileID: 124380232}
+  - component: {fileID: 124380231}
+  - component: {fileID: 124380230}
+  m_Layer: 11
+  m_Name: Grabpoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &124380229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124380228}
+  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 81.240005, y: 31.690002, z: 13.5}
+  m_LocalScale: {x: 1.3725029, y: 1, z: 2.3671885}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 560540750}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &124380230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124380228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc2578c4efdf1d4185540953cbb0894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &124380231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124380228}
+  m_Material: {fileID: 13400000, guid: 3b80a49c17801fd4fae0cc283d3b5ed7, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &124380232
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124380228}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: afd80d27fa5526a439b87fee321e4a80, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &124380233
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124380228}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &280634922
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280634922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.09, y: 11.549999, z: -28}
+  m_LocalPosition: {x: 87.59, y: 28.55, z: -31.25}
   m_LocalScale: {x: 13.950124, y: 1, z: 26.881062}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -710,7 +820,7 @@ MonoBehaviour:
   m_VerticalAxis:
     Value: 4.67
     m_SpeedMode: 1
-    m_MaxSpeed: 1
+    m_MaxSpeed: 0.5
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -734,7 +844,7 @@ MonoBehaviour:
   m_HorizontalAxis:
     Value: 0
     m_SpeedMode: 1
-    m_MaxSpeed: 2
+    m_MaxSpeed: 1
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -955,6 +1065,7 @@ Transform:
   - {fileID: 1599821212}
   - {fileID: 280634923}
   - {fileID: 1490166827}
+  - {fileID: 124380229}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1756,8 +1867,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076958169}
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 81.75, y: 19.65, z: -33.75}
-  m_LocalScale: {x: 13.950124, y: 1, z: 9.379951}
+  m_LocalPosition: {x: 47.75, y: 19.65, z: -34.07}
+  m_LocalScale: {x: 20.422981, y: 1, z: 9.379951}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 560540750}
@@ -1832,12 +1943,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1390259292}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1185688679 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1215784159246802425, guid: 4e0e82a858887ba4291b4d50036fa176,
-    type: 3}
-  m_PrefabInstance: {fileID: 1390259292}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1300472434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,8 +1970,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300472434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 117.2, y: 0, z: 0}
-  m_LocalScale: {x: 18.84258, y: 46.231575, z: 146.72787}
+  m_LocalPosition: {x: 117.2, y: 46.25, z: 0}
+  m_LocalScale: {x: 18.84258, y: 97.27124, z: 146.72787}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 560540750}
@@ -2059,8 +2164,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362044640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.84258, y: 46.231575, z: 146.72787}
+  m_LocalPosition: {x: 0, y: 24.5, z: 0}
+  m_LocalScale: {x: 18.84258, y: 92.44466, z: 146.72787}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 560540750}
@@ -2298,7 +2403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490166826}
   m_LocalRotation: {x: -0, y: -0, z: 0.15250827, w: 0.98830223}
-  m_LocalPosition: {x: 62.384426, y: 15.230469, z: -35.4}
+  m_LocalPosition: {x: 66.38517, y: 24.040821, z: -39.15}
   m_LocalScale: {x: 30.723753, y: 1, z: 9.379951}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2549,7 +2654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599821211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.74, y: 11.65, z: -28}
+  m_LocalPosition: {x: 52.74, y: 19.69, z: -28}
   m_LocalScale: {x: 1.3725029, y: 1, z: 2.3671885}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2832,7 +2937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   gunTip: {fileID: 738684973}
-  markpos: {fileID: 1185688679}
+  markpos: {fileID: 0}
   offset: {x: -2, y: 1, z: 0}
   whatIsGrappleable:
     serializedVersion: 2
@@ -2840,11 +2945,11 @@ MonoBehaviour:
   lr: {fileID: 738684974}
   grappleFov: 45
   normalFov: []
-  maxGrappleDistance: 20
+  maxGrappleDistance: 40
   grappleDelayTime: 2
   overshootYAxis: 3
   grappleDuration: 10
-  grapplingCd: 1
+  grapplingCd: 0
   grappleAction:
     m_Name: Grapple
     m_Type: 0
@@ -2854,6 +2959,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  posToGrab: {fileID: 0}
 --- !u!114 &1730116756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2904,6 +3010,21 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Grappling, Assembly-CSharp
         m_MethodName: ChangePosToGo
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ResetMarked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1730116755}
+        m_TargetAssemblyTypeName: Grappling, Assembly-CSharp
+        m_MethodName: ResetPosToGo
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

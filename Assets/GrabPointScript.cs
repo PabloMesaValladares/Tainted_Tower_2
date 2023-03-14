@@ -18,12 +18,5 @@ public class GrabPointScript : MonoBehaviour
         mark = grappling.markpos;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (renderer.isVisible)
-            player.GetComponent<Grappling>().markpos = this.transform;
-
-
-    }
+    
 }

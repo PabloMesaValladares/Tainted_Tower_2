@@ -84,7 +84,6 @@ public class GrabMoveState : State
 
         dist = Vector3.Distance(grapplePoint, character.transform.position);
 
-        Debug.Log(dist);
 
         if (dist < 4)
         {

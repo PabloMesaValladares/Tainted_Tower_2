@@ -41,6 +41,7 @@ public class Grappling : MonoBehaviour
     private bool grapple;
 
     Vector3 CenterScreen;
+    [SerializeField]
     Transform posToGrab;
 
     private void Start()
@@ -53,6 +54,7 @@ public class Grappling : MonoBehaviour
         grappling = controller.grappling;
         grapplemoving = controller.grapplemoving;
 
+        posToGrab = null;
 
     }
 
@@ -79,24 +81,23 @@ public class Grappling : MonoBehaviour
 
         grapple = true;
 
-        RaycastHit hit;
-
-        if (Physics.Raycast(gunTip.position, posToGrab.position, out hit, maxGrappleDistance, whatIsGrappleable))
+        if (posToGrab !=null)
         {
-            grapplePoint = hit.point + offset;
+            grapplePoint = posToGrab.position + offset;
             Debug.Log("Pillado");
+
             ChangeToMove();
+
+
+            lr.enabled = true;
+
+            lr.SetPosition(1, grapplePoint);
         }
         else
         {
-            grapplePoint = gunTip.position.normalized + posToGrab.position * maxGrappleDistance;
+            grapplePoint = gunTip.position.normalized + Camera.main.transform.forward * maxGrappleDistance;
             StopGrapple();
         }
-
-        Debug.Log(gunTip.position);
-        lr.enabled = true;
-
-        lr.SetPosition(1, grapplePoint);
     }
 
     public void StopGrapple()
