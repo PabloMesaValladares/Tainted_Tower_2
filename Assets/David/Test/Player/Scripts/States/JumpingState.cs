@@ -7,6 +7,8 @@ public class JumpingState : State
 
     Rigidbody rb;
     float jumpForce;
+
+    float counter;
     public JumpingState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -34,8 +36,6 @@ public class JumpingState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        
-        
     }
 
     public override void PhysicsUpdate()
@@ -56,6 +56,7 @@ public class JumpingState : State
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(character.transform.up * jumpForce, ForceMode.Impulse);
+
 
         character.changeState(character.falling);
     }

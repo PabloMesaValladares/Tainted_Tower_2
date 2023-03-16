@@ -63,6 +63,7 @@ public class SprintState : State
     public override void HandleInput()
     {
         base.Enter();
+        
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
         velocity = new Vector3(input.x, 0, input.y);
@@ -70,19 +71,21 @@ public class SprintState : State
         grounded = character.ground.returnCheck(); 
         SpeedControl();
 
-        //if (jumpAction.triggered)
-        //{
-        //    sprintJump = true;
-        //
-        //}
-        if (!sprintAction.IsPressed() || input.sqrMagnitude == 0f)
+        if (jumpAction.triggered)
         {
-            sprint = false;
+            Debug.Log("Salte");
+            sprintJump = true;
+
         }
-        else
+        if (sprintAction.IsPressed() && velocity.sqrMagnitude > 1f)
         {
             sprint = true;
         }
+        else
+        {
+            sprint = false;
+        }
+        
         if (dashAction.triggered)
         {
             dash = character.dashController.checkIfDash();
@@ -92,23 +95,23 @@ public class SprintState : State
 
     public override void LogicUpdate()
     {
-        if (sprint)
-        {
-            //if(!character.dashController.keepMomentum)
-            //character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
-            //else
-            //{
-            //    character.animator.SetFloat("speed", 1.5f);
-            //}
-        }
-        else
+        //if (sprint)
+        //{
+        //    if (!character.dashController.keepMomentum)
+        //        character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
+        //    else
+        //    {
+        //        character.animator.SetFloat("speed", 1.5f);
+        //    }
+        //}
+        if (!sprint)
         {
             stateMachine.ChangeState(character.standing);
         }
 
         if (sprintJump)
         {
-            stateMachine.ChangeState(character.sprintjumping);
+            stateMachine.ChangeState(character.jumping);
         }
         
         if (dash)

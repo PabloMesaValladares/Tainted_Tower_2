@@ -23,6 +23,7 @@ public class GrabMoveState : State
     bool moving;
 
 
+    private Vector3 velocityToSet;
     public GrabMoveState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -77,8 +78,9 @@ public class GrabMoveState : State
 
     public override void PhysicsUpdate()
     {
-        if (moving == false)
+        if (moving == false || counter > 1)
         {
+            rb.mass = 1;
             stop = true;
         }
 
@@ -90,7 +92,9 @@ public class GrabMoveState : State
             moving = false;
         }
         else
+        {
             counter += Time.deltaTime;
+        }
     }
     public override void Exit()
     {
@@ -110,7 +114,6 @@ public class GrabMoveState : State
     }
 
     private bool enableMovementOnNextTouch;
-    private Vector3 velocityToSet;
     public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
     {
 
@@ -118,9 +121,11 @@ public class GrabMoveState : State
 
         Debug.Log(velocityToSet);
 
-        rb.velocity = velocityToSet;
+        rb.mass = 0.8f;
+        //rb.AddForce(velocityToSet, ForceMode.Impulse);
+        rb.velocity = velocityToSet * 2;
 
-        
+
     }
 
     public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)

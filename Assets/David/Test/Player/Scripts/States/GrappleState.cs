@@ -43,7 +43,7 @@ public class GrappleState : State
     }
     public override void PhysicsUpdate()
     {
-        if (counter > 2)
+        if (counter > 1)
         {
             character.changeState(character.grapplemoving);
         }

@@ -13,6 +13,8 @@ public class MarkEnemy : MonoBehaviour
     public bool marking;
 
     public GameObject pointerCanvas;
+    public GameObject NormalpointerCanvas;
+    public GameObject HitpointerCanvas;
 
     [SerializeField]
     CinemachineVirtualCamera normalCamera;
@@ -53,7 +55,7 @@ public class MarkEnemy : MonoBehaviour
 
         Player = GameObject.FindGameObjectWithTag("Player");
         Cam = Camera.main;
-
+        HitpointerCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -85,11 +87,15 @@ public class MarkEnemy : MonoBehaviour
         if (Physics.Raycast(transform.position, posToGrab, out hit, DistanceToCheck, markable))
         {
             markedObject = hit.collider.gameObject;
+            HitpointerCanvas.SetActive(true);
+            NormalpointerCanvas.SetActive(false);
             Debug.DrawRay(transform.position, hit.point, Color.green);
             sendMarked.Invoke(markedObject.transform);
         }
         else
         {
+            HitpointerCanvas.SetActive(false);
+            NormalpointerCanvas.SetActive(true);
             markedObject = null;
             Debug.DrawRay(transform.position, posToGrab, Color.black);
             ResetMarked.Invoke();
