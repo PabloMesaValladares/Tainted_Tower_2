@@ -15,20 +15,24 @@ MonoBehaviour:
   version: 4
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grass_Pink
-  m_Shader: {fileID: 4800000, guid: 72e68f904ae08fc4299172cfb53712c6, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 2449a129f7dd93e4db3a7fae0fb2ea7e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -37,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BladeTexture:
-        m_Texture: {fileID: 2800000, guid: 1de23163edf2fd341b1af5a6542b47c7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 259b2ca347ba8b74f83ff6a22d8be0a2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -61,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: afd630a6632d27b409a4dad01f9ee958, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -85,7 +89,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WindMap:
-        m_Texture: {fileID: 2800000, guid: 2a80618a09ec0b44b9fbfb47279d4d98, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0ed5e4e1880e56044a4b978c697b2c4f, type: 3}
         m_Scale: {x: 0.01, y: 0.01}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -100,10 +104,11 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaClip: 0
     - _BendDelta: 0.15
-    - _BladeBendCurve: 4
+    - _BladeBendCurve: 2.22
     - _BladeBendDistance: 0.39
     - _BladeCurve: 2
     - _BladeForward: 0.38
@@ -111,7 +116,7 @@ Material:
     - _BladeHeightDelta: 0.05
     - _BladeHeightMax: 1.25
     - _BladeHeightMin: 0.75
-    - _BladeSegments: 3
+    - _BladeSegments: 2.22
     - _BladeWidth: 0.015
     - _BladeWidthDelta: 0.02
     - _BladeWidthMax: 0.05
@@ -129,8 +134,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GrassFalloff: 0.5
-    - _GrassThreshold: 0.158
+    - _GrassFalloff: 0.471
+    - _GrassThreshold: 0.569
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -150,12 +155,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.9772253, g: 0, b: 1, a: 1}
+    - _BaseColor: {r: 0.6278195, g: 0.45119846, b: 0.6320754, a: 1}
     - _Color: {r: 0.11764706, g: 0.9137255, b: 0.13333334, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.5660378, g: 0.45540816, b: 0.32306874, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _TipColor: {r: 1, g: 0.9906565, b: 0.60784316, a: 1}
+    - _TipColor: {r: 0.6731979, g: 0.60784316, b: 1, a: 1}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
     - _WindVelocity: {r: 0.2, g: 0, b: 0.15, a: 0}
   m_BuildTextureStacks: []
