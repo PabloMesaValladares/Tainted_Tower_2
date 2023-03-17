@@ -46,6 +46,8 @@ public class FallState : State
         rb = character.rb;
         orientation = character.orientation;
         moveSpeed = character.walkSpeed;
+        if (character.dashController.keepMomentum)
+            moveSpeed = character.sprintSpeed;
         playerHeight = character.ground.normalColliderHeight;
         maxSlopeAngle = character.maxSlopeAngle;
         playerObj = character.playerObj;
@@ -84,8 +86,10 @@ public class FallState : State
         if (grounded)
         {
             //character.animator.SetTrigger("move");
-            stateMachine.ChangeState(character.standing);
-            character.dashController.keepMomentum = false;
+            if (character.dashController.keepMomentum)
+                stateMachine.ChangeState(character.sprinting);
+            else
+                stateMachine.ChangeState(character.standing);
         }
 
 
@@ -102,9 +106,10 @@ public class FallState : State
 
 
         moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
+        moveDirection.y = 0;
         moveDirection.y += character.gravityValue * Time.deltaTime;
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        rb.AddForce(moveDirection.normalized * moveSpeed * 10f , ForceMode.Force);
         if (velocity.sqrMagnitude > 0)
             character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
 

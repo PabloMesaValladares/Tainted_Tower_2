@@ -47,6 +47,7 @@ public class GrabMoveState : State
         rb.drag = 0;
         rb.useGravity = true;
 
+
         counter = -1;
 
         ExecuteGrapple();
@@ -80,7 +81,6 @@ public class GrabMoveState : State
     {
         if (moving == false || counter > 1)
         {
-            rb.mass = 1;
             stop = true;
         }
 
@@ -121,10 +121,8 @@ public class GrabMoveState : State
 
         Debug.Log(velocityToSet);
 
-        rb.mass = 0.8f;
-        //rb.AddForce(velocityToSet, ForceMode.Impulse);
-        rb.velocity = velocityToSet * 2;
-
+        rb.AddForce(velocityToSet, ForceMode.Impulse);
+        //rb.velocity = velocityToSet * 2;
 
     }
 

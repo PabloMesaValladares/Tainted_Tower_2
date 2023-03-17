@@ -1,40 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+
 
 public class CameraCollision : MonoBehaviour
 {
-    public float minDistance = 1.0f;
-    public float maxDistance = 4.0f;
-    public float smooth = 10.0f;
-    Vector3 direction;
-    public float distance;
+    CinemachineVirtualCamera cam;
+    public GameObject camera;
+    public GameObject player;
+    public float DistanceToGet;
+    public float maxDistance;
 
-    public LayerMask layers;
+    [SerializeField]
+    float distance;
+
 
     // Start is called before the first frame update
     void Awake()
     {
-        direction = transform.localPosition.normalized;
-        distance = transform.localPosition.magnitude;
+        cam = GetComponent<CinemachineVirtualCamera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 desiredCameraPos = transform.parent.TransformPoint(direction * maxDistance);
-        RaycastHit hit;
+        distance = Vector3.Distance(player.transform.position, camera.transform.position);
 
-        Debug.DrawLine(transform.parent.position, desiredCameraPos, Color.white);
-        if (Physics.Linecast(transform.parent.position, desiredCameraPos, out hit, layers))
-        {
-            distance = Mathf.Clamp((hit.distance * 0.09f), minDistance, maxDistance);
-        }
-        else
-        {
-            distance = maxDistance;
-        }
-
-        transform.localPosition = Vector3.Lerp(transform.localPosition, direction * distance, Time.deltaTime * smooth);
+        float fov = Mathf.Lerp(20, DistanceToGet, maxDistance - distance);
+        cam.m_Lens.FieldOfView = fov;
     }
 }

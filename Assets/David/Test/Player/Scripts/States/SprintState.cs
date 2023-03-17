@@ -12,7 +12,7 @@ public class SprintState : State
     bool grounded;
     bool sprint;
     bool dash;
-    bool sprintJump;
+    bool jump;
     Vector3 cVelocity;
     float dashVelocity;
 
@@ -37,8 +37,8 @@ public class SprintState : State
     {
         base.Enter();
 
-        sprint = false;
-        sprintJump = false;
+        sprint = true;
+        jump = false;
         dash = false;
         input = Vector2.zero;
         velocity = Vector3.zero;
@@ -58,11 +58,13 @@ public class SprintState : State
         maxSlopeAngle = character.maxSlopeAngle;
         playerObj = character.playerObj;
         groundDrag = character.groundDrag;
+
+        character.dashController.keepMomentum = true;
     }
 
     public override void HandleInput()
     {
-        base.Enter();
+        base.HandleInput();
         
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
@@ -74,10 +76,10 @@ public class SprintState : State
         if (jumpAction.triggered)
         {
             Debug.Log("Salte");
-            sprintJump = true;
+            jump = true;
 
         }
-        if (sprintAction.IsPressed() && velocity.sqrMagnitude > 1f)
+        if (sprintAction.IsPressed() && velocity.sqrMagnitude > 0f)
         {
             sprint = true;
         }
@@ -85,7 +87,7 @@ public class SprintState : State
         {
             sprint = false;
         }
-        
+
         if (dashAction.triggered)
         {
             dash = character.dashController.checkIfDash();
@@ -95,36 +97,39 @@ public class SprintState : State
 
     public override void LogicUpdate()
     {
-        //if (sprint)
-        //{
-        //    if (!character.dashController.keepMomentum)
-        //        character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
-        //    else
-        //    {
-        //        character.animator.SetFloat("speed", 1.5f);
-        //    }
-        //}
-        if (!sprint)
-        {
-            stateMachine.ChangeState(character.standing);
-        }
+        base.LogicUpdate();
 
-        if (sprintJump)
+        if (jump)
         {
             stateMachine.ChangeState(character.jumping);
         }
-        
+
+        if (sprint)
+        {
+            //if (!character.dashController.keepMomentum)
+            //    character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
+            //else
+            //{
+            //    character.animator.SetFloat("speed", 1.5f);
+            //}
+        }
+        if (!sprint)
+        {
+            character.dashController.keepMomentum = false;
+            stateMachine.ChangeState(character.standing);
+        }
+
         if (dash)
         {
             stateMachine.ChangeState(character.dashing);
             character.dashController.previousSpeed = playerSpeed;
             character.dashController.startCooldown();
         }
-        
-        //if (!grounded)
-        //    stateMachine.ChangeState(character.falling);
 
-        
+        if (!grounded)
+            stateMachine.ChangeState(character.falling);
+
+
         rb.drag = groundDrag;
     }
 

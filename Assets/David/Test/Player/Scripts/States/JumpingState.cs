@@ -23,6 +23,12 @@ public class JumpingState : State
         rb = character.rb;
 
         rb.drag = 0;
+
+        input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
+
+        velocity = new Vector3(input.x, 0, input.y);
+
+
         Jump();
     }
 
@@ -30,7 +36,6 @@ public class JumpingState : State
     {
         base.HandleInput();
 
-      
     }
 
     public override void LogicUpdate()
@@ -52,12 +57,26 @@ public class JumpingState : State
 
     void Jump()
     {
-
+        
+        SpeedControl();
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(character.transform.up * jumpForce, ForceMode.Impulse);
 
 
+
         character.changeState(character.falling);
+    }
+
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > jumpForce)
+        {
+            Vector3 limitedVel = flatVel.normalized * jumpForce;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
     }
 }

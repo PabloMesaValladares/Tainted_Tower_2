@@ -200,7 +200,6 @@ public class StandingState : State
         {
             if (velocity.sqrMagnitude > 0)
                 character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
-
         }
         rb.useGravity = !OnSlope();
     }
@@ -235,11 +234,7 @@ public class StandingState : State
     public override void Exit()
     {
         base.Exit();
-        gravityVelocity.y = 0f;
-        character.playerVelocity = new Vector3(input.x, 0, input.y);
-
-        if (velocity.sqrMagnitude > 0)
-            character.transform.rotation = Quaternion.LookRotation(velocity);
+        gravityVelocity.y = 0f; 
     }
 
     public override void ReverseControls()
