@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.InputSystem;
 
 public class introBehaviour : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class introBehaviour : MonoBehaviour
     private VideoPlayer introVideo;
     [SerializeField]
     private GameObject _bacground, _videoIntro;
+
+    [SerializeField]
+    UnityEngine.InputSystem.PlayerInput _config;
+
+    InputAction esc;
 
     [SerializeField]
     private bool isIntro;
@@ -31,6 +37,7 @@ public class introBehaviour : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        esc = _config.actions["Jump"];
     }
 
     private void CheckOver(UnityEngine.Video.VideoPlayer vid)
@@ -49,7 +56,7 @@ public class introBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(esc.triggered)
         {
             SceneManager.LoadScene(sceneNumber);
         }

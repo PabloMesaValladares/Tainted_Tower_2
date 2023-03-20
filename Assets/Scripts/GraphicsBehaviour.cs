@@ -7,13 +7,27 @@ using TMPro;
 public class GraphicsBehaviour : MonoBehaviour
 {
     [SerializeField]
+<<<<<<< Updated upstream:Assets/Scripts/GraphicsBehaviour.cs
     private TMP_Dropdown screenOptions, frameOptions, vsyncOptions, qualityOptions, resolutionOptions, shadowOptions, antialiasingOptions, particleOptions;
+=======
+    private TMP_Dropdown screenOptions, frameOptions, qualityOptions, resolutionOptions;
+
+    public RenderPipelineAsset[] qualityLevels;
+
+    public Camera cam;
+
+>>>>>>> Stashed changes:Assets/Pablo/Scripts/GraphicsBehaviour.cs
     [SerializeField]
     private int frameCap, vSync, aliasing, disParticle;
     // Start is called before the first frame update
     void Awake()
     {
+<<<<<<< Updated upstream:Assets/Scripts/GraphicsBehaviour.cs
         QualitySettings.vSyncCount = 0;
+=======
+       qualityOptions.value = QualitySettings.GetQualityLevel();
+        cam = Camera.main;
+>>>>>>> Stashed changes:Assets/Pablo/Scripts/GraphicsBehaviour.cs
     }
 
     // Update is called once per frame
@@ -42,17 +56,27 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (qualityOptions.value == 0)
         {
+<<<<<<< Updated upstream:Assets/Scripts/GraphicsBehaviour.cs
             QualitySettings.SetQualityLevel(2);
             QualitySettings.masterTextureLimit = 2;
             QualitySettings.skinWeights = SkinWeights.TwoBones;
             QualitySettings.lodBias = 0;
             QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
+=======
+            Debug.Log("lOW");
+            QualitySettings.SetQualityLevel(0);
+            QualitySettings.masterTextureLimit = 3;
+            QualitySettings.skinWeights = SkinWeights.TwoBones;
+            cam.farClipPlane = 100;
+>>>>>>> Stashed changes:Assets/Pablo/Scripts/GraphicsBehaviour.cs
         }
         else if (qualityOptions.value == 1)
         {
+            Debug.Log("MED");
             QualitySettings.SetQualityLevel(1);
             QualitySettings.masterTextureLimit = 1;
             QualitySettings.skinWeights = SkinWeights.FourBones;
+<<<<<<< Updated upstream:Assets/Scripts/GraphicsBehaviour.cs
             QualitySettings.lodBias = 1;
             QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
         }
@@ -63,6 +87,17 @@ public class GraphicsBehaviour : MonoBehaviour
             QualitySettings.skinWeights = SkinWeights.Unlimited;
             QualitySettings.lodBias = 2;
             QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
+=======
+            cam.farClipPlane = 200;
+        }
+        else if (qualityOptions.value == 2)
+        {
+            Debug.Log("HIG");
+            QualitySettings.SetQualityLevel(2);
+            QualitySettings.masterTextureLimit = 0;
+            QualitySettings.skinWeights = SkinWeights.Unlimited;
+            cam.farClipPlane = 300;
+>>>>>>> Stashed changes:Assets/Pablo/Scripts/GraphicsBehaviour.cs
         }
     }
 

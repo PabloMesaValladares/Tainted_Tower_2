@@ -20,13 +20,15 @@ public class MistEffect : MonoBehaviour
          Debug.Log("praticula que toca algo");
      }*/
 
-    void OnParticleCollision(GameObject gameObject) //esto sera para poner los controles inversos.
+    void OnParticleCollision(GameObject lala) //esto sera para poner los controles inversos.
     {
-        gameObject.SetActive(false);
+        if (lala.TryGetComponent<PL>(out PL _pl))
+        {
+            lala.SetActive(false);
+            Debug.Log("LA VIDA ES UNA TOMBOLA, TO TO TO TOMBOLA, DE LUZ Y DE COLOOOOOOOOOR, DE LUZ Y DE COLOOOOOOOR");
+        }
 
         EnablePoison.Invoke();
-
-        Debug.Log("LA VIDA ES UNA TOMBOLA, TO TO TO TOMBOLA, DE LUZ Y DE COLOOOOOOOOOR, DE LUZ Y DE COLOOOOOOOR");
     }
 
 }
