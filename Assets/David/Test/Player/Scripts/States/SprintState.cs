@@ -59,6 +59,8 @@ public class SprintState : State
         playerObj = character.playerObj;
         groundDrag = character.groundDrag;
 
+        jumpForce = character.jumpForce;
+
         character.dashController.keepMomentum = true;
     }
 
@@ -101,7 +103,7 @@ public class SprintState : State
 
         if (jump)
         {
-            stateMachine.ChangeState(character.jumping);
+            Jump();
         }
 
         if (sprint)
@@ -183,5 +185,23 @@ public class SprintState : State
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
+
+
+    float jumpForce;
+
+    void Jump()
+    {
+        rb.drag = 0;
+
+        SpeedControl();
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        rb.AddForce(character.transform.up * jumpForce, ForceMode.Impulse);
+
+
+
+        character.changeState(character.falling);
+    }
+
 
 }

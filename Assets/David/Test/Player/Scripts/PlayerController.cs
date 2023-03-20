@@ -64,8 +64,6 @@ public class PlayerController : MonoBehaviour
     public GrappleState grappling;
     public GrabMoveState grapplemoving;
 
-
-    [HideInInspector]
     public float gravityValue = -9.81f;
     [HideInInspector]
     public UnityEngine.InputSystem.PlayerInput playerInput;
@@ -82,6 +80,9 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public GroundCheck ground;
+
+    [Header("Effects")]
+    public ParticleSystem Trail;
 
     // Start is called before the first frame update
     private void Start()

@@ -42,6 +42,8 @@ public class DashState : State
         rb = character.rb;
         rb.drag = 0;
         rb.useGravity = true;
+
+        character.Trail.Play();
     }
     public override void LogicUpdate()
     {
@@ -97,6 +99,8 @@ public class DashState : State
     public override void Exit()
     {
         base.Exit();
+
+        character.Trail.Stop();
     }
 
 

@@ -79,15 +79,16 @@ public class GrabMoveState : State
 
     public override void PhysicsUpdate()
     {
-        if (moving == false || counter > 1)
+        if (moving == false || counter > 2)
         {
             stop = true;
         }
 
         dist = Vector3.Distance(grapplePoint, character.transform.position);
 
+        Debug.Log(rb.velocity);
 
-        if (dist < 4)
+        if (dist < 3 && character.ground.returnCheck())
         {
             moving = false;
         }

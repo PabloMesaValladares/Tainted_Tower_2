@@ -147,7 +147,7 @@ public class StandingState : State
         if (sprint)//cambia al estado dependiendo de la variable
             stateMachine.ChangeState(character.sprinting);
         else if (jump)
-            stateMachine.ChangeState(character.jumping);
+            Jump(jumpForce);
         else if (crouch)
             stateMachine.ChangeState(character.crouching);
         else if (dash)
@@ -255,6 +255,7 @@ public class StandingState : State
 
     void Jump(float jumpF)
     {
+        rb.drag = 0;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 

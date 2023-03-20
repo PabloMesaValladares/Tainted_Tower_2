@@ -107,7 +107,7 @@ public class FallState : State
 
         moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         moveDirection.y = 0;
-        moveDirection.y += character.gravityValue * Time.deltaTime;
+        moveDirection.y = character.gravityValue + moveSpeed * Time.deltaTime;
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f , ForceMode.Force);
         if (velocity.sqrMagnitude > 0)
