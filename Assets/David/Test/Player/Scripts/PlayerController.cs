@@ -119,6 +119,9 @@ public class PlayerController : MonoBehaviour
         Screen.lockCursor = true;
         //normalColliderHeight = controller.height;
         //gravityValue *= gravityMultiplier;
+
+
+        Trail.Stop();
     }
 
     private void Update()

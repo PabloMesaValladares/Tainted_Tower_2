@@ -41,6 +41,9 @@ public class DashJumpingState : State
 
         rb = character.rb;
         rb.drag = 0;
+        rb.useGravity = false;
+        rb.velocity = Vector3.zero;
+        character.Trail.Play();
     }
     public override void LogicUpdate()
     {
@@ -75,6 +78,8 @@ public class DashJumpingState : State
         if (velocity != Vector3.zero)
             forceToApply = velocity * dashForce + orientation.up * dashUpwardForce;
 
+        forceToApply.y = 0;
+
         if (dashDuration > dashStop)
         {
             rb.AddForce(forceToApply, ForceMode.Impulse);
@@ -92,6 +97,8 @@ public class DashJumpingState : State
     {
         base.Exit();
 
+        rb.useGravity = true;
+        character.Trail.Stop();
     }
 
 
