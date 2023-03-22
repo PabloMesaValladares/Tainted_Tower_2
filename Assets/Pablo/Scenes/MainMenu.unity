@@ -319,7 +319,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ff25efa3177c9046973aeffcfc222d9, type: 2}
+  - {fileID: 2100000, guid: 8d31db3f19871c5429b264cb9716c0b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -417,7 +417,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ff25efa3177c9046973aeffcfc222d9, type: 2}
+  - {fileID: 2100000, guid: 8d31db3f19871c5429b264cb9716c0b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -839,6 +839,7 @@ GameObject:
   - component: {fileID: 212427750}
   - component: {fileID: 212427749}
   - component: {fileID: 212427748}
+  - component: {fileID: 212427753}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -958,6 +959,18 @@ RectTransform:
   m_AnchoredPosition: {x: -6.49, y: 2.92}
   m_SizeDelta: {x: 1920.857, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &212427753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212427747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f7b08711515974ea4fec03f71d0833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &220682559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1039,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ff25efa3177c9046973aeffcfc222d9, type: 2}
+  - {fileID: 2100000, guid: 8d31db3f19871c5429b264cb9716c0b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3364,7 +3377,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ff25efa3177c9046973aeffcfc222d9, type: 2}
+  - {fileID: 2100000, guid: 8d31db3f19871c5429b264cb9716c0b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5107,7 +5120,6 @@ GameObject:
   - component: {fileID: 826033515}
   - component: {fileID: 826033514}
   - component: {fileID: 826033513}
-  - component: {fileID: 826033512}
   - component: {fileID: 826033516}
   m_Layer: 5
   m_Name: Quality Dropdown
@@ -5139,24 +5151,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.014, y: 0.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &826033512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826033510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 826033513}
-  resolutionOptions: {fileID: 0}
-  qualityLevels: []
-  frameCap: 0
 --- !u!114 &826033513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5216,9 +5210,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 826033512}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
-        m_MethodName: ChangeQuality
+        m_MethodName: ChangeScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5573,7 +5567,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 684b2db2d5c9aeb409e6a8bf7e8e5df3, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5789,8 +5783,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957741303}
-  m_LocalRotation: {x: 0.00035415217, y: -0.9991013, z: 0.040639773, w: 0.012039483}
-  m_LocalPosition: {x: -0.7794818, y: 2.2447574, z: -12.112426}
+  m_LocalRotation: {x: 0.16991483, y: 0.26333842, z: -0.04732955, w: 0.94844174}
+  m_LocalPosition: {x: -11.223839, y: 5.2516174, z: -12.869751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6180,7 +6174,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 684b2db2d5c9aeb409e6a8bf7e8e5df3, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6604,7 +6598,7 @@ GameObject:
   - component: {fileID: 1109025248}
   - component: {fileID: 1109025247}
   - component: {fileID: 1109025246}
-  - component: {fileID: 1109025245}
+  - component: {fileID: 1109025249}
   m_Layer: 5
   m_Name: Quality Dropdown
   m_TagString: Untagged
@@ -6635,24 +6629,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.014, y: 0.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1109025245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109025243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 1109025246}
-  resolutionOptions: {fileID: 0}
-  qualityLevels: []
-  frameCap: 0
 --- !u!114 &1109025246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6712,7 +6688,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1109025245}
+      - m_Target: {fileID: 1109025249}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
         m_MethodName: ChangeQuality
         m_Mode: 1
@@ -6763,6 +6739,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109025243}
   m_CullTransparentMesh: 1
+--- !u!114 &1109025249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109025243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenOptions: {fileID: 0}
+  frameOptions: {fileID: 0}
+  qualityOptions: {fileID: 1109025246}
+  resolutionOptions: {fileID: 0}
+  qualityLevels: []
+  cam: {fileID: 957741305}
+  frameCap: 0
 --- !u!1 &1166317120
 GameObject:
   m_ObjectHideFlags: 0
@@ -6775,7 +6770,6 @@ GameObject:
   - component: {fileID: 1166317124}
   - component: {fileID: 1166317123}
   - component: {fileID: 1166317122}
-  - component: {fileID: 1166317121}
   m_Layer: 5
   m_Name: Graphics Menu
   m_TagString: Untagged
@@ -6783,27 +6777,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1166317121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166317120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 826033513}
-  resolutionOptions: {fileID: 0}
-  qualityLevels:
-  - {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574, type: 2}
-  - {fileID: 11400000, guid: e1260c1148f6143b28bae5ace5e9c5d1, type: 2}
-  - {fileID: 11400000, guid: 7b7fd9122c28c4d15b667c7040e3b3fd, type: 2}
-  frameCap: 0
 --- !u!114 &1166317122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6996,7 +6969,6 @@ GameObject:
   - component: {fileID: 1184769724}
   - component: {fileID: 1184769723}
   - component: {fileID: 1184769722}
-  - component: {fileID: 1184769721}
   m_Layer: 5
   m_Name: Quality Dropdown
   m_TagString: Untagged
@@ -7027,24 +6999,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.014, y: 0.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1184769721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184769719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 1184769722}
-  resolutionOptions: {fileID: 0}
-  qualityLevels: []
-  frameCap: 0
 --- !u!114 &1184769722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7122,9 +7076,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1184769721}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
-        m_MethodName: ChangeQuality
+        m_MethodName: ChangeResolution
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7241,7 +7195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c98cdb6ed82b924d83c0aa0f872aa04, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7474,7 +7428,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ff25efa3177c9046973aeffcfc222d9, type: 2}
+  - {fileID: 2100000, guid: 8d31db3f19871c5429b264cb9716c0b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7991,7 +7945,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c98cdb6ed82b924d83c0aa0f872aa04, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8792,7 +8746,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 684b2db2d5c9aeb409e6a8bf7e8e5df3, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9356,7 +9310,6 @@ GameObject:
   - component: {fileID: 1599973971}
   - component: {fileID: 1599973970}
   - component: {fileID: 1599973969}
-  - component: {fileID: 1599973968}
   m_Layer: 5
   m_Name: Quality Dropdown
   m_TagString: Untagged
@@ -9387,24 +9340,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.014, y: 0.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1599973968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599973966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b8178b0e6f18946ab76edd1bf56dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenOptions: {fileID: 0}
-  frameOptions: {fileID: 0}
-  qualityOptions: {fileID: 1599973969}
-  resolutionOptions: {fileID: 0}
-  qualityLevels: []
-  frameCap: 0
 --- !u!114 &1599973969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9468,9 +9403,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1599973968}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
-        m_MethodName: ChangeQuality
+        m_MethodName: ChangeFrames
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9587,7 +9522,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c98cdb6ed82b924d83c0aa0f872aa04, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10586,10 +10521,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 212427748}
-        m_TargetAssemblyTypeName: CameraMenuMove, Assembly-CSharp
-        m_MethodName: MoveToPoint
-        m_Mode: 3
+      - m_Target: {fileID: 212427753}
+        m_TargetAssemblyTypeName: MenusController, Assembly-CSharp
+        m_MethodName: LevelSelect
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11111,7 +11046,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 684b2db2d5c9aeb409e6a8bf7e8e5df3, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11318,7 +11253,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 684b2db2d5c9aeb409e6a8bf7e8e5df3, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11831,7 +11766,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c98cdb6ed82b924d83c0aa0f872aa04, type: 2}
+  - {fileID: 2100000, guid: 239f99278859f9e4c9ef2acaa8880a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

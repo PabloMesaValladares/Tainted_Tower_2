@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PoisonMist : MonoBehaviour
+public class MobTrigger : MonoBehaviour
 {
     //[SerializeField] private GameObject _player;
 
