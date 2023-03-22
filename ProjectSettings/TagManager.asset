@@ -18,9 +18,13 @@ TagManager:
   - CameraIgnore
   - GrabPoint
   - EnemyAbility
+<<<<<<< Updated upstream
   - 
   - 
-  - 
+=======
+  - EnemyAbility
+  - Bullet
+>>>>>>> Stashed changes
   - 
   - 
   - 
