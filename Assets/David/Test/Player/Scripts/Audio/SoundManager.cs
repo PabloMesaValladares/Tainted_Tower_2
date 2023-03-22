@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Audio;
-
 //Singleton //Un Singleton es una clase estatica que no es estatica
 
 public class SoundManager : MonoBehaviour
@@ -111,6 +110,48 @@ public class SoundManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void FadeInFadeOut(string nameIn, string nameOut, float volume, float speed)
+    {
+
+        if (_audios.ContainsKey(nameIn))//if exist in dictionary
+        {
+            for (int i = 0; i < audioControllers.Count; i++)
+            {
+                if (audioControllers[i].clip == null || !audioControllers[i].isPlaying)
+                {
+                    audioControllers[i].clip = _audios[name].audioSelected;
+                    audioControllers[i].volume = 0;
+                    audioControllers[i].loop = true;
+                    audioControllers[i].outputAudioMixerGroup = _audios[name].mixer;
+                    audioControllers[i].Play();
+                    break;
+                }
+            }
+        }
+
+        if (_audios.ContainsKey(nameOut))//if exist in dictionary
+        {
+            for (int i = 0; i < audioControllers.Count; i++)
+            {
+                if (audioControllers[i].clip != null && audioControllers[i].isPlaying)
+                {
+                    if (audioControllers[i].clip.name == name)
+                        audioControllers[i].volume = Mathf.Lerp(volume, 0, speed);
+                }
+                if (audioControllers[i].clip == null || !audioControllers[i].isPlaying)
+                {
+                    audioControllers[i].clip = _audios[name].audioSelected;
+                    audioControllers[i].volume = 0;
+                    audioControllers[i].loop = true;
+                    audioControllers[i].outputAudioMixerGroup = _audios[name].mixer;
+                    audioControllers[i].Play();
+                    break;
+                }
+            }
+        }
+
     }
 
     public void StopSounds()
