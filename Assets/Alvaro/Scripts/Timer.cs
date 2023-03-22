@@ -11,12 +11,6 @@ public class Timer : MonoBehaviour
 
     public UnityEvent timerHasStopped;
 
-    public void StartTimer(float t)
-    {
-        time = t;
-        started = true;
-    }
-
     private void Update()
     {
         if (started)
@@ -28,6 +22,12 @@ public class Timer : MonoBehaviour
             started = false;
             timerHasStopped.Invoke();
         }
+    }
+
+    public void StartTimer(float t)
+    {
+        time = t;
+        started = true;
     }
 
     public float UpdateStopWatch(bool state)
