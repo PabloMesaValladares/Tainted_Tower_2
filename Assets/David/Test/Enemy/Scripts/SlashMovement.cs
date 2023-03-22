@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SlashMovement : MonoBehaviour
 {
-    float speed;
+    public float speed;
     bool move;
+    [SerializeField]
     Vector3 directionToGo;
     Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = 0;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -21,7 +21,7 @@ public class SlashMovement : MonoBehaviour
     {
         if (move)
         {
-            rb.AddForce(directionToGo * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(transform.forward * speed, ForceMode.Force);
         }
         else
             speed = 0;
@@ -31,5 +31,6 @@ public class SlashMovement : MonoBehaviour
     {
         directionToGo = direction;
         move = true;
+        transform.LookAt(directionToGo);
     }
 }
