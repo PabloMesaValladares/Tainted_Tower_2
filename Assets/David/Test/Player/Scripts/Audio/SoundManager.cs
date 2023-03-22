@@ -112,8 +112,12 @@ public class SoundManager : MonoBehaviour
         return false;
     }
 
-    public void FadeInFadeOut(string nameIn, string nameOut, float volume, float speed)
+    public void FadeInFadeOut(string nameIn, string nameOut)
     {
+        Debug.Log("Entro");
+        AudioSource audioIn = null;
+        AudioSource audioOut = null;
+        float vol = 0;
 
         if (_audios.ContainsKey(nameIn))//if exist in dictionary
         {
@@ -121,12 +125,12 @@ public class SoundManager : MonoBehaviour
             {
                 if (audioControllers[i].clip == null || !audioControllers[i].isPlaying)
                 {
-                    audioControllers[i].clip = _audios[name].audioSelected;
+                    audioControllers[i].clip = _audios[nameIn].audioSelected;
                     audioControllers[i].volume = 0;
                     audioControllers[i].loop = true;
-                    audioControllers[i].outputAudioMixerGroup = _audios[name].mixer;
-                    audioControllers[i].Play();
-                    break;
+                    audioControllers[i].outputAudioMixerGroup = _audios[nameIn].mixer;
+                    audioIn = audioControllers[i];
+                    audioIn.Play();
                 }
             }
         }
@@ -137,21 +141,20 @@ public class SoundManager : MonoBehaviour
             {
                 if (audioControllers[i].clip != null && audioControllers[i].isPlaying)
                 {
-                    if (audioControllers[i].clip.name == name)
-                        audioControllers[i].volume = Mathf.Lerp(volume, 0, speed);
-                }
-                if (audioControllers[i].clip == null || !audioControllers[i].isPlaying)
-                {
-                    audioControllers[i].clip = _audios[name].audioSelected;
-                    audioControllers[i].volume = 0;
-                    audioControllers[i].loop = true;
-                    audioControllers[i].outputAudioMixerGroup = _audios[name].mixer;
-                    audioControllers[i].Play();
-                    break;
+                    if (audioControllers[i].clip.name == nameOut)
+                        audioOut = audioControllers[i];
                 }
             }
         }
 
+
+        while(vol < 1)
+        {
+            Debug.Log("Volumen es : " + vol);
+            audioIn.volume = Mathf.Lerp(0, _audios[nameIn].volume, vol);
+            audioOut.volume = Mathf.Lerp(_audios[nameOut].volume, 0, vol);
+            vol += Time.deltaTime;
+        }
     }
 
     public void StopSounds()
