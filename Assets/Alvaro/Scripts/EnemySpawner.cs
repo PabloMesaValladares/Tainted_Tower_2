@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] string[] pName;
     [SerializeField] Transform[] spawnPoints;
 
-    GameObject pPrefab;
+    GameObject[] pPrefab;
 
     private void Start()
     {
@@ -16,12 +16,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(TryGetComponent<PlayerController>(out PlayerController player))
+        if (other.TryGetComponent(out TestController player))
         {
             for(int i = 0; i < spawnPoints.Length; i++)
             {
-                pPrefab = PoolingManager.Instance.GetPooledObject(pName[i]);
-                pPrefab.transform.position = spawnPoints[i].position;
+                pPrefab[i].SetActive(true);
+                pPrefab[i].transform.position = spawnPoints[i].position;
             }
         }
     }

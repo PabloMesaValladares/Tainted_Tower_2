@@ -1192,7 +1192,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341303124}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 10
   m_Height: 1
@@ -1229,8 +1229,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee6cbcbfcd7d674bab2d768786a1968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pName: []
-  spawnPoints: []
+  pName:
+  - Enemi1
+  - Enemi1
+  - Enemi1
+  - Enemi1
+  spawnPoints:
+  - {fileID: 695208630}
+  - {fileID: 1938994587}
+  - {fileID: 2058503241}
+  - {fileID: 1981212422}
 --- !u!1 &1381358667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1388,10 @@ MonoBehaviour:
     objectToPool: {fileID: 5122448538454444249, guid: 16648476314748b42b34504b6928bb6c,
       type: 3}
     amount: 6
+  - name: Enemi1
+    objectToPool: {fileID: 3924281547393338383, guid: b4912ea469cfe98479d63a686d6fe92a,
+      type: 3}
+    amount: 4
 --- !u!4 &1433069744
 Transform:
   m_ObjectHideFlags: 0
@@ -2194,6 +2206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732941047258011753, guid: 48fd65bc4083d8c49b02246df58e74e0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8732941047258011753, guid: 48fd65bc4083d8c49b02246df58e74e0,
         type: 3}
