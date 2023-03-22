@@ -9,6 +9,8 @@ public class GrappleState : State
 
     float playerSpeed;
     bool dash;
+
+    float counter;
     public GrappleState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -18,8 +20,9 @@ public class GrappleState : State
     public override void Enter()
     {
         dash = false;
-        playerSpeed = character.playerSpeed;
-        character.animator.SetTrigger("grapple");
+        counter = 0;
+        playerSpeed = character.sprintSpeed;
+        //character.animator.SetTrigger("grapple"); 
     }
     public override void HandleInput()
     {
@@ -40,7 +43,12 @@ public class GrappleState : State
     }
     public override void PhysicsUpdate()
     {
-
+        if (counter > 1)
+        {
+            character.changeState(character.grapplemoving);
+        }
+        else
+            counter += Time.deltaTime;
     }
     public override void Exit()
     {

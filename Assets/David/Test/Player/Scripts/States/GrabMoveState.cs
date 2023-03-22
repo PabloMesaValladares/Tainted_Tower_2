@@ -13,9 +13,17 @@ public class GrabMoveState : State
     float playerSpeed;
     bool dash;
     Vector3 grapplePoint;
+    Vector3 Offset;
     float overshootYAxis;
     bool stop;
 
+    Rigidbody rb;
+
+    float counter;
+    bool moving;
+
+
+    private Vector3 velocityToSet;
     public GrabMoveState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -24,22 +32,33 @@ public class GrabMoveState : State
 
     public override void Enter()
     {
+        moving = true;
         dash = false;
         stop = false;
-        playerSpeed = character.playerSpeed;
-        character.animator.SetTrigger("dash"); 
+        playerSpeed = character.sprintSpeed;
+        //character.animator.SetTrigger("dash"); 
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;
         overshootYAxis = character.GetComponent<Grappling>().overshootYAxis;
         grapplePoint = character.GetComponent<Grappling>().GetGrapplePoint(); 
         orientation = character.transform;
+
+        rb = character.rb;
+        rb.drag = 0;
+        rb.useGravity = true;
+
+
+        counter = -1;
+
+        ExecuteGrapple();
     }
     public override void HandleInput()
     {
-        //if (dashAction.triggered)
-        //{
-        //    dash = character.dashController.checkIfDash();
-        //}
+        if (dashAction.triggered)
+        {
+            character.GetComponent<Grappling>().StopGrapple();
+            dash = character.dashController.checkIfDash();
+        }
 
     }
     public override void LogicUpdate()
@@ -56,15 +75,27 @@ public class GrabMoveState : State
             character.GetComponent<Grappling>().StopGrapple();
         }
     }
+    float dist;
+
     public override void PhysicsUpdate()
     {
-        ExecuteGrapple();
-        float dist = Vector3.Distance(character.transform.position, grapplePoint);
-        Debug.Log(dist);
-        if (dist < 1.1)
+        if (moving == false || counter > 2)
+        {
             stop = true;
+        }
 
+        dist = Vector3.Distance(grapplePoint, character.transform.position);
 
+        Debug.Log(rb.velocity);
+
+        if (dist < 3 && character.ground.returnCheck())
+        {
+            moving = false;
+        }
+        else
+        {
+            counter += Time.deltaTime;
+        }
     }
     public override void Exit()
     {
@@ -73,7 +104,6 @@ public class GrabMoveState : State
 
     private void ExecuteGrapple()
     {
-
         Vector3 lowestPoint = new Vector3(character.transform.position.x, character.transform.position.y - 1f, character.transform.position.z);
 
         float grapplePointRelativeYPos = grapplePoint.y - lowestPoint.y;
@@ -85,28 +115,18 @@ public class GrabMoveState : State
     }
 
     private bool enableMovementOnNextTouch;
-    private Vector3 velocityToSet;
     public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
     {
 
         velocityToSet = CalculateJumpVelocity(character.transform.position, targetPosition, trajectoryHeight);
 
-        character.GetComponent<CharacterController>().Move(velocityToSet * dashForce * Time.deltaTime);
+        Debug.Log(velocityToSet);
+
+        rb.AddForce(velocityToSet, ForceMode.Impulse);
+        //rb.velocity = velocityToSet * 2;
+
     }
 
-    private void SetVelocity()
-    {
-        enableMovementOnNextTouch = true;
-        character.GetComponent<CharacterController>().Move(velocityToSet * Time.deltaTime);
-
-        //cam.DoFov(grappleFov);
-    }
-
-    public void ResetRestrictions()
-    {
-        //activeGrapple = false;
-        //cam.DoFov(85f);
-    }
     public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
     {
         float gravity = Physics.gravity.y;

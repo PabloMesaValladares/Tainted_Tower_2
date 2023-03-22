@@ -4,49 +4,69 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
 using Cinemachine;
-
+using UnityEngine.Events;
 public class MarkEnemy : MonoBehaviour
 {
     [SerializeField]
     GameObject enemy;
     public GameObject markPos;
+    public bool marking;
 
     public GameObject pointerCanvas;
+    public GameObject NormalpointerCanvas;
+    public GameObject HitpointerCanvas;
 
     [SerializeField]
-    CinemachineFreeLook normalCamera;
+    CinemachineVirtualCamera normalCamera;
     [SerializeField]
-    CinemachineVirtualCamera enemyCamera;
-    [SerializeField]
-    CinemachineFreeLook MarkCamera;
+    CinemachineVirtualCamera AimCamera;
     [SerializeField]
     GameObject Player;
     EnemyController enemyController;
 
     [HideInInspector]
     public InputAction markAction;
+    [HideInInspector]
+    public InputAction lookAction;
     CameraMove move;
 
+    public LayerMask markable;
+
+    Vector3 markPosResetPos;
 
     public float DistanceToCheck;
-    public float maxUpDownDist;
+    public float moveSpeed;
+    public GameObject markedObject;
+
+
+    Camera Cam;
+    public UnityEvent<Transform> sendMarked;
+    public UnityEvent ResetMarked;
+
 
     // Start is called before the first frame update
     void Start()
     {
         markAction = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions["Mark"];
+        lookAction = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions["Look"];
         enemyController = GetComponent<EnemyController>();
 
-        enemyCamera.gameObject.SetActive(false);
-        MarkCamera.gameObject.SetActive(false);
+        enemy = null;
+
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Cam = Camera.main;
+        HitpointerCanvas.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(markAction.IsPressed())
+        markPosResetPos = transform.position + (transform.forward * DistanceToCheck);
+        marking = markAction.IsPressed();
+
+        if(marking)
         {
-            markEnemy();
+            Mark();
         }
         else
         {
@@ -54,42 +74,57 @@ public class MarkEnemy : MonoBehaviour
         }
     }
 
+    void Mark()
+    {
+        AimCamera.gameObject.SetActive(true);
+        normalCamera.gameObject.SetActive(false);
+        pointerCanvas.SetActive(true);
+        RaycastHit hit; 
+        MarkCameraMovement();
+
+        Vector3 posToGrab = Cam.transform.forward;
+        //Vector3 posToGrab = Cam.ScreenToWorldPoint(new Vector3(markPos.transform.position.x, markPos.transform.position.y, Cam.nearClipPlane));
+        if (Physics.Raycast(transform.position, posToGrab, out hit, DistanceToCheck, markable))
+        {
+            markedObject = hit.collider.gameObject;
+            HitpointerCanvas.SetActive(true);
+            NormalpointerCanvas.SetActive(false);
+            Debug.DrawRay(transform.position, hit.point, Color.green);
+            sendMarked.Invoke(markedObject.transform);
+        }
+        else
+        {
+            HitpointerCanvas.SetActive(false);
+            NormalpointerCanvas.SetActive(true);
+            markedObject = null;
+            Debug.DrawRay(transform.position, posToGrab, Color.black);
+            ResetMarked.Invoke();
+        }
+
+    }
+
     void markEnemy()
     {
         enemy = enemyController.GetCloseEnemy();
         float dist = 0; 
-        normalCamera.gameObject.SetActive(false);
+        //normalCamera.gameObject.SetActive(false);
         if (enemy != null)
         {
             float distPlayerEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
             if (distPlayerEnemy <= DistanceToCheck)
             {
-                enemyCamera.LookAt = enemy.transform;
                 Vector3 posToLookAt = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
                 transform.LookAt(posToLookAt);
-                enemyCamera.m_Lens.FieldOfView = 20 + dist;
-
-
-                MarkCamera.gameObject.SetActive(false);
-                enemyCamera.gameObject.SetActive(true);
-                enemyCamera.Priority = 15;
             }
             else
             {
-                enemyCamera.gameObject.SetActive(false);
-                MarkCamera.gameObject.SetActive(true);
-                MarkCamera.Priority = 15;
-                pointerCanvas.SetActive(true);
+                MarkCameraMovement();
             }
         }
         else
         {
-            enemyCamera.gameObject.SetActive(false);
-            MarkCamera.gameObject.SetActive(true);
-            MarkCamera.Priority = 15;
-            pointerCanvas.SetActive(true);
-           
+            MarkCameraMovement();
         }
     }
 
@@ -98,21 +133,24 @@ public class MarkEnemy : MonoBehaviour
         return enemy;
     }
 
+    void MarkCameraMovement()
+    {
+        pointerCanvas.SetActive(true);
+
+    }
+
     void ResetCamera()
     {
+        AimCamera.gameObject.SetActive(false);
         normalCamera.gameObject.SetActive(true);
-        enemyCamera.gameObject.SetActive(false);
-        MarkCamera.gameObject.SetActive(false);
         enemy = null;
-        enemyCamera.Priority = 5;
-        MarkCamera.Priority  = 5;
-        MarkCamera.LookAt = markPos.transform;
         pointerCanvas.SetActive(false);
+
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, DistanceToCheck);
     }
 }

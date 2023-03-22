@@ -28,7 +28,7 @@ public class SprintJumpState : State
         grounded = false;
         dash = false;
         gravityValue = character.gravityValue;
-        jumpHeight = character.jumpHeight;
+        jumpHeight = character.jumpForce;
         playerSpeed = character.sprintSpeed;
         gravityVelocity.y = 0;
         playerPrevPos = character.transform.position;
@@ -51,7 +51,7 @@ public class SprintJumpState : State
             airVelocity = airVelocity.x * character.cameraTransform.right.normalized + airVelocity.z * character.cameraTransform.forward.normalized;
             airVelocity.y = 0f;
 
-            character.controller.Move(gravityVelocity * Time.deltaTime + (airVelocity * character.airControl + velocity * (1 - character.airControl)) * playerSpeed * Time.deltaTime);
+            //character.controller.Move(gravityVelocity * Time.deltaTime + (airVelocity * character.airControl + velocity * (1 - character.airControl)) * playerSpeed * Time.deltaTime);
         }
         if (character.transform.position.y < playerPrevPos.y)
         {
@@ -60,7 +60,7 @@ public class SprintJumpState : State
         }
         playerPrevPos = character.transform.position;
         gravityVelocity.y += gravityValue * Time.deltaTime;
-        grounded = character.controller.isGrounded;
+        //grounded = character.controller.isGrounded;
     }
 
     public override void LogicUpdate()

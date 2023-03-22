@@ -8,9 +8,10 @@ public class Grappling : MonoBehaviour
 {
     [Header("References")]
     private GameObject player;
-    public CinemachineFreeLook[] cinemachineCam;
     public Transform cam;
     public Transform gunTip;
+    public Transform markpos;
+    Transform posToGo;
     public Vector3 offset;
     public LayerMask whatIsGrappleable;
     public LineRenderer lr;
@@ -25,6 +26,7 @@ public class Grappling : MonoBehaviour
     public float maxGrappleDistance;
     public float grappleDelayTime;
     public float overshootYAxis;
+    public float grappleDuration;
 
     private Vector3 grapplePoint;
 
@@ -32,11 +34,16 @@ public class Grappling : MonoBehaviour
     public float grapplingCd;
     private float grapplingCdTimer;
 
+    [HideInInspector]
     public InputAction grappleAction;
 
     private PlayerInput playerInput;
     private bool grapple;
-    GameObject markpos;
+
+    Vector3 CenterScreen;
+    [SerializeField]
+    Transform posToGrab;
+
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -46,16 +53,17 @@ public class Grappling : MonoBehaviour
         controller = player.GetComponent<PlayerController>();
         grappling = controller.grappling;
         grapplemoving = controller.grapplemoving;
-        markpos = GetComponent<MarkEnemy>().markPos;
-        normalFov = new float[cinemachineCam.Length];
-        for (int i = 0; i < cinemachineCam.Length; i++)
-            normalFov[i] = cinemachineCam[i].m_Lens.FieldOfView;
+
+        posToGrab = null;
+
     }
 
     private void Update()
     {
         if (grappleAction.triggered)
-            controller.changeState(grappling);
+        {
+            StartGrapple();
+        }
 
 
         if (grapplingCdTimer > 0)
@@ -73,25 +81,23 @@ public class Grappling : MonoBehaviour
 
         grapple = true;
 
-        RaycastHit hit;
-
-        Vector3 posToGrab = cam.forward + offset;
-        if(Physics.Raycast(markpos.transform.position, posToGrab, out hit, maxGrappleDistance, whatIsGrappleable))
+        if (posToGrab !=null)
         {
-            grapplePoint = hit.point;
-            gameObject.transform.LookAt(new Vector3(grapplePoint.x, gameObject.transform.position.y, grapplePoint.z));
+            grapplePoint = posToGrab.position + offset;
             Debug.Log("Pillado");
-            Invoke(nameof(ChangeToMove), grappleDelayTime);
+
+            ChangeToMove();
+
+
+            lr.enabled = true;
+
+            lr.SetPosition(1, grapplePoint);
         }
         else
         {
-            grapplePoint = markpos.transform.position + posToGrab * maxGrappleDistance;
-            gameObject.transform.LookAt(new Vector3(grapplePoint.x, gameObject.transform.position.y, grapplePoint.z));
-            Invoke(nameof(StopGrapple), grappleDelayTime);
+            grapplePoint = gunTip.position.normalized + Camera.main.transform.forward * maxGrappleDistance;
+            StopGrapple();
         }
-
-        lr.enabled = true;
-        lr.SetPosition(1, grapplePoint);
     }
 
     public void StopGrapple()
@@ -101,18 +107,26 @@ public class Grappling : MonoBehaviour
         grapplingCdTimer = grapplingCd;
 
         lr.enabled = false;
+        
+    }
 
+    public void ChangePosToGo(Transform pTG)
+    {
+        posToGrab = pTG;
+    }
 
-        controller.changeState(controller.standing);
-        for (int i = 0; i < cinemachineCam.Length; i++)
-            cinemachineCam[i].m_Lens.FieldOfView = normalFov[i];
+    public void ResetPosToGo()
+    {
+        posToGrab = null;
     }
 
     void ChangeToMove()
     {
-        for (int i = 0; i < cinemachineCam.Length; i++)
-            cinemachineCam[i].m_Lens.FieldOfView = normalFov[i];
-        controller.changeState(grapplemoving);
+
+        lr.enabled = false;
+
+        gameObject.transform.LookAt(new Vector3(grapplePoint.x, gameObject.transform.position.y, grapplePoint.z));
+        controller.changeState(grappling);
     }
     public Vector3 GetGrapplePoint()
     {

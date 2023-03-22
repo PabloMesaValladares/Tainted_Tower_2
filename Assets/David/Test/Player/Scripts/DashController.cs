@@ -12,7 +12,7 @@ public class DashController : MonoBehaviour
     public float dashDuration;
     public float dashStop;
     public float dashspeedChangeFactor;
-
+    public float maxYSpeed;
 
     public float previousSpeed;
 

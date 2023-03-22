@@ -19,6 +19,7 @@ public class State
     public InputAction dashAction;
     public InputAction attackAction;
     public InputAction grappleAction;
+    public InputAction testAction;
 
     public State(PlayerController _character, StateMachine _stateMachine)
     {
@@ -32,6 +33,7 @@ public class State
         dashAction = character.playerInput.actions["Dash"];
         attackAction = character.playerInput.actions["Attack"];
         grappleAction = character.playerInput.actions["Grapple"];
+        testAction = character.playerInput.actions["Test"];
     }
 
     public virtual void Enter()
@@ -54,4 +56,16 @@ public class State
     {
 
     }
+
+    public virtual void ChangeAttributes(float s)
+    {
+
+    }
+
+    public virtual void ReverseControls()
+    {
+
+    }
+
+
 }
