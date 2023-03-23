@@ -22,15 +22,16 @@ public class SlashMovement : MonoBehaviour
     {
         if (move)
         {
-            SpeedControl();
+            //SpeedControl();
 
             rb.AddForce(transform.forward * speed, ForceMode.Force);
             counter += Time.deltaTime;
 
             if (counter > 10)
             {
-                gameObject.SetActive(false);
+                rb.velocity = Vector3.zero;
                 move = false;
+                gameObject.SetActive(false);
             }
         }
         

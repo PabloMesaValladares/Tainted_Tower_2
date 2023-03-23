@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Slope Handling")]
     public float maxSlopeAngle;
-    private RaycastHit slopeHit;
-    private bool exitingSlope;
 
     [Header("Change Stats")]
     public float reverseTimer;

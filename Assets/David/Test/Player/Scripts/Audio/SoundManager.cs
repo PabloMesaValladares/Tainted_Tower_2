@@ -112,12 +112,14 @@ public class SoundManager : MonoBehaviour
         return false;
     }
 
+    
+
     public void FadeInFadeOut(string nameIn, string nameOut)
     {
         Debug.Log("Entro");
-        AudioSource audioIn = null;
-        AudioSource audioOut = null;
-        float vol = 0;
+        AudioSource audioIn = audioControllers[0];
+        AudioSource audioOut = audioControllers[0];
+        float vol = 0.1f;
 
         if (_audios.ContainsKey(nameIn))//if exist in dictionary
         {
@@ -129,8 +131,8 @@ public class SoundManager : MonoBehaviour
                     audioControllers[i].volume = 0;
                     audioControllers[i].loop = true;
                     audioControllers[i].outputAudioMixerGroup = _audios[nameIn].mixer;
+                    audioControllers[i].Play();
                     audioIn = audioControllers[i];
-                    audioIn.Play();
                 }
             }
         }
@@ -148,12 +150,23 @@ public class SoundManager : MonoBehaviour
         }
 
 
-        while(vol < 1)
+        LowerVolume(audioIn, audioOut, vol);
+    }
+
+
+    void LowerVolume(AudioSource audIn, AudioSource audOut, float vol)
+    {
+       if(audIn.volume < _audios[audOut.clip.name].volume)
         {
             Debug.Log("Volumen es : " + vol);
-            audioIn.volume = Mathf.Lerp(0, _audios[nameIn].volume, vol);
-            audioOut.volume = Mathf.Lerp(_audios[nameOut].volume, 0, vol);
-            vol += Time.deltaTime;
+            audIn.volume += vol;
+            audOut.volume -= vol;
+            LowerVolume(audIn, audOut, vol);
+        }
+       else
+        {
+            audOut.Stop();
+            audOut.clip = null;
         }
     }
 
