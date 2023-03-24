@@ -16,6 +16,7 @@ namespace FSM
         private void Awake()
         {
             player = GameObject.FindGameObjectWithTag("Player");
+            rb = GetComponent<Rigidbody>();
         }
         private void Start()
         {
@@ -33,6 +34,7 @@ namespace FSM
 
         public void Transition(State nextState)
         {
+            currentState.RestartActions();
             currentState = nextState;
         }
     }

@@ -12,5 +12,10 @@ public class IdleAction : Action
         controller.transform.LookAt(playerPos);
     }
 
+    public override void RestartVariables()
+    {
+        
+    }
+
 }
 

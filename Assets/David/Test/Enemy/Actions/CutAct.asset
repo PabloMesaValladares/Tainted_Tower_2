@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67409a990eed17c4aa62ad2eab8316f7, type: 3}
-  m_Name: IdleTimer
+  m_Script: {fileID: 11500000, guid: 143a9c982bb605e4b9d21d9e4a37ab7f, type: 3}
+  m_Name: CutAct
   m_EditorClassIdentifier: 
-  TimerMaxTime: 1
+  dashForce: 15
+  dashUpwardForce: 0

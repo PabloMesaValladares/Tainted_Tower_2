@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67409a990eed17c4aa62ad2eab8316f7, type: 3}
-  m_Name: IdleTimer
+  m_Script: {fileID: 11500000, guid: 171eccf51c030394c9bbc88750ea7241, type: 3}
+  m_Name: AlwaysTrue
   m_EditorClassIdentifier: 
-  TimerMaxTime: 1

@@ -6,11 +6,23 @@ using FSM;
 
 public class SlashAttack : Action
 {
+    public float NoSlashes;
+    float counter = 0;
     public override void Act(Controller controller)
     {
-        GameObject attack = PoolingManager.Instance.GetPooledObject("Slash");
-        attack.transform.position = controller.gameObject.transform.position;
-        attack.GetComponent<SlashMovement>().MoveDirection(controller.player.transform.position);
-        attack.SetActive(true);
+        if(counter < NoSlashes)
+        {
+            GameObject attack = PoolingManager.Instance.GetPooledObject("Slash");
+            Debug.Log(controller.gameObject);
+            attack.transform.position = controller.gameObject.transform.position;
+            attack.GetComponent<SlashMovement>().MoveDirection(controller.player.transform.position);
+            attack.SetActive(true);
+            counter++;
+        }
+    }
+
+    public override void RestartVariables()
+    {
+        counter = 0;
     }
 }

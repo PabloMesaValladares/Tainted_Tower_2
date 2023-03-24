@@ -13,9 +13,13 @@ public class CutAttack : Action
     public delegate void Move();
     public static Move MoveEffect;
 
+    public delegate void Stop();
+    public static Stop StopEffect;
+
     public override void Act(Controller controller)
     {
         rb = controller.rb;
+        MoveEffect();
         SpeedControl();
         Vector3 forceToApply = controller.transform.forward * dashForce + controller.transform.up * dashUpwardForce;
         controller.rb.AddForce(forceToApply, ForceMode.Impulse);
@@ -30,6 +34,12 @@ public class CutAttack : Action
             Vector3 limitedVel = flatVel.normalized * dashForce;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
+    }
+
+    public override void RestartVariables()
+    {
+        StopEffect();
+        rb.velocity = Vector3.zero;
     }
 }
 

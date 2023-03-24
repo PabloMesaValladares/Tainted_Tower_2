@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc43fde62382e8d46829a39de1d7ccac, type: 3}
-  m_Name: SlashState
+  m_Name: CutState
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: e7aad8e9778112c49809c96d4759976e, type: 2}
+  - {fileID: 11400000, guid: 5a8a123313c46b5459e3112ea39ae6b4, type: 2}
   transitions:
-  - desicion: {fileID: 11400000, guid: 635944c7d697ff04d8ef720cf2940a6b, type: 2}
+  - desicion: {fileID: 11400000, guid: f589a16942c22f0438190ed4f822e887, type: 2}
     trueState: {fileID: 11400000, guid: 9bf380d25168c5a4687bf203de1f8ab8, type: 2}

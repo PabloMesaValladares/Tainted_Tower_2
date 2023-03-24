@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db8e12891e40bd439da54c2def6270d, type: 3}
   m_Name: SlashAct
   m_EditorClassIdentifier: 
-  animation: 
-  value: 0
+  NoSlashes: 1

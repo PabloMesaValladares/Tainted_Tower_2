@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 namespace FSM
 {
@@ -25,6 +26,13 @@ namespace FSM
             }
         }
 
+        public void RestartActions()
+        {
+            for (int i = 0; i < actions.Length; i++)
+            {
+                actions[i].RestartVariables();
+            }
+        }
         private void CheckTransitions(Controller controller)
         {
             for (int i = 0; i < transitions.Length; i++)
@@ -32,6 +40,7 @@ namespace FSM
                 bool decision = transitions[i].desicion.Decide(controller);
                 if(decision)
                 {
+                    transitions[i].desicion.RestartVariables();
                     controller.Transition(transitions[i].trueState);
                     return;
                 }

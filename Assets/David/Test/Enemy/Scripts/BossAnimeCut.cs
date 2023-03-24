@@ -22,6 +22,7 @@ public class BossAnimeCut : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        look = true;
         rb = GetComponent<Rigidbody>();
         //player = GameObject.FindGameObjectWithTag("Player");
         counter = 0;
@@ -31,10 +32,7 @@ public class BossAnimeCut : MonoBehaviour
     private void OnEnable()
     {
         CutAttack.MoveEffect += DoSlash;
-    }
-    private void OnDisable()
-    {
-        CutAttack.MoveEffect -= LookAround;
+        CutAttack.StopEffect += LookAround;
     }
 
 
@@ -45,7 +43,6 @@ public class BossAnimeCut : MonoBehaviour
         {
             playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             transform.LookAt(playerPos);
-            counter += Time.deltaTime;
         }
         
     }
@@ -56,12 +53,13 @@ public class BossAnimeCut : MonoBehaviour
         SpeedControl();
         Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
         rb.AddForce(forceToApply, ForceMode.Impulse);
-        Invoke(nameof(StopDash), dashCoold);
+        //Invoke(nameof(LookAround), dashCoold);
     }
 
     public void LookAround()
     {
         look = true;
+        rb.velocity = Vector3.zero;
     }
 
     private void SpeedControl()

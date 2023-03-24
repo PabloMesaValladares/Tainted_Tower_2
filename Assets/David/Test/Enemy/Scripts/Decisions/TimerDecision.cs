@@ -18,5 +18,10 @@ public class TimerDecision : Decision
             return false;
         }
     }
+
+    public override void RestartVariables()
+    {
+        counter = 0;
+    }
 }
 
