@@ -9,6 +9,7 @@ public class BossAnimeCut : MonoBehaviour
     [Header("Parameters")]
     public float attackCounter;
     [SerializeField] Vector3 playerPos;
+    [SerializeField] Vector3 posToGo;
     [Header("Debug")]
     [SerializeField] float counter;
     Rigidbody rb;
@@ -17,6 +18,7 @@ public class BossAnimeCut : MonoBehaviour
     public float dashForce;
     public float dashUpwardForce;
 
+    [SerializeField]
     bool look;
 
     // Start is called before the first frame update
@@ -32,7 +34,6 @@ public class BossAnimeCut : MonoBehaviour
     private void OnEnable()
     {
         CutAttack.MoveEffect += DoSlash;
-        CutAttack.StopEffect += LookAround;
     }
 
 
@@ -44,16 +45,22 @@ public class BossAnimeCut : MonoBehaviour
             playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             transform.LookAt(playerPos);
         }
-        
+        else
+        {
+            SpeedControl();
+            Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
+            rb.AddForce(forceToApply, ForceMode.Impulse);
+            Debug.Log(Vector3.Distance(transform.position, posToGo));
+            if (Vector3.Distance(transform.position, posToGo) < 1)
+                LookAround();
+        }
+
     }
 
     public void DoSlash()
     {
         look = false;
-        SpeedControl();
-        Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
-        rb.AddForce(forceToApply, ForceMode.Impulse);
-        //Invoke(nameof(LookAround), dashCoold);
+        posToGo = playerPos;
     }
 
     public void LookAround()

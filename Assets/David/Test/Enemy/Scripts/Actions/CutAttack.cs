@@ -19,7 +19,6 @@ public class CutAttack : Action
     public override void Act(Controller controller)
     {
         rb = controller.rb;
-        MoveEffect();
         SpeedControl();
         Vector3 forceToApply = controller.transform.forward * dashForce + controller.transform.up * dashUpwardForce;
         controller.rb.AddForce(forceToApply, ForceMode.Impulse);
@@ -38,7 +37,7 @@ public class CutAttack : Action
 
     public override void RestartVariables()
     {
-        StopEffect();
+        MoveEffect();
         rb.velocity = Vector3.zero;
     }
 }

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: SlashAct
   m_EditorClassIdentifier: 
   NoSlashes: 1
+  offset: 5
