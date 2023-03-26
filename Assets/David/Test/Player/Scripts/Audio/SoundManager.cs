@@ -114,7 +114,7 @@ public class SoundManager : MonoBehaviour
 
     
 
-    public void FadeInFadeOut(string nameIn, string nameOut)
+    public void FadeInFadeOut(string nameIn, string nameOut, float duration)
     {
         Debug.Log("Entro");
         AudioSource audioIn = audioControllers[0];
@@ -149,10 +149,22 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-
-        LowerVolume(audioIn, audioOut, vol);
+        StartCoroutine(StartFade(audioIn, audioOut, duration, audioOut.volume));
     }
 
+    public static IEnumerator StartFade(AudioSource In, AudioSource Out, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = In.volume;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            Out.volume = Mathf.Lerp(targetVolume, 0, currentTime / duration);
+            In.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
+    }
 
     void LowerVolume(AudioSource audIn, AudioSource audOut, float vol)
     {

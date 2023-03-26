@@ -50,7 +50,7 @@ public class BossAnimeCut : MonoBehaviour
             SpeedControl();
             Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
             rb.AddForce(forceToApply, ForceMode.Impulse);
-            Debug.Log(Vector3.Distance(transform.position, posToGo));
+            //Debug.Log(Vector3.Distance(transform.position, posToGo));
             if (Vector3.Distance(transform.position, posToGo) < 1)
                 LookAround();
         }

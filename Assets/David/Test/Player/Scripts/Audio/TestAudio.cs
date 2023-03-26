@@ -8,6 +8,8 @@ public class TestAudio : MonoBehaviour
     public UnityEngine.InputSystem.PlayerInput input;
     InputAction activate;
 
+    public float time;
+
     public string inAud;
     public string outAud;
 
@@ -23,7 +25,7 @@ public class TestAudio : MonoBehaviour
     {
         if(activate.triggered)
         {
-            SoundManager.instance.FadeInFadeOut(inAud, outAud);
+            SoundManager.instance.FadeInFadeOut(inAud, outAud, time);
         }
     }
 }
