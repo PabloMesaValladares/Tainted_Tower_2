@@ -12,12 +12,15 @@ public class GraphicsBehaviour : MonoBehaviour
 
     public RenderPipelineAsset[] qualityLevels;
 
+    public Camera cam;
+
     [SerializeField]
     private int frameCap;
     // Start is called before the first frame update
     void Start()
     {
        qualityOptions.value = QualitySettings.GetQualityLevel();
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -46,21 +49,27 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (qualityOptions.value == 0)
         {
+            Debug.Log("lOW");
             QualitySettings.SetQualityLevel(0);
             QualitySettings.masterTextureLimit = 3;
             QualitySettings.skinWeights = SkinWeights.TwoBones;
+            cam.farClipPlane = 100;
         }
         else if (qualityOptions.value == 1)
         {
+            Debug.Log("MED");
             QualitySettings.SetQualityLevel(1);
             QualitySettings.masterTextureLimit = 1;
             QualitySettings.skinWeights = SkinWeights.FourBones;
+            cam.farClipPlane = 200;
         }
         else if (qualityOptions.value == 2)
         {
+            Debug.Log("HIG");
             QualitySettings.SetQualityLevel(2);
             QualitySettings.masterTextureLimit = 0;
             QualitySettings.skinWeights = SkinWeights.Unlimited;
+            cam.farClipPlane = 300;
         }
     }
 
