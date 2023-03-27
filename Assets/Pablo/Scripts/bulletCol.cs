@@ -11,6 +11,9 @@ public class bulletCol : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        gameObject.SetActive(false);
+        if(collision.gameObject.layer == 8)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

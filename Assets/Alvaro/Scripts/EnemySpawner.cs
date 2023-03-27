@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    Timer timer;
+    [SerializeField] float spawnCD;
     [SerializeField] string[] pName;
     [SerializeField] Transform[] spawnPoints;
 
-    GameObject pPrefab;
-
     private void Start()
     {
-
+        timer = GetComponent<Timer>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(TryGetComponent<PlayerController>(out PlayerController player))
+        if(other.TryGetComponent(out TestController player))
         {
-            for(int i = 0; i < spawnPoints.Length; i++)
+            timer.StartTimer(spawnCD);
+            for (int i = 0; i < spawnPoints.Length; i++)
             {
-                pPrefab = PoolingManager.Instance.GetPooledObject(pName[i]);
-                pPrefab.transform.position = spawnPoints[i].position;
+                GameObject enem = PoolingManager.Instance.GetPooledObject(pName[i]);
+                enem.transform.position = spawnPoints[i].position;
+                enem.SetActive(true);
             }
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
+    }
+
+    public void ActivateCollider()
+    {
+        gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 }

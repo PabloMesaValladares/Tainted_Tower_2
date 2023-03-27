@@ -9,17 +9,18 @@ public class Bambi : MonoBehaviour
     private MovementBehavior _movement;
 
     [SerializeField]
-    private float vel, returnVel, attackVel, timeremaining, timeremainingSaved, atackTime, atackTimeSaved, dist, maxdist;
+    private float vel, attackVel, timeremaining, timeremainingSaved, atackTime, atackTimeSaved, dist, maxdist;
     [SerializeField]
-    private bool activated, farAway, fighting, attacking;
-    [SerializeField]
-    private Transform player, originalPoint;
+    private bool farAway, fighting;
     [SerializeField]
     private Vector3 oldPlayerPosition;
     [SerializeField]
-    private GameObject enemy;
+    private GameObject player;
     // Start is called before the first frame update
-
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     // Update is called once per frame
     void Update()
     {
@@ -27,19 +28,19 @@ public class Bambi : MonoBehaviour
 
         if (timeremaining <= 0)
         {
-            DistanceChecker();
+            //DistanceChecker();
             timeremaining = timeremainingSaved;
         }
-        //Volver al punto Original
+        /*Volver al punto Original
         if (farAway)
         {
             _movement.MoveVector(originalPoint.transform.position, returnVel);
         }
-
+        */
         if(fighting)
         {
             atackTime -= Time.deltaTime;
-            transform.LookAt(player);
+            transform.LookAt(oldPlayerPosition);
             
             if(atackTime <= 0)
             {
@@ -56,7 +57,7 @@ public class Bambi : MonoBehaviour
         fighting = true;
         atackTime = 0;
     }
-
+    /*
     void DistanceChecker()
     {
         dist = Vector3.Distance(originalPoint.transform.position, gameObject.transform.position);
@@ -69,15 +70,6 @@ public class Bambi : MonoBehaviour
         else
         {
             farAway = false;
-        }
-    }
-
-    /*
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.TryGetComponent<PL>(out PL _pl))
-        {
-            enemy.SetActive(false);
         }
     }
     */

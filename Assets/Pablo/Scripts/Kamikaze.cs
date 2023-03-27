@@ -5,105 +5,56 @@ using UnityEngine;
 public class Kamikaze : MonoBehaviour
 {
     [SerializeField]
-    private GroundCheck _groundedcheking;
-    [SerializeField]
     private MovementBehavior _movement;
 
     [SerializeField]
     private Rigidbody _rigid;
 
     [SerializeField]
-    private float vel, returnVel, attackVel, timeFly, timeremaining, dist, maxdist;
+    private float vel, attackVel, distanceBoom;
     [SerializeField]
-    private bool activated, flychange, farAway, fighting, attacking;
-    [SerializeField]
-    private Transform player, originalPoint;
+    private bool fighting;
     [SerializeField]
     private Vector3 oldPlayerPosition;
     [SerializeField]
-    private GameObject enemy;
+    private GameObject _boomParticles;
+
+
+    [SerializeField]
+    private GameObject player, enemy;
     // Start is called before the first frame update
     void Awake()
     {
-        _groundedcheking.GetComponent<GroundCheck>();
         _rigid.GetComponent<Rigidbody>();
-        timeremaining = timeFly;
+        enemy = this.gameObject;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeremaining -= Time.deltaTime;
-
-        //Cambios de altura
-        if(timeremaining <= 0)
-        {
-            flyChecker();
-            DistanceChecker();
-            timeremaining = timeFly;  
-        }
-        if(flychange)
-        {
-            _movement.MoveRigidBody(gameObject, Vector2.up, vel);
-        }
-        if(!flychange)
-        {
-            _movement.MoveRigidBody(gameObject, Vector2.down, vel);
-        }
-        //Volver al punto Original
-        if(farAway)
-        {
-            _movement.MoveVector(originalPoint.transform.position, returnVel);
-        }
-
         if(fighting)
-        {          
-            transform.LookAt(player);
-            _movement.MoveGameObject(gameObject, oldPlayerPosition, attackVel);
+        {
+            distanceBoom = Vector3.Distance(oldPlayerPosition, transform.position);
+
+            if(distanceBoom <= 2)
+            {
+                _boomParticles = PoolingManager.Instance.GetPooledObject("boomPar");
+                _boomParticles.transform.position = gameObject.transform.position;
+                _boomParticles.SetActive(true);
+                enemy.SetActive(false);
+            }
+
+            _rigid.AddForce(transform.forward * attackVel, ForceMode.Force);
+
         }
-    }
-
-    public void ICantFlyAnyMore()
-    {
-        _rigid.useGravity = true;
-    }
-
-    public void ICanFlyAgain()
-    {
-        _rigid.useGravity = false;
     }
 
     public void AttackCheck()
     {
-        oldPlayerPosition = new Vector3(player.transform.position.x - gameObject.transform.position.x, player.transform.position.y - gameObject.transform.position.y, player.transform.position.z - gameObject.transform.position.z);
-        fighting = true; 
-    }
-
-    void flyChecker()
-    {
-        flychange = _groundedcheking.returnCheck();
-    }
-
-    void DistanceChecker()
-    {
-        dist = Vector3.Distance(originalPoint.transform.position, gameObject.transform.position);
-        if(dist >= maxdist)
-        {
-            farAway = true;
-            transform.LookAt(originalPoint);
-            fighting = false;
-        }
-        else
-        {
-            farAway = false;
-        }
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.TryGetComponent<PL>(out PL _pl))
-        {
-            enemy.SetActive(false);
-        }
+        transform.LookAt(player.transform.position);
+        _rigid.velocity = Vector3.zero;
+        oldPlayerPosition = new Vector3(player.transform.position.x , transform.position.y, player.transform.position.z);
+        fighting = true;
     }
 }
