@@ -31,7 +31,7 @@ public class DashState : State
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;
         dashDuration = character.dashController.dashDuration;
-        dashStop = character.dashController.dashStop;
+        dashStop = 0;
         character.dashController.keepMomentum = true;
         velocity = Vector3.zero;
         previousInput = Vector3.zero;

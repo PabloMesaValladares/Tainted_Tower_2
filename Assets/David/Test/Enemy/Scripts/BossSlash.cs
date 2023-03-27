@@ -6,7 +6,6 @@ public class BossSlash : MonoBehaviour
 {
     [Header("GameObjects")]
     public GameObject player;
-    public GameObject slash;
     [Header("Parameters")]
     public float SlashAttackCounter;
     [SerializeField] Vector3 playerPos;
@@ -29,10 +28,11 @@ public class BossSlash : MonoBehaviour
 
         if (counter > SlashAttackCounter)
         {
-            GameObject attack = Instantiate(slash, transform, false);
-            attack.SetActive(true);
-            attack.transform.rotation = transform.rotation;
+            GameObject attack = PoolingManager.Instance.GetPooledObject("Slash");
+            attack.transform.position = transform.position;
+            //attack.transform.rotation = transform.rotation;
             attack.GetComponent<SlashMovement>().MoveDirection(playerPos);
+            attack.SetActive(true);
             counter = 0;
         }
         else

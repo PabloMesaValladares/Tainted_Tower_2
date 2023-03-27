@@ -13,14 +13,12 @@ public class Grappling : MonoBehaviour
     public Transform markpos;
     Transform posToGo;
     public Vector3 offset;
-    public LayerMask whatIsGrappleable;
     public LineRenderer lr;
     public float grappleFov;
     public float[] normalFov;
 
     private PlayerController controller;
     private GrappleState grappling;
-    private GrabMoveState grapplemoving;
 
     [Header("Grappling")]
     public float maxGrappleDistance;
@@ -40,7 +38,6 @@ public class Grappling : MonoBehaviour
     private PlayerInput playerInput;
     private bool grapple;
 
-    Vector3 CenterScreen;
     [SerializeField]
     Transform posToGrab;
 
@@ -52,7 +49,6 @@ public class Grappling : MonoBehaviour
 
         controller = player.GetComponent<PlayerController>();
         grappling = controller.grappling;
-        grapplemoving = controller.grapplemoving;
 
         posToGrab = null;
 
@@ -83,7 +79,7 @@ public class Grappling : MonoBehaviour
 
         if (posToGrab !=null)
         {
-            grapplePoint = posToGrab.position + offset;
+            grapplePoint = posToGrab.position + posToGrab.position * 0.1f;
             Debug.Log("Pillado");
 
             ChangeToMove();
@@ -91,7 +87,7 @@ public class Grappling : MonoBehaviour
 
             lr.enabled = true;
 
-            lr.SetPosition(1, grapplePoint);
+            lr.SetPosition(1, posToGrab.position);
         }
         else
         {
@@ -107,7 +103,7 @@ public class Grappling : MonoBehaviour
         grapplingCdTimer = grapplingCd;
 
         lr.enabled = false;
-        
+        ResetPosToGo();
     }
 
     public void ChangePosToGo(Transform pTG)

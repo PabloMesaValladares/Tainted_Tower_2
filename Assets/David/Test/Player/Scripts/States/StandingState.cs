@@ -97,7 +97,7 @@ public class StandingState : State
         if (jumpAction.triggered)
         {
             if (OnSlope())
-                Jump(jumpForce * 1.5f);
+                Jump(jumpForce * 1.25f);
             else
                 jump = true;
         }
@@ -131,8 +131,8 @@ public class StandingState : State
                 reverse = false;
         }
 
-        if (testAction.triggered)
-            ReverseControls();
+        //if (testAction.triggered)
+        //    ReverseControls();
 
         grounded = character.ground.returnCheck();
         //velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;

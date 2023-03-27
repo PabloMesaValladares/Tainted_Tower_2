@@ -138,7 +138,7 @@ public class CrouchingState : State
     {
         RaycastHit hit;
         Vector3 direction = targetPositon - character.transform.position;
-        if (Physics.Raycast(character.transform.position, direction, out hit, startYScale, character.layersToReact))
+        if (Physics.Raycast(character.transform.position, direction, out hit, startYScale, character.ground.layersToReact))
         {
             Debug.DrawRay(character.transform.position, direction * hit.distance, Color.yellow);
             return true;

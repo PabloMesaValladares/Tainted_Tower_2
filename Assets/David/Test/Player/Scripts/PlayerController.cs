@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Slope Handling")]
     public float maxSlopeAngle;
-    private RaycastHit slopeHit;
-    private bool exitingSlope;
 
     [Header("Change Stats")]
     public float reverseTimer;
@@ -74,7 +72,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Vector3 playerVelocity;
 
-    public LayerMask layersToReact;
     [HideInInspector]
     public DashController dashController;
 

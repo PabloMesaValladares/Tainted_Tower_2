@@ -50,7 +50,8 @@ public class GrabMoveState : State
 
         counter = -1;
 
-        ExecuteGrapple();
+
+        //ExecuteGrapple();
     }
     public override void HandleInput()
     {
@@ -59,6 +60,9 @@ public class GrabMoveState : State
             character.GetComponent<Grappling>().StopGrapple();
             dash = character.dashController.checkIfDash();
         }
+
+        velocityToSet = grapplePoint - character.transform.position;
+        //SpeedControl();
 
     }
     public override void LogicUpdate()
@@ -86,20 +90,47 @@ public class GrabMoveState : State
 
         dist = Vector3.Distance(grapplePoint, character.transform.position);
 
-        Debug.Log(rb.velocity);
+        Debug.Log(dist);
 
-        if (dist < 3 && character.ground.returnCheck())
+        Vector3 forceToApply = velocityToSet * dashForce + orientation.up * dashUpwardForce;
+
+        if (dist > 8)
         {
-            moving = false;
+            rb.AddForce(forceToApply, ForceMode.Force);
         }
         else
         {
-            counter += Time.deltaTime;
+            rb.velocity = character.transform.forward * dashForce;
+            if (grapplePoint.y > character.transform.position.y)
+                stateMachine.ChangeState(character.jumping); 
+            else
+                stateMachine.ChangeState(character.standing);
+            character.GetComponent<Grappling>().StopGrapple();
         }
+
+        //if (dist < 3 && character.ground.returnCheck())
+        //{
+        //    moving = false;
+        //}
+        //else
+        //{
+        //    counter += Time.deltaTime;
+        //}
     }
     public override void Exit()
     {
 
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > dashForce)
+        {
+            Vector3 limitedVel = flatVel.normalized * dashForce;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
     }
 
     private void ExecuteGrapple()

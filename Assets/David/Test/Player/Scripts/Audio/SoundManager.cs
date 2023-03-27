@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Audio;
-
 //Singleton //Un Singleton es una clase estatica que no es estatica
 
 public class SoundManager : MonoBehaviour
@@ -111,6 +110,76 @@ public class SoundManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    
+
+    public void FadeInFadeOut(string nameIn, string nameOut, float duration)
+    {
+        Debug.Log("Entro");
+        AudioSource audioIn = audioControllers[0];
+        AudioSource audioOut = audioControllers[0];
+        float vol = 0.1f;
+
+        if (_audios.ContainsKey(nameIn))//if exist in dictionary
+        {
+            for (int i = 0; i < audioControllers.Count; i++)
+            {
+                if (audioControllers[i].clip == null || !audioControllers[i].isPlaying)
+                {
+                    audioControllers[i].clip = _audios[nameIn].audioSelected;
+                    audioControllers[i].volume = 0;
+                    audioControllers[i].loop = true;
+                    audioControllers[i].outputAudioMixerGroup = _audios[nameIn].mixer;
+                    audioControllers[i].Play();
+                    audioIn = audioControllers[i];
+                }
+            }
+        }
+
+        if (_audios.ContainsKey(nameOut))//if exist in dictionary
+        {
+            for (int i = 0; i < audioControllers.Count; i++)
+            {
+                if (audioControllers[i].clip != null && audioControllers[i].isPlaying)
+                {
+                    if (audioControllers[i].clip.name == nameOut)
+                        audioOut = audioControllers[i];
+                }
+            }
+        }
+
+        StartCoroutine(StartFade(audioIn, audioOut, duration, audioOut.volume));
+    }
+
+    public static IEnumerator StartFade(AudioSource In, AudioSource Out, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = In.volume;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            Out.volume = Mathf.Lerp(targetVolume, 0, currentTime / duration);
+            In.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
+    }
+
+    void LowerVolume(AudioSource audIn, AudioSource audOut, float vol)
+    {
+       if(audIn.volume < _audios[audOut.clip.name].volume)
+        {
+            Debug.Log("Volumen es : " + vol);
+            audIn.volume += vol;
+            audOut.volume -= vol;
+            LowerVolume(audIn, audOut, vol);
+        }
+       else
+        {
+            audOut.Stop();
+            audOut.clip = null;
+        }
     }
 
     public void StopSounds()
