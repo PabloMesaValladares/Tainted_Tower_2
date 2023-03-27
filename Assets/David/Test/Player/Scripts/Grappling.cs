@@ -103,7 +103,7 @@ public class Grappling : MonoBehaviour
         grapplingCdTimer = grapplingCd;
 
         lr.enabled = false;
-        
+        ResetPosToGo();
     }
 
     public void ChangePosToGo(Transform pTG)

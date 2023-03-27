@@ -60,6 +60,6 @@ public class SlashMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Slashed");
+        //Debug.Log("Slashed");
     }
 }

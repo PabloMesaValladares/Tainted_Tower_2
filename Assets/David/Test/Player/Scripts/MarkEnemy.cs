@@ -30,6 +30,7 @@ public class MarkEnemy : MonoBehaviour
     public InputAction lookAction;
     CameraMove move;
 
+    public LayerMask notIgnore;
     public LayerMask markable;
 
     Vector3 markPosResetPos;
@@ -84,22 +85,27 @@ public class MarkEnemy : MonoBehaviour
 
         Vector3 posToGrab = Cam.transform.forward;
         //Vector3 posToGrab = Cam.ScreenToWorldPoint(new Vector3(markPos.transform.position.x, markPos.transform.position.y, Cam.nearClipPlane));
-        if (Physics.Raycast(transform.position, posToGrab, out hit, DistanceToCheck, markable))
+
+        if (Physics.Raycast(transform.position, posToGrab, out hit, DistanceToCheck, notIgnore))
         {
-            markedObject = hit.collider.gameObject;
-            HitpointerCanvas.SetActive(true);
-            NormalpointerCanvas.SetActive(false);
-            Debug.DrawRay(transform.position, hit.point, Color.green);
-            sendMarked.Invoke(markedObject.transform);
+           if(hit.collider.gameObject.layer == LayerMask.NameToLayer("GrabPoint"))
+            {
+                markedObject = hit.collider.gameObject;
+                HitpointerCanvas.SetActive(true);
+                NormalpointerCanvas.SetActive(false);
+                Debug.DrawRay(transform.position, hit.point, Color.green);
+                sendMarked.Invoke(markedObject.transform);
+            }
+            else
+            {
+                HitpointerCanvas.SetActive(false);
+                NormalpointerCanvas.SetActive(true);
+                markedObject = null;
+                Debug.DrawRay(transform.position, posToGrab, Color.black);
+                ResetMarked.Invoke();
+            }
         }
-        else
-        {
-            HitpointerCanvas.SetActive(false);
-            NormalpointerCanvas.SetActive(true);
-            markedObject = null;
-            Debug.DrawRay(transform.position, posToGrab, Color.black);
-            ResetMarked.Invoke();
-        }
+        
 
     }
 

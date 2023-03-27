@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Vector3 playerVelocity;
 
-    public LayerMask layersToReact;
     [HideInInspector]
     public DashController dashController;
 
