@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class GrabPointScript : MonoBehaviour
 {
-    GameObject player; 
+    GameObject player;
     PlayerController character;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -16,7 +15,8 @@ public class GrabPointScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        other.GetComponent<Grappling>().StopGrapple();
+        other.gameObject.GetComponentInParent<PlayerController>().rb.velocity = character.transform.forward * character.grabSpeed;
+        other.gameObject.GetComponentInParent<PlayerController>().changeState(character.jumping);
+        other.gameObject.GetComponentInParent<Grappling>().StopGrapple();
     }
 }

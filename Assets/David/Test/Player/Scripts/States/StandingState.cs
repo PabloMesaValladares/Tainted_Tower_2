@@ -113,6 +113,10 @@ public class StandingState : State
         {
             dash = character.dashController.checkIfDash();
         }
+        if(grappleAction.triggered)
+        {
+            character.GetComponent<Grappling>().StartGrapple();
+        }
         //if (attackAction.triggered)
         //    attack = true;
 
