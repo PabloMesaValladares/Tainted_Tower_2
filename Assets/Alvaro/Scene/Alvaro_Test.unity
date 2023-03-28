@@ -1272,7 +1272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1341303126}
-  - component: {fileID: 1341303125}
+  - component: {fileID: 1341303129}
   - component: {fileID: 1341303127}
   - component: {fileID: 1341303128}
   m_Layer: 0
@@ -1282,20 +1282,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1341303125
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341303124}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 10
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1341303126
 Transform:
   m_ObjectHideFlags: 0
@@ -1327,7 +1313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee6cbcbfcd7d674bab2d768786a1968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCD: 0
+  spawnCD: 10
   pName:
   - Enemi1
   - Enemi1
@@ -1365,6 +1351,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &1341303129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341303124}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 5, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1381358667
 GameObject:
   m_ObjectHideFlags: 0
