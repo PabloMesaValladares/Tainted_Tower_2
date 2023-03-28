@@ -22,6 +22,7 @@ public class GrabMoveState : State
     float counter;
     bool moving;
 
+    float lastSqrMag;
 
     private Vector3 velocityToSet;
     public GrabMoveState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
@@ -50,7 +51,9 @@ public class GrabMoveState : State
 
         counter = -1;
 
+        velocityToSet = (grapplePoint - character.transform.position).normalized * dashForce;
 
+        lastSqrMag = Mathf.Infinity;
         //ExecuteGrapple();
     }
     public override void HandleInput()
@@ -61,8 +64,16 @@ public class GrabMoveState : State
             dash = character.dashController.checkIfDash();
         }
 
-        velocityToSet = grapplePoint - character.transform.position;
         //SpeedControl();
+        float sqrMag = (grapplePoint - character.transform.position).sqrMagnitude;
+
+        if (sqrMag > lastSqrMag)
+        {
+            rb.velocity = Vector3.zero;
+            stateMachine.ChangeState(character.standing);
+            character.GetComponent<Grappling>().StopGrapple();
+        }
+        lastSqrMag = sqrMag;
 
     }
     public override void LogicUpdate()
@@ -90,23 +101,25 @@ public class GrabMoveState : State
 
         dist = Vector3.Distance(grapplePoint, character.transform.position);
 
-        Debug.Log(dist);
+        Debug.Log(lastSqrMag);
 
-        Vector3 forceToApply = velocityToSet * dashForce + orientation.up * dashUpwardForce;
+        rb.velocity = velocityToSet;
 
-        if (dist > 8)
-        {
-            rb.AddForce(forceToApply, ForceMode.Force);
-        }
-        else
-        {
-            rb.velocity = character.transform.forward * dashForce;
-            if (grapplePoint.y > character.transform.position.y)
-                stateMachine.ChangeState(character.jumping); 
-            else
-                stateMachine.ChangeState(character.standing);
-            character.GetComponent<Grappling>().StopGrapple();
-        }
+        //if (dist > 8)
+        //{
+
+        //    float step = dashForce * Time.deltaTime;
+        //    character.transform.position = Vector3.MoveTowards(character.transform.position, grapplePoint, step);
+        //}
+        //else
+        //{
+        //    rb.velocity = character.transform.forward * dashForce;
+        //    //if (grapplePoint.y > character.transform.position.y)
+        //    //    stateMachine.ChangeState(character.jumping);
+        //    //else
+        //    //    stateMachine.ChangeState(character.standing);
+        //    //character.GetComponent<Grappling>().StopGrapple();
+        //}
 
         //if (dist < 3 && character.ground.returnCheck())
         //{

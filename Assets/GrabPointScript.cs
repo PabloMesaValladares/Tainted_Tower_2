@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class GrabPointScript : MonoBehaviour
 {
-    Renderer renderer;
-    GameObject player;
-    Grappling grappling;
-    Transform mark;
+    GameObject player; 
+    PlayerController character;
 
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<Renderer>();
         player = GameObject.FindGameObjectWithTag("Player");
-        grappling = player.GetComponent<Grappling>();
-        mark = grappling.markpos;
+        character = player.GetComponent<PlayerController>();
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+
+        other.GetComponent<Grappling>().StopGrapple();
+    }
 }
