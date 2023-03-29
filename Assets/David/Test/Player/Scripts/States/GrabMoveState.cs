@@ -55,13 +55,8 @@ public class GrabMoveState : State
             dash = character.dashController.checkIfDash();
         }
 
-        Debug.Log("character sqrMag es : " + character.transform.position.sqrMagnitude);
-        Debug.Log("grapplePoint sqrMag es : " + grapplePoint.sqrMagnitude);
         //SpeedControl();
         float sqrMag = (grapplePoint - character.transform.position).sqrMagnitude;
-
-        if (character.transform.position.sqrMagnitude < grapplePoint.sqrMagnitude)
-            sqrMag = (grapplePoint - character.transform.position).sqrMagnitude;
 
         if (sqrMag > lastSqrMag)
         {

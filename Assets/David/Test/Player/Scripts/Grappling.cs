@@ -74,7 +74,7 @@ public class Grappling : MonoBehaviour
 
         if (posToGrab !=null)
         {
-            grapplePoint = posToGrab.position + player.transform.up * 1.5f;
+            grapplePoint = posToGrab.position + player.transform.up;
             Debug.Log("Pillado");
 
             ChangeToMove();
