@@ -17,17 +17,6 @@ public class SlashAttack : Action
             attack.transform.position = controller.gameObject.transform.position;
             attack.GetComponent<SlashMovement>().MoveDirection(controller.player.transform.position);
             attack.SetActive(true);
-
-            attack = PoolingManager.Instance.GetPooledObject("Slash");
-            attack.transform.position = controller.gameObject.transform.position;
-            attack.GetComponent<SlashMovement>().MoveDirection(controller.player.transform.position + controller.gameObject.transform.right * offset);
-            attack.SetActive(true);
-
-            attack = PoolingManager.Instance.GetPooledObject("Slash");
-            attack.transform.position = controller.gameObject.transform.position;
-            attack.GetComponent<SlashMovement>().MoveDirection(controller.player.transform.position + (-controller.gameObject.transform.right * offset));
-            attack.SetActive(true);
-            counter++;
         }
     }
 

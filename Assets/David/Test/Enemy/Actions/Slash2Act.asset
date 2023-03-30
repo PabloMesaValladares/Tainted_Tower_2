@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8db8e12891e40bd439da54c2def6270d, type: 3}
-  m_Name: SlashAct
+  m_Script: {fileID: 11500000, guid: 580b40c03c2b4a7469e6f238154b23ec, type: 3}
+  m_Name: Slash2Act
   m_EditorClassIdentifier: 
-  NoSlashes: 1
-  offset: 0.1
+  TimeWaitSlashes: 0.7
+  offset: 5

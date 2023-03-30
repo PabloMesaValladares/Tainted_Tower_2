@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8db8e12891e40bd439da54c2def6270d, type: 3}
-  m_Name: SlashAct
+  m_Script: {fileID: 11500000, guid: 8c0f56e7deb395e4eb9c24ed370d5c34, type: 3}
+  m_Name: ThirdPhase
   m_EditorClassIdentifier: 
-  NoSlashes: 1
-  offset: 0.1
+  LifePercentage: 25

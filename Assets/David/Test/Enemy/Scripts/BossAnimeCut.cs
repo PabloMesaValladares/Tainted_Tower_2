@@ -61,6 +61,7 @@ public class BossAnimeCut : MonoBehaviour
     {
         look = false;
         posToGo = playerPos;
+        transform.LookAt(playerPos);
     }
 
     public void LookAround()
