@@ -20,6 +20,8 @@ public class BossAnimeCut : MonoBehaviour
 
     [SerializeField]
     bool look;
+    [SerializeField]
+    float distEffEn;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +52,9 @@ public class BossAnimeCut : MonoBehaviour
             SpeedControl();
             Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
             rb.AddForce(forceToApply, ForceMode.Impulse);
+            distEffEn = Vector3.Distance(transform.position, posToGo);
             //Debug.Log(Vector3.Distance(transform.position, posToGo));
-            if (Vector3.Distance(transform.position, posToGo) < 1)
+            if (distEffEn < 1)
                 LookAround();
         }
 

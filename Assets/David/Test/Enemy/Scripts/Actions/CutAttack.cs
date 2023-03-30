@@ -13,15 +13,19 @@ public class CutAttack : Action
     public delegate void Move();
     public static Move MoveEffect;
 
-    public delegate void Stop();
-    public static Stop StopEffect;
-
+    Controller cont;
+    bool done;
     public override void Act(Controller controller)
     {
-        rb = controller.rb;
-        SpeedControl();
-        Vector3 forceToApply = controller.transform.forward * dashForce + controller.transform.up * dashUpwardForce;
-        controller.rb.AddForce(forceToApply, ForceMode.Impulse);
+        if(!done)
+        {
+            cont = controller;
+            rb = controller.rb;
+            SpeedControl();
+            Vector3 forceToApply = controller.transform.forward * dashForce + controller.transform.up * dashUpwardForce;
+            controller.rb.AddForce(forceToApply, ForceMode.Impulse);
+            done = true;
+        }
     }
 
     private void SpeedControl()
@@ -37,8 +41,10 @@ public class CutAttack : Action
 
     public override void RestartVariables()
     {
+        done = false;
         MoveEffect();
         rb.velocity = Vector3.zero;
+        cont.gameObject.transform.LookAt(cont.player.transform.position);
     }
 }
 

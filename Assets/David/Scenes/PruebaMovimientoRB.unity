@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1224,7 +1224,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4223274
+      value: 1.4222841
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -2055,7 +2055,7 @@ GameObject:
   - component: {fileID: 603346056}
   - component: {fileID: 603346055}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Slashes Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2121,8 +2121,8 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
-  m_MinParticleSize: 0.25
-  m_MaxParticleSize: 0.5
+  m_MinParticleSize: 0.5
+  m_MaxParticleSize: 1
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -3036,7 +3036,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.6
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6875,7 +6875,7 @@ Rigidbody:
   m_GameObject: {fileID: 603346051}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 4
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -6903,6 +6903,7 @@ MonoBehaviour:
   dashForce: 15
   dashUpwardForce: 0
   look: 0
+  distEffEn: 0
 --- !u!1 &615055444
 GameObject:
   m_ObjectHideFlags: 0
@@ -10612,7 +10613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529428746}
   m_LocalRotation: {x: 0.0989724, y: -0, z: -0, w: 0.9950902}
-  m_LocalPosition: {x: 1.4223274, y: 3.0895715, z: 2.0881}
+  m_LocalPosition: {x: 1.4222841, y: 3.0895715, z: 2.0881}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15834,7 +15835,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659136158}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81c4c644d56b42344bf40bf2415c90f1, type: 3}
   m_Name: 
@@ -15879,6 +15880,7 @@ MonoBehaviour:
   dashForce: 15
   dashUpwardForce: 0
   look: 0
+  distEffEn: 0
 --- !u!114 &1659136167
 MonoBehaviour:
   m_ObjectHideFlags: 0
