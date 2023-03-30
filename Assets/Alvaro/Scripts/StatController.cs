@@ -15,8 +15,8 @@ public class StatController : MonoBehaviour
     public int stamina; // vida
     public int defense;
 
-    [Header("Damage")]
-    [SerializeField] private float damage;
+    //[Header("Damage")]
+    [SerializeField] public float damage { get; private set; }
     [SerializeField] private int damageDone;
 
     private void Update()
