@@ -11,9 +11,9 @@ public class MenusController : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void LevelSelect()
+    public void LevelSelect(int i)
     {
-        SceneManager.LoadScene("mushrooms");
+        SceneManager.LoadScene(i);
     }
     public void Controls()
     {
