@@ -17,7 +17,7 @@ TagManager:
   - Scenario
   - GrabPoint
   - Bullet
-  - 
+  - UI
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1240171095
     locked: 0
