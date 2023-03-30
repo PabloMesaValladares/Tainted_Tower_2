@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
                 GameObject enem = PoolingManager.Instance.GetPooledObject(pName[i]);
                 enem.transform.position = spawnPoints[i].position;
                 enem.SetActive(true);
+                enem.GetComponent<EnemyTest>().SetSpawnPoint(spawnPoints[i]);  // Cambiar EnemyTest por el script de los enemigos
             }
             gameObject.GetComponent<BoxCollider>().enabled = false;
         }

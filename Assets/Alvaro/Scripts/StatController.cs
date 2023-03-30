@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class StatController : MonoBehaviour
 {
-    public int health;
-    public int mana;
+    public int health, mana;
 
     [Header("Equipment")]
-    public Weapon mainHand;
-    public Weapon secondaryHand;
+    public Weapon mainHand, secondaryHand;
 
     [Header("Stats")]
     public int strength; // daño fisico
