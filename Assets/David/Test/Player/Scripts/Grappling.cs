@@ -56,6 +56,11 @@ public class Grappling : MonoBehaviour
 
     private void Update()
     {
+        if (grappleAction.triggered)
+        {
+            StartGrapple();
+        }
+
 
         if (grapplingCdTimer > 0)
             grapplingCdTimer -= Time.deltaTime;
@@ -66,7 +71,7 @@ public class Grappling : MonoBehaviour
         if (grapple)
             lr.SetPosition(0, gunTip.position);
     }
-    public void StartGrapple()
+    private void StartGrapple()
     {
         if (grapplingCdTimer > 0) return;
 
@@ -74,7 +79,7 @@ public class Grappling : MonoBehaviour
 
         if (posToGrab !=null)
         {
-            grapplePoint = posToGrab.position + player.transform.up;
+            grapplePoint = posToGrab.position + posToGrab.position * 0.1f;
             Debug.Log("Pillado");
 
             ChangeToMove();
@@ -117,7 +122,7 @@ public class Grappling : MonoBehaviour
         lr.enabled = false;
 
         gameObject.transform.LookAt(new Vector3(grapplePoint.x, gameObject.transform.position.y, grapplePoint.z));
-        controller.changeState(controller.grappling);
+        controller.changeState(grappling);
     }
     public Vector3 GetGrapplePoint()
     {
