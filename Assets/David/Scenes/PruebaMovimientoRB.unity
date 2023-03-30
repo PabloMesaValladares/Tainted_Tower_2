@@ -409,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 124380228}
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 81.240005, y: 31.440002, z: 13.48}
-  m_LocalScale: {x: 1.3725029, y: 1, z: 2.3671885}
+  m_LocalScale: {x: 1.9183472, y: 1.3977, z: 3.3086193}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 560540750}
@@ -435,7 +435,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124380228}
   m_Material: {fileID: 13400000, guid: 3b80a49c17801fd4fae0cc283d3b5ed7, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -925,7 +925,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4221761
+      value: 1.4223568
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -1010,7 +1010,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781543, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_DistanceLimit
-      value: 0
+      value: 87.49
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781543, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -1025,7 +1025,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781543, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_TransparentLayers.m_Bits
-      value: 256
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781543, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -7094,7 +7094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738684972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0.51}
+  m_LocalPosition: {x: 0.77, y: -0.16, z: 0.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9762,7 +9762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529428746}
   m_LocalRotation: {x: 0.0989724, y: -0, z: -0, w: 0.9950902}
-  m_LocalPosition: {x: 1.4221761, y: 3.0895715, z: 2.0881}
+  m_LocalPosition: {x: 1.4223568, y: 3.0895715, z: 2.0881}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14688,7 +14688,7 @@ Transform:
   m_GameObject: {fileID: 1599821211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 44.24, y: 32.690002, z: -28}
-  m_LocalScale: {x: 1.3725029, y: 1, z: 2.3671885}
+  m_LocalScale: {x: 1.9183472, y: 2.9671772, z: 3.3086193}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 560540750}
@@ -14702,7 +14702,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599821211}
   m_Material: {fileID: 13400000, guid: 3b80a49c17801fd4fae0cc283d3b5ed7, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -15168,6 +15168,7 @@ MonoBehaviour:
   crouchSpeed: 10
   crouchYScale: 0.7
   startYScale: 0
+  grabSpeed: 40
   maxSlopeAngle: 40
   reverseTimer: 10
   rb: {fileID: 0}
@@ -15313,9 +15314,7 @@ MonoBehaviour:
   notIgnore:
     serializedVersion: 2
     m_Bits: 768
-  markable:
-    serializedVersion: 2
-    m_Bits: 2560
+  markable: GrabPoint
   DistanceToCheck: 100
   moveSpeed: 1
   markedObject: {fileID: 0}
@@ -15734,7 +15733,7 @@ GameObject:
   - component: {fileID: 1765601162}
   - component: {fileID: 1765601161}
   - component: {fileID: 1765601160}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: PlayerOBJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}

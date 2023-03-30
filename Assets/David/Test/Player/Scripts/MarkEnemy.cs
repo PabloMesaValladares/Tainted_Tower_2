@@ -31,7 +31,7 @@ public class MarkEnemy : MonoBehaviour
     CameraMove move;
 
     public LayerMask notIgnore;
-    public LayerMask markable;
+    public string markable;
 
     Vector3 markPosResetPos;
 
@@ -88,7 +88,7 @@ public class MarkEnemy : MonoBehaviour
 
         if (Physics.Raycast(transform.position, posToGrab, out hit, DistanceToCheck, notIgnore))
         {
-           if(hit.collider.gameObject.layer == LayerMask.NameToLayer("GrabPoint"))
+           if(hit.collider.gameObject.layer == LayerMask.NameToLayer(markable))
             {
                 markedObject = hit.collider.gameObject;
                 HitpointerCanvas.SetActive(true);

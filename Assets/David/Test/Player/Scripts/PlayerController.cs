@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public float crouchYScale;
     public float startYScale;
 
+    [Header("Grab")]
+    public float grabSpeed;
+
     [Header("Slope Handling")]
     public float maxSlopeAngle;
 
