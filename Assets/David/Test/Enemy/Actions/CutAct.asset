@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143a9c982bb605e4b9d21d9e4a37ab7f, type: 3}
   m_Name: CutAct
   m_EditorClassIdentifier: 
-  dashForce: 15
+  dashForce: 150
   dashUpwardForce: 0

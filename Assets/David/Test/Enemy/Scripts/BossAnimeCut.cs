@@ -20,6 +20,8 @@ public class BossAnimeCut : MonoBehaviour
 
     [SerializeField]
     bool look;
+    [SerializeField]
+    float distEffEn;
 
     // Start is called before the first frame update
     void Start()
@@ -40,18 +42,17 @@ public class BossAnimeCut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(look)
-        {
-            playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-            transform.LookAt(playerPos);
-        }
-        else
+        playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        transform.LookAt(playerPos);
+
+        if (!look)
         {
             SpeedControl();
             Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
             rb.AddForce(forceToApply, ForceMode.Impulse);
+            distEffEn = Vector3.Distance(transform.position, posToGo);
             //Debug.Log(Vector3.Distance(transform.position, posToGo));
-            if (Vector3.Distance(transform.position, posToGo) < 1)
+            if (distEffEn < 1)
                 LookAround();
         }
 
@@ -61,6 +62,7 @@ public class BossAnimeCut : MonoBehaviour
     {
         look = false;
         posToGo = playerPos;
+        transform.LookAt(playerPos);
     }
 
     public void LookAround()
@@ -83,5 +85,10 @@ public class BossAnimeCut : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         counter = 0;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Tocadito");
     }
 }

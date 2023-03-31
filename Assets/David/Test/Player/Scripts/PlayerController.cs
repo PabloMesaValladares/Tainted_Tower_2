@@ -117,7 +117,6 @@ public class PlayerController : MonoBehaviour
         //normalColliderHeight = controller.height;
         //gravityValue *= gravityMultiplier;
 
-
         Trail.Stop();
     }
 
