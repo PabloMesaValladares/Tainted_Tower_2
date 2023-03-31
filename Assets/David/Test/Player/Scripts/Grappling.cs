@@ -56,10 +56,10 @@ public class Grappling : MonoBehaviour
 
     private void Update()
     {
-        if (grappleAction.triggered)
-        {
-            StartGrapple();
-        }
+        //if (grappleAction.triggered)
+        //{
+        //    StartGrapple();
+        //}
 
 
         if (grapplingCdTimer > 0)
@@ -71,7 +71,7 @@ public class Grappling : MonoBehaviour
         if (grapple)
             lr.SetPosition(0, gunTip.position);
     }
-    private void StartGrapple()
+    public void StartGrapple()
     {
         if (grapplingCdTimer > 0) return;
 
@@ -122,7 +122,7 @@ public class Grappling : MonoBehaviour
         lr.enabled = false;
 
         gameObject.transform.LookAt(new Vector3(grapplePoint.x, gameObject.transform.position.y, grapplePoint.z));
-        controller.changeState(grappling);
+        controller.changeState(controller.grappling);
     }
     public Vector3 GetGrapplePoint()
     {

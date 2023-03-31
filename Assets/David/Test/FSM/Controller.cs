@@ -24,6 +24,7 @@ namespace FSM
         }
         private void Start()
         {
+            this.enabled = false;
             ActivateAI = true;//Activa la IA
         }
 

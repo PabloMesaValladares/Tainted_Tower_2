@@ -115,7 +115,10 @@ public class StandingState : State
         }
         //if (attackAction.triggered)
         //    attack = true;
-
+        if (grappleAction.triggered)
+        {
+            character.GetComponent<Grappling>().StartGrapple();
+        }
 
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
