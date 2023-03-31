@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StatController : MonoBehaviour
 {
-    public int health, mana;
+    public int health, totalMana, baseMana;
 
     [Header("Equipment")]
     public Weapon mainHand, secondaryHand;
@@ -15,8 +15,8 @@ public class StatController : MonoBehaviour
     public int stamina; // vida
     public int defense;
 
-    //[Header("Damage")]
-    [SerializeField] public float damage { get; private set; }
+    [Header("Damage")]
+    [SerializeField] public float damage;
     [SerializeField] private int damageDone;
 
     private void Update()
@@ -28,9 +28,18 @@ public class StatController : MonoBehaviour
         }*/
     }
 
-    public int CalculateDmg(int defense, int dmg)
+    public int CalculateDmgBasic(int dmg)
     {
+        strength = TotalStat(strength);
+        damage = (1 + strength * 0.2f) * (dmg / 1.50f);
 
+        damageDone = Mathf.FloorToInt(damage - defense * 0.1f);
+
+        return damageDone;
+    }
+
+    public int CalculateDmg(int dmg)
+    {
         if(mainHand.mainStatType == Weapon.Type.physical)
         {
             strength = TotalStat(strength);
@@ -39,7 +48,7 @@ public class StatController : MonoBehaviour
         else if(mainHand.mainStatType == Weapon.Type.magical)
         {
             inteligence = TotalStat(inteligence);
-            damage = (1 + inteligence * 0.2f) * (dmg / 1.50f);
+            damage = (1 + inteligence * 0.15f) * (dmg / 1.50f);
         }
 
         damageDone = Mathf.FloorToInt(damage - defense * 0.1f);
@@ -47,9 +56,15 @@ public class StatController : MonoBehaviour
         return damageDone;
     }
 
+    public void CalculateMana()
+    {
+        totalMana = Mathf.FloorToInt(baseMana + inteligence * 1.2f);
+    }
+
     public void CalculateHealth(int dmg)
     {
-        health -= dmg;
+        //health behaviour
+        //health -= dmg;
     }
 
     public int GetDefense()
