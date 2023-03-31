@@ -105,7 +105,7 @@ public class StandingState : State
         {
             crouch = true;
         }
-        if (sprintAction.triggered)
+        if (sprintAction.triggered && !character.GetComponent<StaminaController>().tired)
         {
             sprint = true;
         }
@@ -170,7 +170,7 @@ public class StandingState : State
 
         moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         moveDirection.y = 0;
-        
+
         if(mark.marking)
         {
             moveDirection = character.transform.forward.normalized * velocity.z + character.transform.right.normalized * velocity.x;

@@ -19,8 +19,10 @@ public class CutAttack : Action
     {
         if(!done)
         {
+            controller.gameObject.GetComponent<BoxCollider>().isTrigger = true;
             cont = controller;
             rb = controller.rb;
+            rb.useGravity = false;
             SpeedControl();
             Vector3 forceToApply = controller.transform.forward * dashForce + controller.transform.up * dashUpwardForce;
             controller.rb.AddForce(forceToApply, ForceMode.Impulse);
@@ -45,6 +47,8 @@ public class CutAttack : Action
         MoveEffect();
         rb.velocity = Vector3.zero;
         cont.gameObject.transform.LookAt(cont.player.transform.position);
+        cont.gameObject.GetComponent<BoxCollider>().isTrigger = false;
+        rb.useGravity = true;
     }
 }
 

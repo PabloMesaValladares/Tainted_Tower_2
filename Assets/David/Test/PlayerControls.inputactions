@@ -157,6 +157,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Ball",
+                    "type": "Button",
+                    "id": "58d1f2ac-f8d8-49be-ba79-604697894932",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -779,7 +788,7 @@
                 {
                     "name": "",
                     "id": "98e26f9c-37b8-47c9-9784-1ea635d83b95",
-                    "path": "<XInputController>/dpad/right",
+                    "path": "<DualShockGamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -850,6 +859,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Fourth",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "799808d6-fce0-460c-93e0-90e73ea2af75",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ball",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

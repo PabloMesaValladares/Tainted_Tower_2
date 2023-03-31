@@ -27,6 +27,8 @@ public class SprintState : State
     float groundDrag;
     float moveSpeed;
 
+    StaminaController stamController;
+
     public SprintState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
         character = _character;
@@ -60,7 +62,8 @@ public class SprintState : State
         groundDrag = character.groundDrag;
 
         jumpForce = character.jumpForce;
-
+        stamController = character.GetComponent<StaminaController>();
+        stamController.Reduce(true);
         character.dashController.keepMomentum = true;
     }
 
@@ -84,6 +87,10 @@ public class SprintState : State
         if (sprintAction.IsPressed() && velocity.sqrMagnitude > 0f)
         {
             sprint = true;
+        }
+        else if(stamController.ReturnStamina() < 0)
+        {
+            sprint = false;
         }
         else
         {
@@ -140,7 +147,7 @@ public class SprintState : State
         base.PhysicsUpdate();
         moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         moveDirection.y = 0;
-
+        stamController.ReduceStamina();
 
         if (OnSlope())
         {
@@ -203,5 +210,10 @@ public class SprintState : State
         character.changeState(character.falling);
     }
 
+    public override void Exit()
+    {
+        base.Exit();
+        stamController.Reduce(false);
+    }
 
 }

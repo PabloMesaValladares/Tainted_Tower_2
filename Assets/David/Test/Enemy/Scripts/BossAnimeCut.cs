@@ -42,12 +42,10 @@ public class BossAnimeCut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(look)
-        {
-            playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-            transform.LookAt(playerPos);
-        }
-        else
+        playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        transform.LookAt(playerPos);
+
+        if (!look)
         {
             SpeedControl();
             Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
@@ -87,5 +85,10 @@ public class BossAnimeCut : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         counter = 0;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Tocadito");
     }
 }
