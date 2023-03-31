@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,17 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public Rigidbody rb;
+
+    internal void Enable()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void Disable()
+    {
+        throw new NotImplementedException();
+    }
+
     public PlayerMovementBehaviour playerMovement;
 
     [Header("Damage")]
@@ -80,6 +92,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Effects")]
     public ParticleSystem Trail;
+
+    public object Controls { get; internal set; }
 
     // Start is called before the first frame update
     private void Start()
