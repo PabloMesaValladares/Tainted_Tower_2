@@ -18,6 +18,8 @@ public class FlyEnemy : MonoBehaviour
     private float vel, velFly, timeFly, timeremaining, distAttack, maxdistAttack;
     [SerializeField]
     private bool flychange, inRange;
+    [SerializeField]
+    private Vector3 directionSet;
 
 
     // Start is called before the first frame update
@@ -50,7 +52,7 @@ public class FlyEnemy : MonoBehaviour
         {
             _movement.MoveRigidBody(gameObject, Vector2.down, velFly);
         }
-
+        
         if(inRange == true)
         {
             if (distAttack >= maxdistAttack)
@@ -75,6 +77,7 @@ public class FlyEnemy : MonoBehaviour
         flychange = _groundedcheking.returnCheck();
     }
 
+    
     void DistanceAttackChecker()
     {
         distAttack = Vector3.Distance(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), gameObject.transform.position);
@@ -85,4 +88,8 @@ public class FlyEnemy : MonoBehaviour
         inRange = true;
     }
 
+    public void DistanceCheckFalse()
+    {
+        inRange = false;
+    }
 }

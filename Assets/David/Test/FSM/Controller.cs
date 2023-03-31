@@ -10,8 +10,12 @@ namespace FSM
         public State currentState;//Apuntador al estado actual
 
         public GameObject player;
+        public GameObject enemy;
         [HideInInspector]
         public Rigidbody rb;
+
+        public bool detect;
+
         public bool ActivateAI { get; set; }
         private void Awake()
         {
@@ -36,6 +40,11 @@ namespace FSM
         {
             currentState.RestartActions();
             currentState = nextState;
+        }
+
+        public void Detecting(bool d)
+        {
+            detect = d;
         }
     }
 }

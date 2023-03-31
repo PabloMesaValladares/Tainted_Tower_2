@@ -29,14 +29,19 @@ public class SlashMovement : MonoBehaviour
 
             if (counter > 10)
             {
-                rb.velocity = Vector3.zero;
-                move = false;
-                gameObject.SetActive(false);
+                ResetMovement();
             }
         }
         
         
         
+    }
+
+    public void ResetMovement()
+    {
+        rb.velocity = Vector3.zero;
+        move = false;
+        gameObject.SetActive(false);
     }
 
     private void SpeedControl()
@@ -51,6 +56,7 @@ public class SlashMovement : MonoBehaviour
     }
     public void MoveDirection(Vector3 direction)
     {
+        Debug.Log("Direccion es " + direction);
         //rb.velocity = Vector3.zero;
         directionToGo = direction;
         move = true;
