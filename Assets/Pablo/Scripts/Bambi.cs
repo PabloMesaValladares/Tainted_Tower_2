@@ -15,6 +15,8 @@ public class Bambi : MonoBehaviour
     [SerializeField]
     private Vector3 oldPlayerPosition;
     [SerializeField]
+    private Vector3 thisPos;
+    [SerializeField]
     private GameObject player;
     // Start is called before the first frame update
     private void Awake()
@@ -25,6 +27,7 @@ public class Bambi : MonoBehaviour
     void Update()
     {
         timeremaining -= Time.deltaTime;
+        oldPlayerPosition = new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z);
 
         if (timeremaining <= 0)
         {
@@ -40,15 +43,17 @@ public class Bambi : MonoBehaviour
         if(fighting)
         {
             atackTime -= Time.deltaTime;
-            transform.LookAt(oldPlayerPosition);
+            //transform.LookAt(oldPlayerPosition);
             
             if(atackTime <= 0)
             {
-                oldPlayerPosition = new Vector3(player.transform.position.x - gameObject.transform.position.x, gameObject.transform.position.y, player.transform.position.z - gameObject.transform.position.z);
+                thisPos = transform.position;
+                //oldPlayerPosition = new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z);
                 atackTime = atackTimeSaved;
             }
 
-            _movement.MoveGameObject(gameObject, oldPlayerPosition, attackVel);
+            _movement.MoveVector(oldPlayerPosition, attackVel);
+            //_movement.MoveGameObject(gameObject,oldPlayerPosition,attackVel);
         }
     }
 

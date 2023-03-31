@@ -41,6 +41,11 @@ public class MovementBehavior : MonoBehaviour
         f.transform.position +=  g * vel * Time.deltaTime;
     }
 
+    public void MoveGameObject(Vector3 g, float vel)
+    {
+        transform.position += g * vel * Time.deltaTime;
+    }
+
     //Esto es solo para los followers.
     public void MoveVector(Vector3 g, float vel)
     {

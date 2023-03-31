@@ -22,7 +22,7 @@ public class MistEffect : MonoBehaviour
 
     void OnParticleCollision(GameObject lala) //esto sera para poner los controles inversos.
     {
-        if (lala.TryGetComponent<PL>(out PL _pl))
+        if (lala.TryGetComponent<PlayerController>(out PlayerController _playerController))
         {
             lala.SetActive(false);
             Debug.Log("LA VIDA ES UNA TOMBOLA, TO TO TO TOMBOLA, DE LUZ Y DE COLOOOOOOOOOR, DE LUZ Y DE COLOOOOOOOR");
