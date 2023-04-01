@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
         playerMovement = GetComponent<PlayerMovementBehaviour>();
 
         movementSM.Initialize(standing);
-        Screen.lockCursor = true;
+        //Screen.lockCursor = true;
         //normalColliderHeight = controller.height;
         //gravityValue *= gravityMultiplier;
 

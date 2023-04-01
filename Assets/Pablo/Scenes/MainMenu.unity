@@ -8231,7 +8231,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1166317126}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
         m_MethodName: ChangeScreen
         m_Mode: 1
@@ -11180,7 +11180,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1166317126}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
         m_MethodName: ChangeResolution
         m_Mode: 1
@@ -14612,7 +14612,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1166317126}
         m_TargetAssemblyTypeName: GraphicsBehaviour, Assembly-CSharp
         m_MethodName: ChangeFrames
         m_Mode: 1
