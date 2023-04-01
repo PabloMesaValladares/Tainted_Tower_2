@@ -1495,7 +1495,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0785334
+      value: 1.4220676
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -10979,7 +10979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529428746}
   m_LocalRotation: {x: 0.0989724, y: -0, z: -0, w: 0.9950902}
-  m_LocalPosition: {x: -1.0785334, y: 3.089572, z: -12.161901}
+  m_LocalPosition: {x: 1.4220676, y: 3.0895715, z: 2.0881}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16601,7 +16601,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   speedDampTime: 0.1
   velocityDampTime: 0.9
-  rotationDampTime: 0.193
+  rotationDampTime: 0.15
   airControl: 0.5
   movementSM: {fileID: 0}
   gravityValue: -8
@@ -16684,7 +16684,7 @@ MonoBehaviour:
   normalFov: []
   maxGrappleDistance: 40
   grappleDelayTime: 2
-  overshootYAxis: 5
+  overshootYAxis: 2
   grappleDuration: 10
   grapplingCd: 0
   grappleAction:
@@ -16808,7 +16808,8 @@ MonoBehaviour:
   stamina: 0
   StaminaSlider: {fileID: 71612487}
   tired: 0
-  offset: {x: -2.24, y: 0, z: 0}
+  offset: {x: -1.5, y: 0, z: 0}
+  speedDampTime: 0.394
   Fill: {fileID: 1683586972}
   FullFillColor: {r: 0.08923691, g: 0.8867924, b: 0.37250984, a: 1}
   MediumFillColor: {r: 1, g: 0.80746645, b: 0.40251565, a: 1}

@@ -79,7 +79,7 @@ public class Grappling : MonoBehaviour
 
         if (posToGrab !=null)
         {
-            grapplePoint = posToGrab.position + posToGrab.position * 0.1f;
+            grapplePoint = posToGrab.position + transform.up * overshootYAxis;
             Debug.Log("Pillado");
 
             ChangeToMove();
