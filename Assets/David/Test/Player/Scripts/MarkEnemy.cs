@@ -28,7 +28,6 @@ public class MarkEnemy : MonoBehaviour
     public InputAction markAction;
     [HideInInspector]
     public InputAction lookAction;
-    CameraMove move;
 
     public LayerMask notIgnore;
     public LayerMask markable;
@@ -105,7 +104,14 @@ public class MarkEnemy : MonoBehaviour
                 ResetMarked.Invoke();
             }
         }
-        
+        else
+        {
+            HitpointerCanvas.SetActive(false);
+            NormalpointerCanvas.SetActive(true);
+            markedObject = null;
+            Debug.DrawRay(transform.position, posToGrab, Color.black);
+            ResetMarked.Invoke();
+        }
 
     }
 
