@@ -5,15 +5,15 @@ Shader "IFP/Shader05"
         _MainTex("Texture", 2D) = "white" {}
         MaxDistance("MaxDistance", float) = 0
         _Amount("Amount", Range(0.0,1.0)) = 0
-        _Transparency("Transparency", Range(0.0,1.0)) = 0.25
-        ColorTest("ColorTest", Color) = (0,0,0,0)
-		
+        _Transparency("Transparency", Range(0.0,0.5)) = 0.25
+
     }
         SubShader
         {
-            Tags { "Queue"="Transparent" "RenderType"="Transparent" }
-			Blend SrcAlpha OneMinusSrcAlpha
-			AlphaTest Greater 0.1
+            Tags { "Queue" = "Transparent" "RenderType" = "Opaque" }
+			LOD 100
+			//ZWrite Off
+			//Blend SrcAlpha OneMinusSrcAlpha
 			
             Pass
             {
@@ -40,7 +40,6 @@ Shader "IFP/Shader05"
                 float MaxDistance;
                 float _Amount;
 				float _Transparency;
-				float4 ColorTest;
 
                 VSOutput VShader(VSInput i)
                 {
@@ -54,6 +53,13 @@ Shader "IFP/Shader05"
 
                     float4 positionS = mul(UNITY_MATRIX_P, positionC);
 
+                    if (distance(positionC, positionW) < MaxDistance)
+                    {
+                        distanceCP = (MaxDistance - distance(positionC, positionW)) / MaxDistance;
+                    }
+                    else
+                        distanceCP = 0;
+
                     o.position = positionS;
                     o.uv = i.uv;
 
@@ -65,11 +71,8 @@ Shader "IFP/Shader05"
                     fixed4 texColor = tex2D(_MainTex, i.uv);
 
                     fixed4 texColorHide = texColor;
-					
-                    fixed4 texColorBase = ColorTest;
-					
+                    fixed4 texColorBase = texColor;
 					texColorHide.a = _Transparency;
-					
                     texColor.a = lerp(texColorBase, texColorHide, _Amount);
 
                     return texColor;
