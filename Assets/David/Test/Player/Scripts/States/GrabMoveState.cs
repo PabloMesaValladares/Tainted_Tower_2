@@ -94,7 +94,7 @@ public class GrabMoveState : State
 
         Vector3 forceToApply = velocityToSet * dashForce + orientation.up * dashUpwardForce;
 
-        if (dist > 8)
+        if (dist > 20)
         {
             rb.AddForce(forceToApply, ForceMode.Force);
         }
