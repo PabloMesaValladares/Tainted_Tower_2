@@ -31,11 +31,10 @@ public class MarkEnemy : MonoBehaviour
 
     public LayerMask notIgnore;
     public LayerMask markable;
+    float markedLayer;
 
-    Vector3 markPosResetPos;
 
     public float DistanceToCheck;
-    public float moveSpeed;
     public GameObject markedObject;
 
 
@@ -56,12 +55,15 @@ public class MarkEnemy : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         Cam = Camera.main;
         HitpointerCanvas.SetActive(false);
+
+        var rawValue = markable.value;
+        var layerValue = Mathf.Log(rawValue, 2);
+        markedLayer = layerValue;
     }
 
     // Update is called once per frame
     void Update()
     {
-        markPosResetPos = transform.position + (transform.forward * DistanceToCheck);
         marking = markAction.IsPressed();
 
         if(marking)
@@ -87,7 +89,7 @@ public class MarkEnemy : MonoBehaviour
 
         if (Physics.Raycast(transform.position, posToGrab, out hit, DistanceToCheck, notIgnore))
         {
-           if(hit.collider.gameObject.layer == LayerMask.NameToLayer("GrabPoint"))
+            if (hit.collider.gameObject.layer == markedLayer)
             {
                 markedObject = hit.collider.gameObject;
                 HitpointerCanvas.SetActive(true);
