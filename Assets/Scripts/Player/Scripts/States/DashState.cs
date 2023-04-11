@@ -86,14 +86,9 @@ public class DashState : State
             //character.animator.SetTrigger("move");
             character.dashController.LastDashSpeed = forceToApply;
 
-            if (character.dashController.previousSpeed == character.sprintSpeed)
-            {
-                Debug.Log("Vuelvo a esprintar");
-                stateMachine.ChangeState(character.sprinting);
-            }
-            else
-                stateMachine.ChangeState(character.standing);
-            
+            stateMachine.ChangeState(stateMachine.previousState);
+
+
         }
     }
     public override void Exit()

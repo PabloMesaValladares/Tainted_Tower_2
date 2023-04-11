@@ -9,14 +9,14 @@ public class MouseController : MonoBehaviour
     public PlayerInput playerInput;
     public CinemachineVirtualCamera NormalCamera;
     public CinemachineVirtualCamera AimCamera;
+    public GameObject pauseMenu;
 
-
-    InputAction Unlock;
+    InputAction activate;
 
     // Start is called before the first frame update
     void Start()
     {
-        Unlock = playerInput.actions["Unlock"];
+        activate = playerInput.actions["Unlock"];
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -25,18 +25,31 @@ public class MouseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Unlock.IsPressed())
+        if(activate.IsPressed())
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            NormalCamera.GetComponent<CinemachineInputProvider>().enabled = false;
-            AimCamera.GetComponent<CinemachineInputProvider>().enabled = false;
+            Lock();
+        }
+        else if(pauseMenu.activeInHierarchy)
+        {
+            Lock();
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            NormalCamera.GetComponent<CinemachineInputProvider>().enabled = AimCamera.GetComponent<CinemachineInputProvider>().enabled = true;
+            Unlock();
         }
+    }
+
+    void Lock()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        NormalCamera.GetComponent<CinemachineInputProvider>().enabled = false;
+        AimCamera.GetComponent<CinemachineInputProvider>().enabled = false;
+    }
+    void Unlock()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        NormalCamera.GetComponent<CinemachineInputProvider>().enabled = AimCamera.GetComponent<CinemachineInputProvider>().enabled = true;
     }
 }

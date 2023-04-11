@@ -39,6 +39,7 @@ public class StandingState : State
     MarkEnemy mark;
 
     float jumpForce;
+    float slopeAngle;
     public StandingState(PlayerController _character, StateMachine _stateMachine):base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -97,7 +98,7 @@ public class StandingState : State
         if (jumpAction.triggered)
         {
             if (OnSlope())
-                Jump(jumpForce * 1.25f);
+                Jump(jumpForce * (slopeAngle / maxSlopeAngle));
             else
                 jump = true;
         }
@@ -222,7 +223,10 @@ public class StandingState : State
         if (Physics.Raycast(character.transform.position, Vector3.down, out slopeHit, playerHeight * 1.5f + 0.3f))
         {
             Debug.DrawRay(character.transform.position, Vector3.down * (playerHeight * 0.5f + 0.3f), Color.yellow);
-            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal); 
+            slopeAngle = angle;
+            if (angle > maxSlopeAngle)
+                slopeAngle = maxSlopeAngle;
             return angle < maxSlopeAngle && angle != 0;
         }
 
