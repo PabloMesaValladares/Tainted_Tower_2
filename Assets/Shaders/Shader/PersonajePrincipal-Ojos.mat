@@ -13,7 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
-  - _TEX_ON
+  - _ALPHATEST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a687774c59b227d41b55afa776332be1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -90,16 +90,17 @@ Material:
     - PlayerDistanceX: 0
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
-    - _AlphaClip: 0
-    - _Amount: 0.005754153
+    - _AlphaClip: 1
+    - _Amount: 0.0076695285
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
+    - _BlendOp: 0
     - _Brightness: 1
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DetailTex: 1
@@ -115,6 +116,7 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _SampleGI: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -122,7 +124,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _TintColor: 0
-    - _Transparency: 0.84
+    - _Transparency: 0.953
     - _VertexColor: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
