@@ -14,6 +14,8 @@ public class StaminaController : MonoBehaviour
     bool reducing;
     public bool tired;
     public Vector3 offset;
+    [Range(0, 1)]
+    public float speedDampTime = 0.1f;
 
     [Header("Color")]
     public Image Fill;
@@ -35,7 +37,8 @@ public class StaminaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StaminaSlider.transform.position = Camera.main.WorldToScreenPoint(transform.position + offset);
+
+        StaminaSlider.transform.position = Vector3.Lerp(StaminaSlider.transform.position, Camera.main.WorldToScreenPoint(transform.position + offset), speedDampTime);
         if (stamina != MaxStamina)
         {
             StaminaSlider.value = stamina / 100;
