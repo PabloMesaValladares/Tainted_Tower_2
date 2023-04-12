@@ -98,7 +98,7 @@ public class StandingState : State
         if (jumpAction.triggered)
         {
             if (OnSlope())
-                Jump(jumpForce * (slopeAngle / maxSlopeAngle));
+                Jump(jumpForce + (slopeAngle / maxSlopeAngle));
             else
                 jump = true;
         }

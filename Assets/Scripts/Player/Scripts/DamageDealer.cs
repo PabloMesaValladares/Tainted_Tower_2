@@ -7,6 +7,8 @@ public class DamageDealer : MonoBehaviour
     bool canDealDamage;
     List<GameObject> hasDealtDamage;
 
+    StatController stats;
+
     public LayerMask layersToReact;
     [SerializeField] float weaponLength;
     [SerializeField] float weaponDamage;
@@ -14,6 +16,7 @@ public class DamageDealer : MonoBehaviour
     {
         canDealDamage = false;
         hasDealtDamage = new List<GameObject>();
+        stats = GetComponent<StatController>();
     }
 
     void Update()
@@ -27,7 +30,7 @@ public class DamageDealer : MonoBehaviour
                 if (hit.transform.TryGetComponent(out Enemy enemy) && !hasDealtDamage.Contains(hit.transform.gameObject))
                 {
                     Debug.Log(enemy.name);
-                    enemy.TakeDamage(weaponDamage);
+                    enemy.TakeDamage(stats.CalculateDmg(stats.mainHand.damage, enemy.GetComponent<StatController>().defense));
                     hasDealtDamage.Add(hit.transform.gameObject);
                 }
             }

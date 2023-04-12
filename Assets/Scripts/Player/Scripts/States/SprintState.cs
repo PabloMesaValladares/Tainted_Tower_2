@@ -26,6 +26,7 @@ public class SprintState : State
     float maxSlopeAngle;
     float groundDrag;
     float moveSpeed;
+    float slopeAngle;
 
     StaminaController stamController;
 
@@ -78,11 +79,13 @@ public class SprintState : State
         grounded = character.ground.returnCheck(); 
         SpeedControl();
 
+
         if (jumpAction.triggered)
         {
-            Debug.Log("Salte");
-            jump = true;
-
+            if (OnSlope())
+                Jump(jumpForce + (slopeAngle / maxSlopeAngle));
+            else
+                jump = true;
         }
         if (sprintAction.IsPressed() && velocity.sqrMagnitude > 0f)
         {
@@ -108,10 +111,6 @@ public class SprintState : State
     {
         base.LogicUpdate();
 
-        if (jump)
-        {
-            Jump();
-        }
 
         if (sprint)
         {
@@ -182,6 +181,9 @@ public class SprintState : State
         if (Physics.Raycast(character.transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
         {
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            slopeAngle = angle;
+            if (angle > maxSlopeAngle)
+                slopeAngle = maxSlopeAngle;
             return angle < maxSlopeAngle && angle != 0;
         }
 
@@ -196,16 +198,14 @@ public class SprintState : State
 
     float jumpForce;
 
-    void Jump()
+    void Jump(float jumpF)
     {
         rb.drag = 0;
 
         SpeedControl();
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        rb.AddForce(character.transform.up * jumpForce, ForceMode.Impulse);
-
-
+            rb.AddForce(character.transform.up * jumpF, ForceMode.Impulse);
 
         character.changeState(character.falling);
     }
