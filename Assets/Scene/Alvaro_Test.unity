@@ -393,9 +393,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187851175}
-  - component: {fileID: 187851174}
-  - component: {fileID: 187851176}
   - component: {fileID: 187851177}
+  - component: {fileID: 187851178}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -403,23 +402,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &187851174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187851173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24aa939dfe46cfc41a70ee1bd6ff9b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack:
-  - {fileID: 11400000, guid: 5d5203321619f4c49909d8eca78a2ea2, type: 2}
-  - {fileID: 11400000, guid: cdde3a86e3f2c454f9b34785154efb79, type: 2}
-  index: 0
-  random: 0
 --- !u!4 &187851175
 Transform:
   m_ObjectHideFlags: 0
@@ -435,18 +417,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &187851176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187851173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92aa907c9553b2f47828d0ff010c4d9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &187851177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +448,23 @@ MonoBehaviour:
   m_DefaultActionMap: New action map
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &187851178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187851173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7677ba883899f2848bf0e47ab7b0f7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 11400000, guid: 1a8c421c9f2898246a3a915c06a9b4cb, type: 2}
+  player: {fileID: 0}
+  enemy: {fileID: 0}
+  rb: {fileID: 0}
+  detect: 0
 --- !u!1 &229399123
 GameObject:
   m_ObjectHideFlags: 0
