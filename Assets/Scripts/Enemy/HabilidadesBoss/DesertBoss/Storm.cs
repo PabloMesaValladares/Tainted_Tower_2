@@ -7,7 +7,6 @@ public class Storm : MonoBehaviour
     public bool firstHit;
     public float tickInterval;
     public float stormDuration;
-    GameObject _go;
     HealthBehaviour _playerHB;
     Timer _timer;
     new Collider collider;
@@ -15,8 +14,6 @@ public class Storm : MonoBehaviour
     private void Awake()
     {
         collider = GetComponent<Collider>();
-        _go = GameObject.FindGameObjectWithTag("Player");
-        _playerHB = _go.GetComponent<HealthBehaviour>();
         _timer = GetComponent<Timer>();
     }
 
@@ -24,8 +21,6 @@ public class Storm : MonoBehaviour
     {
         collider.enabled = false;
         firstHit = true;
-
-        transform.position = _go.transform.position;
 
         _timer.StartTimer(stormDuration);
 
@@ -51,7 +46,6 @@ public class Storm : MonoBehaviour
     {
         if(firstHit)
         {
-            _playerHB.Hurt(250);
             firstHit = false;
         }
 
@@ -60,7 +54,6 @@ public class Storm : MonoBehaviour
 
     IEnumerator DamageTick()
     {
-        _playerHB.Hurt(10);
         yield return new WaitForSeconds(tickInterval);
         DamageOverTime();
     }

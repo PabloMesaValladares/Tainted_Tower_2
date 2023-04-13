@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc43fde62382e8d46829a39de1d7ccac, type: 3}
+  m_Name: P2IdleState
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: f06a72ee7f55c374ab348aea1c1b2338, type: 2}
+  transitions:
+  - desicion: {fileID: 11400000, guid: 588aefbb6a46028458461d3fdf8feebd, type: 2}
+    trueState: {fileID: 11400000, guid: 0f4ba5214b30af149b33f6f563e72603, type: 2}
+  - desicion: {fileID: 11400000, guid: 6d321295b4ff0f64f8e522fbc3af6280, type: 2}
+    trueState: {fileID: 11400000, guid: 686762798ea7e654a85844fbd3db227b, type: 2}
