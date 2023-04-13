@@ -7,7 +7,8 @@ using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
-    [SerializeField]GameObject[] Slots;
+    [SerializeField] GameObject[] Slots;
+    [SerializeField]GameObject[] QuickSlots;
     [SerializeField] Sprite[] itemImage;
     [SerializeField] string[] itemName;
     [SerializeField] string[] desc;
@@ -28,6 +29,8 @@ public class InventoryManager : MonoBehaviour
     InputAction firstSlot, secondSlot, thirdSlot, fourthSlot;
     InventorySelector selector;
 
+    public Item selectedItem;
+
     private void Awake()
     {
         _instance = this;
@@ -44,6 +47,29 @@ public class InventoryManager : MonoBehaviour
             items.Add(itemName[i], item);
             itemsImageSearch.Add(itemName[i], itemImage[i]);
         }
+
+        for(int i = 0; i< QuickSlots.Length; i ++)
+        {
+            QuickSlots[i].GetComponent<Item>().itemName = null;
+            QuickSlots[i].GetComponent<Item>().Num = 0;
+            //QuickSlots[i].GetComponentInChildren<InventoryNum>().UpdateText();
+            QuickSlots[i].SetActive(false);
+
+        }
+        for (int i = 0; i < Slots.Length; i++)
+        {
+            if(Slots[i].GetComponent<Item>().itemName != null)
+            {
+                Slots[i].GetComponent<Image>().sprite = itemsImageSearch[Slots[i].GetComponent<Item>().itemName];
+                //Slots[i].GetComponentInChildren<InventoryNum>().UpdateText();
+            }
+            else
+            {
+                Slots[i].SetActive(false);
+            }
+
+        }
+
         //itemNotice.SetActive(false);
         itemAdded = false;
 
@@ -58,16 +84,16 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         if(firstSlot.triggered)
-            selector.ChangeColor(Slots[0]);
+            selector.ChangeColor(QuickSlots[0]);
         if (secondSlot.triggered)
-            selector.ChangeColor(Slots[1]);
+            selector.ChangeColor(QuickSlots[1]);
         if (thirdSlot.triggered)
-            selector.ChangeColor(Slots[2]);
+            selector.ChangeColor(QuickSlots[2]);
         if (fourthSlot.triggered)
-            selector.ChangeColor(Slots[3]);
+            selector.ChangeColor(QuickSlots[3]);
     }
 
-    public void UpdateSlot(string name)
+    public void UpdateSlot(Item itemGot)
     {
         GameObject slot = null;
         if (!itemAdded)
@@ -75,20 +101,39 @@ public class InventoryManager : MonoBehaviour
 
         if (slot != null)
         {
-           
             //noticeText.text = TextsManager.instance.GetText("Got_Item");
             //itemText.text = TextsManager.instance.GetText(name);
-            itemNotice.SetActive(true);
-            GameObject parent = slot.GetComponentInParent<Image>().gameObject;
-            parent.name = name;
+            //itemNotice.SetActive(true);
+            GameObject parent = slot.GetComponentInParent<Slot>().gameObject;
+            InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
+            slot.GetComponent<Item>().itemName = itemGot.itemName;
+            slot.GetComponent<Item>().Num = itemGot.Num;
+            slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
             parent.GetComponent<Slot>().item = slot.GetComponent<Item>();
-            slot.GetComponent<Item>().itemName = items[name].itemName;
-            slot.GetComponent<Image>().sprite = itemsImageSearch[name];
+            child.item = slot.GetComponent<Item>();
+            //child.UpdateText();
+            parent.name = itemGot.itemName;
             slot.SetActive(true); 
             //GameManager.instance.NotificationOn();
         }
     }
 
+    public void UpdateQuickSlot(Item itemGot, int id)
+    {
+
+        GameObject slot = QuickSlots[id];
+
+        GameObject parent = slot.GetComponentInParent<Slot>().gameObject;
+        InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
+        slot.GetComponent<Item>().itemName = itemGot.itemName;
+        slot.GetComponent<Item>().Num = itemGot.Num;
+        slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
+        parent.GetComponent<Slot>().item = slot.GetComponent<Item>();
+        child.item = slot.GetComponent<Item>();
+        //child.UpdateText();
+        parent.name = itemGot.itemName;
+        slot.SetActive(true);
+    }
     public GameObject getFreeSlot()
     {
         for(int i = 0; i < Slots.Length; i++)

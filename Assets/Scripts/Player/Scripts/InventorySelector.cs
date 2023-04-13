@@ -31,7 +31,7 @@ public class InventorySelector : MonoBehaviour
             InventoryManager.instance.itemSelected = false;
             InventoryManager.instance.itemSelectedString = null;
             Slot.GetComponent<Image>().color = Color.white;
-            CraftingManager.instance.ClearCurrentItem();
+            //CraftingManager.instance.ClearCurrentItem();
         }
     }
 }
