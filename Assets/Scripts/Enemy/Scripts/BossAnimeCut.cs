@@ -21,7 +21,10 @@ public class BossAnimeCut : MonoBehaviour
     [SerializeField]
     bool look;
     [SerializeField]
+    bool touched;
+    [SerializeField]
     float distEffEn;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +66,7 @@ public class BossAnimeCut : MonoBehaviour
         look = false;
         posToGo = playerPos;
         transform.LookAt(playerPos);
+        touched = false;
     }
 
     public void LookAround()
@@ -89,6 +93,10 @@ public class BossAnimeCut : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        if (!touched)
+            other.GetComponentInParent<HealthBehaviour>().Hurt(damage);
+
+        touched = true;
         Debug.Log("Tocadito");
     }
 }
