@@ -86,10 +86,7 @@ public class FallState : State
         if (grounded)
         {
             //character.animator.SetTrigger("move");
-            if (character.dashController.keepMomentum)
-                stateMachine.ChangeState(character.sprinting);
-            else
-                stateMachine.ChangeState(character.standing);
+            stateMachine.ChangeState(stateMachine.previousState);
         }
 
 

@@ -82,7 +82,6 @@ public class PlayerController : MonoBehaviour
     public UnityEngine.InputSystem.PlayerInput playerInput;
     [HideInInspector]
     public Transform cameraTransform;
-    [HideInInspector]
     public Animator animator;
     [HideInInspector]
     public Vector3 playerVelocity;
@@ -101,7 +100,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        //animator = GetComponent<Animator>();
         playerInput = GetComponent<UnityEngine.InputSystem.PlayerInput>();
         cameraTransform = Camera.main.transform;
 

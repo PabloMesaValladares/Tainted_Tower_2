@@ -28,6 +28,7 @@ public class DashJumpingState : State
         base.Enter();
         grounded = false;
 
+        character.animator.SetTrigger("dash");
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;
         dashDuration = character.dashController.dashDuration;
