@@ -15,11 +15,9 @@ public class MobTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.TryGetComponent<PlayerController>(out PlayerController _playerController))
-        {
-            ActivateMob.Invoke();
-            Debug.Log("Ha Entrado");
-        }
+
+        ActivateMob.Invoke();
+        Debug.Log("Ha Entrado");
     }
 
     private void OnTriggerExit(Collider collision)
