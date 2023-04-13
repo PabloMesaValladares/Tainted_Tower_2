@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 943809310501735086}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &553694692632877913
 SphereCollider:
@@ -73,10 +73,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2670656679931934712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c6384a85d4630d4fbcf608a8e31222f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e8f41c3081ffc24e9e8e6e11ba925ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpellToCast: {fileID: 11400000, guid: 028dc0fe7d582b344a582aa400517125, type: 2}
+  SpellToCast: {fileID: 11400000, guid: d7422a0cfa49e6c49832a06acf8ec04e, type: 2}
 --- !u!1 &4561103097727974628
 GameObject:
   m_ObjectHideFlags: 0
