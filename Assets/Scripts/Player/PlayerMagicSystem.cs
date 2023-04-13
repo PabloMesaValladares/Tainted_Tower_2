@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 
 public class PlayerMagicSystem : MonoBehaviour
 {
-    /*[SerializeField] private Spell spellToCast;
+    [SerializeField] private Spell spellToCast;
 
     [SerializeField] private float maxMana = 100f;
     [SerializeField] private float currentMana;
@@ -18,29 +19,29 @@ public class PlayerMagicSystem : MonoBehaviour
 
     private bool castingMagic = false;
 
-    private PlayerController playerControls;
-    
+    PlayerInput playerControls;
+
+    InputAction ShootBall;
 
     private void Awake()
     {
-        playerControls = new PlayerController();
+        playerControls = GetComponent<PlayerInput>();
+
+        ShootBall = playerControls.actions["Ball"];
     }
 
     private void OnEnable()
     {
-        playerControls.Enable();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
-
         currentMana = maxMana;
     }
 
     private void Update()
     {
-        bool isSpellCastHeldDown = playerControls.Controls.SpellCast.ReadValue<float>() > 0.1;
+        bool isSpellCastHeldDown = ShootBall.IsPressed();
         bool hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f; ;
 
         if (!castingMagic && isSpellCastHeldDown && hasEnoughMana)
@@ -77,5 +78,5 @@ public class PlayerMagicSystem : MonoBehaviour
         //CAST OUR SPELL
 
         Instantiate(spellToCast, castPoint.position, castPoint.rotation);
-    }*/
+    }
 }
