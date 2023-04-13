@@ -1178,7 +1178,7 @@ GameObject:
   - component: {fileID: 245241376}
   - component: {fileID: 245241378}
   - component: {fileID: 245241377}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: ActivateCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2246,6 +2246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524c1d67cef0e12449d56835b73d5a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!135 &456667299
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2684,7 +2686,7 @@ GameObject:
   - component: {fileID: 503367042}
   - component: {fileID: 503367044}
   - component: {fileID: 503367043}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: ActivateCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3273,6 +3275,7 @@ GameObject:
   - component: {fileID: 636581064}
   - component: {fileID: 636581063}
   - component: {fileID: 636581062}
+  - component: {fileID: 636581065}
   m_Layer: 13
   m_Name: Placa Blanco
   m_TagString: Untagged
@@ -3358,6 +3361,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636581060}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &636581065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636581060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977072142}
+        m_TargetAssemblyTypeName: Minigame1Administrator, Assembly-CSharp
+        m_MethodName: CorrectWay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &639507798
 GameObject:
   m_ObjectHideFlags: 0
@@ -9870,6 +9900,7 @@ GameObject:
   - component: {fileID: 877204319}
   - component: {fileID: 877204318}
   - component: {fileID: 877204317}
+  - component: {fileID: 877204320}
   m_Layer: 13
   m_Name: Placa Naranja
   m_TagString: Untagged
@@ -9955,6 +9986,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877204315}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &877204320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877204315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977072142}
+        m_TargetAssemblyTypeName: Minigame1Administrator, Assembly-CSharp
+        m_MethodName: BadWay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &890006553
 GameObject:
   m_ObjectHideFlags: 0
@@ -10930,7 +10988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.098972306, y: 0, z: 0, w: 0.99509025}
-  m_LocalPosition: {x: -354.00998, y: 158.8, z: -395.63}
+  m_LocalPosition: {x: -275.8, y: 158.8, z: -395.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11019,6 +11077,7 @@ MonoBehaviour:
   playerInput: {fileID: 1705587407}
   NormalCamera: {fileID: 1041469044}
   AimCamera: {fileID: 1664726456}
+  pauseMenu: {fileID: 0}
 --- !u!114 &963194232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11038,6 +11097,103 @@ MonoBehaviour:
   HairMaterial: {fileID: 2100000, guid: 9c9e55e14fd5f2843be1d0ee304b9ebf, type: 2}
   ClothesMaterial: {fileID: 2100000, guid: 600352b982362d84fb43482fed422190, type: 2}
   EyeMaterial: {fileID: 2100000, guid: 273e9239cfc47fe4aaec1f699024d0d6, type: 2}
+--- !u!1 &997676246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 997676250}
+  - component: {fileID: 997676249}
+  - component: {fileID: 997676248}
+  - component: {fileID: 997676247}
+  m_Layer: 8
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &997676247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997676246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &997676248
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997676246}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9630b607a0334484bb41b4033d78a1c7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &997676249
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997676246}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &997676250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997676246}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -277.43, y: 155.63, z: -415.9}
+  m_LocalScale: {x: 1, y: 7, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1977072141}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &997933153
 GameObject:
   m_ObjectHideFlags: 0
@@ -11425,7 +11581,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -353.06473
+      value: -274.85474
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -12245,6 +12401,7 @@ GameObject:
   - component: {fileID: 1258432078}
   - component: {fileID: 1258432077}
   - component: {fileID: 1258432076}
+  - component: {fileID: 1258432079}
   m_Layer: 13
   m_Name: Placa Amarillo
   m_TagString: Untagged
@@ -12330,6 +12487,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258432074}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1258432079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258432074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977072142}
+        m_TargetAssemblyTypeName: Minigame1Administrator, Assembly-CSharp
+        m_MethodName: BadWay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1259061512
 GameObject:
   m_ObjectHideFlags: 0
@@ -13100,6 +13284,7 @@ GameObject:
   - component: {fileID: 1499359470}
   - component: {fileID: 1499359469}
   - component: {fileID: 1499359468}
+  - component: {fileID: 1499359471}
   m_Layer: 13
   m_Name: Placa Negro
   m_TagString: Untagged
@@ -13185,6 +13370,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499359466}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1499359471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499359466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977072142}
+        m_TargetAssemblyTypeName: Minigame1Administrator, Assembly-CSharp
+        m_MethodName: BadWay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1517798744
 GameObject:
   m_ObjectHideFlags: 0
@@ -14518,7 +14730,7 @@ PrefabInstance:
     - target: {fileID: 1215784159000388058, guid: 4e0e82a858887ba4291b4d50036fa176,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -354.00998
+      value: -275.8
       objectReference: {fileID: 0}
     - target: {fileID: 1215784159000388058, guid: 4e0e82a858887ba4291b4d50036fa176,
         type: 3}
@@ -14861,6 +15073,7 @@ GameObject:
   - component: {fileID: 1685851667}
   - component: {fileID: 1685851666}
   - component: {fileID: 1685851665}
+  - component: {fileID: 1685851668}
   m_Layer: 13
   m_Name: Placa Verde
   m_TagString: Untagged
@@ -14946,6 +15159,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685851663}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1685851668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685851663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977072142}
+        m_TargetAssemblyTypeName: Minigame1Administrator, Assembly-CSharp
+        m_MethodName: BadWay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1700553147
 GameObject:
   m_ObjectHideFlags: 0
@@ -15034,7 +15274,9 @@ MonoBehaviour:
   dashForce: 15
   dashUpwardForce: 0
   look: 0
+  touched: 0
   distEffEn: 0
+  damage: 0
 --- !u!199 &1702731557
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -20167,7 +20409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705587406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -354.43, y: 157.69, z: -394.07}
+  m_LocalPosition: {x: -276.22, y: 157.69, z: -394.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20334,6 +20576,7 @@ GameObject:
   - component: {fileID: 1733629982}
   - component: {fileID: 1733629981}
   - component: {fileID: 1733629980}
+  - component: {fileID: 1733629983}
   m_Layer: 13
   m_Name: Placa Roja
   m_TagString: Untagged
@@ -20419,6 +20662,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733629978}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1733629983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733629978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977072142}
+        m_TargetAssemblyTypeName: Minigame1Administrator, Assembly-CSharp
+        m_MethodName: CorrectWay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1746754689
 GameObject:
   m_ObjectHideFlags: 0
@@ -20649,6 +20919,7 @@ GameObject:
   - component: {fileID: 1789604935}
   - component: {fileID: 1789604934}
   - component: {fileID: 1789604933}
+  - component: {fileID: 1789604936}
   m_Layer: 13
   m_Name: Placa Azul
   m_TagString: Untagged
@@ -20734,6 +21005,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789604931}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1789604936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789604931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977072142}
+        m_TargetAssemblyTypeName: Minigame1Administrator, Assembly-CSharp
+        m_MethodName: CorrectWay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1805321595
 GameObject:
   m_ObjectHideFlags: 0
@@ -21008,7 +21306,7 @@ GameObject:
   - component: {fileID: 1854114439}
   - component: {fileID: 1854114438}
   - component: {fileID: 1854114437}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Poison Mist (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25859,6 +26157,7 @@ GameObject:
   - component: {fileID: 1856197618}
   - component: {fileID: 1856197617}
   - component: {fileID: 1856197616}
+  - component: {fileID: 1856197619}
   m_Layer: 13
   m_Name: Placa Marron
   m_TagString: Untagged
@@ -25944,6 +26243,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856197614}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1856197619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856197614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plateCheck:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977072142}
+        m_TargetAssemblyTypeName: Minigame1Administrator, Assembly-CSharp
+        m_MethodName: CorrectWay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1869621454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26418,6 +26744,7 @@ Transform:
   - {fileID: 1733629979}
   - {fileID: 1685851664}
   - {fileID: 1258432075}
+  - {fileID: 997676250}
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26430,9 +26757,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1977072140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d04a4534c2cee042bf9642b7a80436f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c8f6fe102e0a1f4e943a0407a551ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 997676246}
+  sequenceCorrect: 0
 --- !u!1 &1988120209
 GameObject:
   m_ObjectHideFlags: 0
@@ -33375,7 +33704,7 @@ GameObject:
   - component: {fileID: 5279430322859228643}
   - component: {fileID: 5279430322859228701}
   - component: {fileID: 5279430322859228642}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: ActivateCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
