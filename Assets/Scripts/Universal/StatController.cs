@@ -12,12 +12,14 @@ public class StatController : MonoBehaviour
     [Header("Stats")]
     public int strength; // daño fisico
     public int inteligence; // daño magico y mana
-    public int stamina; // vida
+    public int stamina; // correr
     public int defense;
 
     [Header("Damage")]
     [SerializeField] public float damage;
     [SerializeField] private int damageDone;
+
+
 
     private void Update()
     {
@@ -38,17 +40,20 @@ public class StatController : MonoBehaviour
         return damageDone;
     }
 
-    public int CalculateDmg(int dmg)
+    public int CalculateDmg(int dmg, int defense)
     {
-        if(mainHand.mainStatType == Weapon.Type.physical)
+        switch(mainHand.mainStatType)
         {
-            strength = TotalStat(strength);
-            damage = (1 + strength * 0.2f) * (dmg / 1.50f);
-        }
-        else if(mainHand.mainStatType == Weapon.Type.magical)
-        {
-            inteligence = TotalStat(inteligence);
-            damage = (1 + inteligence * 0.15f) * (dmg / 1.50f);
+            case Weapon.Type.physical:
+                strength = TotalStat(strength);
+                damage = (1 + strength * 0.2f) * (dmg / 1.50f);
+                break;
+            case Weapon.Type.magical:
+                inteligence = TotalStat(inteligence);
+                damage = (1 + inteligence * 0.15f) * (dmg / 1.50f);
+                break;
+            default:
+                break;
         }
 
         damageDone = Mathf.FloorToInt(damage - defense * 0.1f);

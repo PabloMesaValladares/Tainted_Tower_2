@@ -5,6 +5,7 @@ using UnityEngine;
 public class SlashMovement : MonoBehaviour
 {
     public float speed;
+    public int damage;
     bool move;
     [SerializeField]
     Vector3 directionToGo;
@@ -66,6 +67,7 @@ public class SlashMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        other.GetComponentInParent<HealthBehaviour>().Hurt(damage);
         //Debug.Log("Slashed");
     }
 }

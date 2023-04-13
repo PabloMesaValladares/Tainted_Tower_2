@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthBehaviour : MonoBehaviour
 {
     public int maxHP;
     public int currentHP;
+
+    public UnityEvent damagedEvent;
 
     private void Awake()
     {
@@ -15,6 +18,9 @@ public class HealthBehaviour : MonoBehaviour
     public void Hurt(int dmg)
     {
         currentHP -= dmg;
-        print(currentHP);
+        if (currentHP < 0)
+            currentHP = 0;
+        damagedEvent.Invoke();
+        //print(currentHP);
     }
 }

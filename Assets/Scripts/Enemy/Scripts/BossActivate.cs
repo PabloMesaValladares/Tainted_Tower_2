@@ -5,20 +5,29 @@ using FSM;
 
 public class BossActivate : MonoBehaviour
 {
+    public GameObject enemy;
+    [SerializeField]
+    GameObject player;
+
     private void Start()
     {
+        enemy.GetComponent<Controller>().detect = false;
+        //GetComponentInParent<Controller>().enabled = false;
+    }
+    private void Update()
+    {
 
-        GetComponentInParent<Controller>().enabled = false;
     }
     private void OnTriggerEnter(Collider other)
     {
-
-        GetComponentInParent<Controller>().enabled = true;
+        player = other.gameObject;
+        enemy.GetComponent<Controller>().detect = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-
-        GetComponentInParent<Controller>().enabled = false;
+        player = null;
+        enemy.GetComponent<Controller>().detect = false;
     }
+
 }

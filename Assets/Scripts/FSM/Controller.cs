@@ -24,14 +24,14 @@ namespace FSM
         }
         private void Start()
         {
-            this.enabled = false;
+            //this.enabled = false;
             ActivateAI = true;//Activa la IA
         }
 
         // Update is called once per frame
         void Update()
         {//Se ejecutan las acciones del estado actual
-            if (!ActivateAI) return; //El parámetro permite que los estados tengan una referencia
+            if (!detect) return; //El parámetro permite que los estados tengan una referencia
             if(currentState != null)
                 currentState.UpdateState(this);//controlador, para poder llamar a sus métodos
 

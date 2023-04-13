@@ -2041,7 +2041,6 @@ GameObject:
   - component: {fileID: 493523211}
   - component: {fileID: 493523210}
   - component: {fileID: 493523214}
-  - component: {fileID: 493523215}
   m_Layer: 5
   m_Name: MenuPause
   m_TagString: Untagged
@@ -2143,18 +2142,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28f7b08711515974ea4fec03f71d0833, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &493523215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493523209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87eb6886e16f4e443a1f860d176883de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &503367041
@@ -9386,6 +9373,7 @@ MonoBehaviour:
   playerInput: {fileID: 1705587407}
   NormalCamera: {fileID: 1041469044}
   AimCamera: {fileID: 1664726456}
+  pauseMenu: {fileID: 1157292992}
 --- !u!114 &963194232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9792,7 +9780,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -335.79825
+      value: -335.7978
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -34915,20 +34903,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bd2fa6b3696d948aba1e3d5d44a227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movement: {fileID: 8765000657810556605}
-  vel: 5
-  attackVel: 6
-  timeremaining: 0
-  timeremainingSaved: 1.5
-  atackTime: 0
-  atackTimeSaved: 3
-  dist: 0
-  maxdist: 40
-  farAway: 0
-  fighting: 0
-  oldPlayerPosition: {x: 0, y: 0, z: 0}
-  thisPos: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
 --- !u!54 &8765000657810556604
 Rigidbody:
   m_ObjectHideFlags: 0
