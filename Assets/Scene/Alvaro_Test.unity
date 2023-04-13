@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7677ba883899f2848bf0e47ab7b0f7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
+  currentState: {fileID: 11400000, guid: 1a8c421c9f2898246a3a915c06a9b4cb, type: 2}
   player: {fileID: 0}
   enemy: {fileID: 0}
   rb: {fileID: 0}
