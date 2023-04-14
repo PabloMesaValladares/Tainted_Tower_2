@@ -9,11 +9,13 @@ public class PillarAttack : Action
 {
     public override void Act(Controller controller)
     {
-        throw new System.NotImplementedException();
+        GameObject storm = PoolingManager.Instance.GetPooledObject("Pillar");
+        storm.transform.position = controller.player.transform.position;
+        storm.SetActive(true);
     }
 
     public override void RestartVariables()
     {
-        throw new System.NotImplementedException();
+
     }
 }

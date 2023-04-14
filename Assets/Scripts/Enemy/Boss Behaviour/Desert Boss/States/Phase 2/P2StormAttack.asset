@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc43fde62382e8d46829a39de1d7ccac, type: 3}
-  m_Name: P2RangedAttack
+  m_Name: P2StormAttack
   m_EditorClassIdentifier: 
   actions:
   - {fileID: 11400000, guid: ed6c876db5b9963428e99a91c59c9ca4, type: 2}

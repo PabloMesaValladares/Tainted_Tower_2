@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using FSM;
 
-[CreateAssetMenu(menuName = "FSM/Carnation/Action/DBRangedAttack")]
-public class RangedAttack : Action
+[CreateAssetMenu(menuName = "FSM/Carnation/Action/DBStormAttack")]
+public class StormAttack : Action
 {
     public float stormOffset;
     float counter;
