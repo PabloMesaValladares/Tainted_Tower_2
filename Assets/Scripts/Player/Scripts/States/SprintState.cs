@@ -28,6 +28,7 @@ public class SprintState : State
     float moveSpeed;
     float slopeAngle;
 
+    bool attack;
     StaminaController stamController;
 
     public SprintState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
@@ -48,6 +49,7 @@ public class SprintState : State
         currentVelocity = Vector3.zero;
         gravityVelocity.y = 0;
 
+        character.animator.SetTrigger("move");
         grounded = character.ground.returnCheck();
         gravityValue = character.gravityValue;
 
@@ -65,7 +67,7 @@ public class SprintState : State
         jumpForce = character.jumpForce;
         stamController = character.GetComponent<StaminaController>();
         stamController.Reduce(true);
-        character.dashController.keepMomentum = true;
+        //character.dashController.keepMomentum = true;
     }
 
     public override void HandleInput()
@@ -91,15 +93,16 @@ public class SprintState : State
         {
             sprint = true;
         }
-        else if(stamController.ReturnStamina() < 0)
-        {
-            sprint = false;
-        }
         else
         {
             sprint = false;
+        } 
+        if (stamController.ReturnStamina() < 0)
+        {
+            sprint = false;
         }
-
+        if (attackAction.triggered)
+            attack = true;
         if (dashAction.triggered)
         {
             dash = character.dashController.checkIfDash();
@@ -114,12 +117,12 @@ public class SprintState : State
 
         if (sprint)
         {
-            //if (!character.dashController.keepMomentum)
-            //    character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
-            //else
-            //{
-            //    character.animator.SetFloat("speed", 1.5f);
-            //}
+            if (!character.dashController.keepMomentum)
+                character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
+            else
+            {
+                character.animator.SetFloat("speed", 1.5f);
+            }
         }
         if (!sprint)
         {
@@ -134,6 +137,8 @@ public class SprintState : State
             character.dashController.startCooldown();
         }
 
+        if (attack)
+            stateMachine.ChangeState(character.attacking);
         if (!grounded)
             stateMachine.ChangeState(character.falling);
 
@@ -201,6 +206,7 @@ public class SprintState : State
     void Jump(float jumpF)
     {
         rb.drag = 0;
+        character.animator.SetTrigger("jump");
 
         SpeedControl();
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);

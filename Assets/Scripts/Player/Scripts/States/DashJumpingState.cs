@@ -28,6 +28,7 @@ public class DashJumpingState : State
         base.Enter();
         grounded = false;
 
+        character.animator.SetTrigger("dash");
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;
         dashDuration = character.dashController.dashDuration;
@@ -78,8 +79,6 @@ public class DashJumpingState : State
         if (velocity != Vector3.zero)
             forceToApply = velocity * dashForce + orientation.up * dashUpwardForce;
 
-        forceToApply.y = 0;
-
         if (dashDuration > dashStop)
         {
             rb.AddForce(forceToApply, ForceMode.Impulse);
@@ -87,11 +86,13 @@ public class DashJumpingState : State
         }
         else
         {
+            character.animator.SetTrigger("fall");
             character.dashController.LastDashSpeed = forceToApply;
-            character.dashController.dashForce = dashForce;
+
             stateMachine.ChangeState(character.falling);
+
+
         }
-        //grounded = character.controller.isGrounded;
     }
     public override void Exit()
     {

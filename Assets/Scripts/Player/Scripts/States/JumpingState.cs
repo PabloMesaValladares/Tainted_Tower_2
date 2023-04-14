@@ -18,6 +18,9 @@ public class JumpingState : State
     public override void Enter()//Iniciar las variables
     {
         base.Enter();
+
+
+        character.animator.SetTrigger("jump");
         jumpForce = character.jumpForce;
 
         rb = character.rb;

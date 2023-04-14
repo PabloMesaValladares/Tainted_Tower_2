@@ -39,6 +39,9 @@ public class AttackState : State
         orientation = character.transform; 
         dashForce = 5f;
         dashUpwardForce = 0f;
+
+        character.Sheathedweapon.SetActive(false);
+        character.weapon.SetActive(true);
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
@@ -96,7 +99,10 @@ public class AttackState : State
     public override void Exit()
     {
         base.Exit();
-
+        character.weapon.SetActive(false);
+        character.animator.ResetTrigger("attack");
+        character.Sheathedweapon.GetComponent<SheathedWeapon>().StartTimer();
+        character.Sheathedweapon.SetActive(true);
         character.animator.applyRootMotion = false;
     }
 

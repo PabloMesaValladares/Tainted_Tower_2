@@ -40,8 +40,8 @@ public class FallState : State
         dashForce = character.dashController.dashForce;
 
 
-        //character.animator.SetFloat("speed", 0);
-        //character.animator.SetTrigger("fall");
+        character.animator.SetFloat("speed", 0);
+        character.animator.SetTrigger("fall");
 
         rb = character.rb;
         orientation = character.orientation;
@@ -86,10 +86,7 @@ public class FallState : State
         if (grounded)
         {
             //character.animator.SetTrigger("move");
-            if (character.dashController.keepMomentum)
-                stateMachine.ChangeState(character.sprinting);
-            else
-                stateMachine.ChangeState(character.standing);
+            stateMachine.ChangeState(stateMachine.previousState);
         }
 
 

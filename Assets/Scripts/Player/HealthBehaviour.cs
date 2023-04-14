@@ -15,6 +15,24 @@ public class HealthBehaviour : MonoBehaviour
         currentHP = maxHP;
     }
 
+    public void AddHealthPercent(int h)
+    {
+        int perc = maxHP * h / 100;
+        currentHP += perc;
+        if (currentHP > maxHP)
+            currentHP = maxHP;
+
+        damagedEvent.Invoke();
+    }
+    public void AddHealth(int h)
+    {
+        currentHP += h;
+        if (currentHP > maxHP)
+            currentHP = maxHP;
+
+        damagedEvent.Invoke();
+    }
+
     public void Hurt(int dmg)
     {
         currentHP -= dmg;

@@ -50,11 +50,11 @@ public class StandingState : State
     {
         base.Enter();
         //character.animator.ResetTrigger("land");
-        //character.animator.ResetTrigger("dash");
-        //character.animator.ResetTrigger("jump");
+        character.animator.ResetTrigger("dash");
+        character.animator.ResetTrigger("jump");
         //character.animator.ResetTrigger("crouch");
         //character.animator.ResetTrigger("fall");
-        //character.animator.SetTrigger("move");
+        character.animator.SetTrigger("move");
         dash = false;
         jump = false;
         crouch = false;
@@ -114,8 +114,8 @@ public class StandingState : State
         {
             dash = character.dashController.checkIfDash();
         }
-        //if (attackAction.triggered)
-        //    attack = true;
+        if (attackAction.triggered)
+            attack = true;
         if (grappleAction.triggered)
         {
             character.GetComponent<Grappling>().StartGrapple();
@@ -146,7 +146,7 @@ public class StandingState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        //character.animator.SetFloat("speed", input.magnitude, character.speedDampTime, Time.deltaTime);//Cambiamos la velocidad del animator para cambiar su animacion
+        character.animator.SetFloat("speed", input.magnitude, character.speedDampTime, Time.deltaTime);//Cambiamos la velocidad del animator para cambiar su animacion
 
         if (sprint)//cambia al estado dependiendo de la variable
             stateMachine.ChangeState(character.sprinting);
@@ -241,7 +241,8 @@ public class StandingState : State
     public override void Exit()
     {
         base.Exit();
-        gravityVelocity.y = 0f; 
+        gravityVelocity.y = 0f;
+        character.animator.ResetTrigger("move");
     }
 
     public override void ReverseControls()
@@ -262,6 +263,7 @@ public class StandingState : State
 
     void Jump(float jumpF)
     {
+        character.animator.SetTrigger("jump");
         rb.drag = 0;
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);

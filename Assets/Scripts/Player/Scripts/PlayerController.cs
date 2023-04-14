@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Damage")]
     public GameObject weapon;
+    public GameObject Sheathedweapon;
 
     [Header("Animation Smoothing")]
     [Range(0, 1)]
@@ -82,7 +83,6 @@ public class PlayerController : MonoBehaviour
     public UnityEngine.InputSystem.PlayerInput playerInput;
     [HideInInspector]
     public Transform cameraTransform;
-    [HideInInspector]
     public Animator animator;
     [HideInInspector]
     public Vector3 playerVelocity;
@@ -101,7 +101,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        //animator = GetComponent<Animator>();
         playerInput = GetComponent<UnityEngine.InputSystem.PlayerInput>();
         cameraTransform = Camera.main.transform;
 
@@ -128,6 +127,9 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = true;
 
         playerMovement = GetComponent<PlayerMovementBehaviour>();
+
+        weapon.SetActive(false);
+        Sheathedweapon.SetActive(false);
 
         movementSM.Initialize(standing);
         //Screen.lockCursor = true;

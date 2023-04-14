@@ -16,7 +16,7 @@ public class CraftingManager : MonoBehaviour
     public List<Slot> craftingSlots;
 
     public string[] recipes;
-    public string[] recipeResults;
+    public Item[] recipeResults;
 
     public UnityEvent<GameObject> changeColor;
     private void Awake()
@@ -99,7 +99,7 @@ public class CraftingManager : MonoBehaviour
             ItemPicked = slot;
             currentItem = slot.item;
             customCursor.gameObject.SetActive(true);
-            customCursor.sprite = currentItem.GetComponent<Image>().sprite;
+            //customCursor.sprite = currentItem.GetComponent<Image>().sprite;
             ItemPicked = slot;
         }
     }
