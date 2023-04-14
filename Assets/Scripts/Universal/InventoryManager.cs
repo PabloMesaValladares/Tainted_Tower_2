@@ -76,6 +76,8 @@ public class InventoryManager : MonoBehaviour
             if (Slots[i].GetComponent<Item>().itemName != null)
             {
                 Slots[i].GetComponent<Image>().sprite = itemsImageSearch[Slots[i].GetComponent<Item>().itemName];
+
+                Slots[i].GetComponent<Item>().SetUse(sendItemUse(Slots[i].GetComponent<Item>().itemName));
                 //Slots[i].GetComponentInChildren<InventoryNum>().UpdateText();
             }
             else
@@ -99,11 +101,12 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(firstSlot.triggered)
+        if(firstSlot.triggered && QuickSlots[0].activeInHierarchy)
         {
             if (!itemSelected)
             {
-                selectedItem = QuickSlots[0].GetComponent<Slot>().item;
+                Debug.Log(QuickSlots[0].GetComponent<Item>().itemName);
+                selectedItem = QuickSlots[0].GetComponent<Item>();
                 itemSelected = true;
             }
             else
@@ -113,7 +116,7 @@ public class InventoryManager : MonoBehaviour
             }
             selector.ChangeColor(QuickSlots[0]);
         }
-        if (secondSlot.triggered)
+        if (secondSlot.triggered && QuickSlots[1].activeInHierarchy)
         {
 
             if (!itemSelected)
@@ -128,7 +131,7 @@ public class InventoryManager : MonoBehaviour
             }
             selector.ChangeColor(QuickSlots[1]);
         }
-        if (thirdSlot.triggered)
+        if (thirdSlot.triggered && QuickSlots[2].activeInHierarchy)
         {
             if (!itemSelected)
             {
@@ -142,7 +145,7 @@ public class InventoryManager : MonoBehaviour
             }
             selector.ChangeColor(QuickSlots[2]);
         }
-        if (fourthSlot.triggered)
+        if (fourthSlot.triggered && QuickSlots[3].activeInHierarchy)
         {
             if (!itemSelected)
             {
@@ -158,8 +161,13 @@ public class InventoryManager : MonoBehaviour
         }
         if (Use.triggered && itemSelected)
         {
-            selectedItem.Use(playerControls.gameObject);
+            selectedItem.Use();
         }
+    }
+
+    public ItemUses sendItemUse(string name)
+    {
+        return itemsUseSearch[name];
     }
 
     public void UpdateSlot(Item itemGot)
