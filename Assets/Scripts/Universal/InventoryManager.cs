@@ -42,6 +42,11 @@ public class InventoryManager : MonoBehaviour
     {
         Item.itemUsed += ClearSlot;
     }
+    private void OnDisable()
+    {
+        Item.itemUsed -= ClearSlot;
+    }
+
 
     void Start()
     {
@@ -67,11 +72,10 @@ public class InventoryManager : MonoBehaviour
         }
         for (int i = 0; i < Slots.Length; i++)
         {
-            if(Slots[i].GetComponent<Item>().itemName != null)
+            Slots[i].GetComponent<Item>().ind = i;
+            if (Slots[i].GetComponent<Item>().itemName != null)
             {
-                Slots[i].GetComponentInParent<Slot>().index = i;
                 Slots[i].GetComponent<Image>().sprite = itemsImageSearch[Slots[i].GetComponent<Item>().itemName];
-                Slots[i].GetComponent<Item>().ind = i;
                 //Slots[i].GetComponentInChildren<InventoryNum>().UpdateText();
             }
             else

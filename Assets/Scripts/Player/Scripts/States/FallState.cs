@@ -40,7 +40,7 @@ public class FallState : State
         dashForce = character.dashController.dashForce;
 
 
-        character.animator.SetFloat("speed", 0);
+        //character.animator.SetFloat("speed", 0);
         character.animator.SetTrigger("fall");
 
         rb = character.rb;
@@ -53,7 +53,7 @@ public class FallState : State
         playerObj = character.playerObj;
         airMultiplier = character.airMultiplier;
 
-        grounded = false;
+        //grounded = false;
         rb.drag = 0;
         rb.useGravity = true;
     }
@@ -86,7 +86,10 @@ public class FallState : State
         if (grounded)
         {
             //character.animator.SetTrigger("move");
-            stateMachine.ChangeState(stateMachine.previousState);
+            if (!character.dashController.keepMomentum)
+                stateMachine.ChangeState(character.standing);
+            else
+                stateMachine.ChangeState(character.standing);
         }
 
 
@@ -115,6 +118,7 @@ public class FallState : State
     public override void Exit()
     {
         base.Exit();
+        character.animator.ResetTrigger("fall");
     }
     private void SpeedControl()
     {
