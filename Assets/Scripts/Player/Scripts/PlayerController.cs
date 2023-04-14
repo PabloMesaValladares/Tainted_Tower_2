@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Damage")]
     public GameObject weapon;
+    public GameObject Sheathedweapon;
 
     [Header("Animation Smoothing")]
     [Range(0, 1)]
@@ -126,6 +127,9 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = true;
 
         playerMovement = GetComponent<PlayerMovementBehaviour>();
+
+        weapon.SetActive(false);
+        Sheathedweapon.SetActive(false);
 
         movementSM.Initialize(standing);
         //Screen.lockCursor = true;

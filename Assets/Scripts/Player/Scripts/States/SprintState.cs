@@ -28,6 +28,7 @@ public class SprintState : State
     float moveSpeed;
     float slopeAngle;
 
+    bool attack;
     StaminaController stamController;
 
     public SprintState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
@@ -100,7 +101,8 @@ public class SprintState : State
         {
             sprint = false;
         }
-
+        if (attackAction.triggered)
+            attack = true;
         if (dashAction.triggered)
         {
             dash = character.dashController.checkIfDash();
@@ -135,6 +137,8 @@ public class SprintState : State
             character.dashController.startCooldown();
         }
 
+        if (attack)
+            stateMachine.ChangeState(character.attacking);
         if (!grounded)
             stateMachine.ChangeState(character.falling);
 

@@ -40,8 +40,8 @@ public class FallState : State
         dashForce = character.dashController.dashForce;
 
 
-        //character.animator.SetFloat("speed", 0);
-        //character.animator.SetTrigger("fall");
+        character.animator.SetFloat("speed", 0);
+        character.animator.SetTrigger("fall");
 
         rb = character.rb;
         orientation = character.orientation;

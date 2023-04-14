@@ -91,7 +91,7 @@ Material:
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
     - _AlphaClip: 1
-    - _Amount: 0.21507208
+    - _Amount: 0.0020166237
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
@@ -124,7 +124,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _TintColor: 0
-    - _Transparency: 0.953
+    - _Transparency: 1
     - _VertexColor: 0
     - _WorkflowMode: 1
     - _ZWrite: 1

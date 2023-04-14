@@ -10,10 +10,12 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject[] Slots;
     [SerializeField]GameObject[] QuickSlots;
     [SerializeField] Sprite[] itemImage;
+    [SerializeField] ItemUses[] itemUses;
     [SerializeField] string[] itemName;
     [SerializeField] string[] desc;
     [SerializeField] Dictionary<string, Item> items;
     Dictionary<string, Sprite> itemsImageSearch;
+    Dictionary<string, ItemUses> itemsUseSearch;
 
     private static InventoryManager _instance;
     public static InventoryManager instance => _instance;
@@ -26,7 +28,7 @@ public class InventoryManager : MonoBehaviour
     bool itemAdded;
 
     public PlayerInput playerControls;
-    InputAction firstSlot, secondSlot, thirdSlot, fourthSlot;
+    InputAction firstSlot, secondSlot, thirdSlot, fourthSlot, Use;
     InventorySelector selector;
 
     public Item selectedItem;
@@ -36,16 +38,23 @@ public class InventoryManager : MonoBehaviour
         _instance = this;
     }
 
+    private void OnEnable()
+    {
+        Item.itemUsed += ClearSlot;
+    }
+
     void Start()
     {
         items = new Dictionary<string, Item>();
         itemsImageSearch = new Dictionary<string, Sprite>();
+        itemsUseSearch = new Dictionary<string, ItemUses>();
         for (int i = 0; i < itemName.Length; i++)
         {
             Item item = new Item();
             item.itemName = itemName[i];
             items.Add(itemName[i], item);
             itemsImageSearch.Add(itemName[i], itemImage[i]);
+            itemsUseSearch.Add(itemName[i], itemUses[i]);
         }
 
         for(int i = 0; i< QuickSlots.Length; i ++)
@@ -60,7 +69,9 @@ public class InventoryManager : MonoBehaviour
         {
             if(Slots[i].GetComponent<Item>().itemName != null)
             {
+                Slots[i].GetComponentInParent<Slot>().index = i;
                 Slots[i].GetComponent<Image>().sprite = itemsImageSearch[Slots[i].GetComponent<Item>().itemName];
+                Slots[i].GetComponent<Item>().ind = i;
                 //Slots[i].GetComponentInChildren<InventoryNum>().UpdateText();
             }
             else
@@ -77,6 +88,7 @@ public class InventoryManager : MonoBehaviour
         secondSlot = playerControls.actions["Second"];
         thirdSlot = playerControls.actions["Third"];
         fourthSlot = playerControls.actions["Fourth"];
+        Use = playerControls.actions["Interact"];
         selector = GetComponent<InventorySelector>();
     }
 
@@ -84,13 +96,66 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         if(firstSlot.triggered)
+        {
+            if (!itemSelected)
+            {
+                selectedItem = QuickSlots[0].GetComponent<Slot>().item;
+                itemSelected = true;
+            }
+            else
+            {
+                itemSelected = false;
+                selectedItem = null;
+            }
             selector.ChangeColor(QuickSlots[0]);
+        }
         if (secondSlot.triggered)
+        {
+
+            if (!itemSelected)
+            {
+                selectedItem = QuickSlots[1].GetComponent<Slot>().item;
+                itemSelected = true;
+            }
+            else
+            {
+                itemSelected = false;
+                selectedItem = null;
+            }
             selector.ChangeColor(QuickSlots[1]);
+        }
         if (thirdSlot.triggered)
+        {
+            if (!itemSelected)
+            {
+                selectedItem = QuickSlots[2].GetComponent<Slot>().item;
+                itemSelected = true;
+            }
+            else
+            {
+                itemSelected = false;
+                selectedItem = null;
+            }
             selector.ChangeColor(QuickSlots[2]);
+        }
         if (fourthSlot.triggered)
+        {
+            if (!itemSelected)
+            {
+                selectedItem = QuickSlots[3].GetComponent<Slot>().item;
+                itemSelected = true;
+            }
+            else
+            {
+                itemSelected = false;
+                selectedItem = null;
+            }
             selector.ChangeColor(QuickSlots[3]);
+        }
+        if (Use.triggered && itemSelected)
+        {
+            selectedItem.Use(playerControls.gameObject);
+        }
     }
 
     public void UpdateSlot(Item itemGot)
@@ -107,6 +172,7 @@ public class InventoryManager : MonoBehaviour
             GameObject parent = slot.GetComponentInParent<Slot>().gameObject;
             InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
             slot.GetComponent<Item>().itemName = itemGot.itemName;
+            slot.GetComponent<Item>().SetUse(itemsUseSearch[itemGot.name]);
             slot.GetComponent<Item>().Num = itemGot.Num;
             slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
             parent.GetComponent<Slot>().item = slot.GetComponent<Item>();
@@ -156,7 +222,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ClearSlot(int i)
     {
-        Slots[i].GetComponentInParent<Image>().gameObject.name = "Slot";
+        //Slots[i].GetComponentInParent<Image>().gameObject.name = "Slot";
         Slots[i].SetActive(false);
     }
 

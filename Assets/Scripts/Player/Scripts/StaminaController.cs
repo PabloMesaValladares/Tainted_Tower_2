@@ -83,6 +83,15 @@ public class StaminaController : MonoBehaviour
         return stamina;
     }
 
+    public void addStamina(int s)
+    {
+        stamina += s;
+    }
+    public void addStaminaPerc(int s)
+    {
+        float perc = MaxStamina * s / 100;
+        stamina += perc;
+    }
     public void ReduceStamina()
     {
         stamina -= StaminaReducing * Time.deltaTime;
