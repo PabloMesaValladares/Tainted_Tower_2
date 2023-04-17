@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Spell : MonoBehaviour
 {
-    /*public SpellScriptableObject SpellToCast;
+    public SpellScriptableObject SpellToCast;
 
     private SphereCollider myCollider;
     private Rigidbody myRigidbody;
@@ -40,10 +40,10 @@ public class Spell : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            HealthComponent enemyHealth = other.GetComponent<HealthComponent>();
-            enemyHealth.TakeDamage(SpellToCast.DamageAmount);
+            //Destruir enemigo
+           
         }
 
         Destroy(this.gameObject);
-    }*/
+    }
 }

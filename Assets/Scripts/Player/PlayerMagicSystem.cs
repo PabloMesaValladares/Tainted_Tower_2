@@ -1,47 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMagicSystem : MonoBehaviour
 {
-    /*[SerializeField] private Spell spellToCast;
+    [SerializeField] private Spell spellToCast;
 
     [SerializeField] private float maxMana = 100f;
     [SerializeField] private float currentMana;
-    [SerializeField] private float manaRechargeRate = 2f;
-    [SerializeField] private float timeBetweenCast = 1.5f;
+    [SerializeField] private float manaRechargeRate = 10f;
+    [SerializeField] private float timeBetweenCast = 2f;
     private float currentCastTimer;
 
     [SerializeField] private Transform castPoint;
 
     private bool castingMagic = false;
 
-    private PlayerController playerControls;
+    PlayerInput playerControls;
+
+    InputAction ShootBall;
+
     
 
+    public Slider manaSlider;
+
+  
     private void Awake()
     {
-        playerControls = new PlayerController();
+        playerControls = GetComponent<PlayerInput>();
+        ShootBall = playerControls.actions["Ball"];
+        currentMana = maxMana;
+        manaSlider.value = currentMana;
     }
 
     private void OnEnable()
     {
-        playerControls.Enable();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
-
         currentMana = maxMana;
     }
 
     private void Update()
     {
-        bool isSpellCastHeldDown = playerControls.Controls.SpellCast.ReadValue<float>() > 0.1;
-        bool hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f; ;
+        bool isSpellCastHeldDown = ShootBall.IsPressed();
+        bool hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f;
 
         if (!castingMagic && isSpellCastHeldDown && hasEnoughMana)
         {
@@ -70,12 +76,19 @@ public class PlayerMagicSystem : MonoBehaviour
                 currentMana = maxMana;
             }
         }
+
+        ChangeMana();
+
     }
 
+    public void ChangeMana()
+    {
+        manaSlider.value = currentMana / 100;
+    }
     void CastSpell()
     {
         //CAST OUR SPELL
 
         Instantiate(spellToCast, castPoint.position, castPoint.rotation);
-    }*/
+    }
 }
