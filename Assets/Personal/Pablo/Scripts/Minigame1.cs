@@ -1,20 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Minigame1 : MonoBehaviour
 {
-    [SerializeField]
-    private List<GameObject> plates;
-    // Start is called before the first frame update
-    void Start()
+    public UnityEvent plateCheck;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        plateCheck.Invoke();
+        Debug.Log("Emblem Engageeeeeeeeeeeeeeeeeeeeeeeeeee");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
