@@ -25,6 +25,8 @@ public class ControllerInventory : MonoBehaviour
     InputAction Use;
     InputAction pause;
 
+    public bool hideMouse;
+
     private void Start()
     {
         index = 0;
@@ -35,14 +37,16 @@ public class ControllerInventory : MonoBehaviour
         Use = playerControls.actions["Interact"];
         pause = playerControls.actions["Pause"];
 
-        BagButtons = new GameObject[GameObject.FindGameObjectsWithTag("BagButtons").Length];
-        BagButtons = GameObject.FindGameObjectsWithTag("BagButtons");
+        //BagButtons = new GameObject[GameObject.FindGameObjectsWithTag("BagButtons").Length];
+        //BagButtons = GameObject.FindGameObjectsWithTag("BagButtons");
     }
 
     // Update is called once per frame
     void Update()
     {
         bool controllers = Gamepad.all.Count > 0;
+
+        Debug.Log("Controllers es " + controllers);
         if (controllers)
         {
             if(BagMenu.activeInHierarchy)

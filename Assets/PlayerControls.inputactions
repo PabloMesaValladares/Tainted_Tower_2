@@ -301,19 +301,8 @@
                 },
                 {
                     "name": "",
-                    "id": "6219319e-0263-463b-915a-c20e0e58a621",
-                    "path": "<DualShockGamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c1c321c0-632d-40cf-b2e9-ccd5ab492a7f",
-                    "path": "<XInputController>/buttonEast",
+                    "id": "316b1fb3-e529-464d-89b7-274ceb5e5f9c",
+                    "path": "<XInputController>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -334,8 +323,8 @@
                 },
                 {
                     "name": "",
-                    "id": "316b1fb3-e529-464d-89b7-274ceb5e5f9c",
-                    "path": "<XInputController>/buttonNorth",
+                    "id": "5dde390a-2879-479f-8041-45a87cd4463b",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -345,8 +334,8 @@
                 },
                 {
                     "name": "",
-                    "id": "f6594043-8e74-47a8-8f98-36e549908710",
-                    "path": "<DualShockGamepad>/buttonWest",
+                    "id": "ec2eddce-d3c0-4aab-b116-731ccd30c85b",
+                    "path": "<DualShockGamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -400,8 +389,8 @@
                 },
                 {
                     "name": "",
-                    "id": "ec2eddce-d3c0-4aab-b116-731ccd30c85b",
-                    "path": "<DualShockGamepad>/buttonSouth",
+                    "id": "6219319e-0263-463b-915a-c20e0e58a621",
+                    "path": "<DualShockGamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -411,8 +400,8 @@
                 },
                 {
                     "name": "",
-                    "id": "5dde390a-2879-479f-8041-45a87cd4463b",
-                    "path": "<XInputController>/buttonSouth",
+                    "id": "c1c321c0-632d-40cf-b2e9-ccd5ab492a7f",
+                    "path": "<XInputController>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -890,6 +879,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Unlock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6594043-8e74-47a8-8f98-36e549908710",
+                    "path": "<DualShockGamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
