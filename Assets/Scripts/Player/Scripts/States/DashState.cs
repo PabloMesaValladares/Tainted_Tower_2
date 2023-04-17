@@ -26,6 +26,7 @@ public class DashState : State
     public override void Enter()
     {
         base.Enter();
+        character.animator.ResetTrigger("move");
         character.animator.SetTrigger("dash");
 
         dashForce = character.dashController.dashForce;
@@ -83,7 +84,7 @@ public class DashState : State
         }
         else
         {
-            character.animator.SetTrigger("move");
+            //character.animator.SetTrigger("move");
             character.dashController.LastDashSpeed = forceToApply;
 
             stateMachine.ChangeState(stateMachine.previousState);

@@ -28,6 +28,7 @@ public class DashJumpingState : State
         base.Enter();
         grounded = false;
 
+        character.animator.ResetTrigger("fall");
         character.animator.SetTrigger("dash");
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;
@@ -86,7 +87,7 @@ public class DashJumpingState : State
         }
         else
         {
-            character.animator.SetTrigger("fall");
+            //character.animator.SetTrigger("fall");
             character.dashController.LastDashSpeed = forceToApply;
 
             stateMachine.ChangeState(character.falling);

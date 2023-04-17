@@ -9,23 +9,32 @@ public class Item : MonoBehaviour
 
     ItemUses use;
 
+    GameObject player;
 
     public delegate void UseIt(int id);
     public static UseIt itemUsed;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 
     public void SetUse(ItemUses u)
     {
         use = u;
     }
 
-    public void Use(GameObject p)
+    public void Use()
     {
-        use.Use(p);
+        use = InventoryManager.instance.sendItemUse(itemName);
+        //Debug.Log(use);
+        use.Use(player);
         Num--;
-        if (Num < 0)
+        if (Num <= 0)
         {
-            GetComponentInParent<Slot>().gameObject.SetActive(false);
             itemUsed(ind);
+            gameObject.SetActive(false);
         }
     }
 }
