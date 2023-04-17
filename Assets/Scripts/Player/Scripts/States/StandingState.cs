@@ -49,7 +49,7 @@ public class StandingState : State
     public override void Enter()//Iniciar las variables
     {
         base.Enter();
-        //character.animator.ResetTrigger("land");
+        character.animator.ResetTrigger("attack");
         character.animator.ResetTrigger("dash");
         character.animator.ResetTrigger("jump");
         //character.animator.ResetTrigger("crouch");

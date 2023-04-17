@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 5082027}
   m_Layer: 5
   m_Name: MenuItems16
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 5267937}
   m_Layer: 5
   m_Name: MenuItems24
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 5353961}
   m_Layer: 5
   m_Name: Resume
-  m_TagString: Untagged
+  m_TagString: MenuButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -944,7 +944,7 @@ RectTransform:
   m_GameObject: {fileID: 40682857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.64646, y: 0.64646, z: 0.64646}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1189065781}
@@ -954,7 +954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305.8, y: -170.6}
+  m_AnchoredPosition: {x: -327.29996, y: -198.90002}
   m_SizeDelta: {x: 196.6477, y: 108.7759}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &40682859
@@ -1028,7 +1028,7 @@ GameObject:
   - component: {fileID: 62488513}
   m_Layer: 5
   m_Name: MenuItems5
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1472,18 +1472,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116969111}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.38268366, w: 0.92387944}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.89874995, y: 0.89874995, z: 0.89874995}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7821432, y: 0.7821432, z: 0.7821432}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1893449647}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.90000916, y: -38.107178}
-  m_SizeDelta: {x: 42.73, y: 42.73}
+  m_AnchoredPosition: {x: 2.5241, y: -26.6885}
+  m_SizeDelta: {x: 51.3731, y: 52.0617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116969113
 MonoBehaviour:
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 504522101, guid: 261b03bb89fd6c340bc3c3f35ad5df8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dc7edb1c68696c408eb5434af308852, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1665,7 +1665,7 @@ GameObject:
   - component: {fileID: 133755188}
   m_Layer: 5
   m_Name: MenuItems8
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1942,7 +1942,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &148500982
 GameObject:
@@ -1972,7 +1972,7 @@ RectTransform:
   m_GameObject: {fileID: 148500982}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1679, y: 1.0219125, z: 1.1679}
+  m_LocalScale: {x: 1.1162788, y: 0.8790695, z: 1.1162788}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1739507031}
@@ -1981,7 +1981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 314.65, y: -203.49}
+  m_AnchoredPosition: {x: 314.65, y: -208.94}
   m_SizeDelta: {x: 81.811, y: 76.941}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &148500984
@@ -2328,7 +2328,7 @@ GameObject:
   - component: {fileID: 208691353}
   m_Layer: 5
   m_Name: Bag
-  m_TagString: Untagged
+  m_TagString: MenuButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2596,7 +2596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1261.4645, y: -217.41756}
+  m_AnchoredPosition: {x: 1260.4645, y: -216.7509}
   m_SizeDelta: {x: 615.136, y: 46.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216196498
@@ -4017,7 +4017,7 @@ GameObject:
   - component: {fileID: 334021368}
   m_Layer: 5
   m_Name: MenuItems3
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4252,7 +4252,7 @@ RectTransform:
   m_GameObject: {fileID: 344714617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1679, y: 1.0219125, z: 1.1679}
+  m_LocalScale: {x: 1.1162788, y: 0.8790695, z: 1.1162788}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 871823180}
@@ -4261,7 +4261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 274.05, y: -164.02}
+  m_AnchoredPosition: {x: 274.05, y: -169.47}
   m_SizeDelta: {x: 77.78, y: 77.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &359089452
@@ -4785,18 +4785,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382819264}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.38268366, w: 0.92387944}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.89874995, y: 0.89874995, z: 0.89874995}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7821432, y: 0.7821432, z: 0.7821432}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1893449647}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.303513, y: 0.29641724}
-  m_SizeDelta: {x: 42.73, y: 42.73}
+  m_AnchoredPosition: {x: 35.6229, y: -0.1816}
+  m_SizeDelta: {x: 53.1029, y: 53.8144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382819266
 MonoBehaviour:
@@ -4886,7 +4886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 504522101, guid: 261b03bb89fd6c340bc3c3f35ad5df8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dc7edb1c68696c408eb5434af308852, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5465,7 +5465,7 @@ GameObject:
   - component: {fileID: 420992926}
   m_Layer: 5
   m_Name: MenuItems14
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6088,7 +6088,7 @@ GameObject:
   - component: {fileID: 474528218}
   m_Layer: 5
   m_Name: MenuItems7
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6203,7 +6203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46.5, y: 42.6}
+  m_AnchoredPosition: {x: 47.9, y: 46.8}
   m_SizeDelta: {x: 42.73, y: 42.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474923672
@@ -6320,7 +6320,7 @@ GameObject:
   - component: {fileID: 480311525}
   m_Layer: 5
   m_Name: MenuItems19
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7319,7 +7319,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &566304435
 GameObject:
@@ -7943,7 +7943,7 @@ GameObject:
   - component: {fileID: 625842242}
   m_Layer: 5
   m_Name: MenuItems6
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8064,7 +8064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1261.4645, y: -450.67438}
+  m_AnchoredPosition: {x: 1260.4645, y: -450.00772}
   m_SizeDelta: {x: 615.136, y: 46.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632689972
@@ -8226,7 +8226,7 @@ RectTransform:
   m_GameObject: {fileID: 665968143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.67297, y: 0.67297, z: 0.67297}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1925044515}
@@ -8238,7 +8238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 120.2, y: 98.8}
+  m_AnchoredPosition: {x: 89.2, y: 68}
   m_SizeDelta: {x: 206.8004, y: 181.6958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665968145
@@ -8339,7 +8339,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693549497
 GameObject:
@@ -8949,7 +8949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1261.4645, y: -100.78916}
+  m_AnchoredPosition: {x: 1260.4645, y: -100.122505}
   m_SizeDelta: {x: 615.136, y: 46.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718979208
@@ -9142,7 +9142,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -364.5223
+      value: -364.52234
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -10059,7 +10059,7 @@ RectTransform:
   m_GameObject: {fileID: 789879607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.64646, y: 0.64646, z: 0.64646}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 343807405}
@@ -10069,7 +10069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305.8, y: -170.6}
+  m_AnchoredPosition: {x: -327.29996, y: -198.90002}
   m_SizeDelta: {x: 196.6477, y: 108.7759}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789879609
@@ -10678,7 +10678,7 @@ GameObject:
   - component: {fileID: 859290785}
   m_Layer: 5
   m_Name: MenuItems1
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12172,7 +12172,7 @@ GameObject:
   - component: {fileID: 955415157}
   m_Layer: 5
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: MenuButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13115,7 +13115,7 @@ GameObject:
   - component: {fileID: 1004506263}
   m_Layer: 5
   m_Name: MenuItems15
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13936,18 +13936,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088552409}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.38268366, w: 0.92387944}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.89874995, y: 0.89874995, z: 0.89874995}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7821432, y: 0.7821432, z: 0.7821432}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1893449647}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.503555, y: 0.29644775}
-  m_SizeDelta: {x: 42.73, y: 42.73}
+  m_AnchoredPosition: {x: -29.0335, y: -0.612}
+  m_SizeDelta: {x: 53.2174, y: 53.9307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088552411
 MonoBehaviour:
@@ -14037,7 +14037,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 504522101, guid: 261b03bb89fd6c340bc3c3f35ad5df8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dc7edb1c68696c408eb5434af308852, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14181,7 +14181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1261.4645, y: -334.04596}
+  m_AnchoredPosition: {x: 1260.4645, y: -333.3793}
   m_SizeDelta: {x: 615.136, y: 46.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095246454
@@ -14262,7 +14262,7 @@ GameObject:
   - component: {fileID: 1111650635}
   m_Layer: 5
   m_Name: MenuItems2
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15202,7 +15202,7 @@ RectTransform:
   m_GameObject: {fileID: 1172295040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1679, y: 1.0219125, z: 1.1679}
+  m_LocalScale: {x: 1.1162788, y: 0.8790695, z: 1.1162788}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1185628206}
@@ -15211,7 +15211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 314, y: -122.95}
+  m_AnchoredPosition: {x: 314, y: -128.4}
   m_SizeDelta: {x: 80.6867, y: 80.6867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172295042
@@ -15513,7 +15513,7 @@ GameObject:
   - component: {fileID: 1175792615}
   m_Layer: 5
   m_Name: MenuItems20
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16136,7 +16136,7 @@ GameObject:
   - component: {fileID: 1220004756}
   m_Layer: 5
   m_Name: MenuItems11
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16496,7 +16496,7 @@ GameObject:
   - component: {fileID: 1277329407}
   m_Layer: 5
   m_Name: MenuItems4
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24826,7 +24826,7 @@ GameObject:
   - component: {fileID: 1377254947}
   m_Layer: 5
   m_Name: MenuItems13
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25424,7 +25424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1261.4645, y: -551.33325}
+  m_AnchoredPosition: {x: 1260.4645, y: -550.66656}
   m_SizeDelta: {x: 160, y: 20.974}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1414828377
@@ -26378,7 +26378,7 @@ RectTransform:
   m_GameObject: {fileID: 1447661242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0474435, y: 1.0474435, z: 1.0474435}
+  m_LocalScale: {x: 0.67713034, y: 0.67713034, z: 0.67713034}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2027518727}
@@ -26386,7 +26386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0}
   m_AnchorMax: {x: 0.75, y: 1}
-  m_AnchoredPosition: {x: -329.5, y: -158.7}
+  m_AnchoredPosition: {x: -345.1, y: -190.3}
   m_SizeDelta: {x: -259.97217, y: -386.3704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447661244
@@ -26441,7 +26441,7 @@ GameObject:
   - component: {fileID: 1461016641}
   m_Layer: 5
   m_Name: MenuItems23
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26683,7 +26683,7 @@ GameObject:
   - component: {fileID: 1480765985}
   m_Layer: 5
   m_Name: MenuItems17
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27683,7 +27683,7 @@ RectTransform:
   m_GameObject: {fileID: 1500071080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1679, y: 1.0219125, z: 1.1679}
+  m_LocalScale: {x: 1.1162788, y: 0.8790695, z: 1.1162788}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1062061441}
@@ -27692,7 +27692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 355.29, y: -163.3}
+  m_AnchoredPosition: {x: 355.29, y: -168.75}
   m_SizeDelta: {x: 78.135, y: 78.135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500071082
@@ -27973,7 +27973,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1517798748
 MonoBehaviour:
@@ -28699,7 +28699,7 @@ GameObject:
   - component: {fileID: 1571526113}
   m_Layer: 5
   m_Name: MenuItems21
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29148,6 +29148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602656249}
+  - component: {fileID: 1602656250}
   - component: {fileID: 1602656248}
   - component: {fileID: 1602656247}
   - component: {fileID: 1602656246}
@@ -29256,7 +29257,7 @@ MonoBehaviour:
   - Pocion que recupera gran parte de la estamina
   - Carne que recupera poca parte de la vida
   - Carne que recupera poca parte de la estamina
-  itemNotice: {fileID: 0}
+  Menu: {fileID: 1157292992}
   noticeText: {fileID: 0}
   itemText: {fileID: 0}
   itemSelected: 0
@@ -29278,8 +29279,55 @@ Transform:
   - {fileID: 1172527976}
   - {fileID: 1330906736}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602656250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602656245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9a06039083c654bb5b9508dccbc418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Menu: {fileID: 1157292992}
+  BagMenu: {fileID: 1400182987}
+  SelectedButton: {fileID: 0}
+  menIndex: 0
+  index: 0
+  MenuButtons:
+  - {fileID: 5353959}
+  - {fileID: 208691351}
+  - {fileID: 955415155}
+  BagButtons:
+  - {fileID: 859290783}
+  - {fileID: 1111650633}
+  - {fileID: 334021366}
+  - {fileID: 1277329405}
+  - {fileID: 62488511}
+  - {fileID: 625842240}
+  - {fileID: 474528216}
+  - {fileID: 133755186}
+  - {fileID: 2134197146}
+  - {fileID: 1958416413}
+  - {fileID: 1220004754}
+  - {fileID: 1693329582}
+  - {fileID: 1377254945}
+  - {fileID: 420992924}
+  - {fileID: 1004506261}
+  - {fileID: 5082025}
+  - {fileID: 1480765983}
+  - {fileID: 1643999917}
+  - {fileID: 480311523}
+  - {fileID: 1175792613}
+  - {fileID: 1571526111}
+  - {fileID: 1880367011}
+  - {fileID: 1461016639}
+  - {fileID: 5267935}
+  playerControls: {fileID: 795640595}
 --- !u!1 &1614595364
 GameObject:
   m_ObjectHideFlags: 0
@@ -29604,7 +29652,7 @@ GameObject:
   - component: {fileID: 1643999919}
   m_Layer: 5
   m_Name: MenuItems18
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30281,7 +30329,7 @@ GameObject:
   - component: {fileID: 1693329584}
   m_Layer: 5
   m_Name: MenuItems12
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31458,18 +31506,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825105580}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.38268366, w: 0.92387944}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.89874995, y: 0.89874995, z: 0.89874995}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7821432, y: 0.7821432, z: 0.7821432}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1893449647}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9, y: 38.7}
-  m_SizeDelta: {x: 42.73, y: 42.73}
+  m_AnchoredPosition: {x: 2.8712983, y: 25.470306}
+  m_SizeDelta: {x: 49.4497, y: 50.1124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1825105582
 MonoBehaviour:
@@ -31559,7 +31607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 504522101, guid: 261b03bb89fd6c340bc3c3f35ad5df8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dc7edb1c68696c408eb5434af308852, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32073,7 +32121,7 @@ GameObject:
   - component: {fileID: 1880367013}
   m_Layer: 5
   m_Name: MenuItems22
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32193,8 +32241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112.3, y: 115.9}
-  m_SizeDelta: {x: 128.4521, y: 121.7759}
+  m_AnchoredPosition: {x: -112.3, y: 118.35572}
+  m_SizeDelta: {x: 128.4521, y: 126.6873}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893449648
 MonoBehaviour:
@@ -32217,7 +32265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893449646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -37747,7 +37795,7 @@ GameObject:
   - component: {fileID: 1958416415}
   m_Layer: 5
   m_Name: MenuItems10
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39489,7 +39537,7 @@ GameObject:
   - component: {fileID: 2134197148}
   m_Layer: 5
   m_Name: MenuItems9
-  m_TagString: Untagged
+  m_TagString: BagButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

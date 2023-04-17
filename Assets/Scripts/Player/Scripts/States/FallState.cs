@@ -95,6 +95,7 @@ public class FallState : State
 
         if (dash)
         {
+            character.animator.SetTrigger("dash");
             stateMachine.ChangeState(character.dashjumping);
             character.dashController.startCooldown();
         }

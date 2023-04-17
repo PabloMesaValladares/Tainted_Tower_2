@@ -87,7 +87,6 @@ public class DashJumpingState : State
         }
         else
         {
-            //character.animator.SetTrigger("fall");
             character.dashController.LastDashSpeed = forceToApply;
 
             stateMachine.ChangeState(character.falling);

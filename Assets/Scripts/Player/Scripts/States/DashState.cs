@@ -26,7 +26,9 @@ public class DashState : State
     public override void Enter()
     {
         base.Enter();
+        character.animator.ResetTrigger("attack");
         character.animator.ResetTrigger("move");
+        character.animator.ResetTrigger("fall");
         character.animator.SetTrigger("dash");
 
         dashForce = character.dashController.dashForce;
@@ -77,6 +79,9 @@ public class DashState : State
         if (velocity != Vector3.zero)
             forceToApply = velocity * dashForce + orientation.up * dashUpwardForce;
 
+        if (velocity.sqrMagnitude > 0)
+            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(forceToApply.x, 0, forceToApply.z)), character.rotationDampTime);
+
         if (dashDuration > dashStop)
         {
             rb.AddForce(forceToApply, ForceMode.Impulse);
@@ -84,7 +89,7 @@ public class DashState : State
         }
         else
         {
-            //character.animator.SetTrigger("move");
+            character.animator.SetTrigger("move");
             character.dashController.LastDashSpeed = forceToApply;
 
             stateMachine.ChangeState(stateMachine.previousState);
