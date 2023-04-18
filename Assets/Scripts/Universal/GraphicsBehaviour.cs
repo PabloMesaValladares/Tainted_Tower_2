@@ -10,18 +10,44 @@ public class GraphicsBehaviour : MonoBehaviour
     [SerializeField]
     private TMP_Dropdown screenOptions, frameOptions, qualityOptions, resolutionOptions;
 
+    [SerializeField]
+    private bool Full;
+
     public RenderPipelineAsset[] qualityLevels;
 
     public Camera cam;
 
+    public List<int> reswidth;
+    public List<int> resheight;
+
     [SerializeField]
     private int frameCap;
-    // Start is called before the first frame update
+
     void Start()
     {
-       qualityOptions.value = QualitySettings.GetQualityLevel();
-        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, FullScreenMode.FullScreenWindow);
+        Resolution[] resolutions = Screen.resolutions;
+
+        for (int i = resolutions.Length - 1; i >= 0; i--)
+        {
+            reswidth[resolutions.Length - 1 -  i] = resolutions[i].width;
+            resheight[resolutions.Length - 1 - i] = resolutions[i].height;
+        }
+
+        qualityOptions.value = QualitySettings.GetQualityLevel();
         cam = Camera.main;
+
+        resolutionOptions.options.Insert(0, new TMP_Dropdown.OptionData(reswidth[0] + " x " + resheight[0], null));
+        resolutionOptions.options.Insert(1, new TMP_Dropdown.OptionData(reswidth[1] + " x " + resheight[1], null));
+        resolutionOptions.options.Insert(2, new TMP_Dropdown.OptionData(reswidth[2] + " x " + resheight[2], null));
+        resolutionOptions.options.Insert(3, new TMP_Dropdown.OptionData(reswidth[3] + " x " + resheight[3], null));
+        resolutionOptions.options.Insert(4, new TMP_Dropdown.OptionData(reswidth[4] + " x " + resheight[4], null));
+        resolutionOptions.options.Insert(5, new TMP_Dropdown.OptionData(reswidth[5] + " x " + resheight[5], null));
+        resolutionOptions.options.Insert(6, new TMP_Dropdown.OptionData(reswidth[6] + " x " + resheight[6], null));
+        resolutionOptions.options.Insert(7, new TMP_Dropdown.OptionData(reswidth[7] + " x " + resheight[7], null));
+        resolutionOptions.options.Insert(8, new TMP_Dropdown.OptionData(reswidth[8] + " x " + resheight[8], null));
+        resolutionOptions.options.Insert(9, new TMP_Dropdown.OptionData(reswidth[9] + " x " + resheight[9], null));
+
+        ChangeResolution();
     }
 
     // Update is called once per frame
@@ -34,15 +60,21 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (screenOptions.value == 0)
         {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
+            Full = true;
+            Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
+            ChangeResolution();
         }
         else if (screenOptions.value == 1)
         {
-            Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
+            Full = false;
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+            ChangeResolution();
         }
         else if (screenOptions.value == 2)
         {
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+            Full = false;
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+            ChangeResolution();
         }
     }
 
@@ -50,81 +82,75 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (qualityOptions.value == 0)
         {
-            Debug.Log("lOW");
             QualitySettings.SetQualityLevel(0);
-            QualitySettings.masterTextureLimit = 3;
-            QualitySettings.skinWeights = SkinWeights.TwoBones;
-            cam.farClipPlane = 100;
+            QualitySettings.masterTextureLimit = 0;
+            QualitySettings.skinWeights = SkinWeights.Unlimited;
+            cam.farClipPlane = 900;
         }
         else if (qualityOptions.value == 1)
         {
-            Debug.Log("MED");
             QualitySettings.SetQualityLevel(1);
             QualitySettings.masterTextureLimit = 1;
             QualitySettings.skinWeights = SkinWeights.FourBones;
-            cam.farClipPlane = 200;
+            cam.farClipPlane = 600;
         }
         else if (qualityOptions.value == 2)
         {
-            Debug.Log("HIG");
             QualitySettings.SetQualityLevel(2);
-            QualitySettings.masterTextureLimit = 0;
-            QualitySettings.skinWeights = SkinWeights.Unlimited;
+            QualitySettings.masterTextureLimit = 3;
+            QualitySettings.skinWeights = SkinWeights.TwoBones;
             cam.farClipPlane = 300;
         }
     }
 
     public void ChangeResolution()
     {
-        if (resolutionOptions.value == 0)
+        if(Full)
         {
-            //resolutionOptions.options.ToArray(Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true));
-            Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
-            //Screen.SetResolution(320, 240, false);
+            Screen.SetResolution(reswidth[0], resheight[0], true);   
         }
-        else if (resolutionOptions.value == 1)
+        else if(Full == false)
         {
-            Screen.SetResolution(640, 480, false);
-        }
-        else if (resolutionOptions.value == 2)
-        {
-            Screen.SetResolution(854, 480, false);
-        }
-        else if (resolutionOptions.value == 3)
-        {
-            Screen.SetResolution(800, 600, false);
-        }
-        else if (resolutionOptions.value == 4)
-        {
-            Screen.SetResolution(960, 540, false);
-        }
-        else if (resolutionOptions.value == 5)
-        {
-            Screen.SetResolution(1280, 720, false);
-        }
-        else if (resolutionOptions.value == 6)
-        {
-            Screen.SetResolution(1400, 1050, false);
-        }
-        else if (resolutionOptions.value == 7)
-        {
-            Screen.SetResolution(1600, 1200, false);
-        }
-        else if (resolutionOptions.value == 8)
-        {
-            Screen.SetResolution(1920, 1080, false);
-        }
-        else if (resolutionOptions.value == 9)
-        {
-            Screen.SetResolution(1920, 1200, false);
-        }
-        else if (resolutionOptions.value == 10)
-        {
-            Screen.SetResolution(2560, 1440, false);
-        }
-        else if (resolutionOptions.value == 11)
-        {
-            Screen.SetResolution(3840, 2160, false);
+            if (resolutionOptions.value == 0)
+            {
+                Screen.SetResolution(reswidth[0], resheight[0], false);
+            }
+            else if (resolutionOptions.value == 1)
+            {
+                Screen.SetResolution(reswidth[1], resheight[1], false);
+            }
+            else if (resolutionOptions.value == 2)
+            {
+                Screen.SetResolution(reswidth[2], resheight[2], false);
+            }
+            else if (resolutionOptions.value == 3)
+            {
+                Screen.SetResolution(reswidth[3], resheight[3], false);
+            }
+            else if (resolutionOptions.value == 4)
+            {
+                Screen.SetResolution(reswidth[4], resheight[4], false);
+            }
+            else if (resolutionOptions.value == 5)
+            {
+                Screen.SetResolution(reswidth[5], resheight[5], false);
+            }
+            else if (resolutionOptions.value == 6)
+            {
+                Screen.SetResolution(reswidth[6], resheight[6], false);
+            }
+            else if (resolutionOptions.value == 7)
+            {
+                Screen.SetResolution(reswidth[7], resheight[7], false);
+            }
+            else if (resolutionOptions.value == 8)
+            {
+                Screen.SetResolution(reswidth[8], resheight[8], false);
+            }
+            else if (resolutionOptions.value == 9)
+            {
+                Screen.SetResolution(reswidth[9], resheight[9], false);
+            }
         }
     }
 
@@ -132,17 +158,13 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (frameOptions.value == 0)
         {
-            frameCap = 30; 
+            frameCap = 60; 
         }
         else if (frameOptions.value == 1)
         {
-            frameCap = 60;
-        }
-        else if (frameOptions.value == 2)
-        {
             frameCap = 120;
         }
-        else if (frameOptions.value == 3)
+        else if (frameOptions.value == 2)
         {
             frameCap = 240;
         }
