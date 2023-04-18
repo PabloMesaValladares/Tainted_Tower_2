@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67409a990eed17c4aa62ad2eab8316f7, type: 3}
   m_Name: P2-Idle-PillarTimer
   m_EditorClassIdentifier: 
-  TimerMaxTime: 4
+  TimerMaxTime: 3

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PillarAbility : MonoBehaviour
 {
-    [SerializeField] private bool hasOffset;
-    [SerializeField] private float timer, knockBackForce, knowckBackRadius,upKnockBackForce;
+    [SerializeField] private bool hasOffset, playing;
+    [SerializeField] private float timer, duration;
 
     Timer[] _timer;
     new Collider collider;
@@ -18,16 +18,18 @@ public class PillarAbility : MonoBehaviour
         _timer = GetComponents<Timer>();
         collider = GetComponent<Collider>();
         _anim = GetComponentInChildren<Animator>();
+        playing = false;
     }
 
     void OnEnable()
     {
         collider.isTrigger = true;
+        _timer[0].enabled = true;
+        _timer[1].enabled = false;
 
-        if (hasOffset)
+        if(hasOffset)
             StartTimer(timer, 0);
-        else
-            PlayAnimation();
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,11 +43,13 @@ public class PillarAbility : MonoBehaviour
     public void PlayAnimation()
     {
         _anim.SetTrigger("Pilar");
+
+        StartTimer(duration, 1);
     }
 
     public void ChangeColliderType()
     {
-        collider.isTrigger = false;
+        collider.isTrigger = true;
     }
 
     public void DisableParent()

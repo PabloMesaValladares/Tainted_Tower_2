@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
-    private float time;
+    [SerializeField] private float time;
     private float stopw;
     private bool started;
 
