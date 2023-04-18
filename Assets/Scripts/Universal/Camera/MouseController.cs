@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 using Cinemachine;
 
 public class MouseController : MonoBehaviour
@@ -13,6 +14,7 @@ public class MouseController : MonoBehaviour
 
     InputAction activate;
 
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,18 @@ public class MouseController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        player = playerInput.gameObject;
+    }
+
+    private void OnEnable()
+    {
+        ControllerInventory.mouseUnlock += Unlock;
+        ControllerInventory.mouseLock += Lock;
+    }
+    private void OnDisable()
+    {
+        ControllerInventory.mouseUnlock -= Unlock;
+        ControllerInventory.mouseLock -= Lock;
     }
 
     // Update is called once per frame
@@ -29,19 +43,14 @@ public class MouseController : MonoBehaviour
         {
             Unlock();
         }
-        else if(pauseMenu.activeInHierarchy)
-        {
-            Unlock();
-        }
-        else
-        {
-            Lock();
-        }
     }
+
+
 
     void Unlock()
     {
-        if(Gamepad.all.Count > 0)
+        player.GetComponent<PlayerController>().enabled = false;
+        if(InputDetecter.Instance.gamepad)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -56,6 +65,7 @@ public class MouseController : MonoBehaviour
     }
     void Lock()
     {
+        player.GetComponent<PlayerController>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         NormalCamera.GetComponent<CinemachineInputProvider>().enabled = AimCamera.GetComponent<CinemachineInputProvider>().enabled = true;

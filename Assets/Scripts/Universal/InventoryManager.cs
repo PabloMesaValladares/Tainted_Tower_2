@@ -31,7 +31,7 @@ public class InventoryManager : MonoBehaviour
     InputAction firstSlot, secondSlot, thirdSlot, fourthSlot, Use, pause;
     InventorySelector selector;
 
-    public Item selectedItem;
+    public GameObject selectedItem;
 
     private void Awake()
     {
@@ -102,14 +102,14 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool controllers = Gamepad.all.Count <= 0;
-        if (controllers && !Menu.activeInHierarchy)
+        if (!Menu.activeInHierarchy)
         {
             if (firstSlot.triggered && QuickSlots[0].activeInHierarchy)
             {
                 if (!itemSelected)
                 {
-                    selectedItem = QuickSlots[0].GetComponent<Item>();
+                    Debug.Log("Seleccionado");
+                    selectedItem = QuickSlots[0];
                     itemSelected = true;
                 }
                 else
@@ -124,7 +124,7 @@ public class InventoryManager : MonoBehaviour
 
                 if (!itemSelected)
                 {
-                    selectedItem = QuickSlots[1].GetComponent<Item>();
+                    selectedItem = QuickSlots[1];
                     itemSelected = true;
                 }
                 else
@@ -138,7 +138,7 @@ public class InventoryManager : MonoBehaviour
             {
                 if (!itemSelected)
                 {
-                    selectedItem = QuickSlots[2].GetComponent<Item>();
+                    selectedItem = QuickSlots[2];
                     itemSelected = true;
                 }
                 else
@@ -152,7 +152,7 @@ public class InventoryManager : MonoBehaviour
             {
                 if (!itemSelected)
                 {
-                    selectedItem = QuickSlots[3].GetComponent<Item>();
+                    selectedItem = QuickSlots[3];
                     itemSelected = true;
                 }
                 else
@@ -164,7 +164,7 @@ public class InventoryManager : MonoBehaviour
             }
             if (Use.triggered && itemSelected)
             {
-                selectedItem.Use();
+                selectedItem.GetComponent<Item>().Use();
             }
         }
 

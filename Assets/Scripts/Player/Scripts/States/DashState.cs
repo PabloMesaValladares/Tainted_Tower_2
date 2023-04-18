@@ -92,7 +92,12 @@ public class DashState : State
             character.animator.SetTrigger("move");
             character.dashController.LastDashSpeed = forceToApply;
 
-            stateMachine.ChangeState(stateMachine.previousState);
+            if (stateMachine.previousState == character.attacking)
+            {
+                stateMachine.ChangeState(character.standing);
+            }
+            else
+                stateMachine.ChangeState(stateMachine.previousState);
 
 
         }
