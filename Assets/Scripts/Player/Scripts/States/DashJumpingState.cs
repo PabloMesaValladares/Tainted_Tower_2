@@ -41,6 +41,7 @@ public class DashJumpingState : State
 
         maxYSpeed = character.dashController.maxYSpeed;
 
+        character.GetComponent<HealthBehaviour>().invencibility = true;
         rb = character.rb;
         rb.drag = 0;
         rb.useGravity = false;
@@ -98,6 +99,7 @@ public class DashJumpingState : State
     {
         base.Exit();
 
+        character.GetComponent<HealthBehaviour>().invencibility = false;
         rb.useGravity = true;
         character.Trail.Stop();
     }

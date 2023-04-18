@@ -39,6 +39,7 @@ public class DashState : State
         velocity = Vector3.zero;
         previousInput = Vector3.zero;
         orientation = character.transform;
+        character.GetComponent<HealthBehaviour>().invencibility = true;
 
         maxYSpeed = character.dashController.maxYSpeed;
 
@@ -106,6 +107,7 @@ public class DashState : State
     {
         base.Exit();
 
+        character.GetComponent<HealthBehaviour>().invencibility = false;
         character.animator.ResetTrigger("dash");
         character.Trail.Stop();
     }
