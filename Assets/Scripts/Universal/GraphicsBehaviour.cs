@@ -82,6 +82,7 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (qualityOptions.value == 0)
         {
+            Debug.Log("low");
             QualitySettings.SetQualityLevel(0);
             QualitySettings.masterTextureLimit = 0;
             QualitySettings.skinWeights = SkinWeights.Unlimited;
@@ -89,6 +90,7 @@ public class GraphicsBehaviour : MonoBehaviour
         }
         else if (qualityOptions.value == 1)
         {
+            Debug.Log("medium");
             QualitySettings.SetQualityLevel(1);
             QualitySettings.masterTextureLimit = 1;
             QualitySettings.skinWeights = SkinWeights.FourBones;
@@ -96,6 +98,7 @@ public class GraphicsBehaviour : MonoBehaviour
         }
         else if (qualityOptions.value == 2)
         {
+            Debug.Log("high");
             QualitySettings.SetQualityLevel(2);
             QualitySettings.masterTextureLimit = 3;
             QualitySettings.skinWeights = SkinWeights.TwoBones;
