@@ -20,6 +20,7 @@ public class GraphicsBehaviour : MonoBehaviour
     void Start()
     {
        qualityOptions.value = QualitySettings.GetQualityLevel();
+        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, FullScreenMode.FullScreenWindow);
         cam = Camera.main;
     }
 
@@ -77,7 +78,9 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         if (resolutionOptions.value == 0)
         {
-            Screen.SetResolution(320, 240, false);
+            //resolutionOptions.options.ToArray(Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true));
+            Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
+            //Screen.SetResolution(320, 240, false);
         }
         else if (resolutionOptions.value == 1)
         {
