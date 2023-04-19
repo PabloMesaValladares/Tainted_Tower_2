@@ -5,16 +5,21 @@ using UnityEngine;
 public class Storm : MonoBehaviour
 {
     public bool firstHit;
-    public float tickInterval;
-    public float stormDuration;
-    HealthBehaviour _playerHB;
+    public float tickInterval, stormDuration;
+    [SerializeField] int firstTickDmg, tickDmg;
+
     Timer _timer;
+    GameObject player;
+    HealthBehaviour hb;
     new Collider collider;
+
 
     private void Awake()
     {
         collider = GetComponent<Collider>();
         _timer = GetComponent<Timer>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        hb = player.GetComponent<HealthBehaviour>();
     }
 
     private void OnEnable()
@@ -46,6 +51,7 @@ public class Storm : MonoBehaviour
     {
         if(firstHit)
         {
+            hb.Hurt(firstTickDmg);
             firstHit = false;
         }
 
@@ -54,6 +60,7 @@ public class Storm : MonoBehaviour
 
     IEnumerator DamageTick()
     {
+        hb.Hurt(tickDmg);
         yield return new WaitForSeconds(tickInterval);
         DamageOverTime();
     }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5563208143170862617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PilarPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 6538699520700931466}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5563208142844696426
 PrefabInstance:
@@ -99,6 +99,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PilarAbility
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072091691116171354, guid: ce2ace235a9920c4080bd0bc8f272148,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -190,16 +195,16 @@ MonoBehaviour:
   timerHasStopped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5563208144210142577}
-        m_TargetAssemblyTypeName: PillarAbility, Assembly-CSharp
-        m_MethodName: DisableParent
-        m_Mode: 1
+      - m_Target: {fileID: 6866926824178661274}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PilarDown
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &5563208144210142577
@@ -215,12 +220,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasOffset: 1
-  playing: 0
   timer: 2
   duration: 10
+  damage: 0
+  markable:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &6538699520700931466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1696270218314435296, guid: ce2ace235a9920c4080bd0bc8f272148,
+    type: 3}
+  m_PrefabInstance: {fileID: 5563208142844696426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6866926824178661274 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1330890401360683248, guid: ce2ace235a9920c4080bd0bc8f272148,
     type: 3}
   m_PrefabInstance: {fileID: 5563208142844696426}
   m_PrefabAsset: {fileID: 0}

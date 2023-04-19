@@ -2051,7 +2051,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy: {fileID: 0}
   rb: {fileID: 0}
-  detect: 0
+  detect: 1
 --- !u!114 &1647880413
 MonoBehaviour:
   m_ObjectHideFlags: 0

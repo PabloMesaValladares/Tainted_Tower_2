@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class PillarAbility : MonoBehaviour
 {
-    [SerializeField] private bool hasOffset, playing;
+    [SerializeField] private bool hasOffset;
     [SerializeField] private float timer, duration;
+    [SerializeField] private int damage;
 
     Timer[] _timer;
     new Collider collider;
     Animator _anim;
 
-    Vector3 spherePos;
+    public LayerMask markable;
+    float markedLayer;
 
     private void Awake()
     {
         _timer = GetComponents<Timer>();
         collider = GetComponent<Collider>();
         _anim = GetComponentInChildren<Animator>();
-        playing = false;
+
+        var rawValue = markable.value;
+        var layerValue = Mathf.Log(rawValue, 2);
+        markedLayer = layerValue;
     }
 
     void OnEnable()
@@ -29,14 +34,13 @@ public class PillarAbility : MonoBehaviour
 
         if(hasOffset)
             StartTimer(timer, 0);
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent<PlayerController>(out PlayerController player))
+        if(other.gameObject.layer == markedLayer)
         {
-            spherePos = player.transform.position;
+            other.GetComponent<HealthBehaviour>().Hurt(damage);
         }
     }
 
@@ -49,7 +53,7 @@ public class PillarAbility : MonoBehaviour
 
     public void ChangeColliderType()
     {
-        collider.isTrigger = true;
+        collider.isTrigger = false;
     }
 
     public void DisableParent()
