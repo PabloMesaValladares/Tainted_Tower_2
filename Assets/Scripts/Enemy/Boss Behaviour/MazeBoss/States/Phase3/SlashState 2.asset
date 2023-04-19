@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SlashState 2
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: dbcd89c949f68c349ba86704e015626c, type: 2}
+  - {fileID: 11400000, guid: b5ffb5485a687a94d92aff7584b763cb, type: 2}
   transitions:
   - desicion: {fileID: 11400000, guid: 209434588947523488a5ec575175dd00, type: 2}
     trueState: {fileID: 11400000, guid: e0ec06052d0fb8e4884afb85713bf3bb, type: 2}

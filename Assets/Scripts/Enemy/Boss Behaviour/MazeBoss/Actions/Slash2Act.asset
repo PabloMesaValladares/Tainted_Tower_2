@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580b40c03c2b4a7469e6f238154b23ec, type: 3}
   m_Name: Slash2Act
   m_EditorClassIdentifier: 
-  TimeWaitSlashes: 0.7
-  offset: 5
+  TimeWaitSlashes: 0.4
+  SlashSpeed: 100
+  offset: 8

@@ -7,8 +7,6 @@ public class Minigame2 : MonoBehaviour
 {
     [SerializeField]
     private Vector3 doorDown, doorUp;
-    [SerializeField]
-    private BoxCollider colliderPlate;
 
     [SerializeField]
     private float timeFade;
@@ -32,7 +30,6 @@ public class Minigame2 : MonoBehaviour
         if (collision.gameObject.TryGetComponent<PlayerController>(out PlayerController _playerController))
         {
             plateEngage.Invoke();
-            colliderPlate.enabled = false;
             Debug.Log("Emblem Engageeeeeeeeeeeeeeeeeeeeeeeeeee");
         }
     }

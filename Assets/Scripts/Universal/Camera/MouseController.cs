@@ -43,13 +43,21 @@ public class MouseController : MonoBehaviour
         {
             Unlock();
         }
+        else if (pauseMenu.activeInHierarchy)
+        {
+            Unlock();
+        }
+        else
+        {
+            Lock();
+        }
     }
 
 
 
     void Unlock()
     {
-        player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<PlayerInput>().enabled = false;
         if(InputDetecter.Instance.gamepad)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -65,7 +73,7 @@ public class MouseController : MonoBehaviour
     }
     void Lock()
     {
-        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<PlayerInput>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         NormalCamera.GetComponent<CinemachineInputProvider>().enabled = AimCamera.GetComponent<CinemachineInputProvider>().enabled = true;

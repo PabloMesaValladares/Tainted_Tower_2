@@ -17,6 +17,6 @@ public class WaterTouch : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        collision.transform.position = startingPos;
+        collision.gameObject.GetComponent<RespawnPoint>().Respawn();
     }
 }

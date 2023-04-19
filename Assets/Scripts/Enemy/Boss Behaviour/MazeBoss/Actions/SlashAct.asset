@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: SlashAct
   m_EditorClassIdentifier: 
   NoSlashes: 1
+  SlashSpeed: 80
   offset: 0.1
