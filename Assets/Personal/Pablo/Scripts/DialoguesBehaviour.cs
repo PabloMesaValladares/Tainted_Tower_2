@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using I2.Loc;
+using UnityEngine.InputSystem;
 
 public class DialoguesBehaviour : MonoBehaviour
 {
@@ -11,41 +12,23 @@ public class DialoguesBehaviour : MonoBehaviour
     [SerializeField]
     private TMP_Text fieldText;
 
-    
+
     [Header("Debug")]
     public int totalCharacters;
     public int capacity;
     public int counter;
-    private int visiblecount;
-    
-
+    public int visiblecount;
 
     [SerializeField]
     private string actualString;
     [SerializeField]
     private float typingSpeed;
 
-    [SerializeField]
-    private int i;
-
-    [SerializeField] bool ChangeText = false;
-
     // Start is called before the first frame update
-    void Start()
-    {
-        GetText(2);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void GetText(int j)
     {
-        fieldText.text = dialoguesBox.GetSavedText(j);
-        DisplayLetters();
+        actualString = dialoguesBox.GetSavedText(j);
+        StartCoroutine(DisplayLetters());
     }
 
     private IEnumerator DisplayLetters() //Corutina para ir poniendo las letras 1 a 1.
@@ -54,20 +37,17 @@ public class DialoguesBehaviour : MonoBehaviour
 
         fieldText.maxVisibleCharacters = 0;
 
-        totalCharacters = fieldText.textInfo.characterCount;
+        totalCharacters = actualString.Length;
         counter = 0;
-        while (counter < totalCharacters)
+        while (counter <= totalCharacters)
         {
-            visiblecount = counter % (totalCharacters + 1);
-            fieldText.maxVisibleCharacters = visiblecount;
+            fieldText.maxVisibleCharacters = counter;
 
-            if (visiblecount >= totalCharacters)
-            counter += 1;
+            //if (counter <= totalCharacters)
+                counter += 1;
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        if (i + 1 < capacity)
-            i = i + 1;
         yield return new WaitForSeconds(0.05f);
     }
 

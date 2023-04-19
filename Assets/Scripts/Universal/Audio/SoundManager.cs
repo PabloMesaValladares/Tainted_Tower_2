@@ -119,7 +119,6 @@ public class SoundManager : MonoBehaviour
         Debug.Log("Entro");
         AudioSource audioIn = audioControllers[0];
         AudioSource audioOut = audioControllers[0];
-        float vol = 0.1f;
 
         if (_audios.ContainsKey(nameIn))//if exist in dictionary
         {

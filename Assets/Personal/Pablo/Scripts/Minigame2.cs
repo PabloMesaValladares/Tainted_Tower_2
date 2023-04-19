@@ -7,19 +7,16 @@ public class Minigame2 : MonoBehaviour
 {
     [SerializeField]
     private Vector3 doorDown, doorUp;
-    [SerializeField]
-    private BoxCollider colliderPlate;
 
     [SerializeField]
-    private float timeFade;
+    private float timeFade, timer, maxTimer;
 
     public UnityEvent plateEngage;
     // Start is called before the first frame update
 
     public void UpWalls(GameObject w)
     {
-        //w.transform.position.y = transform.Translate(0, 2, 0);
-        StartCoroutine(startMove(w, new Vector3(w.transform.position.x, doorUp.y, w.transform.position.z), timeFade));
+        StartCoroutine(startMove(w, new Vector3(w.transform.position.x, doorUp.y, w.transform.position.z), timeFade)); 
     }
 
     public void DownWalls(GameObject w)
@@ -32,8 +29,6 @@ public class Minigame2 : MonoBehaviour
         if (collision.gameObject.TryGetComponent<PlayerController>(out PlayerController _playerController))
         {
             plateEngage.Invoke();
-            colliderPlate.enabled = false;
-            Debug.Log("Emblem Engageeeeeeeeeeeeeeeeeeeeeeeeeee");
         }
     }
 
