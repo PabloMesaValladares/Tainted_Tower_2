@@ -2423,7 +2423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 906.6666, y: -186.95248}
+  m_AnchoredPosition: {x: 906.6666, y: -617.68243}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193738822
@@ -10805,7 +10805,7 @@ MonoBehaviour:
   amount: 0
   BodyMaterial: {fileID: 2100000, guid: 8e4dd1377856fdc4ba114de18cea7eed, type: 2}
   HairMaterial: {fileID: 2100000, guid: aa44f96a6ee21aa42a2e59bd713b7fda, type: 2}
-  ClothesMaterial: {fileID: 2100000, guid: dca217ef2137e2e48b1def9ed8d1a808, type: 2}
+  ClothesMaterial: {fileID: 2100000, guid: f1a4cf47a15cc434280a65d11f290e63, type: 2}
   EyeMaterial: {fileID: 2100000, guid: 121dd5c5ef8e43c4aaa3172307a59f6e, type: 2}
 --- !u!114 &781117669
 MonoBehaviour:
@@ -43111,6 +43111,8 @@ MonoBehaviour:
   doorDown: {x: 0, y: 150.95, z: 0}
   doorUp: {x: 0, y: 158.29, z: 0}
   timeFade: 0.5
+  timer: 0
+  maxTimer: 0
   plateEngage:
     m_PersistentCalls:
       m_Calls:
@@ -43174,6 +43176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c4c644d56b42344bf40bf2415c90f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
   timerHasStopped:
     m_PersistentCalls:
       m_Calls:
