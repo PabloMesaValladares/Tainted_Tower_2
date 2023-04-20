@@ -83,10 +83,6 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-<<<<<<< HEAD:Assets/Shaders/Shader/PersonajePrincipal-Ropa.mat
-    - _Amount: 0.21507256
-=======
->>>>>>> Mario-prog:Assets/Materials/PyromanticMaterial.mat
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
