@@ -10,7 +10,9 @@ public class AttackState : State
     float clipLenght;
     float clipSpeed;
     bool attack;
+    bool run;
     bool dash;
+    Rigidbody rb;
     Vector3 currentVelocity;
     Vector3 cVelocity; 
 
@@ -18,6 +20,7 @@ public class AttackState : State
     Transform orientation;
     float dashForce;
     float dashUpwardForce;
+    Vector3 moveDirection;
 
     public AttackState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
@@ -30,6 +33,7 @@ public class AttackState : State
         base.Enter();
 
         attack = false;
+        moveDirection = character.transform.forward;
         currentVelocity = Vector3.zero;
         dash = false;
         character.animator.applyRootMotion = true;
@@ -39,17 +43,28 @@ public class AttackState : State
         orientation = character.transform; 
         dashForce = 5f;
         dashUpwardForce = 0f;
+        rb = character.rb;
+
+        rb.useGravity = true;
 
         character.Sheathedweapon.SetActive(false);
         character.weapon.SetActive(true);
+
+        input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
+
+        velocity = new Vector3(input.x, 0, input.y);
+        moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
+        moveDirection.y = 0;
+        character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.attackRotationDampTime);
+
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
     {
         base.HandleInput();
 
-        if (attackAction.triggered)
-            attack = true;
+        attack = attackAction.IsPressed();
+        run = sprintAction.IsPressed();
         if (dashAction.triggered)
             dash = character.dashController.checkIfDash();
     }
@@ -69,7 +84,10 @@ public class AttackState : State
         
         else if(timePassed >= clipLenght / clipSpeed)
         {
-            stateMachine.ChangeState(character.standing);
+            if (run)
+                stateMachine.ChangeState(character.sprinting);
+            else
+                stateMachine.ChangeState(character.standing);
             character.animator.SetTrigger("move");
         }
 
@@ -79,6 +97,7 @@ public class AttackState : State
             character.dashController.startCooldown();
             character.animator.SetTrigger("dash");
         }
+
     }
     public override void PhysicsUpdate()
     {
@@ -94,7 +113,9 @@ public class AttackState : State
                 //if (Vector3.Distance(character.transform.position, enemy.transform.position) > 1.5f)
                     //character.controller.Move(forceToApply * dashForce * Time.deltaTime);
             }
+
         }
+
     }
 
     public override void Exit()

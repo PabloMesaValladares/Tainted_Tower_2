@@ -12,10 +12,6 @@ public class HealthBehaviour : MonoBehaviour
 
     public UnityEvent damagedEvent;
 
-    private void Awake()
-    {
-        currentHP = maxHP;
-    }
 
     public void AddHealthPercent(int h)
     {

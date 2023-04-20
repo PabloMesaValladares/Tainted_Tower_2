@@ -25,6 +25,7 @@ public class InputDetecter : MonoBehaviour
     {
         //buttonImage = GetComponent<Image>();
         //updateButtonImage(input.currentControlScheme);
+        input = GetComponent<PlayerInput>();
         Debug.Log(input.currentControlScheme);
     }
 

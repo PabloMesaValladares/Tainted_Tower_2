@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Escenario 1.unity
     guid: c277c6d17c9329f43aa8172f73c31a25
+  - enabled: 1
+    path: Assets/Scene/LoadingScreen.unity
+    guid: 13e57a12d345b9a47b75fa4d0783754d
+  - enabled: 1
+    path: Assets/Scene/EscenarioDavid.unity
+    guid: ca30e0afc72ceeb4faed2a3a11594c96
   m_configObjects: {}

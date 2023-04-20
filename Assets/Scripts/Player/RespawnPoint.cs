@@ -21,6 +21,6 @@ public class RespawnPoint : MonoBehaviour
 
     public void Respawn()
     {
-        gameObject.transform.position = RespawnPosition;
+        GameManager.instance.SetScripts();
     }
 }

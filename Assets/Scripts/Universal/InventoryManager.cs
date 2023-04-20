@@ -8,6 +8,7 @@ using TMPro;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] GameObject[] Slots;
+    [SerializeField] Item[] SlotsItems;
     [SerializeField]GameObject[] QuickSlots;
     [SerializeField] Sprite[] itemImage;
     [SerializeField] ItemUses[] itemUses;
@@ -50,6 +51,7 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         itemSelected = false;
+        SlotsItems = new Item[Slots.Length];
         items = new Dictionary<string, Item>();
         itemsImageSearch = new Dictionary<string, Sprite>();
         itemsUseSearch = new Dictionary<string, ItemUses>();
@@ -78,6 +80,7 @@ public class InventoryManager : MonoBehaviour
                 Slots[i].GetComponent<Image>().sprite = itemsImageSearch[Slots[i].GetComponent<Item>().itemName];
 
                 Slots[i].GetComponent<Item>().SetUse(sendItemUse(Slots[i].GetComponent<Item>().itemName));
+                SlotsItems[i] = Slots[i].GetComponent<Item>();
                 //Slots[i].GetComponentInChildren<InventoryNum>().UpdateText();
             }
             else
@@ -201,6 +204,29 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void UpdateSlot(Item itemGot, int ind)
+    {
+        GameObject slot = Slots[ind];
+
+
+        //noticeText.text = TextsManager.instance.GetText("Got_Item");
+        //itemText.text = TextsManager.instance.GetText(name);
+        //itemNotice.SetActive(true);
+        GameObject parent = slot.GetComponentInParent<Slot>().gameObject;
+        InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
+        slot.GetComponent<Item>().itemName = itemGot.itemName;
+        slot.GetComponent<Item>().SetUse(itemsUseSearch[itemGot.name]);
+        slot.GetComponent<Item>().Num = itemGot.Num;
+        slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
+        parent.GetComponent<Slot>().item = slot.GetComponent<Item>();
+        child.item = slot.GetComponent<Item>();
+        //child.UpdateText();
+        parent.name = itemGot.itemName;
+        slot.SetActive(true);
+        //GameManager.instance.NotificationOn();
+
+    }
+
     public void UpdateQuickSlot(Item itemGot, int id)
     {
 
@@ -263,5 +289,16 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public Item[] getInventoryItems()
+    {
+        return SlotsItems;
+    }
 
+    public void setInventoryItems(Item[] items)
+    {
+        for(int i = 0; i < SlotsItems.Length; i++)
+        {
+            UpdateSlot(items[i], i);
+        }
+    }
 }
