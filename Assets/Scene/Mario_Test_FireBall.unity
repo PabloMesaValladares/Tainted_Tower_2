@@ -7261,6 +7261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1754551624}
   rotate: 0
+  camDistance: 0
   camZoom: 15
 --- !u!114 &609137808
 MonoBehaviour:
@@ -22529,7 +22530,7 @@ MonoBehaviour:
   - Pocion que recupera gran parte de la estamina
   - Carne que recupera poca parte de la vida
   - Carne que recupera poca parte de la estamina
-  itemNotice: {fileID: 0}
+  Menu: {fileID: 0}
   noticeText: {fileID: 0}
   itemText: {fileID: 0}
   itemSelected: 0
@@ -32090,8 +32091,9 @@ GameObject:
   - component: {fileID: 1527676920}
   - component: {fileID: 1527676922}
   - component: {fileID: 1527676921}
+  - component: {fileID: 1527676923}
   m_Layer: 0
-  m_Name: AttackFireParticles
+  m_Name: EnemyAttackFireParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35764,9 +35766,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -35829,7 +35831,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -35882,7 +35884,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -35941,7 +35943,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -36893,6 +36895,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1527676923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527676919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8032e4cce62cf44bc8e221fb3a40f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyParticleAttack: {fileID: 1527676922}
+  damage: 10
 --- !u!1 &1540473634
 GameObject:
   m_ObjectHideFlags: 0
@@ -44123,6 +44139,8 @@ GameObject:
   - component: {fileID: 1705587408}
   - component: {fileID: 1705587418}
   - component: {fileID: 1705587419}
+  - component: {fileID: 1705587421}
+  - component: {fileID: 1705587420}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -44479,6 +44497,50 @@ MonoBehaviour:
   timeBetweenCast: 2
   castPoint: {fileID: 2002684014}
   manaSlider: {fileID: 1310029868}
+--- !u!114 &1705587420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705587406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ee894a4ed5d4f45bc323dff92db259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FX: {fileID: 0}
+  Animation: {fileID: 0}
+--- !u!114 &1705587421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705587406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15f34d340b00a94eb76f3ea175e333c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
+  invencibility: 0
+  damagedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1705587420}
+        m_TargetAssemblyTypeName: DestroyBehavior, Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1706022695
 GameObject:
   m_ObjectHideFlags: 0
@@ -45361,6 +45423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 0
   currentHP: 0
+  invencibility: 0
   damagedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -46562,7 +46625,7 @@ GameObject:
   - component: {fileID: 1834897682}
   - component: {fileID: 1834897681}
   m_Layer: 0
-  m_Name: AttackPreviewParticles
+  m_Name: EnemyAttackPreviewParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62831,7 +62894,7 @@ MonoBehaviour:
   - Attack
   - Defense
   desc: []
-  itemNotice: {fileID: 0}
+  Menu: {fileID: 0}
   noticeText: {fileID: 0}
   itemText: {fileID: 0}
   itemSelected: 0
