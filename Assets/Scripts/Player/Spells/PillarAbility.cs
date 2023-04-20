@@ -4,48 +4,65 @@ using UnityEngine;
 
 public class PillarAbility : MonoBehaviour
 {
-
     [SerializeField] private bool hasOffset;
-    [SerializeField] private float offset, knockBackForce, knowckBackRadius,upKnockBackForce;
+    [SerializeField] private float timer, duration;
+    [SerializeField] private int damage;
 
-    Timer _timer;
+    Timer[] _timer;
     new Collider collider;
+    Animator _anim;
 
-    Vector3 spherePos;
+    public LayerMask markable;
+    float markedLayer;
 
     private void Awake()
     {
+        _timer = GetComponents<Timer>();
         collider = GetComponent<Collider>();
-        _timer = GetComponent<Timer>();
+        _anim = GetComponentInChildren<Animator>();
+
+        var rawValue = markable.value;
+        var layerValue = Mathf.Log(rawValue, 2);
+        markedLayer = layerValue;
     }
 
     void OnEnable()
     {
+        collider.isTrigger = true;
+        _timer[0].enabled = true;
+        _timer[1].enabled = false;
+
         if(hasOffset)
-        {
-            collider.enabled = false;
-            _timer.StartTimer(offset);
-        }
-        else
-            PlayAnimation();
+            StartTimer(timer, 0);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent<PlayerController>(out PlayerController player))
+        if(other.gameObject.layer == markedLayer)
         {
-            spherePos = player.transform.position;
-            player.GetComponent<Rigidbody>().AddExplosionForce(knockBackForce, spherePos, knowckBackRadius, upKnockBackForce);
+            other.GetComponent<HealthBehaviour>().Hurt(damage);
         }
     }
 
     public void PlayAnimation()
     {
+        _anim.SetTrigger("Pilar");
 
+        StartTimer(duration, 1);
     }
 
     public void ChangeColliderType()
     {
         collider.isTrigger = false;
+    }
+
+    public void DisableParent()
+    {
+        transform.parent.gameObject.SetActive(false);
+    }
+
+    public void StartTimer(float timer, int i)
+    {
+        _timer[i].StartTimer(timer);
     }
 }
