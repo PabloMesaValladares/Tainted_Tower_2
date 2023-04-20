@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.38808674, g: 0.7278085, b: 0.7325042, a: 1}
+  m_IndirectSpecularColor: {r: 0.38808668, g: 0.7278085, b: 0.7325042, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9971,7 +9971,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -364.0944
+      value: -364.094
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -11287,7 +11287,7 @@ MonoBehaviour:
   secondaryHand: {fileID: 0}
   strength: 5
   inteligence: 3
-  stamina: 50
+  stamina: 100
   defense: 10
   damage: 5
   damageDone: 0
@@ -17144,10 +17144,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affa14ac5d23f3d41be62d81d01d64ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grapple: 0
+  player: {fileID: 0}
+  currentHP: 0
+  totalMana: 0
+  strength: 0
+  inteligence: 0
+  defense: 0
+  staminaStat: 0
+  stamina: 0
+  RespawnPosition: {x: 0, y: 0, z: 0}
+  grapple: 1
   pilar: 0
   drugs: 0
   fireball: 0
+  firstSet: 0
 --- !u!1 &1172295040
 GameObject:
   m_ObjectHideFlags: 0

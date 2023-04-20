@@ -41,7 +41,10 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
 
-            SetScripts();
+            SetScripts(); 
+            currentHP = player.GetComponent<HealthBehaviour>().maxHP;
+            stamina = staminaStat;
+            player.GetComponent<StaminaController>().SetStamina(staminaStat);
             firstSet = true;
             DontDestroyOnLoad(this.gameObject);
         }
@@ -51,30 +54,27 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!firstSet)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-            player.GetComponent<HealthBehaviour>().currentHP = currentHP; //Seteamos la vida actual
-            player.GetComponent<StatController>().totalMana = totalMana;
-            player.GetComponent<StatController>().strength = strength;
-            player.GetComponent<StatController>().inteligence = inteligence;
-            player.GetComponent<StatController>().stamina = staminaStat;
-            player.GetComponent<StatController>().defense = defense;
-            player.GetComponent<StaminaController>().SetStamina(stamina);
-            player.GetComponent<RespawnPoint>().RespawnPosition = RespawnPosition;
-            player.GetComponent<RespawnPoint>().Respawn();
-            player.GetComponent<Grappling>().enabled = grapple;
-            inventory = GameObject.FindGameObjectWithTag("Inventory");
-            inventory.GetComponent<InventoryManager>().setInventoryItems(inventoryItems);
-        }
-        else
-            firstSet = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<HealthBehaviour>().currentHP = currentHP; //Seteamos la vida actual
+        player.GetComponent<LifeManager>().lifeSlider.value = currentHP;
+        player.GetComponent<StatController>().totalMana = totalMana;
+        player.GetComponent<StatController>().strength = strength;
+        player.GetComponent<StatController>().inteligence = inteligence;
+        player.GetComponent<StatController>().stamina = staminaStat;
+        player.GetComponent<StatController>().defense = defense;
+        player.GetComponent<StaminaController>().SetStamina(stamina);
+        player.GetComponent<RespawnPoint>().RespawnPosition = RespawnPosition;
+        player.GetComponent<RespawnPoint>().Respawn();
+        player.GetComponent<Grappling>().enabled = grapple;
+        inventory = GameObject.FindGameObjectWithTag("Inventory");
+        inventory.GetComponent<InventoryManager>().setInventoryItems(inventoryItems);
+
     }
 
     public void SetScripts()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        currentHP = player.GetComponent<HealthBehaviour>().maxHP; //Seteamos la vida actual
+        currentHP = player.GetComponent<HealthBehaviour>().currentHP; //Seteamos la vida actual
         totalMana = player.GetComponent<StatController>().totalMana;
         strength = player.GetComponent<StatController>().strength;
         inteligence = player.GetComponent<StatController>().inteligence;
