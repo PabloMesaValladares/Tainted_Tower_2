@@ -45,6 +45,7 @@ public class DialoguesGoNext : MonoBehaviour
 
                 if (counter >= maxCounter)
                 {
+                    ChatOff.SetActive(false);
                     counter = 0;
                 }
             }

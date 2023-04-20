@@ -45,7 +45,11 @@ public class StandingState : State
         character = _character;
         stateMachine = _stateMachine;
     }
-
+    public override void ReEnter()
+    {
+        base.ReEnter();
+        Enter();
+    }
     public override void Enter()//Iniciar las variables
     {
         base.Enter();
