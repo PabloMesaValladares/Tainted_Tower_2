@@ -67,7 +67,8 @@ public class SlashMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponentInParent<HealthBehaviour>().Hurt(damage);
+        if (other.transform.parent != null)
+            other.gameObject.GetComponentInParent<HealthBehaviour>().Hurt(damage);
         //Debug.Log("Slashed");
     }
 }

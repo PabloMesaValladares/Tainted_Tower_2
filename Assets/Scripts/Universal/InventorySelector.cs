@@ -17,7 +17,7 @@ public class InventorySelector : MonoBehaviour
                 SelectedSlot.GetComponent<Image>().color = Color.white;
 
             Slot.GetComponent<Image>().color = selectedColor;
-            InventoryManager.instance.itemSelected = true;
+            //InventoryManager.instance.itemSelected = true;
             SelectedSlot = Slot;
             //if (Slot.name != "Slot")
             //{

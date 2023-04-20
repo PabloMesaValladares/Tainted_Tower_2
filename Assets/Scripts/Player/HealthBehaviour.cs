@@ -8,6 +8,8 @@ public class HealthBehaviour : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
+    public bool invencibility;
+
     public UnityEvent damagedEvent;
 
     private void Awake()
@@ -35,7 +37,8 @@ public class HealthBehaviour : MonoBehaviour
 
     public void Hurt(int dmg)
     {
-        currentHP -= dmg;
+        if (!invencibility)
+            currentHP -= dmg;
         if (currentHP < 0)
             currentHP = 0;
         damagedEvent.Invoke();

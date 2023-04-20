@@ -7,6 +7,7 @@ using FSM;
 public class P2ShaslAttack : Action
 {
     public float TimeWaitSlashes;
+    public float SlashSpeed;
     public float offset;
     float counter = 0;
     public override void Act(Controller controller)
@@ -16,16 +17,19 @@ public class P2ShaslAttack : Action
             controller.transform.LookAt(controller.player.transform.position);
             GameObject attack = PoolingManager.Instance.GetPooledObject("Slash");
             attack.transform.position = controller.gameObject.transform.position;
+            attack.GetComponent<SlashMovement>().speed = SlashSpeed;
             attack.GetComponent<SlashMovement>().MoveDirection(controller.player.transform.position);
             attack.SetActive(true);
 
             attack = PoolingManager.Instance.GetPooledObject("Slash");
             attack.transform.position = controller.gameObject.transform.position;
+            attack.GetComponent<SlashMovement>().speed = SlashSpeed;
             attack.GetComponent<SlashMovement>().MoveDirection(controller.player.transform.position + controller.gameObject.transform.right * offset);
             attack.SetActive(true);
 
             attack = PoolingManager.Instance.GetPooledObject("Slash");
             attack.transform.position = controller.gameObject.transform.position;
+            attack.GetComponent<SlashMovement>().speed = SlashSpeed;
             attack.GetComponent<SlashMovement>().MoveDirection(controller.player.transform.position + (-controller.gameObject.transform.right * offset));
             attack.SetActive(true);
             counter = 0;

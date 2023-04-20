@@ -6,6 +6,7 @@ public class MinimapScript : MonoBehaviour
 {
     public Transform player;
     public bool rotate;
+    public float camDistance;
     public float camZoom;
     Camera cam;
 
@@ -16,7 +17,7 @@ public class MinimapScript : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 newPosition = player.position;
-        newPosition.y += 20;
+        newPosition.y += camDistance;
         transform.position = newPosition;
 
         cam.orthographicSize = camZoom;

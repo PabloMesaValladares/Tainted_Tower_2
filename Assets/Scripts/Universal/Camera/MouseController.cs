@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 using Cinemachine;
 
 public class MouseController : MonoBehaviour
@@ -13,6 +14,7 @@ public class MouseController : MonoBehaviour
 
     InputAction activate;
 
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,18 @@ public class MouseController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        player = playerInput.gameObject;
+    }
+
+    private void OnEnable()
+    {
+        ControllerInventory.mouseUnlock += Unlock;
+        ControllerInventory.mouseLock += Lock;
+    }
+    private void OnDisable()
+    {
+        ControllerInventory.mouseUnlock -= Unlock;
+        ControllerInventory.mouseLock -= Lock;
     }
 
     // Update is called once per frame
@@ -27,27 +41,39 @@ public class MouseController : MonoBehaviour
     {
         if(activate.IsPressed())
         {
-            Lock();
+            Unlock();
         }
-        else if(pauseMenu.activeInHierarchy)
-        {
-            Lock();
-        }
-        else
+        else if (pauseMenu.activeInHierarchy)
         {
             Unlock();
         }
+        else
+        {
+            Lock();
+        }
     }
 
-    void Lock()
+
+
+    void Unlock()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        player.GetComponent<PlayerInput>().enabled = false;
+        if(InputDetecter.Instance.gamepad)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         NormalCamera.GetComponent<CinemachineInputProvider>().enabled = false;
         AimCamera.GetComponent<CinemachineInputProvider>().enabled = false;
     }
-    void Unlock()
+    void Lock()
     {
+        player.GetComponent<PlayerInput>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         NormalCamera.GetComponent<CinemachineInputProvider>().enabled = AimCamera.GetComponent<CinemachineInputProvider>().enabled = true;

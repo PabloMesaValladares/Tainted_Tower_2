@@ -51,7 +51,7 @@ public class AttackState : State
         if (attackAction.triggered)
             attack = true;
         if (dashAction.triggered)
-            dash = true;
+            dash = character.dashController.checkIfDash();
     }
 
     public override void LogicUpdate()
@@ -75,7 +75,8 @@ public class AttackState : State
 
         if(dash)
         {
-            stateMachine.ChangeState(character.dashing);
+            stateMachine.ChangeState(character.dashing); 
+            character.dashController.startCooldown();
             character.animator.SetTrigger("dash");
         }
     }
