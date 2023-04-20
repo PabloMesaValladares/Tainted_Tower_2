@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.52386564, g: 0.56170434, b: 0.47704506, a: 1}
+  m_IndirectSpecularColor: {r: 0.5238622, g: 0.5616721, b: 0.47704557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3174,7 +3174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: "\u623B\u308B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -3634,7 +3634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: "\u623B\u308B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -4073,7 +4073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version
+  m_text: "\u30D0\u30FC\u30B8\u30E7\u30F3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -4248,7 +4248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Language
+  m_text: "\u8A00\u8A9E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -4559,7 +4559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resolution
+  m_text: "\u89E3\u6C7A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -4956,7 +4956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound
+  m_text: "\u97F3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -5562,7 +5562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Master
+  m_text: "\u30DE\u30B9\u30BF\u30FC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -6142,7 +6142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: "\u623B\u308B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -6384,7 +6384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 2029808804}
+  mTarget: {fileID: 1375239489}
   mAlignment_RTL: 514
   mAlignment_LTR: 514
   mAlignmentWasRTL: 0
@@ -6448,7 +6448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Frames
+  m_text: "\u30D5\u30EC\u30FC\u30E0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -9547,7 +9547,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: "\u623B\u308B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -10200,7 +10200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music
+  m_text: "\u97F3\u697D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -10317,7 +10317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: "\u8A2D\u5B9A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -11415,7 +11415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go out
+  m_text: "\u5916\u51FA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -13582,10 +13582,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: "\u8A2D\u5B9A"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: c5cab36bb90d3234384a653002e759bc, type: 2}
+  m_sharedMaterial: {fileID: -2390391961972593405, guid: c5cab36bb90d3234384a653002e759bc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -13673,7 +13673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Options
-  mTermSecondary: 
+  mTermSecondary: Barkentina 1 SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -13685,7 +13685,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14101,8 +14103,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u65E5\u672C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: 50b2a4f39946da84abb833196035ca50, type: 2}
+  m_sharedMaterial: {fileID: -970330222866029496, guid: 50b2a4f39946da84abb833196035ca50,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14189,7 +14191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 2138059013}
+  mTarget: {fileID: 1255576837}
   mAlignment_RTL: 514
   mAlignment_LTR: 514
   mAlignmentWasRTL: 0
@@ -14837,10 +14839,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go out
+  m_text: "\u5916\u51FA"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: c5cab36bb90d3234384a653002e759bc, type: 2}
+  m_sharedMaterial: {fileID: -2390391961972593405, guid: c5cab36bb90d3234384a653002e759bc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14928,7 +14930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Exit
-  mTermSecondary: 
+  mTermSecondary: LAKHAPATI font SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -14940,7 +14942,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15356,7 +15360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quality
+  m_text: "\u54C1\u8CEA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -16612,7 +16616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/NewGame
-  mTermSecondary: 
+  mTermSecondary: Barkentina 1 SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -16624,7 +16628,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16657,10 +16663,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New game
+  m_text: "\u65B0\u3057\u3044\u30B2\u30FC\u30E0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: c5cab36bb90d3234384a653002e759bc, type: 2}
+  m_sharedMaterial: {fileID: -2390391961972593405, guid: c5cab36bb90d3234384a653002e759bc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16831,7 +16837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Screen
+  m_text: "\u753B\u9762"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -17366,7 +17372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Continue
-  mTermSecondary: 
+  mTermSecondary: LAKHAPATI font SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -17378,7 +17384,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -17411,10 +17419,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: "\u7D9A\u304F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -19195,7 +19203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yes
+  m_text: "\u30D5\u30A9\u30FC\u30AF"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -20083,7 +20091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quality
+  m_text: "\u54C1\u8CEA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -21106,10 +21114,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Load
+  m_text: "\u30ED\u30FC\u30C9"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: c5cab36bb90d3234384a653002e759bc, type: 2}
+  m_sharedMaterial: {fileID: -2390391961972593405, guid: c5cab36bb90d3234384a653002e759bc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -21189,7 +21197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Load
-  mTermSecondary: 
+  mTermSecondary: Barkentina 1 SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -21201,7 +21209,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -21549,7 +21559,7 @@ PrefabInstance:
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.size
-      value: 41
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
@@ -21588,6 +21598,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].Term
+      value: LAKHAPATI font SDF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].TermType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
       propertyPath: mSource.mTerms.Array.data[35].Flags.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -21618,6 +21638,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
       propertyPath: mSource.mTerms.Array.data[35].Languages.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -21644,6 +21669,11 @@ PrefabInstance:
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[40].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].Languages.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
@@ -21735,6 +21765,21 @@ PrefabInstance:
         type: 3}
       propertyPath: mSource.mTerms.Array.data[40].Languages.Array.data[2]
       value: No Viva Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].Languages.Array.data[0]
+      value: Barkentina 1 SDF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].Languages.Array.data[1]
+      value: Barkentina 1 SDF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].Languages.Array.data[2]
+      value: ZenKakuGothicNew-Regular SDF
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}

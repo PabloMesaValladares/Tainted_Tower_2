@@ -366,6 +366,15 @@ MonoBehaviour:
       - SFX
       Flags: 000000
       Languages_Touch: []
+    - Term: Barkentina 1 SDF
+      TermType: 9
+      Description: 
+      Languages:
+      - Barkentina 1 SDF
+      - Barkentina 1 SDF
+      - ZenKakuGothicNew-Regular SDF
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
