@@ -120,7 +120,6 @@ public class MarkEnemy : MonoBehaviour
     void markEnemy()
     {
         enemy = enemyController.GetCloseEnemy();
-        float dist = 0; 
         //normalCamera.gameObject.SetActive(false);
         if (enemy != null)
         {

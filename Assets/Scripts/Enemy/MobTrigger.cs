@@ -15,7 +15,6 @@ public class MobTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-
         ActivateMob.Invoke();
         Debug.Log("Ha Entrado");
     }

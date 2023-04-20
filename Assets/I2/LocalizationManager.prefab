@@ -1,0 +1,433 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4493916931572233311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4493916931572233305}
+  - component: {fileID: 4493916931572233304}
+  m_Layer: 0
+  m_Name: LocalizationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4493916931572233305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493916931572233311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7882528, y: 10.33794, z: -10.690502}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4493916931572233304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493916931572233311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488051eaa73ba421e8fe4868f2e0f364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mSource:
+    UserAgreesToHaveItOnTheScene: 0
+    UserAgreesToHaveItInsideThePluginsFolder: 0
+    GoogleLiveSyncIsUptoDate: 1
+    mTerms:
+    - Term: Albion
+      TermType: 0
+      Description: 
+      Languages:
+      - Albion Online es un MMORPG
+      - Albion Online is a mMORPG
+      - "Albion Online\u306FMMORPG\u3067\u3059"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buenos Dias
+      TermType: 0
+      Description: 
+      Languages:
+      - Buenos Dias
+      - Good morning
+      - "\u304A\u306F\u3088\u3046"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: EC
+      TermType: 0
+      Description: 
+      Languages:
+      - Estas seguro que quieres salir?
+      - Are you sure you want to leave?
+      - "\u53BB\u308A\u305F\u3044\u3067\u3059\u304B\uFF1F"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Erase
+      TermType: 0
+      Description: 
+      Languages:
+      - Erase una vez, hace mucho mucho tiempo, una prueba de dialogo fue creada
+        en un excel.
+      - Once once, a long time ago, a dialogue test was created in an Excel.
+      - "\u4E00\u5EA6\u3060\u3051\u3001\u6614\u3001\u30C0\u30A4\u30A2\u30ED\u30B0\u30C6\u30B9\u30C8\u304CExcel\u3067\u4F5C\u6210\u3055\u308C\u307E\u3057\u305F\u3002"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: None
+      TermType: 0
+      Description: 
+      Languages:
+      - .
+      - .
+      - .
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos y Textos/Buenos Dias
+      TermType: 0
+      Description: 
+      Languages:
+      - Buenos Dias
+      - Good morning
+      - "\u304A\u306F\u3088\u3046"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos y Textos/Erase
+      TermType: 0
+      Description: 
+      Languages:
+      - Erase una vez, hace mucho mucho tiempo, una prueba de dialogo fue creada
+        en un excel.
+      - Once once, a long time ago, a dialogue test was created in an Excel.
+      - "\u4E00\u5EA6\u3060\u3051\u3001\u6614\u3001\u30C0\u30A4\u30A2\u30ED\u30B0\u30C6\u30B9\u30C8\u304CExcel\u3067\u4F5C\u6210\u3055\u308C\u307E\u3057\u305F\u3002"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos y Textos/Albion
+      TermType: 0
+      Description: 
+      Languages:
+      - Albion Online es un MMORPG
+      - Albion Online is a mMORPG
+      - "Albion Online\u306FMMORPG\u3067\u3059"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos y Textos/EC
+      TermType: 0
+      Description: 
+      Languages:
+      - Estas seguro que quieres salir?
+      - Are you sure you want to leave?
+      - "\u53BB\u308A\u305F\u3044\u3067\u3059\u304B\uFF1F"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos y Textos/
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Windowed
+      TermType: 0
+      Description: 
+      Languages:
+      - Ventana
+      - Window
+      - "\u7A93"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/FullScreen Windowed
+      TermType: 0
+      Description: 
+      Languages:
+      - Ventana Completa
+      - FullScreen Window
+      - "\u30D5\u30EB\u30B9\u30AF\u30EA\u30FC\u30F3\u30A6\u30A3\u30F3\u30C9\u30A6"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/FullScreen
+      TermType: 0
+      Description: 
+      Languages:
+      - Pantalla Completa
+      - FullScreen
+      - "\u5168\u753B\u9762\u8868\u793A"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Exit
+      TermType: 0
+      Description: 
+      Languages:
+      - Salir
+      - Go out
+      - "\u5916\u51FA"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Menu
+      TermType: 0
+      Description: 
+      Languages:
+      - Al Menu
+      - To Menu
+      - "\u30E1\u30CB\u30E5\u30FC\u306B"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Options
+      TermType: 0
+      Description: 
+      Languages:
+      - Opciones
+      - Settings
+      - "\u8A2D\u5B9A"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Language
+      TermType: 0
+      Description: 
+      Languages:
+      - Idioma
+      - Language
+      - "\u8A00\u8A9E"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Screen
+      TermType: 0
+      Description: 
+      Languages:
+      - Pantalla
+      - Screen
+      - "\u753B\u9762"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Quality
+      TermType: 0
+      Description: 
+      Languages:
+      - Graficos
+      - Quality
+      - "\u54C1\u8CEA"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Low
+      TermType: 0
+      Description: 
+      Languages:
+      - Bajos
+      - Low
+      - "\u4F4E\u3044"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Medium
+      TermType: 0
+      Description: 
+      Languages:
+      - Medios
+      - Medium
+      - "\u4E2D\u304F\u3089\u3044"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/High
+      TermType: 0
+      Description: 
+      Languages:
+      - Altos
+      - High
+      - "\u9AD8\u3044"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Resolucion
+      TermType: 0
+      Description: 
+      Languages:
+      - Resolucion
+      - Resolution
+      - "\u89E3\u6C7A"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Frames
+      TermType: 0
+      Description: 
+      Languages:
+      - Frames
+      - Frames
+      - "\u30D5\u30EC\u30FC\u30E0"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/NewGame
+      TermType: 0
+      Description: 
+      Languages:
+      - Nueva Partida
+      - New game
+      - "\u65B0\u3057\u3044\u30B2\u30FC\u30E0"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Continue
+      TermType: 0
+      Description: 
+      Languages:
+      - Continuar
+      - Continue
+      - "\u7D9A\u304F"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Load
+      TermType: 0
+      Description: 
+      Languages:
+      - Cargar
+      - Load
+      - "\u30ED\u30FC\u30C9"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Back
+      TermType: 0
+      Description: 
+      Languages:
+      - Atras
+      - Back
+      - "\u623B\u308B"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Version
+      TermType: 0
+      Description: 
+      Languages:
+      - Version
+      - Version
+      - "\u30D0\u30FC\u30B8\u30E7\u30F3"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Sound
+      TermType: 0
+      Description: 
+      Languages:
+      - Sonido
+      - Sound
+      - "\u97F3"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Yes
+      TermType: 0
+      Description: 
+      Languages:
+      - Si
+      - Yes
+      - "\u30D5\u30A9\u30FC\u30AF"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/No
+      TermType: 0
+      Description: 
+      Languages:
+      - No
+      - No
+      - "\u3044\u3044\u3048"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Master
+      TermType: 0
+      Description: 
+      Languages:
+      - Maestro
+      - Master
+      - "\u30DE\u30B9\u30BF\u30FC"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Music
+      TermType: 0
+      Description: 
+      Languages:
+      - Musica
+      - Music
+      - "\u97F3\u697D"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/SFX
+      TermType: 0
+      Description: 
+      Languages:
+      - SFX
+      - SFX
+      - SFX
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Barkentina 1 SDF
+      TermType: 9
+      Description: 
+      Languages:
+      - Barkentina 1 SDF
+      - Barkentina 1 SDF
+      - ZenKakuGothicNew-Regular SDF
+      Flags: 000000
+      Languages_Touch: []
+    CaseInsensitiveTerms: 0
+    OnMissingTranslation: 1
+    mTerm_AppName: 
+    mLanguages:
+    - Name: Spanish
+      Code: es
+      Flags: 0
+    - Name: English
+      Code: en
+      Flags: 0
+    - Name: Japanese
+      Code: ja
+      Flags: 0
+    IgnoreDeviceLanguage: 0
+    _AllowUnloadingLanguages: 0
+    Google_WebServiceURL: https://script.google.com/macros/s/AKfycbyjP-H_YK3Gb3vmP-OtqINssDiFMgOSAy5108i0rFqyA-AfnSMWJ1oAY7De290Tg2ob/exec
+    Google_SpreadsheetKey: 16pxnmP605zfR_-606mv4ZTiO9rg6NBt5R6rcRmEC6q4
+    Google_SpreadsheetName: I2Loc TaintedMenus Assets/Pablo/Scenes/MainMenu.unity
+      LocalizationManager
+    Google_LastUpdatedVersion: 1679916851194
+    Google_Password: change_this
+    GoogleUpdateFrequency: 2
+    GoogleInEditorCheckFrequency: 2
+    GoogleUpdateSynchronization: 1
+    GoogleUpdateDelay: 0
+    Assets: []
+    Spreadsheet_LocalFileName: C:/Users/Alumno/Downloads/I2Loc TaintedMenus Assets_Scenes_MainMenu.unity
+      LocalizationManager - Dialogos.csv
+    Spreadsheet_LocalCSVSeparator: ','
+    Spreadsheet_LocalCSVEncoding: utf-8
+    Spreadsheet_SpecializationAsRows: 1
+  version: 1
+  NeverDestroy: 0
+  UserAgreesToHaveItOnTheScene: 0
+  UserAgreesToHaveItInsideThePluginsFolder: 0
+  GoogleLiveSyncIsUptoDate: 1
+  Assets: []
+  Google_WebServiceURL: 
+  Google_SpreadsheetKey: 
+  Google_SpreadsheetName: 
+  Google_LastUpdatedVersion: 
+  GoogleUpdateFrequency: 3
+  GoogleUpdateDelay: 5
+  mLanguages: []
+  IgnoreDeviceLanguage: 0
+  _AllowUnloadingLanguages: 0
+  mTerms: []
+  CaseInsensitiveTerms: 0
+  OnMissingTranslation: 1
+  mTerm_AppName: 
+  Spreadsheet_LocalFileName: 
+  Spreadsheet_LocalCSVSeparator: ','
+  Spreadsheet_LocalCSVEncoding: utf-8
+  Spreadsheet_SpecializationAsRows: 1
+  Google_Password: change_this
+  GoogleInEditorCheckFrequency: 2
