@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: P2IdleState
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: f06a72ee7f55c374ab348aea1c1b2338, type: 2}
+  - {fileID: 11400000, guid: c158d0ca91880d94f824bcb8533f5044, type: 2}
   transitions:
   - desicion: {fileID: 11400000, guid: 588aefbb6a46028458461d3fdf8feebd, type: 2}
     trueState: {fileID: 11400000, guid: 0f4ba5214b30af149b33f6f563e72603, type: 2}
