@@ -16,7 +16,7 @@ public class PlayerStatsSet : MonoBehaviour
         GetComponent<StatController>().defense = GameManager.instance.defense;
         GetComponent<StaminaController>().SetStamina(GameManager.instance.stamina);
         GetComponent<RespawnPoint>().RespawnPosition = GameManager.instance.RespawnPosition;
-        GetComponent<RespawnPoint>().Respawn();
+        //GetComponent<RespawnPoint>().Respawn();
         GetComponent<Grappling>().enabled = GameManager.instance.grapple;
     }
 

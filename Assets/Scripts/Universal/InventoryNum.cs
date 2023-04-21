@@ -15,6 +15,9 @@ public class InventoryNum : MonoBehaviour
 
     public void Update()
     {
-        text.text = "X " + item.Num.ToString();
+        if (item.Num > 0)
+            text.text = "X " + item.Num.ToString();
+        else
+            text.text = "";
     }    
 }

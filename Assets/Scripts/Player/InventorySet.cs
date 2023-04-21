@@ -8,6 +8,7 @@ public class InventorySet : MonoBehaviour
     void Start()
     {
         GetComponent<InventoryManager>().setInventoryItems(GameManager.instance.inventoryItems);
+
     }
 
 }

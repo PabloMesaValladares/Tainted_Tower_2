@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     {
 
         inventory = GameObject.FindGameObjectWithTag("Inventory");
-        inventoryItems = new List<ItemSave>();
         if (instance == null)
         {
             _instance = this;
@@ -88,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void SetScripts()
     {
+        inventoryItems = new List<ItemSave>();
         player = GameObject.FindGameObjectWithTag("Player");
         currentHP = player.GetComponent<HealthBehaviour>().currentHP; //Seteamos la vida actual
         totalMana = player.GetComponent<StatController>().totalMana;
@@ -98,13 +98,16 @@ public class GameManager : MonoBehaviour
         stamina = player.GetComponent<StaminaController>().ReturnStamina();
         RespawnPosition = player.GetComponent<RespawnPoint>().RespawnPosition; 
         inventory = GameObject.FindGameObjectWithTag("Inventory");
+
         for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
         {
             ItemSave item = new ItemSave();
             //item.name = i.ToString();
             item.itemName = inventory.GetComponent<InventoryManager>().getInventoryItems(i).itemName;
+            if (inventory.GetComponent<InventoryManager>().getInventoryItems(i).itemName == null)
+                item.itemName = "Null";
             item.Num = inventory.GetComponent<InventoryManager>().getInventoryItems(i).Num;
-            item.ind = inventory.GetComponent<InventoryManager>().getInventoryItems(i).ind;
+            item.ind = i;
             //item.SetUse(inventory.GetComponent<InventoryManager>().getItemUse(item.itemName));
             inventoryItems.Add(item);
 

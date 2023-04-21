@@ -20,26 +20,20 @@ public class SceneLoader : MonoBehaviour {
     private void Awake()
     {
         scene = sceneIndexFromName(SceneController.instance.levelName);
-    }
-
-    // Updates once per frame
-    void Update() {
-
-        if (sceneFound && !loadScene)
+        if (sceneFound)
         {
-            //SoundManager.instance.StopSounds();
             loadScene = true;
             //LoadSceneNew(scene);
             StartCoroutine(LoadNewScene());
-            //StartCoroutine(changeAlpha(0));
-
         }
+    }
 
-        if (loadScene == true) {
+    // Updates once per frame
+    void Update()
+    {
 
-
-            Debug.Log(Bar.value);
-            //Bar.value = target;
+        if (loadScene == true)
+        {
             loadingText.color = new Color(loadingText.color.r, loadingText.color.g, loadingText.color.b, Mathf.PingPong(Time.time, 1));
         }
 
