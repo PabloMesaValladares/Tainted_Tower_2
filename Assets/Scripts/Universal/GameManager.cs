@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,10 +25,18 @@ public class GameManager : MonoBehaviour
     public float stamina;
     public Vector3 RespawnPosition;
 
+    [Serializable]
+    public struct ItemSave
+    {
+        public string itemName;
+        public int Num;
+        public int ind;
+    }
+
 
     [Header("Menu")]
     GameObject inventory;
-    Item[] inventoryItems;
+    public List<ItemSave> inventoryItems;
 
     [Header("Skills")]
     public bool grapple, pilar, drugs, fireball;
@@ -37,6 +46,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
 
+        inventory = GameObject.FindGameObjectWithTag("Inventory");
+        inventoryItems = new List<ItemSave>();
         if (instance == null)
         {
             _instance = this;
@@ -51,24 +62,28 @@ public class GameManager : MonoBehaviour
         else
             Destroy(this);
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<HealthBehaviour>().currentHP = currentHP; //Seteamos la vida actual
-        player.GetComponent<LifeManager>().lifeSlider.value = currentHP;
-        player.GetComponent<StatController>().totalMana = totalMana;
-        player.GetComponent<StatController>().strength = strength;
-        player.GetComponent<StatController>().inteligence = inteligence;
-        player.GetComponent<StatController>().stamina = staminaStat;
-        player.GetComponent<StatController>().defense = defense;
-        player.GetComponent<StaminaController>().SetStamina(stamina);
-        player.GetComponent<RespawnPoint>().RespawnPosition = RespawnPosition;
-        player.GetComponent<RespawnPoint>().Respawn();
-        player.GetComponent<Grappling>().enabled = grapple;
-        inventory = GameObject.FindGameObjectWithTag("Inventory");
-        inventory.GetComponent<InventoryManager>().setInventoryItems(inventoryItems);
+        //    player = GameObject.FindGameObjectWithTag("Player");
+        //    player.GetComponent<HealthBehaviour>().currentHP = currentHP; //Seteamos la vida actual
+        //    player.GetComponent<LifeManager>().lifeSlider.value = currentHP;
+        //    player.GetComponent<StatController>().totalMana = totalMana;
+        //    player.GetComponent<StatController>().strength = strength;
+        //    player.GetComponent<StatController>().inteligence = inteligence;
+        //    player.GetComponent<StatController>().stamina = staminaStat;
+        //    player.GetComponent<StatController>().defense = defense;
+        //    player.GetComponent<StaminaController>().SetStamina(stamina);
+        //    player.GetComponent<RespawnPoint>().RespawnPosition = RespawnPosition;
+        //    player.GetComponent<RespawnPoint>().Respawn();
+        //    player.GetComponent<Grappling>().enabled = grapple;
+        //    inventory = GameObject.FindGameObjectWithTag("Inventory");
+        //    inventory.GetComponent<InventoryManager>().setInventoryItems(inventoryItems);
 
+
+       
     }
 
     public void SetScripts()
@@ -81,8 +96,18 @@ public class GameManager : MonoBehaviour
         staminaStat = player.GetComponent<StatController>().stamina;
         defense = player.GetComponent<StatController>().defense;
         stamina = player.GetComponent<StaminaController>().ReturnStamina();
-        RespawnPosition = player.GetComponent<RespawnPoint>().RespawnPosition;
+        RespawnPosition = player.GetComponent<RespawnPoint>().RespawnPosition; 
         inventory = GameObject.FindGameObjectWithTag("Inventory");
-        inventoryItems = inventory.GetComponent<InventoryManager>().getInventoryItems();
+        for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
+        {
+            ItemSave item = new ItemSave();
+            //item.name = i.ToString();
+            item.itemName = inventory.GetComponent<InventoryManager>().getInventoryItems(i).itemName;
+            item.Num = inventory.GetComponent<InventoryManager>().getInventoryItems(i).Num;
+            item.ind = inventory.GetComponent<InventoryManager>().getInventoryItems(i).ind;
+            //item.SetUse(inventory.GetComponent<InventoryManager>().getItemUse(item.itemName));
+            inventoryItems.Add(item);
+
+        }
     }
 }

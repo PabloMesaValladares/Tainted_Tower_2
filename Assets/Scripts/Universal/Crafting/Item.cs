@@ -54,6 +54,9 @@ public class Item : MonoBehaviour
         SubstractUse(ind);
         if (Num <= 0)
         {
+            itemName = null;
+            Num = 0;
+            ind = 0;
             itemUsed(ind);
             gameObject.SetActive(false);
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.38808668, g: 0.7278085, b: 0.7325042, a: 1}
+  m_IndirectSpecularColor: {r: 0.38808674, g: 0.7278085, b: 0.7325042, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9971,7 +9971,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -364.094
+      value: -364.0944
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -11137,6 +11137,7 @@ GameObject:
   - component: {fileID: 795640598}
   - component: {fileID: 795640597}
   - component: {fileID: 795640609}
+  - component: {fileID: 795640610}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -11560,6 +11561,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &795640610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795640593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63323e8bf8da9734ca4ec10b4b1694d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &815777084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13402,7 +13415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &941122796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13434,20 +13447,18 @@ MonoBehaviour:
   audioTypes:
   - type: Mario
     audioSelected: {fileID: 8300000, guid: e07e7b27dd5147c488ac3f041160a41c, type: 3}
-    mixer: {fileID: -5541326335417224254, guid: 58986ec736d01f74880485141ed1dacc,
-      type: 2}
+    mixer: {fileID: 6147185970330392971, guid: 6b4815a6c13369044af144f3c16bae35, type: 2}
     volume: 0.288
   - type: Jizz
     audioSelected: {fileID: 8300000, guid: eddd953687ac91b47b90ed913c337224, type: 3}
-    mixer: {fileID: -5541326335417224254, guid: 58986ec736d01f74880485141ed1dacc,
-      type: 2}
+    mixer: {fileID: 6147185970330392971, guid: 6b4815a6c13369044af144f3c16bae35, type: 2}
     volume: 0.311
   - type: Thomas
     audioSelected: {fileID: 8300000, guid: 034765f9a45fe85489071b86437360a3, type: 3}
-    mixer: {fileID: -5541326335417224254, guid: 58986ec736d01f74880485141ed1dacc,
-      type: 2}
+    mixer: {fileID: 6147185970330392971, guid: 6b4815a6c13369044af144f3c16bae35, type: 2}
     volume: 0.311
   audioControllers: []
+  currentBGM: 
 --- !u!4 &941122798
 Transform:
   m_ObjectHideFlags: 0
@@ -17153,7 +17164,8 @@ MonoBehaviour:
   staminaStat: 0
   stamina: 0
   RespawnPosition: {x: 0, y: 0, z: 0}
-  grapple: 1
+  inventoryItems: []
+  grapple: 0
   pilar: 0
   drugs: 0
   fireball: 0
@@ -32033,6 +32045,7 @@ GameObject:
   - component: {fileID: 1602656248}
   - component: {fileID: 1602656247}
   - component: {fileID: 1602656246}
+  - component: {fileID: 1602656251}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Inventory
@@ -32219,6 +32232,18 @@ MonoBehaviour:
   QuickButtons: []
   playerControls: {fileID: 795640595}
   hideMouse: 1
+--- !u!114 &1602656251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602656245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed00fda73b0ef59458b3c33cdfe4221b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1614595364
 GameObject:
   m_ObjectHideFlags: 0

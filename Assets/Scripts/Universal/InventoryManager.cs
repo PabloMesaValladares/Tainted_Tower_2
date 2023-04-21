@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] GameObject[] Slots;
     [SerializeField] Item[] SlotsItems;
-    [SerializeField]GameObject[] QuickSlots;
+    [SerializeField] GameObject[] QuickSlots;
     [SerializeField] Sprite[] itemImage;
     [SerializeField] ItemUses[] itemUses;
     [SerializeField] string[] itemName;
@@ -226,6 +226,28 @@ public class InventoryManager : MonoBehaviour
         //GameManager.instance.NotificationOn();
 
     }
+    public void UpdateSlot(GameManager.ItemSave itemGot, int ind)
+    {
+        GameObject slot = Slots[ind];
+
+
+        //noticeText.text = TextsManager.instance.GetText("Got_Item");
+        //itemText.text = TextsManager.instance.GetText(name);
+        //itemNotice.SetActive(true);
+        GameObject parent = slot.transform.parent.gameObject;
+        InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
+        slot.GetComponent<Item>().itemName = itemGot.itemName;
+        slot.GetComponent<Item>().SetUse(itemsUseSearch[itemGot.itemName]);
+        slot.GetComponent<Item>().Num = itemGot.Num;
+        slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
+        parent.GetComponent<Slot>().item = slot.GetComponent<Item>();
+        child.item = slot.GetComponent<Item>();
+        //child.UpdateText();
+        parent.name = itemGot.itemName;
+        slot.SetActive(true);
+        //GameManager.instance.NotificationOn();
+
+    }
 
     public void UpdateQuickSlot(Item itemGot, int id)
     {
@@ -269,6 +291,8 @@ public class InventoryManager : MonoBehaviour
         //Slots[i].GetComponentInParent<Image>().gameObject.name = "Slot";
 
         Slots[i].SetActive(false);
+        Slots[i].GetComponent<Item>().itemName = null;
+        Slots[i].GetComponent<Item>().Num = 0;
 
         for(int j = 0; j < QuickSlots.Length; j++)
         {
@@ -289,16 +313,26 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public Item[] getInventoryItems()
+    public Item getInventoryItems(int ind)
     {
-        return SlotsItems;
+        return Slots[ind].GetComponent<Item>();
     }
 
-    public void setInventoryItems(Item[] items)
+    public void setInventoryItems(List<GameManager.ItemSave> items)
     {
         for(int i = 0; i < SlotsItems.Length; i++)
         {
             UpdateSlot(items[i], i);
         }
+    }
+
+    public ItemUses getItemUse(string name)
+    {
+        return itemsUseSearch[name];
+    }
+
+    public int getSlotLenght()
+    {
+        return Slots.Length;
     }
 }

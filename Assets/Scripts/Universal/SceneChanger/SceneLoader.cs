@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,8 @@ public class SceneLoader : MonoBehaviour {
     private int scene;
     [SerializeField]
     private TextMeshProUGUI loadingText;
+    public Slider Bar;
+    float target;
 
     private void Awake()
     {
@@ -26,12 +29,17 @@ public class SceneLoader : MonoBehaviour {
         {
             //SoundManager.instance.StopSounds();
             loadScene = true;
+            //LoadSceneNew(scene);
             StartCoroutine(LoadNewScene());
-            StartCoroutine(changeAlpha(0));
+            //StartCoroutine(changeAlpha(0));
 
         }
 
         if (loadScene == true) {
+
+
+            Debug.Log(Bar.value);
+            //Bar.value = target;
             loadingText.color = new Color(loadingText.color.r, loadingText.color.g, loadingText.color.b, Mathf.PingPong(Time.time, 1));
         }
 
@@ -58,6 +66,22 @@ public class SceneLoader : MonoBehaviour {
         return name.Substring(0, dot);
     }
 
+    public async void LoadSceneNew(int sceneInt)
+    {
+        AsyncOperation scene = SceneManager.LoadSceneAsync(sceneInt);
+
+        do
+        {
+            await System.Threading.Tasks.Task.Delay(100);
+            Bar.value = scene.progress;
+        } while (scene.progress < 0.9f);
+
+        await System.Threading.Tasks.Task.Delay(1000);
+
+        scene.allowSceneActivation = true;
+        
+    }
+
     IEnumerator LoadNewScene() {
 
         yield return new WaitForSeconds(3);
@@ -66,24 +90,16 @@ public class SceneLoader : MonoBehaviour {
         if (SceneController.instance.songname != null)
         {
             SoundManager.instance.StopSounds();
-            SoundManager.instance.PlaySound(SceneController.instance.songname, true);
+            SoundManager.instance.FadeInFadeOut(SceneController.instance.songname, 1);
         }
 
-        while (!async.isDone) {
-            yield return null;
-        }
 
-    }
-    public IEnumerator changeAlpha(float targetAlpha)
-    {
-        float currentTime = 0;
-        while (currentTime < 1)
+        while (!async.isDone)
         {
-            currentTime += Time.deltaTime;
-            loadingText.alpha = Mathf.Lerp(loadingText.alpha, targetAlpha, currentTime);
+            target = async.progress;
+            Bar.value = target;
             yield return null;
         }
-        StartCoroutine(changeAlpha(1));
-        yield break;
+        yield return new WaitForSeconds(3);
     }
 }
