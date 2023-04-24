@@ -180,6 +180,11 @@ public class InventoryManager : MonoBehaviour
 
             if (slot == null)
                 slot = getFreeSlot();
+            else
+            {
+                slot.GetComponent<Item>().Num++;
+                return;
+            }
 
             Debug.Log(slot);
         }

@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Effects")]
     public ParticleSystem Trail;
+    public RageEffects Rage;
 
     public bool stopInput;
 

@@ -30,6 +30,7 @@ public class Kamikaze : MonoBehaviour
             oldPlayerPosition = new Vector3(player.transform.position.x - gameObject.transform.position.x, player.transform.position.y - gameObject.transform.position.y, player.transform.position.z - gameObject.transform.position.z);
             distanceBoom = Vector3.Distance(player.transform.position, gameObject.transform.position);
 
+            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
             if (distanceBoom <= maxDistanceBoom)
             {
                 //_boomParticles = PoolingManager.Instance.GetPooledObject("boomPar");
