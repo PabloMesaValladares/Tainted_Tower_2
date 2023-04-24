@@ -375,6 +375,187 @@ MonoBehaviour:
       - ZenKakuGothicNew-Regular SDF
       Flags: 000000
       Languages_Touch: []
+    - Term: Puzzle0
+      TermType: 0
+      Description: 
+      Languages:
+      - "Un peque\xF1o ni\xF1o deseaba volar como los p\xE1jaros, pero no ten\xEDa
+        por donde empezar, buscar p\xE1jaros fue su misi\xF3n.\r\n"
+      - 'A little boy wanted to fly like the birds, but had where to start, looking
+        for birds was his mission.
+
+'
+      - "\u5C0F\u3055\u306A\u7537\u306E\u5B50\u306F\u9CE5\u306E\u3088\u3046\u306B\u98DB\u3076\u3053\u3068\u3092\u671B\u3093\u3067\u3044\u307E\u3057\u305F\u304C\u3001\u3069\u3053\u304B\u3089\u59CB\u3081\u308C\u3070\u3044\u3044\u306E\u304B\u3001\u9CE5\u3092\u63A2\u3059\u3053\u3068\u304C\u5F7C\u306E\u4F7F\u547D\u3067\u3057\u305F\u3002\r\n"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle1
+      TermType: 0
+      Description: 
+      Languages:
+      - "Al \xE1rbol central de su aldea fue, y al Gorri\xF3n pregunto. \u201C\xBFc\xF3mo
+        podr\xEDa volar como t\xFA?\u201D"
+      - The central tree of his village was, and I asked to the sparrow. "How could
+        you fly like you?"
+      - "\u5F7C\u306E\u6751\u306E\u4E2D\u592E\u306E\u6728\u306F\u305D\u3046\u3067\u3042\u308A\u3001\u79C1\u306F\u30B9\u30BA\u30E1\u306B\u5C0B\u306D\u305F\u3002
+        \u300C\u3069\u3046\u3057\u3066\u3042\u306A\u305F\u306F\u3042\u306A\u305F\u306E\u3088\u3046\u306B\u98DB\u3076\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u304B\uFF1F\u300D"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle2
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u201CLo siento no poder ayudarte, pero quiz\xE1s al Cisne en el lago m\xE1s
+        suerte tendr\xE1s, con mucho gusto escuchara tu petici\xF3n\u201D"
+      - '"I''m sorry I can''t help you, but maybe the swan in the lake will have
+        more luck, with pleasure you will listen to your request."'
+      - "\u300C\u7533\u3057\u8A33\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u79C1\u306F\u3042\u306A\u305F\u3092\u52A9\u3051\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u305B\u3093\u304C\u3001\u6E56\u306E\u767D\u9CE5\u306F\u3042\u306A\u305F\u306E\u8981\u6C42\u306B\u8033\u3092\u50BE\u3051\u308B\u559C\u3073\u3092\u3082\u3063\u3066\u3001\u3082\u3063\u3068\u904B\u304C\u3042\u308A\u307E\u3059\u3002\u300D"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle3
+      TermType: 0
+      Description: 
+      Languages:
+      - "El ni\xF1o a buscar al Cisne en el lago fue, armado de gran valor y esp\xEDritu"
+      - The child to look for swan in the lake was, armed with great value and spirit
+      - "\u6E56\u3067\u767D\u9CE5\u3092\u63A2\u3059\u5B50\u4F9B\u306F\u3001\u5927\u304D\u306A\u4FA1\u5024\u3068\u7CBE\u795E\u3067\u6B66\u88C5\u3057\u3066\u3044\u307E\u3057\u305F"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle4
+      TermType: 0
+      Description: 
+      Languages:
+      - "lleg\xF3 a su destino, a Cisne y Golondrina hablando encontr\xF3."
+      - He reached his destination, swan and swallow speaking found.
+      - "\u5F7C\u306F\u76EE\u7684\u5730\u306B\u5230\u7740\u3057\u3001\u767D\u9CE5\u3068\u30B9\u30EF\u30ED\u30FC\u304C\u767A\u8A00\u3057\u307E\u3057\u305F\u3002"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle5
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u201CDisculpad deseo volar como vosotros, \xBFcomo logar podr\xEDa? \u201D"
+      - "\u201CExcuse me, I want to fly like you, how could I log? \""
+      - "\u300C\u3059\u307F\u307E\u305B\u3093\u3001\u79C1\u306F\u3042\u306A\u305F\u306E\u3088\u3046\u306B\u98DB\u3073\u305F\u3044\u3067\u3059\u3001\u3069\u3046\u3059\u308C\u3070\u30ED\u30B0\u3067\u304D\u307E\u3059\u304B\uFF1F
+        \u300C"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle6
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u201C\xBFA volar? no sabemos c\xF3mo, pero estamos seguros que el viejo
+        y sabio Piquituerto en medio del bosque ayudar\xEDa\u201D"
+      - "\"To fly? We do not know how, but we are sure that the old and wise Piquituerto
+        in the middle of the forest would help \u201D"
+      - "\u300C\u98DB\u3076\u305F\u3081\u306B\uFF1F\u79C1\u305F\u3061\u306F\u65B9\u6CD5\u3092\u77E5\u308A\u307E\u305B\u3093\u304C\u3001\u68EE\u306E\u771F\u3093\u4E2D\u306B\u3042\u308B\u53E4\u304F\u3066\u8CE2\u3044\u30D4\u30AD\u30C1\u30E5\u30A8\u30EB\u30C8\u304C\u5F79\u7ACB\u3064\u3068\u78BA\u4FE1\u3057\u3066\u3044\u307E\u3059\u3002\u300D"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle7
+      TermType: 0
+      Description: 
+      Languages:
+      - "El ni\xF1o se adentro en el bosque y all\xED encontr\xF3 al Piquituerto,
+        pregunto de nuevo y con sumo detalles el Piquituerto ilustro."
+      - The boy inside in the forest and there he found the Piquituerto, asked again
+        and with great details the Illustro Piquuerto.
+      - "\u68EE\u306E\u4E2D\u306E\u5C11\u5E74\u3068\u305D\u3053\u3067\u5F7C\u306F\u30D4\u30AD\u30C1\u30E5\u30A8\u30EB\u30C8\u3092\u898B\u3064\u3051\u3001\u518D\u3073\u5C0B\u306D\u307E\u3057\u305F\u3001\u305D\u3057\u3066\u3001\u30A4\u30E9\u30B9\u30C8\u30ED\u30D4\u30AF\u30A8\u30EB\u30C8\u3092\u8A73\u7D30\u306B\u5C0B\u306D\u307E\u3057\u305F\u3002"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle8
+      TermType: 0
+      Description: 
+      Languages:
+      - "Si deseas volar, volver a tu casa deber\xE1s, jam\xE1s en vida lograras,
+        pero en sue\xF1os quiz\xE1s podr\xEDas."
+      - If you want to fly, return to your house should ever, never in life you will
+        achieve, but in dreams you could.
+      - "\u3042\u306A\u305F\u304C\u98DB\u3073\u305F\u3044\u306A\u3089\u3001\u3042\u306A\u305F\u306E\u5BB6\u306B\u623B\u3063\u3066\u3001\u3042\u306A\u305F\u304C\u9054\u6210\u3059\u308B\u3053\u3068\u306F\u6C7A\u3057\u3066\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u5922\u306E\u4E2D\u3067\u3042\u306A\u305F\u306F\u3067\u304D\u307E\u3059\u3002"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle9
+      TermType: 0
+      Description: 
+      Languages:
+      - "Y as\xED el ni\xF1o a su caso regreso, se acost\xF3 en su cama y dej\xF3
+        a su mente descansar, y as\xED logr\xF3 volar como \xE9l siempre hab\xEDa
+        deseado."
+      - And so the child to his case returned, lay in his bed and let his mind rest,
+        and thus managed to fly as he had always wanted.
+      - "\u305D\u3057\u3066\u3001\u5F7C\u306E\u4E8B\u4EF6\u306E\u5B50\u4F9B\u306F\u623B\u3063\u3066\u304D\u3066\u3001\u5F7C\u306E\u30D9\u30C3\u30C9\u306B\u6A2A\u305F\u308F\u308A\u3001\u5F7C\u306E\u5FC3\u3092\u4F11\u307E\u305B\u3001\u305D\u308C\u306B\u3088\u3063\u3066\u5F7C\u304C\u3044\u3064\u3082\u671B\u3093\u3067\u3044\u305F\u3088\u3046\u306B\u98DB\u3076\u3053\u3068\u304C\u3067\u304D\u307E\u3057\u305F\u3002"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/ES
+      TermType: 0
+      Description: 
+      Languages:
+      - "Espa\xF1ol"
+      - "Espa\xF1ol"
+      - "Espa\xF1ol"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/EN
+      TermType: 0
+      Description: 
+      Languages:
+      - English
+      - English
+      - English
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/JP
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u65E5\u672C"
+      - "\u65E5\u672C"
+      - "\u65E5\u672C"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Alpha
+      TermType: 0
+      Description: 
+      Languages:
+      - Alfa
+      - Alpha
+      - "\u30A2\u30EB\u30D5\u30A1"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Beta
+      TermType: 0
+      Description: 
+      Languages:
+      - Beta
+      - Beta
+      - "\u30D9\u30FC\u30BF"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Bag
+      TermType: 0
+      Description: 
+      Languages:
+      - Mochila
+      - Backpack
+      - "\u30D0\u30C3\u30AF\u30D1\u30C3\u30AF"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/Respawn
+      TermType: 0
+      Description: 
+      Languages:
+      - Reaparecer
+      - Respawn
+      - "\u30EA\u30B9\u30DD\u30FC\u30F3"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Puzzle10
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      - 
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
@@ -394,7 +575,7 @@ MonoBehaviour:
     Google_SpreadsheetKey: 16pxnmP605zfR_-606mv4ZTiO9rg6NBt5R6rcRmEC6q4
     Google_SpreadsheetName: I2Loc TaintedMenus Assets/Pablo/Scenes/MainMenu.unity
       LocalizationManager
-    Google_LastUpdatedVersion: 1679916851194
+    Google_LastUpdatedVersion: 1681980908317
     Google_Password: change_this
     GoogleUpdateFrequency: 2
     GoogleInEditorCheckFrequency: 2

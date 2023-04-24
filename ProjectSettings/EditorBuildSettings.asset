@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scene/MainMenu.unity
     guid: c733c89aed9aa804f9b9bfbe5418ec61
   - enabled: 1
+    path: Assets/Scene/DungeonMushroom.unity
+    guid: 958922c86db0d97418c7e89f79c0e9a6
+  - enabled: 1
     path: Assets/Scene/Escenario 1.unity
     guid: c277c6d17c9329f43aa8172f73c31a25
   m_configObjects: {}

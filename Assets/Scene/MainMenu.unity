@@ -1758,6 +1758,7 @@ RectTransform:
   - {fileID: 118851803}
   - {fileID: 220682560}
   - {fileID: 513901543}
+  - {fileID: 825778399}
   - {fileID: 1780652997}
   - {fileID: 513472889}
   - {fileID: 13833005}
@@ -3174,7 +3175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u623B\u308B"
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -3265,7 +3266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Back
-  mTermSecondary: 
+  mTermSecondary: LAKHAPATI font SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -3277,7 +3278,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3634,7 +3637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u623B\u308B"
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -4012,7 +4015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 904.2, y: -497.1}
+  m_AnchoredPosition: {x: 871.8, y: -502.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513901544
@@ -4028,7 +4031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Version
-  mTermSecondary: 
+  mTermSecondary: LAKHAPATI font SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -4040,7 +4043,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4073,7 +4078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30D0\u30FC\u30B8\u30E7\u30F3"
+  m_text: Version
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -4107,8 +4112,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4215,7 +4220,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4248,10 +4255,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u8A00\u8A9E"
+  m_text: Idioma
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4559,7 +4566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u89E3\u6C7A"
+  m_text: Resolucion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -4650,7 +4657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Resolucion
-  mTermSecondary: 
+  mTermSecondary: LAKHAPATI font SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -4662,7 +4669,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4923,7 +4932,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4956,10 +4967,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u97F3"
+  m_text: Sonido
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5046,9 +5057,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 513901545}
-  mAlignment_RTL: 260
-  mAlignment_LTR: 257
+  mTarget: {fileID: 825778401}
+  mAlignment_RTL: 258
+  mAlignment_LTR: 258
   mAlignmentWasRTL: 0
   mInitializeAlignment: 0
 --- !u!1 &563311782
@@ -5562,7 +5573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30DE\u30B9\u30BF\u30FC"
+  m_text: Maestro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -6097,7 +6108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Back
-  mTermSecondary: 
+  mTermSecondary: LAKHAPATI font SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -6109,7 +6120,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6142,7 +6155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u623B\u308B"
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -6384,7 +6397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 1375239489}
+  mTarget: {fileID: 2029808804}
   mAlignment_RTL: 514
   mAlignment_LTR: 514
   mAlignmentWasRTL: 0
@@ -6448,10 +6461,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30D5\u30EC\u30FC\u30E0"
+  m_text: Frames
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6551,7 +6564,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8117,6 +8132,183 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814394351}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &825778398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 825778399}
+  - component: {fileID: 825778402}
+  - component: {fileID: 825778401}
+  - component: {fileID: 825778400}
+  m_Layer: 5
+  m_Name: version1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &825778399
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825778398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 212427752}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 930.4, y: -503.6}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &825778400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825778398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Interfaz/Alpha
+  mTermSecondary: LAKHAPATI font SDF
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 559938666}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
+--- !u!114 &825778401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825778398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Alfa
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &825778402
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825778398}
+  m_CullTransparentMesh: 1
 --- !u!1 &826033510
 GameObject:
   m_ObjectHideFlags: 0
@@ -8553,8 +8745,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: high
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8584,8 +8777,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -9502,7 +9695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Back
-  mTermSecondary: 
+  mTermSecondary: LAKHAPATI font SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -9514,7 +9707,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9547,7 +9742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u623B\u308B"
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -10200,7 +10395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u97F3\u697D"
+  m_text: Musica
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -10317,7 +10512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u8A2D\u5B9A"
+  m_text: Opciones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -10400,7 +10595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mTerm: Interfaz/Options
-  mTermSecondary: 
+  mTermSecondary: LAKHAPATI font SDF
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   TermPrefix: 
@@ -10412,7 +10607,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11415,7 +11612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5916\u51FA"
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -11800,14 +11997,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -13316,7 +13513,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -13341,14 +13538,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -13380,7 +13577,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1227848033
@@ -13582,10 +13779,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u8A2D\u5B9A"
+  m_text: Opciones
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5cab36bb90d3234384a653002e759bc, type: 2}
-  m_sharedMaterial: {fileID: -2390391961972593405, guid: c5cab36bb90d3234384a653002e759bc,
+  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14103,8 +14300,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u65E5\u672C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 50b2a4f39946da84abb833196035ca50, type: 2}
-  m_sharedMaterial: {fileID: -970330222866029496, guid: 50b2a4f39946da84abb833196035ca50,
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14191,7 +14388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 1255576837}
+  mTarget: {fileID: 2138059013}
   mAlignment_RTL: 514
   mAlignment_LTR: 514
   mAlignmentWasRTL: 0
@@ -14839,10 +15036,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5916\u51FA"
+  m_text: Salir
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5cab36bb90d3234384a653002e759bc, type: 2}
-  m_sharedMaterial: {fileID: -2390391961972593405, guid: c5cab36bb90d3234384a653002e759bc,
+  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15360,10 +15557,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u54C1\u8CEA"
+  m_text: Graficos
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15463,7 +15660,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16483,14 +16682,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -16663,10 +16862,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u65B0\u3057\u3044\u30B2\u30FC\u30E0"
+  m_text: Nueva Partida
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5cab36bb90d3234384a653002e759bc, type: 2}
-  m_sharedMaterial: {fileID: -2390391961972593405, guid: c5cab36bb90d3234384a653002e759bc,
+  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16837,10 +17036,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u753B\u9762"
+  m_text: Pantalla
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16940,7 +17139,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -17419,10 +17620,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u7D9A\u304F"
+  m_text: Continuar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
-  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
+  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17652,8 +17853,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17683,8 +17885,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -17787,8 +17989,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 60 Fps
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17818,8 +18021,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -17998,7 +18201,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -18023,14 +18226,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -18062,7 +18265,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1768000269
@@ -18161,7 +18364,7 @@ GameObject:
   - component: {fileID: 1780652999}
   - component: {fileID: 1780652998}
   m_Layer: 5
-  m_Name: vernum
+  m_Name: info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18184,7 +18387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 904.19995, y: -522.10004}
+  m_AnchoredPosition: {x: 896.1, y: -522.10004}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780652998
@@ -18207,7 +18410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Alpha 0.0.1
+  m_text: 0.0.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -18241,8 +18444,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -18955,8 +19158,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: MaximizedWindow
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18986,8 +19190,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -19016,7 +19220,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -5.823017, y: 0, z: -3.3809586, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -19203,7 +19407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30D5\u30A9\u30FC\u30AF"
+  m_text: Si
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
   m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
@@ -20091,10 +20295,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u54C1\u8CEA"
+  m_text: Graficos
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
-  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
+  m_fontAsset: {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
+  m_sharedMaterial: {fileID: -4936315428145239669, guid: 28ea845d2df470343ba957c9c055144b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -20194,7 +20398,9 @@ MonoBehaviour:
   CorrectAlignmentForRTL: 1
   AddSpacesToJoinedLanguages: 0
   AllowLocalizedParameters: 1
-  TranslatedObjects: []
+  TranslatedObjects:
+  - {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  - {fileID: 11400000, guid: 28ea845d2df470343ba957c9c055144b, type: 2}
   LocalizeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -21114,10 +21320,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30ED\u30FC\u30C9"
+  m_text: Cargar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5cab36bb90d3234384a653002e759bc, type: 2}
-  m_sharedMaterial: {fileID: -2390391961972593405, guid: c5cab36bb90d3234384a653002e759bc,
+  m_fontAsset: {fileID: 11400000, guid: 3bb5ea62268a53143a8b4363c6a19445, type: 2}
+  m_sharedMaterial: {fileID: 7656126166039881325, guid: 3bb5ea62268a53143a8b4363c6a19445,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -21559,12 +21765,12 @@ PrefabInstance:
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.size
-      value: 42
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.Google_LastUpdatedVersion
-      value: 1681836508384
+      value: 1681979547109
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
@@ -21584,27 +21790,117 @@ PrefabInstance:
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[38].Term
-      value: Pecorine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: mSource.mTerms.Array.data[39].Term
-      value: Pecorine1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: mSource.mTerms.Array.data[40].Term
-      value: Pecorine2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: mSource.mTerms.Array.data[41].Term
       value: LAKHAPATI font SDF
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
-      propertyPath: mSource.mTerms.Array.data[41].TermType
+      propertyPath: mSource.mTerms.Array.data[39].Term
+      value: Puzzle0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[40].Term
+      value: Puzzle1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].Term
+      value: Puzzle2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[42].Term
+      value: Puzzle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[43].Term
+      value: Puzzle4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[44].Term
+      value: Puzzle5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[45].Term
+      value: Puzzle6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[46].Term
+      value: Puzzle7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[47].Term
+      value: Puzzle8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[48].Term
+      value: Puzzle9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[49].Term
+      value: Interfaz/Alpha
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[50].Term
+      value: Interfaz/Beta
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[51].Term
+      value: Interfaz/Bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[52].Term
+      value: Interfaz/Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[53].Term
+      value: Interfaz/Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[54].Term
+      value: Interfaz/Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[55].Term
+      value: Interfaz/Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[35].TermType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[38].TermType
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[39].TermType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[40].TermType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[41].TermType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
@@ -21643,6 +21939,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
+      propertyPath: mSource.mTerms.Array.data[42].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[43].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[44].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[45].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[46].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[47].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[48].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[49].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[50].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[51].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[52].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[53].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[54].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[55].Flags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
       propertyPath: mSource.mTerms.Array.data[35].Languages.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -21674,6 +22040,76 @@ PrefabInstance:
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[41].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[42].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[43].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[44].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[45].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[46].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[47].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[48].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[49].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[50].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[51].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[52].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[53].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[54].Languages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[55].Languages.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
@@ -21724,62 +22160,294 @@ PrefabInstance:
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[38].Languages.Array.data[0]
-      value: "Viva Espa\xF1a"
+      value: Barkentina 1 SDF
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[38].Languages.Array.data[1]
-      value: "Viva Espa\xF1a"
+      value: Barkentina 1 SDF
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[38].Languages.Array.data[2]
-      value: "Viva Espa\xF1a"
+      value: ZenKakuGothicNew-Regular SDF
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[39].Languages.Array.data[0]
-      value: Viva Barcelona
+      value: "Un peque\xF1o ni\xF1o deseaba volar como los p\xE1jaros, pero no ten\xEDa
+        por donde empezar, buscar p\xE1jaros fue su misi\xF3n.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[39].Languages.Array.data[1]
-      value: Viva Barcelona
+      value: 'A little boy wanted to fly like the birds, but had where to start,
+        looking for birds was his mission.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[39].Languages.Array.data[2]
-      value: Viva Barcelona
+      value: "\u5C0F\u3055\u306A\u7537\u306E\u5B50\u306F\u9CE5\u306E\u3088\u3046\u306B\u98DB\u3076\u3053\u3068\u3092\u671B\u3093\u3067\u3044\u307E\u3057\u305F\u304C\u3001\u3069\u3053\u304B\u3089\u59CB\u3081\u308C\u3070\u3044\u3044\u306E\u304B\u3001\u9CE5\u3092\u63A2\u3059\u3053\u3068\u304C\u5F7C\u306E\u4F7F\u547D\u3067\u3057\u305F\u3002\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[40].Languages.Array.data[0]
-      value: No Viva Bar
+      value: "Al \xE1rbol central de su aldea fue, y al Gorri\xF3n pregunto. \u201C\xBFc\xF3mo
+        podr\xEDa volar como t\xFA?\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[40].Languages.Array.data[1]
-      value: No Viva Bar
+      value: The central tree of his village was, and I asked to the sparrow. "How
+        could you fly like you?"
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[40].Languages.Array.data[2]
-      value: No Viva Bar
+      value: "\u5F7C\u306E\u6751\u306E\u4E2D\u592E\u306E\u6728\u306F\u305D\u3046\u3067\u3042\u308A\u3001\u79C1\u306F\u30B9\u30BA\u30E1\u306B\u5C0B\u306D\u305F\u3002
+        \u300C\u3069\u3046\u3057\u3066\u3042\u306A\u305F\u306F\u3042\u306A\u305F\u306E\u3088\u3046\u306B\u98DB\u3076\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u304B\uFF1F\u300D"
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[41].Languages.Array.data[0]
-      value: Barkentina 1 SDF
+      value: "\u201CLo siento no poder ayudarte, pero quiz\xE1s al Cisne en el lago
+        m\xE1s suerte tendr\xE1s, con mucho gusto escuchara tu petici\xF3n\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[41].Languages.Array.data[1]
-      value: Barkentina 1 SDF
+      value: '"I''m sorry I can''t help you, but maybe the swan in the lake will
+        have more luck, with pleasure you will listen to your request."'
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
       propertyPath: mSource.mTerms.Array.data[41].Languages.Array.data[2]
-      value: ZenKakuGothicNew-Regular SDF
+      value: "\u300C\u7533\u3057\u8A33\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u79C1\u306F\u3042\u306A\u305F\u3092\u52A9\u3051\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u305B\u3093\u304C\u3001\u6E56\u306E\u767D\u9CE5\u306F\u3042\u306A\u305F\u306E\u8981\u6C42\u306B\u8033\u3092\u50BE\u3051\u308B\u559C\u3073\u3092\u3082\u3063\u3066\u3001\u3082\u3063\u3068\u904B\u304C\u3042\u308A\u307E\u3059\u3002\u300D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[42].Languages.Array.data[0]
+      value: "El ni\xF1o a buscar al Cisne en el lago fue, armado de gran valor y
+        esp\xEDritu"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[42].Languages.Array.data[1]
+      value: The child to look for swan in the lake was, armed with great value and
+        spirit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[42].Languages.Array.data[2]
+      value: "\u6E56\u3067\u767D\u9CE5\u3092\u63A2\u3059\u5B50\u4F9B\u306F\u3001\u5927\u304D\u306A\u4FA1\u5024\u3068\u7CBE\u795E\u3067\u6B66\u88C5\u3057\u3066\u3044\u307E\u3057\u305F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[43].Languages.Array.data[0]
+      value: "lleg\xF3 a su destino, a Cisne y Golondrina hablando encontr\xF3."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[43].Languages.Array.data[1]
+      value: He reached his destination, swan and swallow speaking found.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[43].Languages.Array.data[2]
+      value: "\u5F7C\u306F\u76EE\u7684\u5730\u306B\u5230\u7740\u3057\u3001\u767D\u9CE5\u3068\u30B9\u30EF\u30ED\u30FC\u304C\u767A\u8A00\u3057\u307E\u3057\u305F\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[44].Languages.Array.data[0]
+      value: "\u201CDisculpad deseo volar como vosotros, \xBFcomo logar podr\xEDa?
+        \u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[44].Languages.Array.data[1]
+      value: "\u201CExcuse me, I want to fly like you, how could I log? \""
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[44].Languages.Array.data[2]
+      value: "\u300C\u3059\u307F\u307E\u305B\u3093\u3001\u79C1\u306F\u3042\u306A\u305F\u306E\u3088\u3046\u306B\u98DB\u3073\u305F\u3044\u3067\u3059\u3001\u3069\u3046\u3059\u308C\u3070\u30ED\u30B0\u3067\u304D\u307E\u3059\u304B\uFF1F
+        \u300C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[45].Languages.Array.data[0]
+      value: "\u201C\xBFA volar? no sabemos c\xF3mo, pero estamos seguros que el
+        viejo y sabio Piquituerto en medio del bosque ayudar\xEDa\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[45].Languages.Array.data[1]
+      value: "\"To fly? We do not know how, but we are sure that the old and wise
+        Piquituerto in the middle of the forest would help \u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[45].Languages.Array.data[2]
+      value: "\u300C\u98DB\u3076\u305F\u3081\u306B\uFF1F\u79C1\u305F\u3061\u306F\u65B9\u6CD5\u3092\u77E5\u308A\u307E\u305B\u3093\u304C\u3001\u68EE\u306E\u771F\u3093\u4E2D\u306B\u3042\u308B\u53E4\u304F\u3066\u8CE2\u3044\u30D4\u30AD\u30C1\u30E5\u30A8\u30EB\u30C8\u304C\u5F79\u7ACB\u3064\u3068\u78BA\u4FE1\u3057\u3066\u3044\u307E\u3059\u3002\u300D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[46].Languages.Array.data[0]
+      value: "El ni\xF1o se adentro en el bosque y all\xED encontr\xF3 al Piquituerto,
+        pregunto de nuevo y con sumo detalles el Piquituerto ilustro."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[46].Languages.Array.data[1]
+      value: The boy inside in the forest and there he found the Piquituerto, asked
+        again and with great details the Illustro Piquuerto.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[46].Languages.Array.data[2]
+      value: "\u68EE\u306E\u4E2D\u306E\u5C11\u5E74\u3068\u305D\u3053\u3067\u5F7C\u306F\u30D4\u30AD\u30C1\u30E5\u30A8\u30EB\u30C8\u3092\u898B\u3064\u3051\u3001\u518D\u3073\u5C0B\u306D\u307E\u3057\u305F\u3001\u305D\u3057\u3066\u3001\u30A4\u30E9\u30B9\u30C8\u30ED\u30D4\u30AF\u30A8\u30EB\u30C8\u3092\u8A73\u7D30\u306B\u5C0B\u306D\u307E\u3057\u305F\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[47].Languages.Array.data[0]
+      value: "Si deseas volar, volver a tu casa deber\xE1s, jam\xE1s en vida lograras,
+        pero en sue\xF1os quiz\xE1s podr\xEDas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[47].Languages.Array.data[1]
+      value: If you want to fly, return to your house should ever, never in life
+        you will achieve, but in dreams you could.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[47].Languages.Array.data[2]
+      value: "\u3042\u306A\u305F\u304C\u98DB\u3073\u305F\u3044\u306A\u3089\u3001\u3042\u306A\u305F\u306E\u5BB6\u306B\u623B\u3063\u3066\u3001\u3042\u306A\u305F\u304C\u9054\u6210\u3059\u308B\u3053\u3068\u306F\u6C7A\u3057\u3066\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u5922\u306E\u4E2D\u3067\u3042\u306A\u305F\u306F\u3067\u304D\u307E\u3059\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[48].Languages.Array.data[0]
+      value: "Y as\xED el ni\xF1o a su caso regreso, se acost\xF3 en su cama y dej\xF3
+        a su mente descansar, y as\xED logr\xF3 volar como \xE9l siempre hab\xEDa
+        deseado."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[48].Languages.Array.data[1]
+      value: And so the child to his case returned, lay in his bed and let his mind
+        rest, and thus managed to fly as he had always wanted.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[48].Languages.Array.data[2]
+      value: "\u305D\u3057\u3066\u3001\u5F7C\u306E\u4E8B\u4EF6\u306E\u5B50\u4F9B\u306F\u623B\u3063\u3066\u304D\u3066\u3001\u5F7C\u306E\u30D9\u30C3\u30C9\u306B\u6A2A\u305F\u308F\u308A\u3001\u5F7C\u306E\u5FC3\u3092\u4F11\u307E\u305B\u3001\u305D\u308C\u306B\u3088\u3063\u3066\u5F7C\u304C\u3044\u3064\u3082\u671B\u3093\u3067\u3044\u305F\u3088\u3046\u306B\u98DB\u3076\u3053\u3068\u304C\u3067\u304D\u307E\u3057\u305F\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[49].Languages.Array.data[0]
+      value: Alfa
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[49].Languages.Array.data[1]
+      value: Alpha
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[49].Languages.Array.data[2]
+      value: "\u30A2\u30EB\u30D5\u30A1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[50].Languages.Array.data[0]
+      value: Beta
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[50].Languages.Array.data[1]
+      value: Beta
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[50].Languages.Array.data[2]
+      value: "\u30D9\u30FC\u30BF"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[51].Languages.Array.data[0]
+      value: Mochila
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[51].Languages.Array.data[1]
+      value: Backpack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[51].Languages.Array.data[2]
+      value: "\u30D0\u30C3\u30AF\u30D1\u30C3\u30AF"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[52].Languages.Array.data[0]
+      value: Reaparecer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[52].Languages.Array.data[1]
+      value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[52].Languages.Array.data[2]
+      value: "\u30EA\u30B9\u30DD\u30FC\u30F3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[53].Languages.Array.data[0]
+      value: Reaparecer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[53].Languages.Array.data[1]
+      value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[53].Languages.Array.data[2]
+      value: "\u30EA\u30B9\u30DD\u30FC\u30F3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[54].Languages.Array.data[0]
+      value: Reaparecer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[54].Languages.Array.data[1]
+      value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[54].Languages.Array.data[2]
+      value: "\u30EA\u30B9\u30DD\u30FC\u30F3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[55].Languages.Array.data[0]
+      value: Reaparecer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[55].Languages.Array.data[1]
+      value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
+        type: 3}
+      propertyPath: mSource.mTerms.Array.data[55].Languages.Array.data[2]
+      value: "\u30EA\u30B9\u30DD\u30FC\u30F3"
       objectReference: {fileID: 0}
     - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
         type: 3}
