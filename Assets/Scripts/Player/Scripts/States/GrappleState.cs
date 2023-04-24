@@ -22,7 +22,7 @@ public class GrappleState : State
         dash = false;
         counter = 0;
         playerSpeed = character.sprintSpeed;
-        //character.animator.SetTrigger("grapple"); 
+        character.torsoAnimator.SetTrigger("grapple"); 
     }
     public override void HandleInput()
     {
@@ -43,7 +43,7 @@ public class GrappleState : State
     }
     public override void PhysicsUpdate()
     {
-        if (counter > 1)
+        if (counter > 0.2)
         {
             character.changeState(character.grapplemoving);
         }

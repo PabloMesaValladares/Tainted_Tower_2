@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+    public int minimumFall;
 
     [Header("Crouching")]
     public float crouchSpeed;
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Transform cameraTransform;
     public Animator animator;
+    public Animator torsoAnimator;
     [HideInInspector]
     public Vector3 playerVelocity;
 

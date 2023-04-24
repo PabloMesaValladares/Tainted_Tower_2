@@ -30,9 +30,11 @@ public class ChestBehaviour : MonoBehaviour
     {
         if (Interact.triggered)
         {
+            Debug.Log("Interactuado con " + gameObject.name);
             chestAnimator.SetTrigger("open");
-            sendItem(item);
+            InventoryManager.instance.UpdateSlot(item);
             GetComponent<SphereCollider>().enabled = false;
+            this.enabled = false;
         }
     }
 }

@@ -87,14 +87,14 @@ public class MarkEnemy : MonoBehaviour
         Vector3 posToGrab = Cam.transform.forward;
         //Vector3 posToGrab = Cam.ScreenToWorldPoint(new Vector3(markPos.transform.position.x, markPos.transform.position.y, Cam.nearClipPlane));
 
-        if (Physics.Raycast(transform.position, posToGrab, out hit, DistanceToCheck, notIgnore))
+        if (Physics.Raycast(markPos.transform.position, posToGrab, out hit, DistanceToCheck, notIgnore))
         {
             if (hit.collider.gameObject.layer == markedLayer)
             {
                 markedObject = hit.collider.gameObject;
                 HitpointerCanvas.SetActive(true);
                 NormalpointerCanvas.SetActive(false);
-                Debug.DrawRay(transform.position, hit.point, Color.green);
+                Debug.DrawRay(markPos.transform.position, hit.point, Color.green);
                 sendMarked.Invoke(markedObject.transform);
             }
             else
@@ -102,7 +102,7 @@ public class MarkEnemy : MonoBehaviour
                 HitpointerCanvas.SetActive(false);
                 NormalpointerCanvas.SetActive(true);
                 markedObject = null;
-                Debug.DrawRay(transform.position, posToGrab, Color.black);
+                Debug.DrawRay(markPos.transform.position, posToGrab * DistanceToCheck, Color.black);
                 ResetMarked.Invoke();
             }
         }

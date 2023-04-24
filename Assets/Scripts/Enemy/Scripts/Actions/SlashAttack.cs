@@ -10,10 +10,13 @@ public class SlashAttack : Action
     public float SlashSpeed;
     public float offset;
     float counter = 0;
+    GameObject enemy;
     public override void Act(Controller controller)
     {
         if(counter < NoSlashes)
         {
+            enemy = controller.gameObject;
+            enemy.GetComponent<Enemy>().animator.SetTrigger("attack");
             GameObject attack = PoolingManager.Instance.GetPooledObject("Slash");
             attack.GetComponent<SlashMovement>().speed = SlashSpeed;
             attack.transform.position = controller.gameObject.transform.position;
@@ -24,6 +27,7 @@ public class SlashAttack : Action
 
     public override void RestartVariables()
     {
+        enemy.GetComponent<Enemy>().animator.ResetTrigger("attack");
         counter = 0;
     }
 }
