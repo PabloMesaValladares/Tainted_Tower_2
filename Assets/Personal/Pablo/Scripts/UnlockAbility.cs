@@ -15,7 +15,11 @@ public class UnlockAbility : MonoBehaviour
     private bool inside;
 
     [SerializeField]
-    private GameObject orb;
+    private GameObject orb, door;
+    [SerializeField]
+    private Vector3 doorUp;
+    [SerializeField]
+    private float timeFade;
 
     // Start is called before the first frame update
     void Start()
@@ -44,5 +48,23 @@ public class UnlockAbility : MonoBehaviour
     private void OnTriggerExit(Collider collision)
     {
         inside = false;
+    }
+
+    public void OpenTheDoors()
+    {
+        StartCoroutine(startMove(door, new Vector3(door.transform.position.x, doorUp.y, door.transform.position.z), timeFade));
+    }
+
+    public static IEnumerator startMove(GameObject door, Vector3 newPos, float duration)
+    {
+        float currentTime = 0;
+        Vector3 start = door.transform.position;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            door.transform.position = Vector3.Lerp(start, newPos, currentTime);
+            yield return null;
+        }
+        yield break;
     }
 }
