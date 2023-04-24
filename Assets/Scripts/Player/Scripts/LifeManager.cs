@@ -14,9 +14,10 @@ public class LifeManager : MonoBehaviour
         stats = GetComponent<StatController>();
         health = GetComponent<HealthBehaviour>();
         health.maxHP = stats.health;
-        health.currentHP = stats.health;
+        //health.currentHP = stats.health;
+        //lifeSlider.value = health.currentHP;
+       
         lifeSlider.maxValue = stats.health;
-        lifeSlider.value = stats.health;
     }
 
     public void changeHealthSlider()

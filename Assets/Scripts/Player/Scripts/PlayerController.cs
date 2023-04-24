@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
     [Range(0, 1)]
     public float rotationDampTime = 0.2f;
     [Range(0, 1)]
+    public float attackRotationDampTime = 0.2f;
+    [Range(0, 1)]
     public float airControl = 0.5f;
 
     [HideInInspector]
@@ -95,6 +97,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Effects")]
     public ParticleSystem Trail;
+
+    public bool stopInput;
 
     public object Controls { get; internal set; }
 
@@ -148,7 +152,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        movementSM.currentState.PhysicsUpdate();
+        if (!stopInput)
+            movementSM.currentState.PhysicsUpdate();
     }
     
     public void changeState(State state)

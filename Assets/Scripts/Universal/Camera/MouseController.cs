@@ -7,22 +7,22 @@ using Cinemachine;
 
 public class MouseController : MonoBehaviour
 {
-    public PlayerInput playerInput;
+    PlayerInput playerInput;
     public CinemachineVirtualCamera NormalCamera;
     public CinemachineVirtualCamera AimCamera;
     public GameObject pauseMenu;
 
     InputAction activate;
 
-    GameObject player;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        playerInput = GetComponent<PlayerInput>();
         activate = playerInput.actions["Unlock"];
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        player = playerInput.gameObject;
     }
 
     private void OnEnable()

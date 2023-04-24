@@ -29,6 +29,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private Dictionary<string, AudioLists> _audios;
 
+    public string currentBGM;
+
     private void Start()
     {
         PlaySound("Menu", true);
@@ -74,6 +76,10 @@ public class SoundManager : MonoBehaviour
                     audioControllers[i].volume = _audios[name].volume;
                     audioControllers[i].loop = loop;
                     audioControllers[i].outputAudioMixerGroup = _audios[name].mixer;
+                    if(_audios[name].mixer.name == "Music")
+                    {
+                        currentBGM = name;
+                    }
                     audioControllers[i].Play();
                     break;
                 }
@@ -112,7 +118,43 @@ public class SoundManager : MonoBehaviour
         return false;
     }
 
-    
+    public void FadeInFadeOut(string nameIn, float duration)
+    {
+        Debug.Log("Entro");
+        AudioSource audioIn = audioControllers[0];
+        AudioSource audioOut = audioControllers[0];
+
+        if (_audios.ContainsKey(nameIn))//if exist in dictionary
+        {
+            for (int i = 0; i < audioControllers.Count; i++)
+            {
+                if (audioControllers[i].clip == null || !audioControllers[i].isPlaying)
+                {
+                    audioControllers[i].clip = _audios[nameIn].audioSelected;
+                    audioControllers[i].volume = 0;
+                    audioControllers[i].loop = true;
+                    audioControllers[i].outputAudioMixerGroup = _audios[nameIn].mixer;
+                    audioControllers[i].Play();
+                    audioIn = audioControllers[i];
+                }
+            }
+        }
+
+        if (_audios.ContainsKey(currentBGM))//if exist in dictionary
+        {
+            for (int i = 0; i < audioControllers.Count; i++)
+            {
+                if (audioControllers[i].clip != null && audioControllers[i].isPlaying)
+                {
+                    if (audioControllers[i].clip.name == currentBGM)
+                        audioOut = audioControllers[i];
+                }
+            }
+        }
+
+        StartCoroutine(StartFade(audioIn, audioOut, duration, audioOut.volume));
+    }
+
 
     public void FadeInFadeOut(string nameIn, string nameOut, float duration)
     {

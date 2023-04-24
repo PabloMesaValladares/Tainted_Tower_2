@@ -10,6 +10,7 @@ public class PlayerDamageTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponentInParent<HealthBehaviour>().Hurt(damage);
+        if (other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
+            player.GetComponentInParent<HealthBehaviour>().Hurt(damage);
     }
 }
