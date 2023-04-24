@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class DrugsMode : MonoBehaviour
 {
     public PlayerController playerController;
     public StatController statController;
+    public RageEffects particlesController;
+    public Slider sliderBar;
 
     public bool ready;
-    public float cooldown, maxCooldown;
+    public float cooldown, maxCooldown, skillCooldown, maxSkillCooldown;
 
     public float walkSpeed, walkSpeedBuff, walkSpeedDebuff;
     public float sprintSpeed, sprintSpeedBuff, sprintSpeedDebuff;
@@ -27,13 +30,16 @@ public class DrugsMode : MonoBehaviour
 
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         statController = GameObject.FindGameObjectWithTag("Player").GetComponent<StatController>();
+        particlesController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Rage;
+        sliderBar = GameObject.FindGameObjectWithTag("BerserkerCool").GetComponent<Slider>();
 
         walkSpeed = playerController.walkSpeed;
         sprintSpeed = playerController.sprintSpeed;
 
         damage = statController.strength;
         damageInt = statController.inteligence;
-
+        sliderBar.maxValue = maxCooldown;
+        sliderBar.value = maxCooldown;
     }
 
     // Update is called once per frame
@@ -42,15 +48,21 @@ public class DrugsMode : MonoBehaviour
         if(ready == false)
         {
             cooldown -= Time.deltaTime;
+            skillCooldown += Time.deltaTime;
 
-            if(cooldown <= maxCooldown/2)
+            sliderBar.value = skillCooldown;
+
+            if (cooldown <= maxCooldown/2)
             {
                 NormalMode();
+                particlesController.Stop();
             }
 
             if(cooldown <= 0)
             {
                 cooldown = maxCooldown;
+                skillCooldown = maxCooldown;
+                sliderBar.value = maxCooldown;
                 ready = true;
             }
         }
@@ -59,7 +71,8 @@ public class DrugsMode : MonoBehaviour
         {
             randomNumber = Random.Range(0, maxRange);
             BerserkerMode();
-            
+            skillCooldown = 0;
+            particlesController.Play();
             ready = false;
         }
     }
