@@ -27,6 +27,7 @@ public class DrugsMode : MonoBehaviour
 
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         statController = GameObject.FindGameObjectWithTag("Player").GetComponent<StatController>();
+
         walkSpeed = playerController.walkSpeed;
         sprintSpeed = playerController.sprintSpeed;
 
@@ -58,6 +59,7 @@ public class DrugsMode : MonoBehaviour
         {
             randomNumber = Random.Range(0, maxRange);
             BerserkerMode();
+            
             ready = false;
         }
     }

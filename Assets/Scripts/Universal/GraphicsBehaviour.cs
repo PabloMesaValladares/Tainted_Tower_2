@@ -17,7 +17,7 @@ public class GraphicsBehaviour : MonoBehaviour
     public RenderPipelineAsset[] qualityLevels;
 
     public Camera cam;
-    public CinemachineVirtualCamera vcam;
+    public CinemachineBrain vcam;
 
     public List<int> reswidth;
     public List<int> resheight;
@@ -88,8 +88,8 @@ public class GraphicsBehaviour : MonoBehaviour
             QualitySettings.SetQualityLevel(0);
             QualitySettings.masterTextureLimit = 0;
             QualitySettings.skinWeights = SkinWeights.Unlimited;
-            vcam.m_Lens.FarClipPlane = 900;
-            //cam.farClipPlane = 900;
+
+            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 600;
         }
         else if (qualityOptions.value == 1)
         {
@@ -97,8 +97,7 @@ public class GraphicsBehaviour : MonoBehaviour
             QualitySettings.SetQualityLevel(1);
             QualitySettings.masterTextureLimit = 1;
             QualitySettings.skinWeights = SkinWeights.FourBones;
-            vcam.m_Lens.FarClipPlane = 600;
-            //cam.farClipPlane = 600;
+            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 400;
         }
         else if (qualityOptions.value == 2)
         {
@@ -106,8 +105,7 @@ public class GraphicsBehaviour : MonoBehaviour
             QualitySettings.SetQualityLevel(2);
             QualitySettings.masterTextureLimit = 3;
             QualitySettings.skinWeights = SkinWeights.TwoBones;
-            vcam.m_Lens.FarClipPlane = 300;
-            //cam.farClipPlane = 300;
+            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 200;
         }
     }
 
