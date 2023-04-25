@@ -2668,6 +2668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6159334108cbaab4a9cdf855e093003f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
   layersToReact:
     serializedVersion: 2
     m_Bits: 128
@@ -19426,6 +19427,8 @@ MonoBehaviour:
   NormalCamera: {fileID: 973255800}
   AimCamera: {fileID: 1926255880}
   pauseMenu: {fileID: 1461407784}
+  brain: {fileID: 0}
+  ClipPlane: 0
   player: {fileID: 0}
 --- !u!114 &1003309263
 MonoBehaviour:
@@ -45358,6 +45361,7 @@ MonoBehaviour:
   tired: 0
   offset: {x: -0.15, y: 0, z: -0.16}
   speedDampTime: 0.122
+  drugs: 0
   Fill: {fileID: 1710818586}
   FullFillColor: {r: 0.08923691, g: 0.8867924, b: 0.37250984, a: 1}
   MediumFillColor: {r: 1, g: 0.80746645, b: 0.40251565, a: 1}
@@ -45400,6 +45404,7 @@ MonoBehaviour:
   jumpForce: 20
   jumpCooldown: 0.2
   airMultiplier: 0.4
+  minimumFall: 0
   crouchSpeed: 10
   crouchYScale: 0.7
   startYScale: 0
@@ -45420,10 +45425,12 @@ MonoBehaviour:
   playerInput: {fileID: 0}
   cameraTransform: {fileID: 0}
   animator: {fileID: 1393856713}
+  torsoAnimator: {fileID: 0}
   playerVelocity: {x: 0, y: 0, z: 0}
   dashController: {fileID: 0}
   ground: {fileID: 0}
   Trail: {fileID: 1716337267}
+  Rage: {fileID: 0}
   stopInput: 0
 --- !u!114 &1865260305
 MonoBehaviour:

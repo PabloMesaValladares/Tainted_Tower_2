@@ -94,7 +94,10 @@ public class FallState : State
             float damage = startOfFall - character.transform.position.y;
 
             if (damage > character.minimumFall)
-                character.GetComponent<HealthBehaviour>().Hurt((int)damage);
+            {
+                character.GetComponent<HealthBehaviour>().Hurt((int)damage - character.minimumFall);
+            }
+            Debug.Log(damage);
 
             if (!character.dashController.keepMomentum)
                 stateMachine.ChangeState(character.standing);

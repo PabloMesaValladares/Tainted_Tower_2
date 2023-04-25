@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     //[HideInInspector]public RespawnPoint playerRespawn;
 
     [Header("Player")]
+    public int maxHP;
     public int currentHP;
     public int totalMana;
     public int strength;
@@ -33,7 +34,6 @@ public class GameManager : MonoBehaviour
         public int ind;
     }
 
-
     [Header("Menu")]
     GameObject inventory;
     public List<ItemSave> inventoryItems;
@@ -43,6 +43,19 @@ public class GameManager : MonoBehaviour
     public bool firstSet;
     //Meter scripts skills para guardar cooldown
 
+    [Header("CheckPoint")]
+    public bool Checkpoint;
+    public int CheckPointHP;
+    public int CheckPointMana;
+    public int CheckPointStrength;
+    public int CheckPointInteligence;
+    public int CheckPointDefense;
+    public int CheckPointStaminaStat;
+    public float CheckPointStamina;
+    public Vector3 CheckPointRespawnPosition;
+    public List<ItemSave> CheckPointInventoryItems;
+    public bool Cgrapple, Cpilar, Cdrugs, Cfireball;
+
     private void Awake()
     {
 
@@ -51,7 +64,8 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
 
-            SetScripts(); 
+            SetScripts();
+            CheckPoint();
             currentHP = player.GetComponent<HealthBehaviour>().maxHP;
             stamina = staminaStat;
             player.GetComponent<StaminaController>().SetStamina(staminaStat);
@@ -112,5 +126,37 @@ public class GameManager : MonoBehaviour
             inventoryItems.Add(item);
 
         }
+    }
+
+    public void CheckPoint()
+    {
+        CheckPointInventoryItems = new List<ItemSave>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        CheckPointHP = player.GetComponent<HealthBehaviour>().currentHP; //Seteamos la vida actual
+        CheckPointMana = player.GetComponent<StatController>().totalMana;
+        CheckPointStrength = player.GetComponent<StatController>().strength;
+        CheckPointInteligence = player.GetComponent<StatController>().inteligence;
+        CheckPointStaminaStat = player.GetComponent<StatController>().stamina;
+        CheckPointDefense = player.GetComponent<StatController>().defense;
+        CheckPointStamina = player.GetComponent<StaminaController>().ReturnStamina();
+        CheckPointRespawnPosition = player.GetComponent<RespawnPoint>().RespawnPosition;
+        inventory = GameObject.FindGameObjectWithTag("Inventory");
+
+        for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
+        {
+            ItemSave item = new ItemSave();
+            //item.name = i.ToString();
+            item.itemName = inventory.GetComponent<InventoryManager>().getInventoryItems(i).itemName;
+            if (inventory.GetComponent<InventoryManager>().getInventoryItems(i).itemName == null)
+                item.itemName = "Null";
+            item.Num = inventory.GetComponent<InventoryManager>().getInventoryItems(i).Num;
+            item.ind = i;
+            //item.SetUse(inventory.GetComponent<InventoryManager>().getItemUse(item.itemName));
+            CheckPointInventoryItems.Add(item);
+
+        }
+        Cgrapple = player.GetComponent<Grappling>().enabled;
+        Cdrugs = player.GetComponent<DrugsMode>().enabled;
+        Checkpoint = false;
     }
 }

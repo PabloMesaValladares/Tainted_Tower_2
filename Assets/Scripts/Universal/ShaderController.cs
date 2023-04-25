@@ -23,6 +23,11 @@ public class ShaderController : MonoBehaviour
     {
         cam = Camera.main.gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
+        amount = 0;
+        BodyMaterial.SetFloat("_Amount", amount);
+        HairMaterial.SetFloat("_Amount", amount);
+        ClothesMaterial.SetFloat("_Amount", amount);
+        EyeMaterial.SetFloat("_Amount", amount);
     }
     private void Update()
     {

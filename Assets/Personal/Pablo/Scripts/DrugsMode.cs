@@ -23,10 +23,11 @@ public class DrugsMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _config = GetComponent<PlayerInput>();
         interactX = _config.actions["Drug"];
 
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        statController = GameObject.FindGameObjectWithTag("Player").GetComponent<StatController>();
+        playerController = GetComponent<PlayerController>();
+        statController = GetComponent<StatController>();
 
         walkSpeed = playerController.walkSpeed;
         sprintSpeed = playerController.sprintSpeed;
@@ -39,16 +40,16 @@ public class DrugsMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ready == false)
+        if (ready == false)
         {
             cooldown -= Time.deltaTime;
 
-            if(cooldown <= maxCooldown/2)
-            {
-                NormalMode();
-            }
+            //if (cooldown <= maxCooldown / 2)
+            //{
+            //    NormalMode();
+            //}
 
-            if(cooldown <= 0)
+            if (cooldown <= 0)
             {
                 cooldown = maxCooldown;
                 ready = true;
@@ -61,12 +62,17 @@ public class DrugsMode : MonoBehaviour
             BerserkerMode();
             
             ready = false;
+
+            Invoke(nameof(NormalMode), maxCooldown / 2);
         }
     }
 
     public void BerserkerMode()
     {
-        if(randomNumber <= 0)
+        GetComponent<StaminaController>().drugs = true;
+        GetComponent<PlayerController>().torsoAnimator.SetTrigger("drogas");
+        GetComponent<PlayerController>().Rage.Play();
+        if (randomNumber <= 0)
         {
             playerController.walkSpeed = walkSpeedDebuff;
             playerController.sprintSpeed = sprintSpeedDebuff;
@@ -88,6 +94,10 @@ public class DrugsMode : MonoBehaviour
 
     public void NormalMode()
     {
+        GetComponent<StaminaController>().drugs = false;
+        GetComponent<PlayerController>().torsoAnimator.ResetTrigger("drogas");
+        GetComponent<PlayerController>().Rage.Stop();
+
         playerController.walkSpeed = walkSpeed;
         playerController.sprintSpeed = sprintSpeed;
 

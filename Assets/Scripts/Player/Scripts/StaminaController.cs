@@ -17,6 +17,8 @@ public class StaminaController : MonoBehaviour
     [Range(0, 1)]
     public float speedDampTime = 0.1f;
 
+    public bool drugs;
+
     [Header("Color")]
     public Image Fill;
     public Color FullFillColor;
@@ -100,7 +102,14 @@ public class StaminaController : MonoBehaviour
     }
     public void ReduceStamina()
     {
-        stamina -= StaminaReducing * Time.deltaTime;
+        if (!drugs)
+            stamina -= StaminaReducing * Time.deltaTime;
+        else
+        {
+            stamina += StaminaAugmentg * Time.deltaTime;
+            if (stamina > MaxStamina)
+                stamina = MaxStamina;
+        }
     }
 
     public void Reduce(bool b)
