@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DrugsMode : MonoBehaviour
 {
     public PlayerController playerController;
+    public GameManager playerManager;
     public StatController statController;
     public RageEffects particlesController;
     public Slider sliderBar;
@@ -29,6 +30,7 @@ public class DrugsMode : MonoBehaviour
         interactX = _config.actions["Drug"];
 
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         statController = GameObject.FindGameObjectWithTag("Player").GetComponent<StatController>();
         particlesController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Rage;
         sliderBar = GameObject.FindGameObjectWithTag("BerserkerCool").GetComponent<Slider>();
@@ -40,6 +42,15 @@ public class DrugsMode : MonoBehaviour
         damageInt = statController.inteligence;
         sliderBar.maxValue = maxCooldown;
         sliderBar.value = maxCooldown;
+
+        if (playerManager.drugs == false)
+        {
+            gameObject.GetComponent<DrugsMode>().enabled = false;
+        }
+        else if(playerManager.drugs == true)
+        {
+            gameObject.GetComponent<DrugsMode>().enabled = true;
+        }
     }
 
     // Update is called once per frame

@@ -6110,6 +6110,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1372236286}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   boxcollider: {fileID: 82770517}
 --- !u!65 &82770517
 BoxCollider:
@@ -18841,6 +18856,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 950505062}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   boxcollider: {fileID: 765505710}
 --- !u!65 &765505710
 BoxCollider:
@@ -18982,6 +19012,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls: []
   boxcollider: {fileID: 769687784}
 --- !u!65 &769687784
 BoxCollider:
@@ -43466,6 +43499,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 499965975}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   boxcollider: {fileID: 1214502294}
 --- !u!65 &1214502294
 BoxCollider:
@@ -44339,6 +44387,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls: []
   boxcollider: {fileID: 1262376264}
 --- !u!65 &1262376264
 BoxCollider:
@@ -51192,6 +51243,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls: []
   boxcollider: {fileID: 1378109587}
 --- !u!65 &1378109587
 BoxCollider:
@@ -78044,6 +78098,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1785557087}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   boxcollider: {fileID: 1804188892}
 --- !u!65 &1804188892
 BoxCollider:
@@ -80905,6 +80974,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls: []
   boxcollider: {fileID: 1928440155}
 --- !u!65 &1928440155
 BoxCollider:
@@ -83375,6 +83447,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  plateAgain:
+    m_PersistentCalls:
+      m_Calls: []
   boxcollider: {fileID: 2079922058}
 --- !u!65 &2079922058
 BoxCollider:

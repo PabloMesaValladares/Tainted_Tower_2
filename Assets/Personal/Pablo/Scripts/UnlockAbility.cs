@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class UnlockAbility : MonoBehaviour
 {
     private PlayerController playerController;
+    private GameManager playerManager;
 
     InputAction interactE;
     [SerializeField]
@@ -25,6 +26,7 @@ public class UnlockAbility : MonoBehaviour
     void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         interactE = _config.actions["Interact"];
     }
 
@@ -36,6 +38,7 @@ public class UnlockAbility : MonoBehaviour
             playerController.GetComponent<DrugsMode>().enabled = true;
             orb.SetActive(false);
             gameObject.SetActive(false);
+            playerManager.drugs = true;
             gameObject.GetComponent<UnlockAbility>().enabled = false;
         }
     }

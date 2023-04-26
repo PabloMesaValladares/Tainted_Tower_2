@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CarroPixelado
-  m_Shader: {fileID: 4800000, guid: 7fb8296dcf1d93b4593291830a39c792, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4600d3869776fd54ebca4b6928938fd2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
