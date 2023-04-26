@@ -53,6 +53,7 @@ public class SprintState : State
         character.animator.ResetTrigger("attack");
         character.animator.ResetTrigger("dash");
         character.animator.SetTrigger("move");
+
         grounded = character.ground.returnCheck();
         gravityValue = character.gravityValue;
 
@@ -121,7 +122,9 @@ public class SprintState : State
         if (sprint)
         {
             if (!character.dashController.keepMomentum)
+            {
                 character.animator.SetFloat("speed", input.magnitude + 0.5f, character.speedDampTime, Time.deltaTime);
+            }
             else
             {
                 character.animator.SetFloat("speed", 1.5f);

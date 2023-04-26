@@ -26,4 +26,9 @@ public class RespawnPoint : MonoBehaviour
         GameManager.instance.SetScripts();
         RespawnEvent.Invoke();
     }
+    public void RespawnCheckPoint()
+    {
+        GameManager.instance.Checkpoint = true;
+        RespawnEvent.Invoke();
+    }
 }

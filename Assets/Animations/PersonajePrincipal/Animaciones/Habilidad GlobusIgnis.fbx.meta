@@ -34,7 +34,408 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CapaDetras
+        weight: 1
+      - path: CapaLados
+        weight: 1
+      - path: ChanclasGomas
+        weight: 1
+      - path: Cinturon1
+        weight: 1
+      - path: Cinturon2
+        weight: 1
+      - path: CuerpoPiernas
+        weight: 1
+      - path: CuerpoTorso
+        weight: 1
+      - path: Flor
+        weight: 1
+      - path: Flor 1
+        weight: 1
+      - path: Lazo1
+        weight: 1
+      - path: Lazo2
+        weight: 1
+      - path: Lazo3A
+        weight: 1
+      - path: Lazo3B
+        weight: 1
+      - path: Pantalonesnew
+        weight: 1
+      - path: PeloArriba
+        weight: 1
+      - path: "Pesta\xF1as"
+        weight: 1
+      - path: Pupilas
+        weight: 1
+      - path: Star001
+        weight: 1
+      - path: Star001/Circle019
+        weight: 1
+      - path: Star001/Circle019/Circle018
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Cadera_01
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008/Capa_I00
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008/Capa_I00/Circle064
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008/Capa_I00/Circle064/CapaTopDelante_000
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008/Capa_I00/Circle064/CapaTopDelante_000/Circle007
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008/Capa_I00/Circle064/CapaTopDelante_000/Circle007/Capa_I01
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008/Capa_I00/Circle064/CapaTopDelante_000/Circle007/Capa_I01/Circle006
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008/Capa_I00/Circle064/CapaTopDelante_000/Circle007/Capa_I01/Circle006/Capa_I02
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle008/Capa_I00/Circle064/CapaTopDelante_000/Circle007/Capa_I01/Circle006/Capa_I02/Capa_I03
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065/Capa_D00
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065/Capa_D00/Circle063
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065/Capa_D00/Circle063/CapaTopDelante_001
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065/Capa_D00/Circle063/CapaTopDelante_001/Circle013
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065/Capa_D00/Circle063/CapaTopDelante_001/Circle013/Capa_D01
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065/Capa_D00/Circle063/CapaTopDelante_001/Circle013/Capa_D01/Circle012
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065/Capa_D00/Circle063/CapaTopDelante_001/Circle013/Capa_D01/Circle012/Capa_D02
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle065/Capa_D00/Circle063/CapaTopDelante_001/Circle013/Capa_D01/Circle012/Capa_D02/Capa_D03
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066/CapaDetras_I00
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066/CapaDetras_I00/Circle068
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066/CapaDetras_I00/Circle068/CapaTOP_002
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066/CapaDetras_I00/Circle068/CapaTOP_002/Circle004
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066/CapaDetras_I00/Circle068/CapaTOP_002/Circle004/CapaDetras_I01
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066/CapaDetras_I00/Circle068/CapaTOP_002/Circle004/CapaDetras_I01/Circle005
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066/CapaDetras_I00/Circle068/CapaTOP_002/Circle004/CapaDetras_I01/Circle005/CapaDetras_I03
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle066/CapaDetras_I00/Circle068/CapaTOP_002/Circle004/CapaDetras_I01/Circle005/CapaDetras_I03/CapaDetras_I02
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067/CapaDetras_D00
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067/CapaDetras_D00/Circle069
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067/CapaDetras_D00/Circle069/CapaTOP_003
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067/CapaDetras_D00/Circle069/CapaTOP_003/Circle009
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067/CapaDetras_D00/Circle069/CapaTOP_003/Circle009/CapaDetras_D01
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067/CapaDetras_D00/Circle069/CapaTOP_003/Circle009/CapaDetras_D01/Circle011
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067/CapaDetras_D00/Circle069/CapaTOP_003/Circle009/CapaDetras_D01/Circle011/CapaDetras_D02
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Circle067/CapaDetras_D00/Circle069/CapaTOP_003/Circle009/CapaDetras_D01/Circle011/CapaDetras_D02/CapaDetras_D03
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/flor_00
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/flor_00/Circle062
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/flor_00/Circle062/flor_01
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/flor_00/Circle062/flor_01/Circle061
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/flor_00/Circle062/flor_01/Circle061/flor_02
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/flor_00/Circle062/flor_01/Circle061/flor_02/flor_03
+        weight: 1
+      - path: Star001/Circle019/Circle018/Cadera_00/Point023
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point023/Piernas_08
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point023/Piernas_08/Piernas_06
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point023/Piernas_08/Piernas_06/Pies_00
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point023/Piernas_08/Piernas_06/Pies_00/Pies_01
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point023/Piernas_08/Piernas_06/Pies_00/Pies_01/Pies_02
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point024
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point024/Piernas_09
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point024/Piernas_09/Piernas_07
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point024/Piernas_09/Piernas_07/Pies_03
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point024/Piernas_09/Piernas_07/Pies_03/Pies_04
+        weight: 0
+      - path: Star001/Circle019/Circle018/Cadera_00/Point024/Piernas_09/Piernas_07/Pies_03/Pies_04/Pies_05
+        weight: 0
+      - path: Star001/Circle019/Circle020
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza00
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_003
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_003/Cabeza_Mechones_000
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_003/Cabeza_Mechones_000/Cabeza_Mechones_001
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_003/Cabeza_Mechones_000/Cabeza_Mechones_001/Cabeza_Mechones_002
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_007
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_007/Cabeza_Mechones_011
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_007/Cabeza_Mechones_011/Cabeza_Mechones_009
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_007/Cabeza_Mechones_011/Cabeza_Mechones_009/Cabeza_Mechones_010
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_008
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_008/Cabeza_Mechones_004
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_008/Cabeza_Mechones_004/Cabeza_Mechones_005
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/Cabeza_Mechones_008/Cabeza_Mechones_004/Cabeza_Mechones_005/Cabeza_Mechones_006
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/CabezaMechonarriba_000
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/CabezaMechonarriba_000/CabezaMechonarriba_001
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/CabezaMechonarriba_000/CabezaMechonarriba_001/CabezaMechonarriba_002
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle028/Cabeza02/Circle029/Cabeza01/CabezaMechonarriba_000/CabezaMechonarriba_001/CabezaMechonarriba_002/CabezaMechonarriba_003
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle033
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle033/Torso_57
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle033/Torso_57/Circle034
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle033/Torso_57/Circle034/Torso_55
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle033/Torso_57/Circle034/Torso_55/Torso_48
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle035
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle035/Torso_51
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle035/Torso_51/Circle036
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle035/Torso_51/Circle036/Torso_52
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle035/Torso_51/Circle036/Torso_52/Circle037
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle035/Torso_51/Circle036/Torso_52/Circle037/Torso_53
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle035/Torso_51/Circle036/Torso_52/Circle037/Torso_53/Torso_54
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle040
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle040/Torso_47
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle040/Torso_47/Circle038
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle040/Torso_47/Circle038/Torso_38
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle040/Torso_47/Circle038/Torso_38/Circle039
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle040/Torso_47/Circle038/Torso_38/Circle039/Torso_49
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle040/Torso_47/Circle038/Torso_38/Circle039/Torso_49/Torso_50
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle043
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle043/Torso_43
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle043/Torso_43/Circle041
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle043/Torso_43/Circle041/Torso_44
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle043/Torso_43/Circle041/Torso_44/Circle042
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle043/Torso_43/Circle041/Torso_44/Circle042/Torso_45
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle043/Torso_43/Circle041/Torso_44/Circle042/Torso_45/Torso_46
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle046
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle046/Torso_39
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle046/Torso_39/Circle044
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle046/Torso_39/Circle044/Torso_40
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle046/Torso_39/Circle044/Torso_40/Circle045
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle046/Torso_39/Circle044/Torso_40/Circle045/Torso_41
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle030/Torso_08/Torso_14/Torso_15/Torso_16/Torso_58/Torso_56/Circle046/Torso_39/Circle044/Torso_40/Circle045/Torso_41/Torso_42
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle048
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle048/Torso_34
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle048/Torso_34/Circle047
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle048/Torso_34/Circle047/Torso_35
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle048/Torso_34/Circle047/Torso_35/Circle049
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle048/Torso_34/Circle047/Torso_35/Circle049/Torso_20
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle048/Torso_34/Circle047/Torso_35/Circle049/Torso_20/Torso_28
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle052
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle052/Torso_30
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle052/Torso_30/Circle051
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle052/Torso_30/Circle051/Torso_31
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle052/Torso_30/Circle051/Torso_31/Circle050
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle052/Torso_30/Circle051/Torso_31/Circle050/Torso_32
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle052/Torso_30/Circle051/Torso_31/Circle050/Torso_32/Torso_33
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle055
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle055/Torso_26
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle055/Torso_26/Circle054
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle055/Torso_26/Circle054/Torso_27
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle055/Torso_26/Circle054/Torso_27/Circle053
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle055/Torso_26/Circle054/Torso_27/Circle053/Torso_19
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle055/Torso_26/Circle054/Torso_27/Circle053/Torso_19/Torso_29
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle058
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle058/Torso_22
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle058/Torso_22/Circle056
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle058/Torso_22/Circle056/Torso_23
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle058/Torso_22/Circle056/Torso_23/Circle057
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle058/Torso_22/Circle056/Torso_23/Circle057/Torso_24
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle058/Torso_22/Circle056/Torso_23/Circle057/Torso_24/Torso_25
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle060
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle060/Torso_36
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle060/Torso_36/Circle059
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle060/Torso_36/Circle059/Torso_37
+        weight: 1
+      - path: Star001/Circle019/Circle020/Circle021/Circle032/Circle031/Torso_09/Torso_11/Torso_12/Torso_13/Torso_17/Torso_18/Circle060/Torso_36/Circle059/Torso_37/Torso_21
+        weight: 1
+      - path: Star001/Circle019/Torso_02
+        weight: 1
+      - path: Star001/Circle019/Torso_02/Torso_00
+        weight: 1
+      - path: Star001/Circle019/Torso_02/Torso_00/Torso_01
+        weight: 1
+      - path: Star001/Circle019/Torso_02/Torso_00/Torso_01/Torso_06
+        weight: 1
+      - path: Zapatos
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []

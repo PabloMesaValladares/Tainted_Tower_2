@@ -49,7 +49,7 @@ public class AttackState : State
 
         character.Sheathedweapon.SetActive(false);
         character.weapon.SetActive(true);
-
+        character.weapon.GetComponent<DamageDealer>().StartDealDamage();
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
         velocity = new Vector3(input.x, 0, input.y);
@@ -126,6 +126,7 @@ public class AttackState : State
         character.Sheathedweapon.GetComponent<SheathedWeapon>().StartTimer();
         character.Sheathedweapon.SetActive(true);
         character.animator.applyRootMotion = false;
+        character.weapon.GetComponent<DamageDealer>().EndDealDamage();
     }
 
 }

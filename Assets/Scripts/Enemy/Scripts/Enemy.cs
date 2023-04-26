@@ -18,56 +18,57 @@ public class Enemy : MonoBehaviour
 
     GameObject player;
     NavMeshAgent agent;
-    Animator animator;
+    public Animator animator;
     float timePassed;
     float newDestinationCD = 0.5f;
+    LifeTest life;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>(); 
         player = GameObject.FindGameObjectWithTag("Player");
+        life = GetComponent<LifeTest>();
+        health = life.Life;
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
+        //animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
-        if (player == null)
-        {
-            return;
-        }
+        //if (player == null)
+        //{
+        //    return;
+        //}
 
-        if (timePassed >= attackCD)
-        {
-            if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
-            {
-                animator.SetTrigger("attack");
-                timePassed = 0;
-            }
-        }
-        timePassed += Time.deltaTime;
+        //if (timePassed >= attackCD)
+        //{
+        //    if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
+        //    {
+        //        animator.SetTrigger("attack");
+        //        timePassed = 0;
+        //    }
+        //}
+        //timePassed += Time.deltaTime;
 
-        if (newDestinationCD <= 0 && Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
-        {
-            LookAtPlayer();
-            newDestinationCD = 0.5f;
-            agent.SetDestination(player.transform.position);
-        }
-        newDestinationCD -= Time.deltaTime;
+        //if (newDestinationCD <= 0 && Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
+        //{
+        //    LookAtPlayer();
+        //    newDestinationCD = 0.5f;
+        //    agent.SetDestination(player.transform.position);
+        //}
+        //newDestinationCD -= Time.deltaTime;
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            print(true);
-            player = collision.gameObject;
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        print(true);
+    //        player = collision.gameObject;
+    //    }
+    //}
 
     void LookAtPlayer()
     {
@@ -80,14 +81,15 @@ public class Enemy : MonoBehaviour
     {
         //Instantiate(ragdoll, transform.position, transform.rotation);
         //Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-        animator.SetTrigger("damage");
+        //animator.SetTrigger("damage");
         //CameraShake.Instance.ShakeCamera(2f, 0.2f);
-
+        life.Life = health;
         if (health <= 0)
         {
             Die();

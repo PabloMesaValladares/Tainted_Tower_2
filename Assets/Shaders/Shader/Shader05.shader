@@ -6,7 +6,8 @@ Shader "IFP/Shader05"
         MaxDistance("MaxDistance", float) = 0
         _Amount("Amount", Range(0.0,1.0)) = 0
         _Transparency("Transparency", Range(0.0,1.0)) = 0.25
-        ColorTest("ColorTest", Color) = (0,0,0,0)
+        ColorNoTransparency("ColorNoTransparency", Color) = (0,0,0,0)
+        ColorTransparency("ColorTransparency", Color) = (0,0,0,0)
 
     }
         SubShader
@@ -40,7 +41,8 @@ Shader "IFP/Shader05"
                 float MaxDistance;
                 float _Amount;
                 float _Transparency;
-                float4 ColorTest;
+                float4 ColorNoTransparency;
+                float4 ColorTransparency;
 
 
                 VSOutput VShader(VSInput i)
@@ -66,11 +68,11 @@ Shader "IFP/Shader05"
                 {
                     fixed4 texColor = tex2D(_MainTex, i.uv);
 
-                    fixed4 texColorHide = texColor;
+                    fixed4 texColorHide = ColorTransparency;
 
-                    fixed4 texColorBase = ColorTest;
+                    fixed4 texColorBase = ColorNoTransparency;
 
-                    texColorHide.a = _Transparency;
+                    //texColorBase.a = _Transparency;
 
                     texColor.a = lerp(texColorBase, texColorHide, _Amount);
 

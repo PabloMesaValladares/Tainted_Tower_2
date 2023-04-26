@@ -57,7 +57,7 @@ public class Item : MonoBehaviour
             itemName = null;
             Num = 0;
             ind = 0;
-            itemUsed(ind);
+            InventoryManager.instance.ClearSlot(ind);
             gameObject.SetActive(false);
         }
     }

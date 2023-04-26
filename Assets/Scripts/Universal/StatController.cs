@@ -79,7 +79,7 @@ public class StatController : MonoBehaviour
 
     private int TotalStat(int rS)
     {
-        int stat = rS + mainHand.mainStat + secondaryHand.mainStat;
+        int stat = rS + mainHand.mainStat;
 
         return stat;
     }

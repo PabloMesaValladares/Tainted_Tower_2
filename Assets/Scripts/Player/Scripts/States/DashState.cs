@@ -31,6 +31,7 @@ public class DashState : State
         character.animator.ResetTrigger("fall");
         character.animator.SetTrigger("dash");
 
+
         dashForce = character.dashController.dashForce;
         dashUpwardForce = character.dashController.dashUpwardForce;
         dashDuration = character.dashController.dashDuration;

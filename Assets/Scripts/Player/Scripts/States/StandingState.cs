@@ -56,9 +56,9 @@ public class StandingState : State
         character.animator.ResetTrigger("attack");
         character.animator.ResetTrigger("dash");
         character.animator.ResetTrigger("jump");
-        //character.animator.ResetTrigger("crouch");
-        //character.animator.ResetTrigger("fall");
         character.animator.SetTrigger("move");
+
+
         dash = false;
         jump = false;
         crouch = false;

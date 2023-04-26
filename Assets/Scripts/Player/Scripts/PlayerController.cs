@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+    public int minimumFall;
 
     [Header("Crouching")]
     public float crouchSpeed;

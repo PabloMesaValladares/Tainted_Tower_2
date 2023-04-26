@@ -40,16 +40,6 @@ public class InventoryManager : MonoBehaviour
     {
         _instance = this;
     }
-    private void OnEnable()
-    {
-        Item.itemUsed += ClearSlot;
-        ChestBehaviour.sendItem += UpdateSlot;
-    }
-    private void OnDisable()
-    {
-        Item.itemUsed -= ClearSlot;
-        ChestBehaviour.sendItem -= UpdateSlot;
-    }
 
 
     void Start()
@@ -173,42 +163,73 @@ public class InventoryManager : MonoBehaviour
     {
         GameObject slot = null;
 
+        slot = getSlotWithName(itemGot.itemName);
 
-        if (!itemAdded)
+        if (slot == null)
         {
-            slot = getSlotWithName(itemGot.itemName);
-
-            if (slot == null)
-                slot = getFreeSlot();
+            Debug.Log("No encontre para stackear");
+            slot = getFreeSlot();
+            if (slot != null)
+            {
+                //noticeText.text = TextsManager.instance.GetText("Got_Item");
+                //itemText.text = TextsManager.instance.GetText(name);
+                //itemNotice.SetActive(true);
+                GameObject parent = slot.transform.parent.GetComponent<Slot>().gameObject;
+                InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
+                slot.GetComponent<Item>().itemName = itemGot.itemName;
+                slot.GetComponent<Item>().SetUse(itemsUseSearch[itemGot.itemName]);
+                slot.GetComponent<Item>().Num = itemGot.Num;
+                slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
+                slot.GetComponent<Image>().color = Color.white;
+                parent.GetComponent<Slot>().item = slot.GetComponent<Item>();
+                child.item = slot.GetComponent<Item>();
+                //child.UpdateText();
+                parent.name = itemGot.itemName;
+                slot.SetActive(true);
+                //GameManager.instance.NotificationOn();
+            }
+        }
+        else
+        {
+            Debug.Log("Encontre para stackear");
+            if (slot.GetComponent<Item>().Num + itemGot.Num <= 99)
+            {
+                slot.GetComponent<Item>().Num += itemGot.Num;
+            }
             else
             {
-                slot.GetComponent<Item>().Num++;
-                return;
+                int overflow = slot.GetComponent<Item>().Num += itemGot.Num - 99;
+                slot.GetComponent<Item>().Num = 99;
+                
+
+                slot = getFreeSlot();
+                if (slot != null)
+                {
+                    //noticeText.text = TextsManager.instance.GetText("Got_Item");
+                    //itemText.text = TextsManager.instance.GetText(name);
+                    //itemNotice.SetActive(true);
+                    GameObject parent = slot.transform.parent.GetComponent<Slot>().gameObject;
+                    InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
+                    slot.GetComponent<Item>().itemName = itemGot.itemName;
+                    slot.GetComponent<Item>().SetUse(itemsUseSearch[itemGot.itemName]);
+                    slot.GetComponent<Item>().Num = overflow;
+                    slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
+                    slot.GetComponent<Image>().color = Color.white;
+                    parent.GetComponent<Slot>().item = slot.GetComponent<Item>();
+                    child.item = slot.GetComponent<Item>();
+                    //child.UpdateText();
+                    parent.name = itemGot.itemName;
+                    slot.SetActive(true);
+                    //GameManager.instance.NotificationOn();
+                }
             }
-
-            Debug.Log(slot);
+         
         }
 
-        if (slot != null)
-        {
-            //noticeText.text = TextsManager.instance.GetText("Got_Item");
-            //itemText.text = TextsManager.instance.GetText(name);
-            //itemNotice.SetActive(true);
-            GameObject parent = slot.transform.parent.GetComponent<Slot>().gameObject;
-            InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
-            slot.GetComponent<Item>().itemName = itemGot.itemName;
-            slot.GetComponent<Item>().SetUse(itemsUseSearch[itemGot.itemName]);
-            slot.GetComponent<Item>().Num = itemGot.Num;
-            slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
-            slot.GetComponent<Image>().color = Color.white;
-            parent.GetComponent<Slot>().item = slot.GetComponent<Item>();
-            child.item = slot.GetComponent<Item>();
-            //child.UpdateText();
-            parent.name = itemGot.itemName;
-            slot.SetActive(true);
-            //GameManager.instance.NotificationOn();
-        }
+        Debug.Log(slot);
     }
+    
+    
     public void UpdateSlot(Item itemGot, int ind)
     {
         GameObject slot = Slots[ind];
@@ -302,7 +323,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < Slots.Length; i++)
         {
-            if (Slots[i].GetComponent<Item>().itemName == name)
+            if (Slots[i].GetComponent<Item>().itemName == name && Slots[i].GetComponent<Item>().Num < 99)
             {
                 itemAdded = true;
                 return Slots[i];

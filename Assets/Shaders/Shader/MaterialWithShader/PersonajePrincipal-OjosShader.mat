@@ -7,26 +7,25 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PersonajePrincipal-Pelo
-  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_Name: PersonajePrincipal-OjosShader
+  m_Shader: {fileID: 4800000, guid: aa953e8957b57db4a87cd558f865c6e4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _ALPHATEST_ON
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2495
-  stringTagMap:
-    RenderType: TransparentCutout
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 7841392104636cf46a8293c2915e1166, type: 3}
+        m_Texture: {fileID: 2800000, guid: a687774c59b227d41b55afa776332be1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -50,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7841392104636cf46a8293c2915e1166, type: 3}
+        m_Texture: {fileID: 2800000, guid: a687774c59b227d41b55afa776332be1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -92,8 +91,8 @@ Material:
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
     - _AlphaClip: 1
-    - _Amount: 0.2150724
-    - _Blend: 3
+    - _Amount: 0.5189131
+    - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
     - _Brightness: 1
@@ -115,7 +114,7 @@ Material:
     - _OcclusionStrength: 1
     - _Outline: 4.55
     - _Parallax: 0.005
-    - _QueueOffset: 45
+    - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SampleGI: 0
     - _Smoothness: 0.5
@@ -130,7 +129,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - ColorTest: {r: 1, g: 0, b: 0, a: 1}
+    - ColorNoTransparency: {r: 1, g: 1, b: 1, a: 0}
+    - ColorTest: {r: 1, g: 1, b: 1, a: 1}
+    - ColorTransparency: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
