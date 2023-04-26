@@ -58,10 +58,6 @@ public class StandingState : State
         character.animator.ResetTrigger("jump");
         character.animator.SetTrigger("move");
 
-        character.torsoAnimator.ResetTrigger("attack");
-        character.torsoAnimator.ResetTrigger("dash");
-        character.torsoAnimator.ResetTrigger("jump");
-        character.torsoAnimator.SetTrigger("move");
 
         dash = false;
         jump = false;
@@ -155,7 +151,6 @@ public class StandingState : State
     {
         base.LogicUpdate();
         character.animator.SetFloat("speed", input.magnitude, character.speedDampTime, Time.deltaTime);//Cambiamos la velocidad del animator para cambiar su animacion
-        character.torsoAnimator.SetFloat("speed", input.magnitude, character.speedDampTime, Time.deltaTime);//Cambiamos la velocidad del animator para cambiar su animacion
 
         if (sprint)//cambia al estado dependiendo de la variable
             stateMachine.ChangeState(character.sprinting);

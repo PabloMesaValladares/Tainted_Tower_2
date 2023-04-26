@@ -9,6 +9,7 @@ public class RespawnSetter : MonoBehaviour
         if(other.transform.parent.gameObject.TryGetComponent<RespawnPoint>(out RespawnPoint respawn))
         {
             respawn.SetRespawn(transform.position);
+            GameManager.instance.CheckPoint();
         }
     }
 }

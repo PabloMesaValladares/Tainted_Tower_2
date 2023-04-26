@@ -31,7 +31,7 @@ public class GrabMoveState : State
         moving = true;
         dash = false;
         stop = false;
-        //character.animator.SetTrigger("dash"); 
+        character.animator.SetTrigger("dash"); 
         playerSpeed = character.grabSpeed;
         grapplePoint = character.GetComponent<Grappling>().GetGrapplePoint(); 
 

@@ -157,6 +157,5 @@ public class GameManager : MonoBehaviour
         }
         Cgrapple = player.GetComponent<Grappling>().enabled;
         Cdrugs = player.GetComponent<DrugsMode>().enabled;
-        Checkpoint = false;
     }
 }

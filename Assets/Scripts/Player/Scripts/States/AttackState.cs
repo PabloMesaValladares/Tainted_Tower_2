@@ -39,9 +39,7 @@ public class AttackState : State
         character.animator.applyRootMotion = true;
         timePassed = 0f;
         character.animator.SetTrigger("attack");
-        character.torsoAnimator.SetTrigger("attack");
         character.animator.SetFloat("speed", 0f);
-        character.torsoAnimator.SetFloat("speed", 0f);
         orientation = character.transform; 
         dashForce = 5f;
         dashUpwardForce = 0f;

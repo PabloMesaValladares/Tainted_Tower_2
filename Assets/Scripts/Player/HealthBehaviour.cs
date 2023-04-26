@@ -58,7 +58,7 @@ public class HealthBehaviour : MonoBehaviour
         while (currentTime < 1)
         {
             currentTime += Time.deltaTime;
-            cam.GetComponent<ShaderController>().maxDistance = Mathf.Lerp(max, 10000, currentTime);
+            cam.GetComponent<ShaderController>().maxDistance = Mathf.Lerp(max, 100, currentTime);
             yield return null;
         }
         yield break;

@@ -10,10 +10,7 @@ public class MouseController : MonoBehaviour
     PlayerInput playerInput;
     public CinemachineVirtualCamera NormalCamera;
     public CinemachineVirtualCamera AimCamera;
-    public GameObject pauseMenu;
-
-    public CinemachineBrain brain;
-    public float ClipPlane;
+    public GameObject pauseMenu, BagMenu;
 
     InputAction activate;
 
@@ -43,12 +40,7 @@ public class MouseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        brain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = ClipPlane;
-        if (activate.IsPressed())
-        {
-            Unlock();
-        }
-        else if (pauseMenu.activeInHierarchy)
+        if (pauseMenu.activeInHierarchy ||BagMenu.activeInHierarchy)
         {
             Unlock();
         }
