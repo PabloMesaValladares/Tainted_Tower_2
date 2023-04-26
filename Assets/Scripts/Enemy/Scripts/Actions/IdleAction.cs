@@ -18,9 +18,9 @@ public class IdleAction : Action
         if(sideMove)
         {
             if(randSide == 0)
-                controller.transform.localPosition += new Vector3(controller.transform.right.x * Time.deltaTime * 10, 0, 0);
+                controller.transform.position += speed * Time.deltaTime * controller.transform.right;
             else
-                controller.transform.localPosition -= new Vector3(controller.transform.right.x * Time.deltaTime * 10, 0, 0);
+                controller.transform.position -= speed * Time.deltaTime * controller.transform.right;
         }
     }
 
@@ -29,6 +29,5 @@ public class IdleAction : Action
         randSide = Random.Range(0, 2);
         Debug.Log(randSide);
     }
-
 }
 

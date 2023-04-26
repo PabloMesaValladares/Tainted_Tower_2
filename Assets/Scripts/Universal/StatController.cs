@@ -59,7 +59,7 @@ public class StatController : MonoBehaviour
         damageDone = Mathf.FloorToInt(damage - defense * 0.1f);
 
         return damageDone;
-    }
+    } 
 
     public void CalculateMana()
     {

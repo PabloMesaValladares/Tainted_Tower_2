@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1025b9a68bd8934a87206c990dea752, type: 3}
   m_Name: LookMoveBoss
   m_EditorClassIdentifier: 
-  randSide: 0
+  randSide: 1
   sideMove: 1
-  speed: 5
+  speed: 4
