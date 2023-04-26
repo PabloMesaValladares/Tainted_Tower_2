@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Minigame1 : MonoBehaviour
 {
-    public UnityEvent plateCheck;
+    public UnityEvent plateCheck, plateAgain;
     public BoxCollider boxcollider;
 
     private void OnEnable()
@@ -28,5 +28,6 @@ public class Minigame1 : MonoBehaviour
     public void EnableCollider()
     {
         boxcollider.enabled = true;
+        plateAgain.Invoke();
     }
 }

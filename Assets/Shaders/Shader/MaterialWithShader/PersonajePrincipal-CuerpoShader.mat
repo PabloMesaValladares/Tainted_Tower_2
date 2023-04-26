@@ -90,7 +90,11 @@ Material:
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
     - _AlphaClip: 0
+<<<<<<< HEAD:Assets/Shaders/Shader/MaterialWithShader/PersonajePrincipal-CuerpoShader.mat
     - _Amount: 0.5189131
+=======
+    - _Amount: 0.21507208
+>>>>>>> Alvaro-Prog:Assets/Shaders/Shader/PersonajePrincipal-Cuerpo.mat
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0

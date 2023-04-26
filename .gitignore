@@ -73,3 +73,5 @@ crashlytics-build.properties
 Assets/Shaders/Shader/PersonajePrincipal-Ropa.mat
 Assets/Shaders/Shader/PersonajePrincipal-Ropa.mat
 Assets/Shaders/Shader/PersonajePrincipal-Pelo.mat
+
+Assets/Shaders/Shader/MaterialWithShader/PersonajePrincipal-CuerpoShader.mat

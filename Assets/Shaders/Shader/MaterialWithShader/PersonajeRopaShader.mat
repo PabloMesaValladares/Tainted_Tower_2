@@ -90,8 +90,13 @@ Material:
     - PlayerDistanceX: 0
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
+<<<<<<< HEAD:Assets/Shaders/Shader/MaterialWithShader/PersonajeRopaShader.mat
     - _AlphaClip: 1
     - _Amount: 0.5189131
+=======
+    - _AlphaClip: 0
+    - _Amount: 0.2150724
+>>>>>>> Pablo-Prog:Assets/Shaders/Shader/PersonajePrincipal-Cuerpo.mat
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
