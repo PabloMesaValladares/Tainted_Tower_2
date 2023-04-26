@@ -12,7 +12,8 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -24,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: fe9e7e302c56ba24b970d5d914fa342b, type: 3}
+        m_Texture: {fileID: 2800000, guid: a687774c59b227d41b55afa776332be1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -89,12 +90,8 @@ Material:
     - PlayerDistanceX: 0
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
-    - _AlphaClip: 0
-<<<<<<< HEAD:Assets/Shaders/Shader/MaterialWithShader/PersonajePrincipal-CuerpoShader.mat
-    - _Amount: 0.5189131
-=======
-    - _Amount: 0.21507208
->>>>>>> Alvaro-Prog:Assets/Shaders/Shader/PersonajePrincipal-Cuerpo.mat
+    - _AlphaClip: 1
+    - _Amount: 0.068211876
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
@@ -103,7 +100,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
-    - _Cutoff: 0.189
+    - _Cutoff: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DetailTex: 1
