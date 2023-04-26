@@ -93,10 +93,14 @@ Material:
     - PlayerDistanceZ: 0
     - _AlphaClip: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _Amount: 0.2150724
     - _Blend: 3
 =======
     - _Amount: 0.21507208
+=======
+    - _Amount: 0.2150724
+>>>>>>> Pablo-Prog
     - _Blend: 0
 >>>>>>> Alvaro-Prog
     - _BlendModePreserveSpecular: 1
