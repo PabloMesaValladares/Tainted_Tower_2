@@ -19,6 +19,9 @@ public class LifeTest : MonoBehaviour
     private void Update()
     {
         if (test)
+        {
+            Debug.Log("El porcentaje de vida es " + LifePerc * maxLife / 100);
             Life = LifePerc * maxLife / 100;
+        }
     }
 }

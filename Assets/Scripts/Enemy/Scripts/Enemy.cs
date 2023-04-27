@@ -28,7 +28,6 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>(); 
         player = GameObject.FindGameObjectWithTag("Player");
         life = GetComponent<LifeTest>();
-        health = life.Life;
     }
 
     // Update is called once per frame
@@ -58,7 +57,7 @@ public class Enemy : MonoBehaviour
         //    agent.SetDestination(player.transform.position);
         //}
         //newDestinationCD -= Time.deltaTime;
-        
+
     }
 
     //private void OnCollisionEnter(Collision collision)
