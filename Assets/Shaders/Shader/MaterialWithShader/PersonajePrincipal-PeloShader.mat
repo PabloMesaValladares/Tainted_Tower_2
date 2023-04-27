@@ -91,7 +91,7 @@ Material:
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
     - _AlphaClip: 1
-    - _Amount: 0.068211876
+    - _Amount: 0
     - _Blend: 3
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0

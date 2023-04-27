@@ -10,7 +10,7 @@ public class MouseController : MonoBehaviour
     PlayerInput playerInput;
     public CinemachineVirtualCamera NormalCamera;
     public CinemachineVirtualCamera AimCamera;
-    public GameObject pauseMenu, BagMenu;
+    public GameObject pauseMenu, BagMenu, deathMenu;
 
     InputAction activate;
 
@@ -40,7 +40,7 @@ public class MouseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pauseMenu.activeInHierarchy ||BagMenu.activeInHierarchy)
+        if (pauseMenu.activeInHierarchy || BagMenu.activeInHierarchy || deathMenu.activeInHierarchy)
         {
             Unlock();
         }
@@ -52,7 +52,7 @@ public class MouseController : MonoBehaviour
 
 
 
-    void Unlock()
+    public void Unlock()
     {
         player.GetComponent<PlayerInput>().enabled = false;
         if(InputDetecter.Instance.gamepad)
@@ -68,7 +68,7 @@ public class MouseController : MonoBehaviour
         NormalCamera.GetComponent<CinemachineInputProvider>().enabled = false;
         AimCamera.GetComponent<CinemachineInputProvider>().enabled = false;
     }
-    void Lock()
+    public void Lock()
     {
         player.GetComponent<PlayerInput>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;

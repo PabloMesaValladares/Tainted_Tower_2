@@ -146,7 +146,10 @@ public class SprintState : State
         if (attack)
             stateMachine.ChangeState(character.attacking);
         if (!grounded)
+        {
+            character.startOfFall = character.transform.position.y;
             stateMachine.ChangeState(character.falling);
+        }
 
 
         rb.drag = groundDrag;

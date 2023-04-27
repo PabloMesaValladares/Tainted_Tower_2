@@ -58,6 +58,7 @@ public class GrabMoveState : State
 
         float sqrMag = (grapplePoint - character.transform.position).sqrMagnitude;
 
+        
         if (sqrMag > lastSqrMag)
         {
             //rb.velocity = character.transform.forward * playerSpeed;

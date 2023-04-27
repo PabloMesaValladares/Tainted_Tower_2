@@ -65,11 +65,11 @@ public class GameManager : MonoBehaviour
             _instance = this;
 
             SetScripts();
-            CheckPoint();
             currentHP = player.GetComponent<HealthBehaviour>().maxHP;
             stamina = staminaStat;
             player.GetComponent<StaminaController>().SetStamina(staminaStat);
-            firstSet = true;
+            player.GetComponent<RespawnPoint>().RespawnPosition = RespawnPosition;
+            CheckPoint();
             DontDestroyOnLoad(this.gameObject);
         }
         else

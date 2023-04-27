@@ -22,8 +22,6 @@ public class FallState : State
     float airMultiplier;
     float gravity;
 
-    float fallingDuration;
-    float startOfFall;
     public FallState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -59,7 +57,6 @@ public class FallState : State
         rb.drag = 0;
         rb.useGravity = true;
 
-        startOfFall = character.transform.position.y;
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
@@ -91,7 +88,7 @@ public class FallState : State
         {
             //character.animator.SetTrigger("move");
 
-            float damage = startOfFall - character.transform.position.y;
+            float damage = character.startOfFall - character.transform.position.y;
 
             if (damage > character.minimumFall)
             {

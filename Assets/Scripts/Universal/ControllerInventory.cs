@@ -10,6 +10,7 @@ public class ControllerInventory : MonoBehaviour
     public GameObject Menu;
     public GameObject BagMenu;
     public GameObject AddMenu;
+    public GameObject DeathMenu;
     [Header("Selected")]
     [SerializeField]GameObject SelectedButton;
     [SerializeField] int menIndex;
@@ -19,15 +20,10 @@ public class ControllerInventory : MonoBehaviour
     public List<GameObject> BagButtons;
     public List<GameObject> AddButtons;
     public List<GameObject> QuickButtons;
+    public List<GameObject> DeathButtons;
     [Header("PlayerInputs")]
     public PlayerInput playerControls;
-    InputAction up;
-    InputAction down;
-    InputAction right;
-    InputAction left;
-    InputAction Use;
-    InputAction pause;
-    InputAction back;
+    InputAction up, down, right, left, Use, pause, bag, back;
 
     public bool hideMouse;
 
@@ -45,6 +41,7 @@ public class ControllerInventory : MonoBehaviour
         left = playerControls.actions["Fourth"];
         Use = playerControls.actions["Jump"];
         pause = playerControls.actions["Pause"];
+        bag = playerControls.actions["Bag"];
         back = playerControls.actions["Attack"];
 
         //BagButtons = new GameObject[GameObject.FindGameObjectsWithTag("BagButtons").Length];
@@ -194,6 +191,27 @@ public class ControllerInventory : MonoBehaviour
                     break;
                 case false:
                     Menu.SetActive(true);
+                    index = 0;
+                    menIndex = 0;
+                    mouseUnlock();
+                    break;
+            }
+        }
+        if (bag.triggered)
+        {
+            switch (BagMenu.activeInHierarchy)
+            {
+                case true:
+                    Menu.SetActive(false);
+                    BagMenu.SetActive(false);
+                    if (SelectedButton != null)
+                        SelectedButton.GetComponent<Image>().color = SelectedButton.GetComponent<Button>().colors.normalColor;
+                    SelectedButton = null;
+                    mouseLock();
+                    break;
+                case false:
+                    Menu.SetActive(true);
+                    BagMenu.SetActive(true);
                     index = 0;
                     menIndex = 0;
                     mouseUnlock();
