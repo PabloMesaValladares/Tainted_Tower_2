@@ -165,7 +165,10 @@ public class StandingState : State
             character.dashController.startCooldown();
         }
         if (!grounded)
+        {
+            character.startOfFall = character.transform.position.y;
             stateMachine.ChangeState(character.falling);
+        }
         if (attack)
             stateMachine.ChangeState(character.attacking);
 

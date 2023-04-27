@@ -13,7 +13,7 @@ public class HealthBehaviour : MonoBehaviour
     public UnityEvent damagedEvent;
     public UnityEvent deathEvent;
 
-
+    public float dur, quantity;
     public void AddHealthPercent(int h)
     {
         int perc = maxHP * h / 100;
@@ -48,17 +48,17 @@ public class HealthBehaviour : MonoBehaviour
 
     public void startRoutine(GameObject c)
     {
-        StartCoroutine(changeSlider(c));
+        StartCoroutine(changeSlider(c, dur));
     }
 
-    public IEnumerator changeSlider(GameObject cam)
+    public IEnumerator changeSlider(GameObject cam, float duration)
     {
         float max = cam.GetComponent<ShaderController>().maxDistance;
         float currentTime = 0;
-        while (currentTime < 1)
+        while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            cam.GetComponent<ShaderController>().maxDistance = Mathf.Lerp(max, 100, currentTime);
+            cam.GetComponent<ShaderController>().maxDistance = Mathf.Lerp(max, quantity, currentTime / duration);
             yield return null;
         }
         yield break;

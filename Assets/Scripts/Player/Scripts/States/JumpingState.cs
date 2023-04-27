@@ -68,6 +68,7 @@ public class JumpingState : State
 
 
 
+        character.startOfFall = character.transform.position.y;
         character.changeState(character.falling);
     }
 

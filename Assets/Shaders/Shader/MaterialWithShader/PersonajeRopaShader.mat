@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 723a7a0029ceec24a8d0d9c0432593ff, type: 3}
+        m_Texture: {fileID: 2800000, guid: a687774c59b227d41b55afa776332be1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -90,13 +90,8 @@ Material:
     - PlayerDistanceX: 0
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
-<<<<<<< HEAD:Assets/Shaders/Shader/MaterialWithShader/PersonajeRopaShader.mat
     - _AlphaClip: 1
-    - _Amount: 0.5189131
-=======
-    - _AlphaClip: 0
-    - _Amount: 0.2150724
->>>>>>> Pablo-Prog:Assets/Shaders/Shader/PersonajePrincipal-Cuerpo.mat
+    - _Amount: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
@@ -135,7 +130,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - ColorNoTransparency: {r: 1, g: 1, b: 1, a: 0}
-    - ColorTest: {r: 1, g: 0, b: 0, a: 1}
+    - ColorTest: {r: 1, g: 1, b: 1, a: 1}
     - ColorTransparency: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

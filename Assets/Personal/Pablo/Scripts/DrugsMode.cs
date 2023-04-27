@@ -7,9 +7,7 @@ using UnityEngine.UI;
 public class DrugsMode : MonoBehaviour
 {
     public PlayerController playerController;
-    public GameManager playerManager;
     public StatController statController;
-    public RageEffects particlesController;
     public Slider sliderBar;
 
     public bool ready;
@@ -30,7 +28,6 @@ public class DrugsMode : MonoBehaviour
         _config = GetComponent<PlayerInput>();
         interactX = _config.actions["Drug"];
 
-        sliderBar = GameObject.FindGameObjectWithTag("BerserkerCool").GetComponent<Slider>();
         playerController = GetComponent<PlayerController>();
         statController = GetComponent<StatController>();
 
@@ -42,14 +39,6 @@ public class DrugsMode : MonoBehaviour
         sliderBar.maxValue = maxCooldown;
         sliderBar.value = maxCooldown;
 
-        if (playerManager.drugs == false)
-        {
-            gameObject.GetComponent<DrugsMode>().enabled = false;
-        }
-        else if(playerManager.drugs == true)
-        {
-            gameObject.GetComponent<DrugsMode>().enabled = true;
-        }
     }
 
     // Update is called once per frame
@@ -80,7 +69,6 @@ public class DrugsMode : MonoBehaviour
             randomNumber = Random.Range(0, maxRange);
             BerserkerMode();
             skillCooldown = 0;
-            particlesController.Play();
             ready = false;
 
             Invoke(nameof(NormalMode), maxCooldown / 2);
@@ -89,9 +77,9 @@ public class DrugsMode : MonoBehaviour
 
     public void BerserkerMode()
     {
-        GetComponent<PlayerController>().animator.SetTrigger("drogas");
+        playerController.animator.SetTrigger("drogas");
         GetComponent<StaminaController>().drugs = true;
-        GetComponent<PlayerController>().Rage.Play();
+        playerController.Rage.Play();
         if (randomNumber < maxRange/2)
         {
             playerController.walkSpeed = walkSpeedDebuff;
@@ -115,7 +103,7 @@ public class DrugsMode : MonoBehaviour
     public void NormalMode()
     {
         GetComponent<StaminaController>().drugs = false;
-        GetComponent<PlayerController>().Rage.Stop();
+        playerController.Rage.Stop();
 
         playerController.walkSpeed = walkSpeed;
         playerController.sprintSpeed = sprintSpeed;

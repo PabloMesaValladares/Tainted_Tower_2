@@ -105,6 +105,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Bag",
+                    "type": "Button",
+                    "id": "8c22f10f-6bfe-4224-bd83-0429c03afacd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "a8a33037-1377-4ea5-9e6d-13133c4eb3f2",
@@ -162,15 +171,6 @@
                     "name": "Ball",
                     "type": "Button",
                     "id": "58d1f2ac-f8d8-49be-ba79-604697894932",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Unlock",
-                    "type": "Button",
-                    "id": "8c22f10f-6bfe-4224-bd83-0429c03afacd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -860,17 +860,6 @@
                 },
                 {
                     "name": "",
-                    "id": "68b166df-7e61-4b28-b165-d463c02346a8",
-                    "path": "<Keyboard>/alt",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Unlock",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f6594043-8e74-47a8-8f98-36e549908710",
                     "path": "<DualShockGamepad>/buttonWest",
                     "interactions": "",
@@ -932,6 +921,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Drug",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68b166df-7e61-4b28-b165-d463c02346a8",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bag",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
