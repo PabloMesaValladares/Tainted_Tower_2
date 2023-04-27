@@ -38,7 +38,7 @@ public class Spell : MonoBehaviour
         // Apply hit particle effects
         // Apply sound effects
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             //Destruir enemigo
            

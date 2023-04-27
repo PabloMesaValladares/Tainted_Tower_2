@@ -21,6 +21,7 @@ public class PlayerStatsSet : MonoBehaviour
             //GetComponent<RespawnPoint>().Respawn();
             GetComponent<Grappling>().enabled = GameManager.instance.grapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.drugs;
+            GetComponent<PlayerMagicSystem>().enabled = GameManager.instance.fireball;
             transform.position = GameManager.instance.CheckPointRespawnPosition;
         }
         else
@@ -37,6 +38,7 @@ public class PlayerStatsSet : MonoBehaviour
             //GetComponent<RespawnPoint>().Respawn();
             GetComponent<Grappling>().enabled = GameManager.instance.Cgrapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.Cdrugs;
+            GetComponent<PlayerMagicSystem>().enabled = GameManager.instance.Cfireball;
             transform.position = GameManager.instance.CheckPointRespawnPosition;
         }
     }
