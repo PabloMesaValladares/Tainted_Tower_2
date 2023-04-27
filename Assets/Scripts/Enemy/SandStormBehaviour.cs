@@ -44,7 +44,6 @@ public class SandStormBehaviour : MonoBehaviour
     float GetRemainingDistance()
     {
         remainingDistance = Vector3.Distance(transform.position, points[destPoint].position);
-
         return remainingDistance;
     }
 }

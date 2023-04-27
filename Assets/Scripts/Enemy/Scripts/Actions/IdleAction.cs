@@ -30,4 +30,3 @@ public class IdleAction : Action
         Debug.Log(randSide);
     }
 }
-
