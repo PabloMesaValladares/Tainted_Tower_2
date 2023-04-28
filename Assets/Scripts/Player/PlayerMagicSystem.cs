@@ -55,7 +55,7 @@ public class PlayerMagicSystem : MonoBehaviour
             currentMana -= spellToCast.SpellToCast.ManaCost;
 
             currentCastTimer = 0;
-            CastSpell();
+            GetComponent<PlayerController>().animator.SetTrigger("fuego");
         }
 
         if (castingMagic)
@@ -85,10 +85,13 @@ public class PlayerMagicSystem : MonoBehaviour
     {
         manaSlider.value = currentMana / 100;
     }
-    void CastSpell()
+    public void CastSpell()
     {
         //CAST OUR SPELL
 
-        Instantiate(spellToCast, castPoint.position, castPoint.rotation);
+        if (!GetComponent<MarkEnemy>().marking)
+            Instantiate(spellToCast, castPoint.position, transform.rotation);
+        else
+            Instantiate(spellToCast, castPoint.position, Camera.main.transform.rotation);
     }
 }

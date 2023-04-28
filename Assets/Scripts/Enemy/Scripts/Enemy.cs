@@ -5,9 +5,9 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float health = 3;
+    [SerializeField] public float health;
+    [SerializeField] public float maxHealth;
     [SerializeField] GameObject hitVFX;
-    [SerializeField] GameObject ragdoll;
     [SerializeField] float lookAtPlayerSpeed;
     public GameObject head;
 
@@ -21,14 +21,14 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     float timePassed;
     float newDestinationCD = 0.5f;
-    LifeTest life;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); 
         player = GameObject.FindGameObjectWithTag("Player");
-        life = GetComponent<LifeTest>();
-        health = life.Life;
+        maxHealth = GetComponent<StatController>().health;
+        health = maxHealth;
+        //life = GetComponent<LifeTest>();
     }
 
     // Update is called once per frame
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
         //    agent.SetDestination(player.transform.position);
         //}
         //newDestinationCD -= Time.deltaTime;
-        
+
     }
 
     //private void OnCollisionEnter(Collision collision)
@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
         health -= damageAmount;
         //animator.SetTrigger("damage");
         //CameraShake.Instance.ShakeCamera(2f, 0.2f);
-        life.Life = health;
+        //life.Life = health;
         if (health <= 0)
         {
             Die();

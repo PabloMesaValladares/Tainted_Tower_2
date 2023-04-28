@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             _instance = this;
 
             SetScripts();
-            currentHP = player.GetComponent<HealthBehaviour>().maxHP;
+            currentHP = player.GetComponent<StatController>().health;
             stamina = staminaStat;
             player.GetComponent<StaminaController>().SetStamina(staminaStat);
             player.GetComponent<RespawnPoint>().RespawnPosition = RespawnPosition;
@@ -126,6 +126,10 @@ public class GameManager : MonoBehaviour
             inventoryItems.Add(item);
 
         }
+
+        //grapple = player.GetComponent<Grappling>().enabled;
+        //drugs = player.GetComponent<DrugsMode>().enabled;
+        //fireball = player.GetComponent<PlayerMagicSystem>().enabled;
     }
 
     public void CheckPoint()
@@ -157,5 +161,6 @@ public class GameManager : MonoBehaviour
         }
         Cgrapple = player.GetComponent<Grappling>().enabled;
         Cdrugs = player.GetComponent<DrugsMode>().enabled;
+        Cfireball = player.GetComponent<PlayerMagicSystem>().enabled;
     }
 }

@@ -12,14 +12,11 @@ public class MouseController : MonoBehaviour
     public CinemachineVirtualCamera AimCamera;
     public GameObject pauseMenu, BagMenu, deathMenu;
 
-    InputAction activate;
-
     public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        activate = playerInput.actions["Unlock"];
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 

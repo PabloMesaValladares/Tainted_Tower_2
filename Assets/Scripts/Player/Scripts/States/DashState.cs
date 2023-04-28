@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+[CreateAssetMenu(menuName = "Player/State/Dash")]
 
 public class DashState : State
 {

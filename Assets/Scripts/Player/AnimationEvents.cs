@@ -8,7 +8,7 @@ public class AnimationEvents : MonoBehaviour
 
     public UnityEvent deathStart;
     public UnityEvent deathFinal;
-
+    public UnityEvent fireBallActivate;
 
     public void DeathStart()
     {
@@ -18,5 +18,10 @@ public class AnimationEvents : MonoBehaviour
     public void DeathEnded()
     {
         deathFinal.Invoke();
+    }
+
+    public void LaunchFireball()
+    { 
+        fireBallActivate.Invoke();
     }
 }
