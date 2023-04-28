@@ -20415,7 +20415,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781543, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_TransparentLayers.m_Bits
-      value: 256
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781543, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -55950,7 +55950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7677ba883899f2848bf0e47ab7b0f7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: 9bf380d25168c5a4687bf203de1f8ab8, type: 2}
+  currentState: {fileID: 11400000, guid: fff75ff72e0027049bccef6034d9187d, type: 2}
   player: {fileID: 795640593}
   enemy: {fileID: 0}
   rb: {fileID: 0}
@@ -55968,9 +55968,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!65 &1488477447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56066,8 +56066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  maxHealth: 0
   hitVFX: {fileID: 0}
-  ragdoll: {fileID: 0}
   lookAtPlayerSpeed: 0
   head: {fileID: 0}
   attackCD: 3

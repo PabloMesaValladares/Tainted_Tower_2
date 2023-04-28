@@ -10,18 +10,20 @@ public class LifeTest : MonoBehaviour
     [Range(0, 100)]
     public float LifePerc;
     public bool test;
+    Enemy enemyScript;
     private void Start()
     {
         maxLife = GetComponent<StatController>().health;
-        Life = maxLife;
+        //Life = maxLife;
+        enemyScript = GetComponent<Enemy>();
     }
 
     private void Update()
     {
         if (test)
         {
-            Debug.Log("El porcentaje de vida es " + LifePerc * maxLife / 100);
-            Life = LifePerc * maxLife / 100;
+            Debug.Log("El porcentaje de vida es " + LifePerc * 100 / maxLife);
+            enemyScript.health = LifePerc * maxLife / 100;
         }
     }
 }
