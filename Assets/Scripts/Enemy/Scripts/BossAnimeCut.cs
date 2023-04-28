@@ -26,6 +26,8 @@ public class BossAnimeCut : MonoBehaviour
     float distEffEn;
     public int damage;
 
+    public float duration;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,8 @@ public class BossAnimeCut : MonoBehaviour
         CutAttack.MoveEffect += DoSlash;
     }
 
-
+    float currentTime;
+    Vector3 startingPos;
     // Update is called once per frame
     void Update()
     {
@@ -50,22 +53,28 @@ public class BossAnimeCut : MonoBehaviour
 
         if (!look)
         {
-            SpeedControl();
-            Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
-            rb.AddForce(forceToApply, ForceMode.Impulse);
-            distEffEn = Vector3.Distance(transform.position, posToGo);
-            //Debug.Log(Vector3.Distance(transform.position, posToGo));
-            if (distEffEn < 1)
+            
+            if(currentTime < duration)
+            {
+                currentTime += Time.deltaTime;
+                rb.MovePosition(Vector3.Lerp(startingPos, posToGo, currentTime / duration));
+            }
+            else
+            {
                 LookAround();
+                StopDash();
+            }
         }
 
     }
 
     public void DoSlash()
     {
+        currentTime = 0;
         look = false;
         posToGo = playerPos;
         transform.LookAt(playerPos);
+        startingPos = transform.position;
         touched = false;
     }
 
