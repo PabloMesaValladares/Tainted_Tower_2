@@ -9,9 +9,10 @@ public class PillarAttack : Action
 {
     public override void Act(Controller controller)
     {
-        GameObject storm = PoolingManager.Instance.GetPooledObject("Pillar");
-        storm.transform.position = controller.player.transform.position;
-        storm.SetActive(true);
+        GameObject pilar = PoolingManager.Instance.GetPooledObject("Pillar");
+        pilar.transform.position = controller.player.transform.position;
+        pilar.GetComponent<PillarAbility>().markable = 6;
+        pilar.SetActive(true);
     }
 
     public override void RestartVariables()

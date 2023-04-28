@@ -13059,7 +13059,7 @@ PrefabInstance:
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -364.09366
+      value: -364.09467
       objectReference: {fileID: 0}
     - target: {fileID: 8980523048787781536, guid: 6bb14da959a37354a8a46310a53cb6e2,
         type: 3}
@@ -13728,6 +13728,7 @@ MonoBehaviour:
   AimCamera: {fileID: 2006513925}
   pauseMenu: {fileID: 1157292992}
   BagMenu: {fileID: 1400182987}
+  deathMenu: {fileID: 0}
   player: {fileID: 795640593}
 --- !u!114 &781117670
 MonoBehaviour:
@@ -13954,6 +13955,8 @@ MonoBehaviour:
   deathEvent:
     m_PersistentCalls:
       m_Calls: []
+  dur: 0
+  quantity: 0
 --- !u!114 &795640599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14174,6 +14177,7 @@ MonoBehaviour:
   jumpForce: 20
   jumpCooldown: 0.2
   airMultiplier: 0.4
+  startOfFall: 0
   minimumFall: 0
   crouchSpeed: 10
   crouchYScale: 0.7
@@ -30083,6 +30087,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 173.22372
       objectReference: {fileID: 0}
+    - target: {fileID: -6554154474035987570, guid: aed96f9c31a039e47a71ec9f7fe0b4f2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 99c9b88099f7e3b49af3c96c81a0dd96, type: 2}
     - target: {fileID: -6468149400094049683, guid: aed96f9c31a039e47a71ec9f7fe0b4f2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30687,7 +30696,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: aa44f96a6ee21aa42a2e59bd713b7fda, type: 2}
+      objectReference: {fileID: 2100000, guid: 99c9b88099f7e3b49af3c96c81a0dd96, type: 2}
     - target: {fileID: -966412720018855743, guid: aed96f9c31a039e47a71ec9f7fe0b4f2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -33127,7 +33136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.612305, y: -20.618927}
+  m_AnchoredPosition: {x: -18.612305, y: -20.618958}
   m_SizeDelta: {x: 1803.929, y: 186.8195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1400182989
@@ -41848,6 +41857,7 @@ MonoBehaviour:
   Menu: {fileID: 1157292992}
   BagMenu: {fileID: 1400182987}
   AddMenu: {fileID: 1893449646}
+  DeathMenu: {fileID: 0}
   SelectedButton: {fileID: 0}
   menIndex: 0
   index: 0
@@ -41887,6 +41897,7 @@ MonoBehaviour:
   - {fileID: 116969111}
   - {fileID: 1088552409}
   QuickButtons: []
+  DeathButtons: []
   playerControls: {fileID: 795640595}
   hideMouse: 1
 --- !u!114 &1602656251
@@ -49414,6 +49425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479fedc244bf7f94cb80db0a7ccbd2d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionToRespawn: {fileID: 0}
 --- !u!65 &1875028669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55045,7 +55057,7 @@ MonoBehaviour:
   - {fileID: 367277042}
   - {fileID: 893612679}
   destPoint: 0
-  speed: 50
+  speed: 30
   remainingDistance: 0
 --- !u!54 &1951176799
 Rigidbody:
