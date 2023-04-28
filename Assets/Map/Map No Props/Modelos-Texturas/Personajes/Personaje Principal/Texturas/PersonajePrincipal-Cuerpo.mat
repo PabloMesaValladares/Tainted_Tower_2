@@ -91,7 +91,7 @@ Material:
     - PlayerDistanceY: 0
     - PlayerDistanceZ: 0
     - _AlphaClip: 0
-    - _Amount: 0.34662375
+    - _Amount: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _Brightness: 1
@@ -127,7 +127,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - ColorNoTransparency: {r: 0, g: 0, b: 0, a: 0}
     - ColorTest: {r: 1, g: 0, b: 0, a: 1}
+    - ColorTransparency: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

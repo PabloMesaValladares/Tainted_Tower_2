@@ -62,9 +62,7 @@ public class ChargeAttackMode : MonoBehaviour
             {
                 oldPlayerPosition = new Vector3(player.transform.position.x - gameObject.transform.position.x, player.transform.position.y - gameObject.transform.position.y, player.transform.position.z - gameObject.transform.position.z);
                 gameObject.transform.LookAt(oldPlayerPosition);
-                //_movement.MoveGameObject(gameObject, oldPlayerPosition, vel);
                 timeremaining = timeBetweenAttacks;
-                //oldPlayerPosition = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
             }
 
             if(oldPlayerPosition != null)
@@ -89,4 +87,5 @@ public class ChargeAttackMode : MonoBehaviour
     {
         inRange = false;
     }
+
 }

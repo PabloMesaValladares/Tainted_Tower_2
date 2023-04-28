@@ -9,16 +9,19 @@ public class RandomIdleMovement : MonoBehaviour
     [SerializeField]
     public float idleVel, timeremaining, maxTime, distFromOrignalPoint, maxDistFromOriginalPoint;
     [SerializeField]
-    private int maxRange, randomNumber;
+    private int maxRange, randomNumber, randomGrade, maxRangeGrade, speedRotation;
     [SerializeField]
     private Vector3 direction;
     [SerializeField]
     private GameObject originalPoint;
     [SerializeField]
-    private bool IdleMode;
-    // Start is called before the first frame update
+    private bool IdleMode, canMove;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        _movement = GetComponent<MovementBehavior>();
+    }
+
     void Update()
     {
         if(IdleMode == true)
@@ -28,6 +31,7 @@ public class RandomIdleMovement : MonoBehaviour
             if (timeremaining <= 0)
             {
                 randomNumber = Random.Range(0, maxRange);
+                randomGrade = Random.Range(0, maxRangeGrade);
                 DistanceOriginalPointkChecker();
                 directionChecker();
                 timeremaining = maxTime;
@@ -35,11 +39,15 @@ public class RandomIdleMovement : MonoBehaviour
 
             if (distFromOrignalPoint >= maxDistFromOriginalPoint)
             {
-                gameObject.GetComponent<MovementBehavior>().MoveLerp(originalPoint.transform.position, idleVel);
+                gameObject.transform.LookAt(new Vector3(originalPoint.transform.position.x, gameObject.transform.position.y, originalPoint.transform.position.z));
+                _movement.MoveLerp(new Vector3(originalPoint.transform.position.x, gameObject.transform.position.y, originalPoint.transform.position.z), idleVel * 2);
             }
+
             else if (distFromOrignalPoint < maxDistFromOriginalPoint)
             {
-                gameObject.GetComponent<MovementBehavior>().MoveGameObject(direction, idleVel);
+                gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, Quaternion.Euler(0, randomGrade, 0), timeremaining / speedRotation);
+                if(canMove)_movement.MoveGameObject(transform.forward, idleVel);
+
             }
         }
     }
@@ -48,23 +56,11 @@ public class RandomIdleMovement : MonoBehaviour
     {
         if (randomNumber == 0)
         {
-            direction = Vector3.forward;
+            canMove = true;
         }
-        else if (randomNumber == 1)
+        else if(randomNumber != 0)
         {
-            direction = Vector3.left;
-        }
-        else if (randomNumber == 2)
-        {
-            direction = Vector3.right;
-        }
-        else if (randomNumber == 3)
-        {
-            direction = Vector3.back;
-        }
-        else if (randomNumber != 0 && randomNumber != 1 && randomNumber != 2 && randomNumber != 3)
-        {
-            direction = Vector3.zero;
+            canMove = false;
         }
     }
 
