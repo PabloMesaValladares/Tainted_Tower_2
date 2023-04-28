@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5261170709817433346
 Transform:
@@ -272,5 +272,6 @@ MonoBehaviour:
       m_Topology: 0
     m_Mesh: {fileID: 0}
   m_SkinMeshRef: {fileID: 0}
-  m_OriginalMeshObject: {fileID: -1001177439171655314, guid: 49b5fc13c7791b14e9dc2bb6604fec4f, type: 3}
+  m_OriginalMeshObject: {fileID: -1001177439171655314, guid: 49b5fc13c7791b14e9dc2bb6604fec4f,
+    type: 3}
   m_Mode: 0
