@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
-[CreateAssetMenu(menuName = "Player/State/Standing")]
 public class StandingState : State
 {
     float gravityValue;

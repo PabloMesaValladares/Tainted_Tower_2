@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IdleState
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: f06a72ee7f55c374ab348aea1c1b2338, type: 2}
+  - {fileID: 11400000, guid: c158d0ca91880d94f824bcb8533f5044, type: 2}
   transitions:
   - desicion: {fileID: 11400000, guid: 432576bda136b0f4facdf8a505711ba2, type: 2}
     trueState: {fileID: 11400000, guid: 2092b2ce5e8a18c4e973eb013343746e, type: 2}

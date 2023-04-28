@@ -75,3 +75,9 @@ Assets/Shaders/Shader/PersonajePrincipal-Ropa.mat
 Assets/Shaders/Shader/PersonajePrincipal-Pelo.mat
 
 Assets/Shaders/Shader/MaterialWithShader/PersonajePrincipal-CuerpoShader.mat
+
+Assets/Shaders/Shader/MaterialWithShader/PersonajePrincipal-PeloShader.mat
+
+Assets/Shaders/Shader/MaterialWithShader/PersonajePrincipal-OjosShader.mat
+
+Assets/Shaders/Shader/MaterialWithShader/PersonajeRopaShader.mat
