@@ -29,6 +29,9 @@ public class GraphicsBehaviour : MonoBehaviour
     {
         Resolution[] resolutions = Screen.resolutions;
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         for (int i = resolutions.Length - 1; i >= 0; i--)
         {
             reswidth[resolutions.Length - 1 -  i] = resolutions[i].width;

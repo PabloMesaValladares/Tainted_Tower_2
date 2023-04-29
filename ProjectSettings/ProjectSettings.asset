@@ -830,23 +830,23 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   scriptingDefineSymbols:
-    Android: TextMeshPro
-    CloudRendering: TextMeshPro
-    EmbeddedLinux: TextMeshPro
-    GameCoreScarlett: TextMeshPro
-    GameCoreXboxOne: TextMeshPro
-    Lumin: TextMeshPro
-    Nintendo Switch: TextMeshPro
-    PS4: TextMeshPro
-    PS5: TextMeshPro
-    QNX: TextMeshPro
-    Stadia: TextMeshPro
-    Standalone: TextMeshPro
-    WebGL: TextMeshPro
-    Windows Store Apps: TextMeshPro
-    XboxOne: TextMeshPro
+    Android: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    CloudRendering: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    EmbeddedLinux: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    GameCoreScarlett: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    GameCoreXboxOne: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    Lumin: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    Nintendo Switch: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    PS4: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    PS5: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    QNX: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    Stadia: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    Standalone: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    WebGL: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    Windows Store Apps: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    XboxOne: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
     iPhone: TextMeshPro
-    tvOS: TextMeshPro
+    tvOS: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

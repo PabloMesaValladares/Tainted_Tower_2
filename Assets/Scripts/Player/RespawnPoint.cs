@@ -13,7 +13,7 @@ public class RespawnPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RespawnPosition = transform.position;
+        //RespawnPosition = transform.position;
     }
 
     public void SetRespawn(Vector3 p)
