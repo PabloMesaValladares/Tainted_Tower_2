@@ -81,11 +81,11 @@ public class SceneLoader : MonoBehaviour {
         yield return new WaitForSeconds(3);
 
         AsyncOperation async = SceneManager.LoadSceneAsync(scene);
-        if (SceneController.instance.songname != null)
-        {
-            SoundManager.instance.StopSounds();
-            SoundManager.instance.FadeInFadeOut(SceneController.instance.songname, 1);
-        }
+        //if (SceneController.instance.songname != null)
+        //{
+        //    SoundManager.instance.StopSounds();
+        //    SoundManager.instance.FadeInFadeOut(SceneController.instance.songname, 1);
+        //}
 
 
         while (!async.isDone)
