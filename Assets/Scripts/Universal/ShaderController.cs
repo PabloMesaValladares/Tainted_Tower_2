@@ -14,20 +14,16 @@ public class ShaderController : MonoBehaviour
     [SerializeField] float dist;
     [SerializeField] float amount;
 
-    public Material BodyMaterial;
-    public Material HairMaterial;
-    public Material ClothesMaterial;
-    public Material EyeMaterial;
+    public SkinnedMeshRenderer Body;
+    MarkEnemy mark;
 
     private void Start()
     {
         cam = Camera.main.gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
         amount = 0;
-        BodyMaterial.SetFloat("_Amount", amount);
-        HairMaterial.SetFloat("_Amount", amount);
-        ClothesMaterial.SetFloat("_Amount", amount);
-        EyeMaterial.SetFloat("_Amount", amount);
+        mark = player.GetComponent<MarkEnemy>();
+
     }
     private void Update()
     {
@@ -35,10 +31,6 @@ public class ShaderController : MonoBehaviour
         amount = (maxDistance - dist) / maxDistance;
         if (dist < maxDistance)
         {
-            BodyMaterial.SetFloat("_Amount", amount);
-            HairMaterial.SetFloat("_Amount", amount);
-            ClothesMaterial.SetFloat("_Amount", amount);
-            EyeMaterial.SetFloat("_Amount", amount);
         }
     }
 

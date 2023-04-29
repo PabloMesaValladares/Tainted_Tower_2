@@ -20,9 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/LoadingScreen.unity
     guid: 13e57a12d345b9a47b75fa4d0783754d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/EscenarioDavid.unity
     guid: ca30e0afc72ceeb4faed2a3a11594c96
+  - enabled: 1
+    path: Assets/Scene/EscenarioPropsDavid.unity
+    guid: 0dc844a2895cc1d448a59f29fb02309d
   - enabled: 1
     path: Assets/Map/Artistas/Scenes/Escenario.unity
     guid: 7e9217bc6deb2014b88a812210527a0c
