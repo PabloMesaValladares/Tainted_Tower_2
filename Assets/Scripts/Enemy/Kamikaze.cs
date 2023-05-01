@@ -7,18 +7,21 @@ public class Kamikaze : MonoBehaviour
     [SerializeField]
     private MovementBehavior _movement;
     [SerializeField]
-    private GameObject player, boom;
+    private GameObject player, boom, exclamation;
+    [SerializeField]
+    private Animator _animator;
 
     [SerializeField]
-    private float vel, distanceBoom, maxDistanceBoom;
+    private float vel, distanceBoom, maxDistanceBoom, cooldown, maxCooldown;
     [SerializeField]
-    private bool inRange;
+    private bool inRange, objectiveConfirmed;
     [SerializeField]
     private Vector3 oldPlayerPosition;
 
     // Start is called before the first frame update
     void Awake()
     {
+        cooldown = maxCooldown;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -27,20 +30,28 @@ public class Kamikaze : MonoBehaviour
     {
         if (inRange == true)
         {
-            oldPlayerPosition = new Vector3(player.transform.position.x - gameObject.transform.position.x, player.transform.position.y - gameObject.transform.position.y, player.transform.position.z - gameObject.transform.position.z);
-            distanceBoom = Vector3.Distance(player.transform.position, gameObject.transform.position);
+            ObjectiveChecked();
+            cooldown -= Time.deltaTime;
+            distanceBoom = Vector3.Distance(oldPlayerPosition, gameObject.transform.position);
+            transform.LookAt(new Vector3(oldPlayerPosition.x, transform.position.y, oldPlayerPosition.z));
+            _animator.SetBool("Attack", true);
+            exclamation.SetActive(true);
 
-            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+            if (cooldown <= 0)
+            {
+                objectiveConfirmed = true;
+                _movement.MoveLerp(oldPlayerPosition, vel);
+                //_movement.MoveGameObject(gameObject, oldPlayerPosition, vel);
+                cooldown = 0;
+                exclamation.SetActive(false);
+            }
+
             if (distanceBoom <= maxDistanceBoom)
             {
-                //_boomParticles = PoolingManager.Instance.GetPooledObject("boomPar");
                 boom.transform.position = gameObject.transform.position;
                 boom.SetActive(true);
+                cooldown = maxCooldown;
                 gameObject.SetActive(false);
-            }
-            else if(distanceBoom > maxDistanceBoom)
-            {
-                _movement.MoveGameObject(gameObject, oldPlayerPosition, vel);
             }
         }
     }
@@ -53,6 +64,17 @@ public class Kamikaze : MonoBehaviour
     {
         inRange = false;
     }
+
+    public void ObjectiveChecked()
+    {
+        if(objectiveConfirmed == false)
+        {
+            oldPlayerPosition = new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z);
+            //oldPlayerPosition = new Vector3(player.transform.position.x - gameObject.transform.position.x, player.transform.position.y - gameObject.transform.position.y, player.transform.position.z - gameObject.transform.position.z);
+        }
+    }
+
+
 
     /*
     [SerializeField]
