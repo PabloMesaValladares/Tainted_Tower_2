@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float attackRange = 1f;
     [SerializeField] float aggroRange = 4f;
 
+    public UnityEvent DieEvent;
+
     GameObject player;
     NavMeshAgent agent;
     public Animator animator;
@@ -28,6 +31,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         maxHealth = GetComponent<StatController>().health;
         health = maxHealth;
+
         //life = GetComponent<LifeTest>();
     }
 
@@ -92,7 +96,8 @@ public class Enemy : MonoBehaviour
         //life.Life = health;
         if (health <= 0)
         {
-            Die();
+            DieEvent.Invoke();
+            //Die();
         }
     }
     public void StartDealDamage()
