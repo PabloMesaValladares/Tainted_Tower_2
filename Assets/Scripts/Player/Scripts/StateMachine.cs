@@ -15,8 +15,8 @@ public class StateMachine : MonoBehaviour
 
     public void ChangeState(State newState)
     {
-        
-        previousState = currentState;
+        if (newState != currentState)
+            previousState = currentState;
         currentState.Exit();
         currentState = newState;
         newState.Enter();

@@ -31,6 +31,8 @@ public class SprintState : State
 
     bool attack;
     StaminaController stamController;
+    MarkEnemy mark;
+    float downForce;
 
     public SprintState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
@@ -60,6 +62,8 @@ public class SprintState : State
 
         dashVelocity = character.dashController.dashForce;
 
+        mark = character.GetComponent<MarkEnemy>();
+
         rb = character.rb;
         orientation = character.orientation;
         moveSpeed = character.sprintSpeed;
@@ -73,6 +77,8 @@ public class SprintState : State
         stamController = character.GetComponent<StaminaController>();
         stamController.Reduce(true);
         //character.dashController.keepMomentum = true;
+
+        downForce = character.downForce;
     }
 
     public override void HandleInput()
@@ -173,13 +179,30 @@ public class SprintState : State
 
         //on ground
         else
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        {
+            if (slopeAngle < maxSlopeAngle)
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            else
+            {
+                moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
+                moveDirection.y = -downForce;
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            }
+        }
 
 
-        if (velocity.sqrMagnitude > 0)
-            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
-
+        if (mark.marking)
+        {
+            Quaternion targetRotation = Quaternion.Euler(0, character.cameraTransform.eulerAngles.y, 0);
+            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, targetRotation, character.rotationDampTime);
+        }
+        else
+        {
+            if (velocity.sqrMagnitude > 0)
+                character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
+        }
         rb.useGravity = !OnSlope();
+
     }
     private void SpeedControl()
     {

@@ -22,7 +22,7 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<Grappling>().enabled = GameManager.instance.grapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.drugs;
             GetComponent<PlayerMagicSystem>().enabled = GameManager.instance.fireball;
-            transform.position = GameManager.instance.CheckPointRespawnPosition;
+            transform.position = GetComponent<RespawnPoint>().RespawnPosition.normalized;
         }
         else
         {
