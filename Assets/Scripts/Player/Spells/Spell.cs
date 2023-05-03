@@ -8,6 +8,8 @@ public class Spell : MonoBehaviour
 {
     public SpellScriptableObject SpellToCast;
 
+    public StatController stats;
+
     private SphereCollider myCollider;
     private Rigidbody myRigidbody;
 
@@ -20,7 +22,7 @@ public class Spell : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         myRigidbody.isKinematic = true;
 
-        Destroy(this.gameObject, SpellToCast.Lifetime);
+        //Destroy(this.gameObject, SpellToCast.Lifetime);
     }
 
     private void Update()
@@ -38,12 +40,22 @@ public class Spell : MonoBehaviour
         // Apply hit particle effects
         // Apply sound effects
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.gameObject.TryGetComponent(out Enemy enemy))
         {
             //Destruir enemigo
-           
+            enemy.TakeDamage(stats.CalculateDmg(stats.mainHand.damage, enemy.gameObject.GetComponent<StatController>().defense));
         }
 
-        Destroy(this.gameObject);
+        deactivateObject();
+    }
+
+    public void setLifeTime()
+    {
+        Invoke(nameof(deactivateObject), SpellToCast.Lifetime);
+    }
+
+    void deactivateObject()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -9,6 +9,7 @@ public class DrugsMode : MonoBehaviour
     public PlayerController playerController;
     public StatController statController;
     public Slider sliderBar;
+    Animator anim;
 
     public bool ready;
     public float cooldown, maxCooldown, skillCooldown, maxSkillCooldown;
@@ -30,7 +31,7 @@ public class DrugsMode : MonoBehaviour
 
         playerController = GetComponent<PlayerController>();
         statController = GetComponent<StatController>();
-
+        anim = playerController.animator;
         walkSpeed = playerController.walkSpeed;
         sprintSpeed = playerController.sprintSpeed;
 
@@ -38,7 +39,7 @@ public class DrugsMode : MonoBehaviour
         damageInt = statController.inteligence;
         sliderBar.maxValue = maxCooldown;
         sliderBar.value = maxCooldown;
-
+  
     }
 
     // Update is called once per frame
@@ -82,6 +83,7 @@ public class DrugsMode : MonoBehaviour
         playerController.Rage.Play();
         if (randomNumber < maxRange/2)
         {
+            anim.SetFloat("buffSpeed", 0.5f);
             playerController.walkSpeed = walkSpeedDebuff;
             playerController.sprintSpeed = sprintSpeedDebuff;
 
@@ -90,6 +92,7 @@ public class DrugsMode : MonoBehaviour
         }
         else
         {
+            anim.SetFloat("buffSpeed", 2);
             playerController.walkSpeed = walkSpeedBuff;
             playerController.sprintSpeed = sprintSpeedBuff;
 
@@ -102,6 +105,7 @@ public class DrugsMode : MonoBehaviour
 
     public void NormalMode()
     {
+        anim.SetFloat("buffSpeed", 1);
         GetComponent<StaminaController>().drugs = false;
         playerController.Rage.Stop();
 

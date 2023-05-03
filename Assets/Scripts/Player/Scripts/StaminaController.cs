@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class StaminaController : MonoBehaviour
 {
+    public GameObject StaminaPlace;
     public float MaxStamina;
     public float StaminaReducing;
     public float StaminaAugmentg;
@@ -52,7 +53,7 @@ public class StaminaController : MonoBehaviour
     void Update()
     {
 
-        StaminaSlider.transform.position = Vector3.Lerp(StaminaSlider.transform.position, Camera.main.WorldToScreenPoint(transform.position + offset), speedDampTime);
+        StaminaSlider.transform.position = Vector3.Lerp(StaminaSlider.transform.position, Camera.main.WorldToScreenPoint(StaminaPlace.transform.position + offset), speedDampTime);
         if (stamina != MaxStamina)
         {
             StaminaSlider.value = stamina / 100;

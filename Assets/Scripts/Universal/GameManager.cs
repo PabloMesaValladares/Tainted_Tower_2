@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Skills")]
     public bool grapple, pilar, drugs, fireball;
-    public bool firstSet;
+    public bool firstSet = true;
     //Meter scripts skills para guardar cooldown
 
     [Header("CheckPoint")]
@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
             _instance = this;
 
             SetScripts();
+            maxHP = player.GetComponent<StatController>().health;
             currentHP = player.GetComponent<StatController>().health;
             stamina = staminaStat;
             player.GetComponent<StaminaController>().SetStamina(staminaStat);
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        firstSet = false;
         //    player = GameObject.FindGameObjectWithTag("Player");
         //    player.GetComponent<HealthBehaviour>().currentHP = currentHP; //Seteamos la vida actual
         //    player.GetComponent<LifeManager>().lifeSlider.value = currentHP;
@@ -96,7 +98,7 @@ public class GameManager : MonoBehaviour
         //    inventory.GetComponent<InventoryManager>().setInventoryItems(inventoryItems);
 
 
-       
+
     }
 
     public void SetScripts()

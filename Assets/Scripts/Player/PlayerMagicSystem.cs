@@ -56,6 +56,7 @@ public class PlayerMagicSystem : MonoBehaviour
 
             currentCastTimer = 0;
             GetComponent<PlayerController>().animator.SetTrigger("fuego");
+            ChangeMana();
         }
 
         if (castingMagic)
@@ -75,9 +76,9 @@ public class PlayerMagicSystem : MonoBehaviour
             {
                 currentMana = maxMana;
             }
+            ChangeMana();
         }
-
-        ChangeMana();
+        
 
     }
 
@@ -89,9 +90,23 @@ public class PlayerMagicSystem : MonoBehaviour
     {
         //CAST OUR SPELL
 
+        GameObject ball;
+
+        ball = PoolingManager.Instance.GetPooledObject("ball");
+        ball.transform.position = castPoint.position;
         if (!GetComponent<MarkEnemy>().marking)
-            Instantiate(spellToCast, castPoint.position, transform.rotation);
+        {
+            ball.transform.rotation = transform.rotation;
+            //Instantiate(spellToCast, castPoint.position, transform.rotation);
+        }
         else
-            Instantiate(spellToCast, castPoint.position, Camera.main.transform.rotation);
+        {
+
+            ball.transform.rotation = Camera.main.transform.rotation;
+            //Instantiate(spellToCast, castPoint.position, Camera.main.transform.rotation);
+        }
+        ball.GetComponent<Spell>().stats = GetComponent<StatController>();
+        ball.SetActive(true);
+        ball.GetComponent<Spell>().setLifeTime();
     }
 }

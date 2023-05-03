@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class SceneLoader : MonoBehaviour {
 
@@ -16,6 +17,8 @@ public class SceneLoader : MonoBehaviour {
     private TextMeshProUGUI loadingText;
     public Slider Bar;
     float target;
+
+    public UnityEvent EndLoad;
 
     private void Awake()
     {
@@ -94,6 +97,9 @@ public class SceneLoader : MonoBehaviour {
             Bar.value = target;
             yield return null;
         }
+
+        EndLoad.Invoke();
+
         yield return new WaitForSeconds(3);
     }
 }
