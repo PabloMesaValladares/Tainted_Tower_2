@@ -31,22 +31,21 @@ public class PillarSpell : MonoBehaviour
     {
         if (!mark.marking)
         {
-            
+            previewB = false;
+            return;
         }
+
+        if (!previewB)
+            PreviewState(previewB);
         else
         {
-            if (!previewB)
-                PreviewState(previewB);
-            else
-            {
-                RaycastInfo();
-                PreviewState(true);
-                preview.transform.position = raycastPoint.position;
-                previewB = true;
-            }
+            RaycastInfo();
+            preview.transform.position = raycastPoint.position;
+            previewB = true;
+            PreviewState(previewB);
         }
     }
-
+    
     public void RaycastInfo()
     {
         Transform camera = Camera.main.transform;
