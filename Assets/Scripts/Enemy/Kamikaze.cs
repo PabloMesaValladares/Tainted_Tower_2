@@ -7,9 +7,15 @@ public class Kamikaze : MonoBehaviour
     [SerializeField]
     private MovementBehavior _movement;
     [SerializeField]
-    private GameObject player, boom, exclamation;
+    private RandomIdleMovement _idle;
+    [SerializeField]
+    private GameObject player, boom, exclamation, enemy;
     [SerializeField]
     private Animator _animator;
+    [SerializeField]
+    private ParticleSystem _particles;
+    [SerializeField]
+    private StatController statController;
 
     [SerializeField]
     private float vel, distanceBoom, maxDistanceBoom, cooldown, maxCooldown;
@@ -17,6 +23,8 @@ public class Kamikaze : MonoBehaviour
     private bool inRange, objectiveConfirmed;
     [SerializeField]
     private Vector3 oldPlayerPosition;
+    [SerializeField]
+    private int savedHealth;
 
     // Start is called before the first frame update
     void Awake()
@@ -41,7 +49,6 @@ public class Kamikaze : MonoBehaviour
             {
                 objectiveConfirmed = true;
                 _movement.MoveLerp(oldPlayerPosition, vel);
-                //_movement.MoveGameObject(gameObject, oldPlayerPosition, vel);
                 cooldown = 0;
                 exclamation.SetActive(false);
             }
@@ -49,15 +56,15 @@ public class Kamikaze : MonoBehaviour
             if (distanceBoom <= maxDistanceBoom)
             {
                 expire();
-                /*
-                boom.transform.position = gameObject.transform.position;
-                boom.SetActive(true);
-                cooldown = maxCooldown;
-                gameObject.SetActive(false);
-                */
             }
         }
     }
+
+    private void OnEnable()
+    {
+        Reseto();
+    }
+
     public void DistanceCheck()
     {
         inRange = true;
@@ -78,10 +85,20 @@ public class Kamikaze : MonoBehaviour
 
     public void expire()
     {
+        boom = PoolingManager.Instance.GetPooledObject("Boom");
         boom.transform.position = gameObject.transform.position;
         boom.SetActive(true);
+        boom.GetComponent<ParticleSystem>().Play(true);
+        enemy.SetActive(false);
+    }
+
+    public void Reseto()
+    {
         cooldown = maxCooldown;
         oldPlayerPosition = new Vector3(0, 0, 0);
-        gameObject.SetActive(false);
+        inRange = false;
+        enemy.SetActive(true);
+        _idle.IdleModeChange();
+        statController.health = savedHealth;
     }
 }

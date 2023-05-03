@@ -20,8 +20,6 @@ public class MistEffect : MonoBehaviour
         if (lala.TryGetComponent<PlayerController>(out PlayerController _playerController))
         {
             lala.GetComponent<HealthBehaviour>().Hurt(damage);
-            //EnablePoison.Invoke();
-            Debug.Log("LA VIDA ES UNA TOMBOLA, TO TO TO TOMBOLA, DE LUZ Y DE COLOOOOOOOOOR, DE LUZ Y DE COLOOOOOOOR");
         }
     }
 }
