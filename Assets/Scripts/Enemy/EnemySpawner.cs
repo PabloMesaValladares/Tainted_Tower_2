@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float spawnCD;
     [SerializeField] string[] pName;
     [SerializeField] Transform[] spawnPoints;
+    [SerializeField]
     private List<GameObject> enemies;
     private void Start()
     {

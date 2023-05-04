@@ -289,9 +289,9 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - Cargar
-      - Load
-      - "\u30ED\u30FC\u30C9"
+      - Cargando
+      - Loading
+      - "\u8AAD\u307F\u8FBC\u307F"
       Flags: 000000
       Languages_Touch: []
     - Term: Interfaz/Back
@@ -426,7 +426,7 @@ MonoBehaviour:
       Languages:
       - "lleg\xF3 a su destino, a Cisne y Golondrina hablando encontr\xF3."
       - He reached his destination, swan and swallow speaking found.
-      - "\u5F7C\u306F\u76EE\u7684\u5730\u306B\u5230\u7740\u3057\u3001\u767D\u9CE5\u3068\u30B9\u30EF\u30ED\u30FC\u304C\u767A\u8A00\u3057\u307E\u3057\u305F\u3002"
+      - "\u5F7C\u306F\u76EE\u7684\u5730\u306B\u5230\u7740\u3057\u3001\u767D\u9CE5\u3068\u30B9\u30EF\u30ED\u30FC\u304C\u767A\u898B\u3055\u308C\u307E\u3057\u305F\u3002"
       Flags: 000000
       Languages_Touch: []
     - Term: Puzzle5
@@ -435,7 +435,7 @@ MonoBehaviour:
       Languages:
       - "\u201CDisculpad deseo volar como vosotros, \xBFcomo logar podr\xEDa? \u201D"
       - "\u201CExcuse me, I want to fly like you, how could I log? \""
-      - "\u300C\u3059\u307F\u307E\u305B\u3093\u3001\u79C1\u306F\u3042\u306A\u305F\u306E\u3088\u3046\u306B\u98DB\u3073\u305F\u3044\u3067\u3059\u3001\u3069\u3046\u3059\u308C\u3070\u30ED\u30B0\u3067\u304D\u307E\u3059\u304B\uFF1F
+      - "\u300C\u3059\u307F\u307E\u305B\u3093\u3001\u79C1\u306F\u3042\u306A\u305F\u306E\u3088\u3046\u306B\u98DB\u3073\u305F\u3044\u3067\u3059\u3001\u3069\u3046\u3059\u308C\u3070\u30ED\u30B0\u304C\u3067\u304D\u307E\u3059\u304B\uFF1F
         \u300C"
       Flags: 000000
       Languages_Touch: []
@@ -458,7 +458,7 @@ MonoBehaviour:
         pregunto de nuevo y con sumo detalles el Piquituerto ilustro."
       - The boy inside in the forest and there he found the Piquituerto, asked again
         and with great details the Illustro Piquuerto.
-      - "\u68EE\u306E\u4E2D\u306E\u5C11\u5E74\u3068\u305D\u3053\u3067\u5F7C\u306F\u30D4\u30AD\u30C1\u30E5\u30A8\u30EB\u30C8\u3092\u898B\u3064\u3051\u3001\u518D\u3073\u5C0B\u306D\u307E\u3057\u305F\u3001\u305D\u3057\u3066\u3001\u30A4\u30E9\u30B9\u30C8\u30ED\u30D4\u30AF\u30A8\u30EB\u30C8\u3092\u8A73\u7D30\u306B\u5C0B\u306D\u307E\u3057\u305F\u3002"
+      - "\u68EE\u306E\u4E2D\u306E\u5C11\u5E74\u3068\u305D\u3053\u3067\u5F7C\u306F\u30D4\u30AD\u30C1\u30E5\u30A8\u30EB\u30C8\u3092\u898B\u3064\u3051\u3001\u518D\u3073\u5C0B\u306D\u307E\u3057\u305F\u3001\u305D\u3057\u3066\u3001\u30A4\u30E9\u30B9\u30C8\u30ED\u30FB\u30D4\u30AF\u30A8\u30EB\u30C8\u306B\u3064\u3044\u3066\u306E\u8A73\u7D30\u3092\u5C0B\u306D\u307E\u3057\u305F\u3002"
       Flags: 000000
       Languages_Touch: []
     - Term: Puzzle8
@@ -575,7 +575,7 @@ MonoBehaviour:
     Google_SpreadsheetKey: 16pxnmP605zfR_-606mv4ZTiO9rg6NBt5R6rcRmEC6q4
     Google_SpreadsheetName: I2Loc TaintedMenus Assets/Pablo/Scenes/MainMenu.unity
       LocalizationManager
-    Google_LastUpdatedVersion: 1681980908317
+    Google_LastUpdatedVersion: 1682450625404
     Google_Password: change_this
     GoogleUpdateFrequency: 2
     GoogleInEditorCheckFrequency: 2
