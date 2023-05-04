@@ -14,7 +14,7 @@ public class ChargeAttackMode : MonoBehaviour
     [SerializeField]
     private Rigidbody _rigid;
     [SerializeField]
-    private GameObject player, forceObject, enemy;
+    private GameObject player, forceObject, enemy, accelerationEffect;
 
     [SerializeField]
     private float vel, force, timeremaining, distAttack, maxdistAttack, timeBetweenAttacks;
@@ -76,11 +76,13 @@ public class ChargeAttackMode : MonoBehaviour
             if (timeremaining <= 0)
             {
                 forceObject.SetActive(false);
+                accelerationEffect.SetActive(false);
                 timeremaining = timeBetweenAttacks;
             }
 
             if(timeremaining <= 4.2 && timeremaining >= 4)
             {
+                accelerationEffect.SetActive(true);
                 forceObject.SetActive(true);
             }
 

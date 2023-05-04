@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.38601238, g: 0.7240199, b: 0.7309164, a: 1}
+  m_IndirectSpecularColor: {r: 0.38602597, g: 0.72402465, b: 0.7309113, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11467,6 +11467,7 @@ MonoBehaviour:
   player: {fileID: 0}
   forceObject: {fileID: 0}
   enemy: {fileID: 0}
+  accelerationEffect: {fileID: 0}
   vel: 1
   force: 0
   timeremaining: 0
@@ -20402,10 +20403,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 775176300}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: spawnPoint (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20417,7 +20418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775176299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.373, y: 0, z: 0}
+  m_LocalPosition: {x: -2.55, y: 0.274, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48213,7 +48214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.612305, y: -20.618927}
+  m_AnchoredPosition: {x: -18.612305, y: -20.618896}
   m_SizeDelta: {x: 1803.929, y: 186.8195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1400182989
@@ -59708,10 +59709,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588610648}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: spawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -59723,7 +59724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588610647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.403, y: 0, z: 0}
+  m_LocalPosition: {x: -2.55, y: 0.274, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60910,10 +60911,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683584259}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: spawnPoint (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -60925,7 +60926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683584258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.498}
+  m_LocalPosition: {x: 0, y: 0, z: -1.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61222,7 +61223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee6cbcbfcd7d674bab2d768786a1968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCD: 10
+  spawnCD: 1000
   pName:
   - Bambi
   - Kami
@@ -61239,7 +61240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704224637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -299.6216, y: 155.97, z: -427.88}
+  m_LocalPosition: {x: -277.4, y: 155.97, z: -427.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
