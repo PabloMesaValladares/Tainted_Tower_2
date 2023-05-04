@@ -9,8 +9,8 @@ public class ChestBehaviour : MonoBehaviour
 {
     [Header("Chest Config")]
     public Item item;
+    public string animationName;
 
-    public GameObject ChestCover;
     Animator chestAnimator;
 
     [Header("Inputs")]
@@ -30,8 +30,8 @@ public class ChestBehaviour : MonoBehaviour
     {
         if (Interact.triggered)
         {
-            Debug.Log("Interactuado con " + gameObject.name);
-            chestAnimator.SetTrigger("open");
+            //Debug.Log("Interactuado con " + gameObject.name);
+            chestAnimator.SetTrigger(animationName);
             InventoryManager.instance.UpdateSlot(item);
             GetComponent<SphereCollider>().enabled = false;
             this.enabled = false;

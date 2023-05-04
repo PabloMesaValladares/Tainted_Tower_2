@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Slope Handling")]
     public float maxSlopeAngle;
+    public float downForce;
 
     [Header("Change Stats")]
     public float reverseTimer;

@@ -39,6 +39,7 @@ public class StandingState : State
 
     float jumpForce;
     float slopeAngle;
+    float downForce;
     public StandingState(PlayerController _character, StateMachine _stateMachine):base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -92,6 +93,7 @@ public class StandingState : State
 
 
         jumpForce = character.jumpForce;
+        downForce = character.downForce;
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
@@ -198,7 +200,16 @@ public class StandingState : State
 
         //on ground
         else
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        {
+            if (slopeAngle < maxSlopeAngle)
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            else
+            {
+                moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
+                moveDirection.y = -downForce;
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            }
+        }
 
 
         if(mark.marking)
@@ -212,6 +223,7 @@ public class StandingState : State
                 character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
         }
         rb.useGravity = !OnSlope();
+       
     }
 
     private void SpeedControl()
@@ -231,8 +243,6 @@ public class StandingState : State
             Debug.DrawRay(character.transform.position, Vector3.down * (playerHeight * 0.5f + 0.3f), Color.yellow);
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal); 
             slopeAngle = angle;
-            if (angle > maxSlopeAngle)
-                slopeAngle = maxSlopeAngle;
             return angle < maxSlopeAngle && angle != 0;
         }
 

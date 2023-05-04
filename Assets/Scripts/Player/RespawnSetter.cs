@@ -11,28 +11,29 @@ public class RespawnSetter : MonoBehaviour
     {
         if(other.transform.parent.gameObject.TryGetComponent<RespawnPoint>(out RespawnPoint respawn))
         {
-            if(respawn.GetComponent<GroundCheck>().returnCheck())
+            if (respawn.GetComponent<GroundCheck>().returnCheck())
             {
-                Vector3 posToResp = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+                Vector3 posToResp = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
                 respawn.SetRespawn(posToResp);
                 GameManager.instance.CheckPoint();
+                GameManager.instance.RespawnPosition = positionToRespawn.position;
             }
             else
             {
                 Vector3 posToResp = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
 
-                if (Physics.Raycast(other.transform.parent.transform.position, -other.transform.parent.transform.up, out hit, distance))
+                if (Physics.Raycast(posToResp, -transform.up, out hit, distance))
                 {
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Scenario"))
                     {
-                        posToResp = posToResp = new Vector3(other.transform.position.x, transform.position.y - hit.distance, other.transform.position.z);
+                        posToResp = posToResp = new Vector3(other.transform.position.x, hit.point.y, other.transform.position.z);
                     }
                 }
-              
+
                 respawn.SetRespawn(posToResp);
                 GameManager.instance.CheckPoint();
+                GameManager.instance.RespawnPosition = positionToRespawn.position;
             }
-           
         }
     }
 }

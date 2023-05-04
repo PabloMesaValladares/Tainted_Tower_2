@@ -785,6 +785,7 @@ GameObject:
   - component: {fileID: 1426336594}
   - component: {fileID: 1426336598}
   - component: {fileID: 1426336599}
+  - component: {fileID: 1426336600}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -891,6 +892,21 @@ MonoBehaviour:
   scene: 0
   loadingText: {fileID: 1982950166}
   Bar: {fileID: 1970875026}
+  EndLoad:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1426336600}
+        m_TargetAssemblyTypeName: PlayerLoadedSpawn, Assembly-CSharp
+        m_MethodName: SetSpawnPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1426336599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,6 +969,18 @@ MonoBehaviour:
   Spreadsheet_SpecializationAsRows: 1
   Google_Password: change_this
   GoogleInEditorCheckFrequency: 2
+--- !u!114 &1426336600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426336593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614d794b91f939847ad7e2c5fae8d730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1830441880
 GameObject:
   m_ObjectHideFlags: 0
