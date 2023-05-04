@@ -8,10 +8,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float spawnCD;
     [SerializeField] string[] pName;
     [SerializeField] Transform[] spawnPoints;
-
+    private List<GameObject> enemies;
     private void Start()
     {
         timer = GetComponent<Timer>();
+        enemies = new List<GameObject>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,21 +20,42 @@ public class EnemySpawner : MonoBehaviour
         if(other.gameObject.transform.parent.TryGetComponent(out PlayerController player))
         {
             timer.StartTimer(spawnCD);
+
             for (int i = 0; i < spawnPoints.Length; i++)
             {
                 GameObject enem = PoolingManager.Instance.GetPooledObject(pName[i]);
                 enem.transform.position = spawnPoints[i].position;
-                //enem.SetActive(true);
                 enem.GetComponentInChildren<Enemy>().SetSpawnPoint(spawnPoints[i]);  
                 enem.SetActive(true);
 
+                enemies.Add(enem);
             }
             gameObject.GetComponent<SphereCollider>().enabled = false;
         }
     }
 
+    public bool CheckAliveEnemies()
+    {
+        for(int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i].activeSelf)
+                return true;
+        }
+
+        ClearList();
+        return false;
+    }
+
     public void ActivateCollider()
     {
-        gameObject.GetComponent<SphereCollider>().enabled = true;
+        if(!CheckAliveEnemies())
+            gameObject.GetComponent<SphereCollider>().enabled = true;
+        else
+            timer.StartTimer(spawnCD);
+    }
+
+    void ClearList()
+    {
+        enemies.Clear();
     }
 }
