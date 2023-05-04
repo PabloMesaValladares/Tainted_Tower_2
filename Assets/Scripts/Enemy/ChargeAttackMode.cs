@@ -10,6 +10,8 @@ public class ChargeAttackMode : MonoBehaviour
     private RandomIdleMovement _idle;
     [SerializeField]
     private StatController statController;
+    [SerializeField]
+    private ParticleSystem _particles;
 
     [SerializeField]
     private Rigidbody _rigid;
@@ -19,7 +21,7 @@ public class ChargeAttackMode : MonoBehaviour
     [SerializeField]
     private float vel, force, timeremaining, distAttack, maxdistAttack, timeBetweenAttacks;
     [SerializeField]
-    private bool inRange, returning;
+    private bool inRange, returning, activation;
     [SerializeField]
     private Vector3 oldPlayerPosition;
     [SerializeField]
@@ -71,27 +73,32 @@ public class ChargeAttackMode : MonoBehaviour
                 transform.LookAt(new Vector3(oldPlayerPosition.x, transform.position.y, oldPlayerPosition.z));
                 _rigid.AddForce(transform.forward * force, ForceMode.Force);
                 forceObject.GetComponent<PushPlayer>().dirToGo = transform.forward;
+                if (activation != true) ActivateEffects();
             }
 
             if (timeremaining <= 0)
             {
                 forceObject.SetActive(false);
+                _particles.Stop(true);
                 accelerationEffect.SetActive(false);
+                activation = false;
                 timeremaining = timeBetweenAttacks;
             }
-
-            if(timeremaining <= 4.2 && timeremaining >= 4)
-            {
-                accelerationEffect.SetActive(true);
-                forceObject.SetActive(true);
-            }
-
         }
     }
 
     private void OnEnable()
     {
         Reseto();
+    }
+
+    public void ActivateEffects()
+    {
+        accelerationEffect.SetActive(true);
+        _particles.Play(true);
+        forceObject.GetComponent<BoxCollider>().enabled = true;
+        forceObject.SetActive(true);
+        activation = true;
     }
 
     void DistanceOriginalPoint()
