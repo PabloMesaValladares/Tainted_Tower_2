@@ -27,6 +27,6 @@ EditorBuildSettings:
     path: Assets/Scene/EscenarioPropsDavid.unity
     guid: 0dc844a2895cc1d448a59f29fb02309d
   - enabled: 1
-    path: Assets/Map/Artistas/Scenes/Escenario.unity
+    path: Assets/Artistas/Scenes/Escenario.unity
     guid: 7e9217bc6deb2014b88a812210527a0c
   m_configObjects: {}
