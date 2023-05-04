@@ -21,9 +21,8 @@ public class PillarSpell : MonoBehaviour
 
         // preview = PoolingManager.Instance("PillarPrev");
 
-        var rawValue = markable.value;
-        var layerValue = Mathf.Log(rawValue, 2);
-        markedLayer = layerValue;
+        NameToLayer(markable);
+        
         previewB = false;
     }
 
@@ -62,17 +61,31 @@ public class PillarSpell : MonoBehaviour
 
         if (!mark.marking)
         {
+            pillar.transform.position = transform.forward + new Vector3(0, 0, distance);
 
+            if (Physics.Raycast(transform.forward + new Vector3(0, 0, distance), -pillar.transform.up, out RaycastHit hit, rayDistance, NameToLayer(8)))
+            {
+                pillar.transform.position = hit.point;
+                pillar.SetActive(true);
+            }
         }
         else
         {
             pillar.transform.position = raycastPoint.position;
         }
-
     }
 
     void PreviewState(bool b)
     {
         preview.SetActive(b);
+    }
+
+    int NameToLayer(LayerMask _lm)
+    {
+        var rawValue = _lm.value;
+        var layerValue = Mathf.Log(rawValue, 2);
+        markedLayer = layerValue;
+
+        return (int)markedLayer;
     }
 }
