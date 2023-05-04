@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339410432220408860}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4844,8 +4844,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388775308646182479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.017, y: 1.621, z: 0.605}
-  m_LocalScale: {x: 1.25, y: 3, z: 1.25}
+  m_LocalPosition: {x: 0.017, y: 1.621, z: 0.23}
+  m_LocalScale: {x: 2, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1388775308851905374}
@@ -4926,9 +4926,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3c1919d8ccf3b42a722d630bd29133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderBox: {fileID: 1388775308646182476}
   charge: {fileID: 1388775308851905373}
-  damage: 1
-  force: 10000
+  damage: 15
+  force: 8500
   dirToGo: {x: 0, y: 0, z: 0}
 --- !u!54 &1388775308646182464
 Rigidbody:
@@ -5414,19 +5415,21 @@ MonoBehaviour:
   _movement: {fileID: 1388775308851905361}
   _idle: {fileID: 1388775308851905372}
   statController: {fileID: 1388775308851905367}
+  _particles: {fileID: 4858126141054561345}
   _rigid: {fileID: 1388775308851905362}
   player: {fileID: 0}
   forceObject: {fileID: 1388775308646182479}
   enemy: {fileID: 1388775310678228334}
   accelerationEffect: {fileID: 339410432220408860}
   vel: 0
-  force: 75
+  force: 125
   timeremaining: 0
   distAttack: 0
   maxdistAttack: 70
   timeBetweenAttacks: 10
   inRange: 0
   returning: 0
+  activation: 0
   oldPlayerPosition: {x: 0, y: 0, z: 0}
   originalPoint: {fileID: 1388775310495603937}
   savedHealth: 500
@@ -5452,7 +5455,7 @@ Rigidbody:
   m_GameObject: {fileID: 1388775308851905375}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
+  m_Drag: 5
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -5470,7 +5473,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 1.5}
+  m_Size: {x: 0.5, y: 3, z: 1}
   m_Center: {x: 0, y: 1.5, z: -0.03}
 --- !u!114 &1388775308851905360
 MonoBehaviour:
@@ -12153,4 +12156,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particles: {fileID: 1388775310773786159}
-  damage: 3
+  damage: 1
