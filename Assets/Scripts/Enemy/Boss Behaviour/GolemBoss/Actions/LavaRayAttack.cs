@@ -18,9 +18,6 @@ public class LavaRayAttack : Action
             lavaRay.GetComponent<particleSpawn>().particlePlay();
             lavaRay.SetActive(true);
             
-        
-
-        
             count += Time.deltaTime;
         
     }
