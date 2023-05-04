@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject enem = PoolingManager.Instance.GetPooledObject(pName[i]);
                 enem.transform.position = spawnPoints[i].position;
+                //enem.SetActive(true);
                 enem.GetComponentInChildren<Enemy>().SetSpawnPoint(spawnPoints[i]);  
                 enem.SetActive(true);
 
