@@ -7,7 +7,7 @@ public class MistEffect : MonoBehaviour
 {
     [SerializeField] ParticleSystem _particles;
     [SerializeField] private List<ParticleCollisionEvent> particles;
-    public UnityEvent EnablePoison;
+    public int damage;
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -15,20 +15,11 @@ public class MistEffect : MonoBehaviour
         particles = new List<ParticleCollisionEvent>();
     }
 
-    /* private void OnParticleTrigger()
-     {
-         Debug.Log("praticula que toca algo");
-     }*/
-
     void OnParticleCollision(GameObject lala) //esto sera para poner los controles inversos.
     {
         if (lala.TryGetComponent<PlayerController>(out PlayerController _playerController))
         {
-            lala.SetActive(false);
-            Debug.Log("LA VIDA ES UNA TOMBOLA, TO TO TO TOMBOLA, DE LUZ Y DE COLOOOOOOOOOR, DE LUZ Y DE COLOOOOOOOR");
+            lala.GetComponent<HealthBehaviour>().Hurt(damage);
         }
-
-        EnablePoison.Invoke();
     }
-
 }

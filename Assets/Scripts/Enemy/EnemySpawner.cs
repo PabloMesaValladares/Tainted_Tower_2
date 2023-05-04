@@ -16,22 +16,24 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out TestController player))
+        if(other.gameObject.transform.parent.TryGetComponent(out PlayerController player))
         {
             timer.StartTimer(spawnCD);
             for (int i = 0; i < spawnPoints.Length; i++)
             {
                 GameObject enem = PoolingManager.Instance.GetPooledObject(pName[i]);
                 enem.transform.position = spawnPoints[i].position;
+                //enem.SetActive(true);
+                enem.GetComponentInChildren<Enemy>().SetSpawnPoint(spawnPoints[i]);  
                 enem.SetActive(true);
-                enem.GetComponent<EnemyTest>().SetSpawnPoint(spawnPoints[i]);  // Cambiar EnemyTest por el script de los enemigos
+
             }
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            gameObject.GetComponent<SphereCollider>().enabled = false;
         }
     }
 
     public void ActivateCollider()
     {
-        gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponent<SphereCollider>().enabled = true;
     }
 }

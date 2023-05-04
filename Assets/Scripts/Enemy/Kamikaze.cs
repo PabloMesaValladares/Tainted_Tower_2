@@ -7,18 +7,29 @@ public class Kamikaze : MonoBehaviour
     [SerializeField]
     private MovementBehavior _movement;
     [SerializeField]
-    private GameObject player, boom;
+    private RandomIdleMovement _idle;
+    [SerializeField]
+    private GameObject player, boom, exclamation, enemy;
+    [SerializeField]
+    private Animator _animator;
+    [SerializeField]
+    private ParticleSystem _particles;
+    [SerializeField]
+    private StatController statController;
 
     [SerializeField]
-    private float vel, distanceBoom, maxDistanceBoom;
+    private float vel, distanceBoom, maxDistanceBoom, cooldown, maxCooldown;
     [SerializeField]
-    private bool inRange;
+    private bool inRange, objectiveConfirmed;
     [SerializeField]
     private Vector3 oldPlayerPosition;
+    [SerializeField]
+    private int savedHealth;
 
     // Start is called before the first frame update
     void Awake()
     {
+        cooldown = maxCooldown;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -27,23 +38,33 @@ public class Kamikaze : MonoBehaviour
     {
         if (inRange == true)
         {
-            oldPlayerPosition = new Vector3(player.transform.position.x - gameObject.transform.position.x, player.transform.position.y - gameObject.transform.position.y, player.transform.position.z - gameObject.transform.position.z);
-            distanceBoom = Vector3.Distance(player.transform.position, gameObject.transform.position);
+            ObjectiveChecked();
+            cooldown -= Time.deltaTime;
+            distanceBoom = Vector3.Distance(oldPlayerPosition, gameObject.transform.position);
+            transform.LookAt(new Vector3(oldPlayerPosition.x, transform.position.y, oldPlayerPosition.z));
+            _animator.SetBool("Attack", true);
+            exclamation.SetActive(true);
 
-            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+            if (cooldown <= 0)
+            {
+                objectiveConfirmed = true;
+                _movement.MoveLerp(oldPlayerPosition, vel);
+                cooldown = 0;
+                exclamation.SetActive(false);
+            }
+
             if (distanceBoom <= maxDistanceBoom)
             {
-                //_boomParticles = PoolingManager.Instance.GetPooledObject("boomPar");
-                boom.transform.position = gameObject.transform.position;
-                boom.SetActive(true);
-                gameObject.SetActive(false);
-            }
-            else if(distanceBoom > maxDistanceBoom)
-            {
-                _movement.MoveGameObject(gameObject, oldPlayerPosition, vel);
+                expire();
             }
         }
     }
+
+    private void OnEnable()
+    {
+        Reseto();
+    }
+
     public void DistanceCheck()
     {
         inRange = true;
@@ -54,60 +75,30 @@ public class Kamikaze : MonoBehaviour
         inRange = false;
     }
 
-    /*
-    [SerializeField]
-    private MovementBehavior _movement;
-
-    [SerializeField]
-    private Rigidbody _rigid;
-
-    [SerializeField]
-    private float vel, attackVel, distanceBoom;
-    [SerializeField]
-    private bool fighting;
-    [SerializeField]
-    private Vector3 oldPlayerPosition;
-    [SerializeField]
-    private GameObject _boomParticles;
-
-
-    [SerializeField]
-    private GameObject player, enemy;
-    // Start is called before the first frame update
-    void Awake()
+    public void ObjectiveChecked()
     {
-        _rigid.GetComponent<Rigidbody>();
-        enemy = this.gameObject;
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(fighting)
+        if(objectiveConfirmed == false)
         {
-            distanceBoom = Vector3.Distance(oldPlayerPosition, transform.position);
-
-            if(distanceBoom <= 2)
-            {
-                _boomParticles = PoolingManager.Instance.GetPooledObject("boomPar");
-                _boomParticles.transform.position = gameObject.transform.position;
-                _boomParticles.SetActive(true);
-                enemy.SetActive(false);
-            }
-
-            _rigid.AddForce(transform.forward * attackVel, ForceMode.Force);
-
+            oldPlayerPosition = new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z);
         }
     }
 
-    public void AttackCheck()
+    public void expire()
     {
-        transform.LookAt(player.transform.position);
-        _rigid.velocity = Vector3.zero;
-        oldPlayerPosition = new Vector3(player.transform.position.x , transform.position.y, player.transform.position.z);
-        fighting = true;
+        boom = PoolingManager.Instance.GetPooledObject("Boom");
+        boom.transform.position = gameObject.transform.position;
+        boom.SetActive(true);
+        boom.GetComponent<ParticleSystem>().Play(true);
+        enemy.SetActive(false);
     }
 
-    */
+    public void Reseto()
+    {
+        cooldown = maxCooldown;
+        oldPlayerPosition = new Vector3(0, 0, 0);
+        inRange = false;
+        enemy.SetActive(true);
+        _idle.IdleModeChange();
+        statController.health = savedHealth;
+    }
 }

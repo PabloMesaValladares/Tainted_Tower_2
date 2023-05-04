@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 456007622853713755}
   - component: {fileID: 2632573543616809909}
   - component: {fileID: -4726181970916172408}
+  - component: {fileID: 555511832251337599}
   m_Layer: 0
   m_Name: Enemi1
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8403991166173836191
 MeshFilter:
@@ -112,3 +113,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   referencePoint: {fileID: 0}
   deSpawnDistance: 10
+--- !u!114 &555511832251337599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924281547393338383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e60584d5aca16c4e960864b2ee26605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 0
+  hitVFX: {fileID: 0}
+  lookAtPlayerSpeed: 0
+  head: {fileID: 0}
+  referencePoint: {fileID: 0}
+  deSpawnDistance: 100
+  attackCD: 3
+  attackRange: 1
+  aggroRange: 4
+  DieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}

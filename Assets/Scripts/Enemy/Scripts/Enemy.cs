@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,10 +12,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] float lookAtPlayerSpeed;
     public GameObject head;
 
+
+    [SerializeField] Transform referencePoint;
+    [SerializeField] float deSpawnDistance;
+
     [Header("Combat")]
     [SerializeField] float attackCD = 3f;
     [SerializeField] float attackRange = 1f;
     [SerializeField] float aggroRange = 4f;
+
+    public UnityEvent DieEvent;
 
     GameObject player;
     NavMeshAgent agent;
@@ -28,12 +35,19 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         maxHealth = GetComponent<StatController>().health;
         health = maxHealth;
+
         //life = GetComponent<LifeTest>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        if (Vector3.Distance(player.transform.position, referencePoint.position) > deSpawnDistance)
+        {
+            gameObject.transform.parent.gameObject.SetActive(false);
+        }
+        
         //animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
         //if (player == null)
@@ -76,14 +90,14 @@ public class Enemy : MonoBehaviour
         Vector3 lookPoint = Vector3.Lerp(playerPos, transform.position, lookAtPlayerSpeed);
         transform.LookAt(lookPoint);
     }
-
+    /*
     void Die()
     {
         //Instantiate(ragdoll, transform.position, transform.rotation);
         //Destroy(this.gameObject);
         gameObject.SetActive(false);
     }
-
+    */
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
@@ -92,7 +106,8 @@ public class Enemy : MonoBehaviour
         //life.Life = health;
         if (health <= 0)
         {
-            Die();
+            DieEvent.Invoke();
+            //Die();
         }
     }
     public void StartDealDamage()
@@ -116,5 +131,10 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, aggroRange);
+    }
+
+    public void SetSpawnPoint(Transform point)
+    {
+        referencePoint = point;
     }
 }
