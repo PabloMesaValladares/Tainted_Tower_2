@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc43fde62382e8d46829a39de1d7ccac, type: 3}
+  m_Name: IdleStateGolemBoss
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: f06a72ee7f55c374ab348aea1c1b2338, type: 2}
+  transitions:
+  - desicion: {fileID: 11400000, guid: c5be632286907c64e87fbefc9ce7f142, type: 2}
+    trueState: {fileID: 11400000, guid: bdddcbdd4c28ad744937c244cc7e9880, type: 2}
+  - desicion: {fileID: 11400000, guid: a2656e532867fd74b96c365fae06d91c, type: 2}
+    trueState: {fileID: 11400000, guid: 2092b2ce5e8a18c4e973eb013343746e, type: 2}

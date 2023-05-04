@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1025b9a68bd8934a87206c990dea752, type: 3}
-  m_Name: LookBoss
+  m_Script: {fileID: 11500000, guid: 949f55cd4ba2ef3498f427e06fe7c1c9, type: 3}
+  m_Name: Lava Ray Attack Action
   m_EditorClassIdentifier: 
-  randSide: 0
-  sideMove: 1
-  speed: 1
+  lavaOffset: 5

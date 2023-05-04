@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1025b9a68bd8934a87206c990dea752, type: 3}
-  m_Name: LookBoss
+  m_Script: {fileID: 11500000, guid: 8c0f56e7deb395e4eb9c24ed370d5c34, type: 3}
+  m_Name: Half LifeDecision
   m_EditorClassIdentifier: 
-  randSide: 0
-  sideMove: 1
-  speed: 1
+  LifePercentage: 50
