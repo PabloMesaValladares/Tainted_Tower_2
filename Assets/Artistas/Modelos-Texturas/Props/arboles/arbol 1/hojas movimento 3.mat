@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hojas movimento 3
-  m_Shader: {fileID: -6465566751694194690, guid: 890a059d8ffebce47ae7a6875138a987, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 890a059d8ffebce47ae7a6875138a987,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

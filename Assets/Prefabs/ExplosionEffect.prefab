@@ -9770,7 +9770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particles: {fileID: 7459358222024865601}
-  damage: 75
+  damage: 55
 --- !u!1 &7977982062347302229
 GameObject:
   m_ObjectHideFlags: 0
@@ -9810,7 +9810,7 @@ Transform:
   - {fileID: 7977982062347004283}
   - {fileID: 7459358222024865602}
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
 --- !u!198 &7977982062362209333
 ParticleSystem:
