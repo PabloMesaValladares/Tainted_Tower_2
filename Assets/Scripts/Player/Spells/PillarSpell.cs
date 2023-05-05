@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PillarSpell : MonoBehaviour
 {
-    [SerializeField] float rayDistance, distance;
-    [SerializeField] bool previewB;
-    public LayerMask markable;
+    [SerializeField] float rayDistance, distance, coolDown;
+    [SerializeField] bool previewB, cdBool;
+    [SerializeField] LayerMask floor;
     float markedLayer;
+
+    InputAction interact;
+    [SerializeField] PlayerInput _config;
 
     Transform raycastPoint;
 
     MarkEnemy mark;
+    Timer timer;
 
     GameObject preview;
 
     void Start()
     {
         mark = GetComponent<MarkEnemy>();
+        timer = GetComponent<Timer>();
+        _config = GetComponent<PlayerInput>();
+        //interact = _config.actions[""];                    Falta tecla
 
         // preview = PoolingManager.Instance("PillarPrev");
-
-        NameToLayer(markable);
         
         previewB = false;
     }
@@ -43,13 +49,18 @@ public class PillarSpell : MonoBehaviour
             previewB = true;
             PreviewState(previewB);
         }
+
+        if(/*interact.triggered &&*/ cdBool)
+        {
+            SummonPilar();
+        }
     }
     
     public void RaycastInfo()
     {
         Transform camera = Camera.main.transform;
 
-        if (Physics.Raycast(camera.position, camera.forward, out RaycastHit hit, rayDistance, (int)markedLayer))
+        if (Physics.Raycast(camera.position, camera.forward, out RaycastHit hit, rayDistance, NameToLayer(floor)))
         {
             raycastPoint.position = hit.point;
         }
@@ -63,10 +74,12 @@ public class PillarSpell : MonoBehaviour
         {
             pillar.transform.position = transform.forward + new Vector3(0, 0, distance);
 
-            if (Physics.Raycast(transform.forward + new Vector3(0, 0, distance), -pillar.transform.up, out RaycastHit hit, rayDistance, NameToLayer(8)))
+            if (Physics.Raycast(transform.forward + new Vector3(0, 0, distance), -pillar.transform.up, out RaycastHit hit, rayDistance, NameToLayer(floor)))
             {
                 pillar.transform.position = hit.point;
                 pillar.SetActive(true);
+                CooldownBool(false);
+                timer.StartTimer(coolDown);
             }
         }
         else
@@ -87,5 +100,10 @@ public class PillarSpell : MonoBehaviour
         markedLayer = layerValue;
 
         return (int)markedLayer;
+    }
+
+    public void CooldownBool(bool b)
+    {
+        cdBool = b;
     }
 }
