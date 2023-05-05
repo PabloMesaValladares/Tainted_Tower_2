@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1025b9a68bd8934a87206c990dea752, type: 3}
   m_Name: LookBoss
   m_EditorClassIdentifier: 
+  randSide: 1
+  sideMove: 0
+  speed: 20
