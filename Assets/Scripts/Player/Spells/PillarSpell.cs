@@ -25,15 +25,23 @@ public class PillarSpell : MonoBehaviour
         mark = GetComponent<MarkEnemy>();
         timer = GetComponent<Timer>();
         _config = GetComponent<PlayerInput>();
-        //interact = _config.actions[""];                    Falta tecla
+        interact = _config.actions["Pilar"];
 
-        // preview = PoolingManager.Instance("PillarPrev");
+        raycastPoint = transform;
+
+        preview = PoolingManager.Instance.GetPooledObject("PillarPrev");
         
         previewB = false;
+        cdBool = true;
     }
 
     void Update()
     {
+        if (interact.triggered && cdBool)
+        {
+            SummonPilar();
+        }
+
         if (!mark.marking)
         {
             previewB = false;
@@ -44,26 +52,27 @@ public class PillarSpell : MonoBehaviour
             PreviewState(previewB);
         else
         {
-            RaycastInfo();
-            preview.transform.position = raycastPoint.position;
-            previewB = true;
-            PreviewState(previewB);
+            if (RaycastInfo())
+            {
+                preview.transform.position = raycastPoint.position;
+                previewB = true;
+                PreviewState(previewB);
+            }
         }
 
-        if(/*interact.triggered &&*/ cdBool)
-        {
-            SummonPilar();
-        }
     }
     
-    public void RaycastInfo()
+    bool RaycastInfo()
     {
         Transform camera = Camera.main.transform;
 
         if (Physics.Raycast(camera.position, camera.forward, out RaycastHit hit, rayDistance, NameToLayer(floor)))
         {
             raycastPoint.position = hit.point;
+            return true;
         }
+
+        return false;
     }
 
     void SummonPilar()
@@ -72,15 +81,10 @@ public class PillarSpell : MonoBehaviour
 
         if (!mark.marking)
         {
-            pillar.transform.position = transform.forward + new Vector3(0, 0, distance);
-
-            if (Physics.Raycast(transform.forward + new Vector3(0, 0, distance), -pillar.transform.up, out RaycastHit hit, rayDistance, NameToLayer(floor)))
-            {
-                pillar.transform.position = hit.point;
-                pillar.SetActive(true);
-                CooldownBool(false);
-                timer.StartTimer(coolDown);
-            }
+            pillar.transform.position = transform.position + transform.forward * distance; 
+            pillar.SetActive(true);
+            CooldownBool(false);
+            timer.StartTimer(coolDown);
         }
         else
         {
