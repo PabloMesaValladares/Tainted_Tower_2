@@ -11,14 +11,14 @@ public class particleSpawn : MonoBehaviour
 
     private void Update()
     {
-       
+        
     }
 
     public void particlePlay()
     {
-        
         particlesRay.transform.rotation = rayCastPoint.transform.rotation;
         particlesRay.transform.position = rayCastPoint.transform.position;
         particlesRay.Play();
+
     }
 }

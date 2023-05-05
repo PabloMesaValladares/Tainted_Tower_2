@@ -10,16 +10,26 @@ public class LavaRayAttack : Action
 {
     public float lavaOffset;
     float count;
+    
 
     public override void Act(Controller controller)
     {
-        
+        if (count > lavaOffset)
+        {
             GameObject lavaRay = PoolingManager.Instance.GetPooledObject("LavaRay");
-            lavaRay.GetComponent<particleSpawn>().particlePlay();
+
+            lavaRay.GetComponent<ParticleSystem>().Play();
+           
             lavaRay.SetActive(true);
-            
+        }
+
+        else
+        {
             count += Time.deltaTime;
-        
+        }
+
+
+
     }
 
     public override void RestartVariables()
