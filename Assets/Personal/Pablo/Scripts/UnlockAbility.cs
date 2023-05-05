@@ -8,12 +8,14 @@ public class UnlockAbility : MonoBehaviour
     private PlayerController playerController;
     private GameManager playerManager;
 
+    [SerializeField]
+    private BoxCollider colliderBox;
     InputAction interactE;
     [SerializeField]
     UnityEngine.InputSystem.PlayerInput _config;
 
     [SerializeField]
-    private bool inside;
+    private bool inside, activated;
 
     [SerializeField]
     private GameObject orb, door;
@@ -26,20 +28,22 @@ public class UnlockAbility : MonoBehaviour
     void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
+        playerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         interactE = _config.actions["Interact"];
+        activated = false;
     }
 
     private void Update()
     {
-        if (interactE.triggered && inside)
+        if (interactE.triggered && inside && activated == false)
         {
             //Llamar al GameManager
+            OpenTheDoors();
             playerController.GetComponent<DrugsMode>().enabled = true;
             orb.SetActive(false);
-            gameObject.SetActive(false);
+            colliderBox.enabled = false;
             playerManager.drugs = true;
-            gameObject.GetComponent<UnlockAbility>().enabled = false;
+            activated = true;
         }
     }
 

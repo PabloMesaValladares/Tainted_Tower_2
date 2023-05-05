@@ -92,7 +92,7 @@ public class DrugsMode : MonoBehaviour
         }
         else
         {
-            anim.SetFloat("buffSpeed", 2);
+            anim.SetFloat("buffSpeed", 1.5f);
             playerController.walkSpeed = walkSpeedBuff;
             playerController.sprintSpeed = sprintSpeedBuff;
 

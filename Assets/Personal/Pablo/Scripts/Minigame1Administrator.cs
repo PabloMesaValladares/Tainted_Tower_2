@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Minigame1Administrator : MonoBehaviour
 {
     [SerializeField]
-    private GameObject door;
+    private GameObject door, peladin;
 
     [SerializeField]
     private Vector3 doorUp;
@@ -53,6 +53,8 @@ public class Minigame1Administrator : MonoBehaviour
             if (i == 3 && sequenceCorrect == 3)
             {
                 finished = true;
+                peladin.GetComponent<BoxCollider>().enabled = false;
+                peladin.SetActive(false);
                 OpenTheDoors();
             }
         }  
