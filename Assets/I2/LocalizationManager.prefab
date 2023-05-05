@@ -131,7 +131,7 @@ MonoBehaviour:
       Languages:
       - "\xBFEstas seguro de entrar a esta mazmorra?"
       - Are you sure to enter this dungeon?
-      - "\u3053\u306E\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u5165\u308B\u3053\u3068\u306F\u3067\u304D\u307E\u3059\u304B\uFF1F"
+      - "\u3053\u306E\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u53C2\u52A0\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
       Flags: 000000
       Languages_Touch: []
     - Term: Dialogos/PortalEnterComplete
@@ -490,7 +490,7 @@ MonoBehaviour:
       Flags: 000000
       Languages_Touch: []
     - Term: Interfaz/FontMenu
-      TermType: 1
+      TermType: 9
       Description: 
       Languages:
       - Cinzel-Black
@@ -499,12 +499,21 @@ MonoBehaviour:
       Flags: 000000
       Languages_Touch: []
     - Term: Interfaz/FontDia
-      TermType: 1
+      TermType: 9
       Description: 
       Languages:
       - Enchanted Land
       - Enchanted Land
       - ZenKakuGothicNew-Regular
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Interfaz/SoundMenu
+      TermType: 0
+      Description: 
+      Languages:
+      - Menu Sonido
+      - Sound menu
+      - "\u30B5\u30A6\u30F3\u30C9\u30E1\u30CB\u30E5\u30FC"
       Flags: 000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
@@ -526,7 +535,7 @@ MonoBehaviour:
     Google_SpreadsheetKey: 16pxnmP605zfR_-606mv4ZTiO9rg6NBt5R6rcRmEC6q4
     Google_SpreadsheetName: I2Loc TaintedMenus Assets/Pablo/Scenes/MainMenu.unity
       LocalizationManager
-    Google_LastUpdatedVersion: 1683222884693
+    Google_LastUpdatedVersion: 1683266458548
     Google_Password: change_this
     GoogleUpdateFrequency: 2
     GoogleInEditorCheckFrequency: 2
