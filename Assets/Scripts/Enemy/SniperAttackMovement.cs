@@ -71,7 +71,7 @@ public class SniperAttackMovement : MonoBehaviour
                 bullet.transform.LookAt(oldPlayerPosition);
                 bullet.transform.position = gameObject.transform.position;
                 bullet.SetActive(true);
-                oldPlayerPosition = new Vector3(player.transform.position.x - bullet.transform.position.x, player.transform.position.y - bullet.transform.position.y, player.transform.position.z - bullet.transform.position.z);
+                oldPlayerPosition = new Vector3(player.transform.position.x - bullet.transform.position.x, player.transform.position.y + 0.5f - bullet.transform.position.y, player.transform.position.z - bullet.transform.position.z);
                 timeremaining = timeBetweenAttacks;
             }
         }
