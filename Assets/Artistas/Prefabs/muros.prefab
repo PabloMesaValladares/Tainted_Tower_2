@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 477790946302473408}
   - component: {fileID: 2397466534626803722}
   - component: {fileID: -2918732899691062318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muros
   m_TagString: Untagged
   m_Icon: {fileID: 0}

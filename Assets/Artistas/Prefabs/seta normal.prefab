@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1652625739500291305}
   - component: {fileID: 2396079721870396236}
   - component: {fileID: 478615788233359238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: seta normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 514123211825665973}
   - component: {fileID: 6424063450651131117}
   - component: {fileID: 304388817511830891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: seta1/3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

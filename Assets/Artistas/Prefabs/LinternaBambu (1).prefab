@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2902759651803835428}
   - component: {fileID: 1129378555206719726}
   - component: {fileID: 1069282370381826177}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LinternaBambu (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

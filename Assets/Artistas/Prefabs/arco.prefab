@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5990210704157875540}
   - component: {fileID: 7245829389649023729}
   - component: {fileID: 4857884510815872571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arco
   m_TagString: Untagged
   m_Icon: {fileID: 0}

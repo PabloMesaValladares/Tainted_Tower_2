@@ -18,12 +18,13 @@ public class DartsBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider lala)
+    private void OnTriggerEnter(Collider other)
     {
-        if (lala.TryGetComponent<PlayerController>(out PlayerController _playerController))
+        if(other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
         {
-            lala.gameObject.transform.GetComponent<HealthBehaviour>().Hurt(damage);
-            gameObject.SetActive(false);
+            player.gameObject.transform.GetComponent<HealthBehaviour>().Hurt(damage);
         }
+
+        gameObject.SetActive(false);
     }
 }

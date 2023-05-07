@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2330431529072720063}
   - component: {fileID: 7782014116635602964}
   - component: {fileID: 4841830940298273564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Textura hojas.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1251693182550091866}
   - component: {fileID: 9185842198665819573}
   - component: {fileID: 8626522775447308405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4168796397632049004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arbol low final (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

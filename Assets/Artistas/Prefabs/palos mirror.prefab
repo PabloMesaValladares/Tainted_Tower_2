@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 554568286935419885}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: palos mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6414384994122593183}
   - component: {fileID: 5823110915744278352}
   - component: {fileID: 3411388131412182262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Object007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 5627088758048119116}
   - component: {fileID: 3799110465080003715}
   - component: {fileID: 7510231710957179307}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Object008
   m_TagString: Untagged
   m_Icon: {fileID: 0}

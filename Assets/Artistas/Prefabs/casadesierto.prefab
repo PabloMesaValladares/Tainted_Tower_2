@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7313668398473869855}
   - component: {fileID: 6026996188491022902}
   - component: {fileID: 6825980517010340226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CasaBase_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 467492006237243438}
   - component: {fileID: 9096347311613329619}
   - component: {fileID: 1316333649735956851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Puerta_Casa001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8032130951546562351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: casadesierto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 1475629565448994572}
   - component: {fileID: 4346631036246167618}
   - component: {fileID: 1932011656308614687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tejado_Casa002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

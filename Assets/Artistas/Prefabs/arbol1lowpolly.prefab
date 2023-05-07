@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2466197544181143187}
   - component: {fileID: 422571801303540313}
   - component: {fileID: -9048734642070135473}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arbol1lowpolly
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1391342376449824372}
   - component: {fileID: 3549988626622134708}
   - component: {fileID: 2251850096197292365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3240388515302864120}
   - component: {fileID: 5765649550908325237}
   - component: {fileID: 6208224335215659922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7792008639387805975}
   - component: {fileID: 7757591025268480766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cofre low
   m_TagString: Untagged
   m_Icon: {fileID: 0}

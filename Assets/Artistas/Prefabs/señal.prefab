@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7313896843538328242}
   - component: {fileID: 1919263563689290033}
   - component: {fileID: 423346456056928532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4558706840431017149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "se\xF1al"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

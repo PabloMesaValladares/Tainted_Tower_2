@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5410197118817078184}
   - component: {fileID: 8987841288218870797}
   - component: {fileID: 6584206862985523399}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MargaritaConCesped
   m_TagString: Untagged
   m_Icon: {fileID: 0}

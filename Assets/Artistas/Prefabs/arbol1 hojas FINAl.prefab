@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7443338176075941973}
   - component: {fileID: 4659250803700972703}
   - component: {fileID: -4411837450534122934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arbol1 hojas FINAl
   m_TagString: Untagged
   m_Icon: {fileID: 0}

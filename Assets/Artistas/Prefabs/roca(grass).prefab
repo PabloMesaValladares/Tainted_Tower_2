@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1806548571843572395}
   - component: {fileID: 4537043554897839713}
   - component: {fileID: -4026469792917459304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: roca(grass)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

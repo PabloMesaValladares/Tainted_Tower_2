@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2040470487854258963}
   - component: {fileID: 4302558671653072857}
   - component: {fileID: -4227265777858590097}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "seta peque\xF1a 2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1512813128372511597}
   - component: {fileID: 4964312007457078319}
   - component: {fileID: 6949621396495073012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: seta2/004
   m_TagString: Untagged
   m_Icon: {fileID: 0}

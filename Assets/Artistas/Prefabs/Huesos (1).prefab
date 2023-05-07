@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6555942659571912545}
   - component: {fileID: 9016088070831602603}
   - component: {fileID: 5627864552083440293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Huesos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

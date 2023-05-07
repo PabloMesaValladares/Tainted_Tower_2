@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5804445372388504757}
   - component: {fileID: 9207531562415375661}
   - component: {fileID: 8388875556011992415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box127
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 211321447941483764}
   - component: {fileID: 7329878759860788138}
   - component: {fileID: 6822219672912794740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8791763043385505415}
   - component: {fileID: 5457494864031962636}
   - component: {fileID: 3843350360934711310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box128
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1399119200082754182}
   - component: {fileID: 9144412491432402217}
   - component: {fileID: 8950584633506197699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box129
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 4457889927773487444}
   - component: {fileID: 8800952570677294383}
   - component: {fileID: 1760868324226801206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box124
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 1653100758565834464}
   - component: {fileID: 4087297519937055586}
   - component: {fileID: 138997198438723678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box125
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 6541580439260882051}
   - component: {fileID: 9019772761934467145}
   - component: {fileID: -1493134320205123292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: torre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 3587504963376954048}
   - component: {fileID: 4099108054988343042}
   - component: {fileID: 1986513805120799809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box126
   m_TagString: Untagged
   m_Icon: {fileID: 0}
