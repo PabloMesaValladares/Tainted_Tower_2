@@ -45,12 +45,12 @@ public class StatController : MonoBehaviour
         switch(mainHand.mainStatType)
         {
             case Weapon.Type.physical:
-                strength = TotalStat(strength);
-                damage = (1 + strength * 0.2f) * (dmg / 1.50f);
+                float str = TotalStat(strength);
+                damage = (1 + str * 0.2f) * (dmg / 1.50f);
                 break;
             case Weapon.Type.magical:
-                inteligence = TotalStat(inteligence);
-                damage = (1 + inteligence * 0.15f) * (dmg / 1.50f);
+                float inte = TotalStat(inteligence);
+                damage = (1 + inte * 0.15f) * (dmg / 1.50f);
                 break;
             default:
                 break;
