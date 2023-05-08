@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6142226030322666893}
   - component: {fileID: 7072308673336088182}
   - component: {fileID: 2509367207364782332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vegetacion2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3253959832517970804}
   - component: {fileID: 2676530517723916898}
   - component: {fileID: 1287301613060353853}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7767906780785291284}
   - component: {fileID: -2999031245708805697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: palmera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

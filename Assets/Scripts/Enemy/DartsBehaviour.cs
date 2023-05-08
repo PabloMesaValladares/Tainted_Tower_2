@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class DartsBehaviour : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider collision)
+    public int damage;
+    public float miniTinmer;
+
+    public void Update()
     {
-        if (collision.gameObject.TryGetComponent<PlayerController>(out PlayerController _playerController))
+        miniTinmer -= Time.deltaTime;
+
+        if(miniTinmer <= 0)
         {
             gameObject.SetActive(false);
-            _playerController.gameObject.SetActive(false);
+            miniTinmer = 1.5f;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
+        {
+            player.gameObject.transform.GetComponent<HealthBehaviour>().Hurt(damage);
         }
 
-        if (collision.gameObject.layer == 8)
-        {
-            gameObject.SetActive(false);
-        }
+        gameObject.SetActive(false);
     }
 }

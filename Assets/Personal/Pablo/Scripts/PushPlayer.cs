@@ -17,13 +17,11 @@ public class PushPlayer : MonoBehaviour
         if (lala.gameObject.transform.TryGetComponent<PlayerController>(out PlayerController _playerController))
         {
             colliderBox.enabled = false;
-            //_playerController.enabled = false;
             Vector3 dir = lala.contacts[0].point - transform.position;
             dir = -dir.normalized;
             lala.gameObject.transform.GetComponent<Rigidbody>().AddForce(dirToGo * force, ForceMode.Force);
             lala.gameObject.transform.GetComponent<HealthBehaviour>().Hurt(damage);
             charge.ChangeTime();
-            //_playerController.enabled = true;
             gameObject.SetActive(false);
         }
     }

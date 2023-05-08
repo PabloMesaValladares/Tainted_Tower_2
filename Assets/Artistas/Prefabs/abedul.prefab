@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5657251213757637096}
   - component: {fileID: 3464566461402160526}
   - component: {fileID: 7763825525741354742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Textura hojas.400
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5608944477076047375}
   - component: {fileID: -3897319791556772489}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: abedul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 807196005275565423}
   - component: {fileID: 233955271706336377}
   - component: {fileID: 4019100620629743910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder004
   m_TagString: Untagged
   m_Icon: {fileID: 0}

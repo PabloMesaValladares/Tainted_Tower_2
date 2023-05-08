@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3647290438350750708}
   - component: {fileID: 6182299953633997994}
   - component: {fileID: 7988928674723036020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1964904846830373206}
   - component: {fileID: 7491354851937337403}
   - component: {fileID: 2567766075013272872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6707130595227239462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: espada (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -42,6 +42,7 @@ public class Kamikaze : MonoBehaviour
             cooldown -= Time.deltaTime;
             distanceBoom = Vector3.Distance(oldPlayerPosition, gameObject.transform.position);
             transform.LookAt(new Vector3(oldPlayerPosition.x, transform.position.y, oldPlayerPosition.z));
+            _animator.SetBool("Idle", false);
             _animator.SetBool("Attack", true);
             exclamation.SetActive(true);
 
@@ -85,6 +86,8 @@ public class Kamikaze : MonoBehaviour
 
     public void expire()
     {
+        _animator.SetBool("Attack", false);
+        _animator.SetBool("Die", true);
         boom = PoolingManager.Instance.GetPooledObject("Boom");
         boom.transform.position = gameObject.transform.position;
         boom.SetActive(true);
@@ -100,5 +103,7 @@ public class Kamikaze : MonoBehaviour
         enemy.SetActive(true);
         _idle.IdleModeChange();
         statController.health = savedHealth;
+        _animator.SetBool("Die", false);
+        _animator.SetBool("Idle", true);
     }
 }

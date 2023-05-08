@@ -6,8 +6,6 @@ public class PlayerDamageTrigger : MonoBehaviour
 {
     public int damage;
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))

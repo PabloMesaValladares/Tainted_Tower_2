@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4144172037241006532}
   - component: {fileID: 4144172037241006534}
   - component: {fileID: 4144172037241006535}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arbustos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

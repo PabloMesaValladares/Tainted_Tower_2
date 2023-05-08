@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2373426384331856512}
   - component: {fileID: 251534397164222109}
   - component: {fileID: 4840500797211695824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: seta rara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2871336836963783471}
   - component: {fileID: 17450254817863653}
   - component: {fileID: -2301871507107436680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: seta rara
   m_TagString: Untagged
   m_Icon: {fileID: 0}

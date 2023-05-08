@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2784898565102785193}
   - component: {fileID: 90359190675170915}
   - component: {fileID: 6871957210473279340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: seta venenosa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1561055254248273204}
   - component: {fileID: 8829982764754406828}
   - component: {fileID: 7939098092810671727}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: seta grande
   m_TagString: Untagged
   m_Icon: {fileID: 0}

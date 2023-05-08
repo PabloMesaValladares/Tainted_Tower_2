@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2647256376633439251}
   - component: {fileID: 240950207868518617}
   - component: {fileID: 6541402256480983176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: roca3low (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

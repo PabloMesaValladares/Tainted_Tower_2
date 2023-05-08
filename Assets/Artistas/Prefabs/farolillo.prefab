@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6148470735316808244}
   - component: {fileID: 2180242760186184097}
   - component: {fileID: 5918599569512738321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8619458994430886533}
   - component: {fileID: 6867082519521391024}
   - component: {fileID: 3049587794013134542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3362434383183684583}
   - component: {fileID: 9127893831795337371}
   - component: {fileID: 2604566283489727455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4231062635124379267}
   - component: {fileID: -783982797337664344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: farolillo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 8235132812085375791}
   - component: {fileID: 1691679572089346522}
   - component: {fileID: 3005326116144945293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder019
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ public class MixerManager : MonoBehaviour
     {
         slider = GetComponent<Slider>();
         slider.value = PlayerPrefs.GetFloat(nameController, 1f);
-       
+
     }
     public void SetVolume()
     {

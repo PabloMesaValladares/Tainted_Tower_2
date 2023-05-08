@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8156023272727579245}
   - component: {fileID: 6256894878478761639}
   - component: {fileID: -1364657012956799890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArcoJapones
   m_TagString: Untagged
   m_Icon: {fileID: 0}

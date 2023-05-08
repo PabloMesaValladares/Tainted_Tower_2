@@ -17,7 +17,7 @@ public class introBehaviour : MonoBehaviour
     [SerializeField]
     UnityEngine.InputSystem.PlayerInput _config;
 
-    InputAction esc;
+    InputAction esc, spc;
 
     [SerializeField]
     private bool isIntro;
@@ -37,7 +37,8 @@ public class introBehaviour : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        esc = _config.actions["Jump"];
+        esc = _config.actions["Pause"];
+        spc = _config.actions["Jump"];
     }
 
     private void CheckOver(UnityEngine.Video.VideoPlayer vid)
@@ -56,7 +57,7 @@ public class introBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(esc.triggered)
+        if(esc.triggered || spc.triggered)
         {
             SceneManager.LoadScene(sceneNumber);
         }
