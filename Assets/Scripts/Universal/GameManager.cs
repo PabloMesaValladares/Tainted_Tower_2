@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
     public static GameManager instance => _instance; //Singleton, para cuando quiero que algo sea estatico pero sus propiedades no
+
+    [Serializable]
+    public struct SpawnPoints
+    {
+        public string SceneName;
+        public Vector3 position;
+    }
 
     [Header("Player scripts")]
     [HideInInspector]public GameObject player;
@@ -24,7 +32,8 @@ public class GameManager : MonoBehaviour
     public int defense;
     public int staminaStat;
     public float stamina;
-    public Vector3 RespawnPosition;
+    public SpawnPoints[] Spawns;
+    public string currentBGM;
 
     [Serializable]
     public struct ItemSave
@@ -52,9 +61,10 @@ public class GameManager : MonoBehaviour
     public int CheckPointDefense;
     public int CheckPointStaminaStat;
     public float CheckPointStamina;
-    public Vector3 CheckPointRespawnPosition;
+    public SpawnPoints[] CheckPointSpawns;
     public List<ItemSave> CheckPointInventoryItems;
     public bool Cgrapple, Cpilar, Cdrugs, Cfireball;
+    public string CcurrentBGM;
 
     private void Awake()
     {
@@ -69,7 +79,11 @@ public class GameManager : MonoBehaviour
             currentHP = player.GetComponent<StatController>().health;
             stamina = staminaStat;
             player.GetComponent<StaminaController>().SetStamina(staminaStat);
-            player.GetComponent<RespawnPoint>().RespawnPosition = RespawnPosition;
+            foreach(SpawnPoints spawn in Spawns)
+            {
+                if (spawn.SceneName == SceneManager.GetActiveScene().name)
+                    player.GetComponent<RespawnPoint>().RespawnPosition = spawn.position;
+            }
             CheckPoint();
             DontDestroyOnLoad(this.gameObject);
         }
@@ -111,9 +125,14 @@ public class GameManager : MonoBehaviour
         inteligence = player.GetComponent<StatController>().inteligence;
         staminaStat = player.GetComponent<StatController>().stamina;
         defense = player.GetComponent<StatController>().defense;
-        stamina = player.GetComponent<StaminaController>().ReturnStamina();
-        RespawnPosition = player.GetComponent<RespawnPoint>().RespawnPosition; 
+        stamina = player.GetComponent<StaminaController>().ReturnStamina(); 
+        for(int i = 0; i < Spawns.Length; i++)
+        {
+            if (Spawns[i].SceneName == SceneManager.GetActiveScene().name)
+                Spawns[i].position = player.GetComponent<RespawnPoint>().RespawnPosition;
+        }
         inventory = GameObject.FindGameObjectWithTag("Inventory");
+        currentBGM = SoundManager.instance.currentBGM;
 
         for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
         {
@@ -144,9 +163,14 @@ public class GameManager : MonoBehaviour
         CheckPointInteligence = player.GetComponent<StatController>().inteligence;
         CheckPointStaminaStat = player.GetComponent<StatController>().stamina;
         CheckPointDefense = player.GetComponent<StatController>().defense;
-        CheckPointStamina = player.GetComponent<StaminaController>().ReturnStamina();
-        CheckPointRespawnPosition = player.GetComponent<RespawnPoint>().RespawnPosition;
+        CheckPointStamina = player.GetComponent<StaminaController>().ReturnStamina(); 
+        for (int i = 0; i < CheckPointSpawns.Length; i++)
+        {
+            if (CheckPointSpawns[i].SceneName == SceneManager.GetActiveScene().name)
+                CheckPointSpawns[i].position = player.GetComponent<RespawnPoint>().RespawnPosition;
+        }
         inventory = GameObject.FindGameObjectWithTag("Inventory");
+        CcurrentBGM = SoundManager.instance.currentBGM;
 
         for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
         {

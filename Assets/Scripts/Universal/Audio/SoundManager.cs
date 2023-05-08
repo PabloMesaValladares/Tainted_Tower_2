@@ -33,6 +33,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        currentBGM = GameManager.instance.currentBGM;
         PlaySound(currentBGM, true);
     }
 
@@ -124,22 +125,6 @@ public class SoundManager : MonoBehaviour
         AudioSource audioIn = audioControllers[0];
         AudioSource audioOut = audioControllers[0];
 
-        if (_audios.ContainsKey(nameIn))//if exist in dictionary
-        {
-            for (int i = 0; i < audioControllers.Count; i++)
-            {
-                if (audioControllers[i].clip == null || !audioControllers[i].isPlaying)
-                {
-                    audioControllers[i].clip = _audios[nameIn].audioSelected;
-                    audioControllers[i].volume = 0;
-                    audioControllers[i].loop = true;
-                    audioControllers[i].outputAudioMixerGroup = _audios[nameIn].mixer;
-                    audioControllers[i].Play();
-                    audioIn = audioControllers[i];
-                }
-            }
-        }
-
         if (_audios.ContainsKey(currentBGM))//if exist in dictionary
         {
             for (int i = 0; i < audioControllers.Count; i++)
@@ -152,7 +137,28 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-        StartCoroutine(StartFade(audioIn, audioOut, duration, audioOut.volume));
+        if (_audios.ContainsKey(nameIn))//if exist in dictionary
+        {
+            for (int i = 0; i < audioControllers.Count; i++)
+            {
+                if (audioControllers[i].clip == null || !audioControllers[i].isPlaying)
+                {
+                    audioControllers[i].clip = _audios[nameIn].audioSelected;
+                    audioControllers[i].volume = 0;
+                    audioControllers[i].loop = true;
+                    audioControllers[i].outputAudioMixerGroup = _audios[nameIn].mixer;
+                    audioControllers[i].Play();
+                    audioIn = audioControllers[i];
+                    i = audioControllers.Count;
+                }
+            }
+        }
+
+
+        Debug.Log("Entra " + audioIn.clip.name + " y sale " + audioOut.clip.name);
+
+        StartCoroutine(StartFade(audioIn, audioOut, duration, _audios[nameIn].volume));
+        currentBGM = nameIn;
     }
 
 
@@ -174,6 +180,7 @@ public class SoundManager : MonoBehaviour
                     audioControllers[i].outputAudioMixerGroup = _audios[nameIn].mixer;
                     audioControllers[i].Play();
                     audioIn = audioControllers[i];
+                    i = audioControllers.Count;
                 }
             }
         }
@@ -189,7 +196,7 @@ public class SoundManager : MonoBehaviour
                 }
             }
         }
-
+        currentBGM = nameIn;
         StartCoroutine(StartFade(audioIn, audioOut, duration, audioOut.volume));
     }
 
@@ -197,13 +204,15 @@ public class SoundManager : MonoBehaviour
     {
         float currentTime = 0;
         float start = In.volume;
+        float startOut = Out.volume;
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            Out.volume = Mathf.Lerp(targetVolume, 0, currentTime / duration);
+            Out.volume = Mathf.Lerp(startOut, 0, currentTime / duration);
             In.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
             yield return null;
         }
+        Out.clip = null;
         yield break;
     }
 

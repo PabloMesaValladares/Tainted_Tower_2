@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RespawnSetter : MonoBehaviour
 {
@@ -15,8 +16,12 @@ public class RespawnSetter : MonoBehaviour
             {
                 Vector3 posToResp = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
                 respawn.SetRespawn(posToResp);
-                GameManager.instance.CheckPoint();
-                GameManager.instance.RespawnPosition = positionToRespawn.position;
+                GameManager.instance.CheckPoint(); 
+                for (int i = 0; i < GameManager.instance.Spawns.Length; i++)
+                {
+                    if (GameManager.instance.Spawns[i].SceneName == SceneManager.GetActiveScene().name)
+                        GameManager.instance.Spawns[i].position = transform.position;
+                }
             }
             else
             {
@@ -32,7 +37,11 @@ public class RespawnSetter : MonoBehaviour
 
                 respawn.SetRespawn(posToResp);
                 GameManager.instance.CheckPoint();
-                GameManager.instance.RespawnPosition = positionToRespawn.position;
+                for (int i = 0; i < GameManager.instance.Spawns.Length; i++)
+                {
+                    if (GameManager.instance.Spawns[i].SceneName == SceneManager.GetActiveScene().name)
+                        GameManager.instance.Spawns[i].position = transform.position;
+                }
             }
         }
     }
