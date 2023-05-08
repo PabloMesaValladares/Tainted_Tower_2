@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
+    public GameObject ColliderCenter;
     public float normalColliderHeight;
     public LayerMask layersToReact;
     [SerializeField]
@@ -17,7 +18,7 @@ public class GroundCheck : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        grounded = CheckCollisionOverlap(gameObject.transform.position + Vector3.down * normalColliderHeight);
+        grounded = CheckCollisionOverlap(ColliderCenter.transform.position + Vector3.down * normalColliderHeight);
     }
 
     public bool returnCheck()
@@ -28,15 +29,15 @@ public class GroundCheck : MonoBehaviour
     {
         RaycastHit hit;
 
-        Vector3 direction = targetPositon - gameObject.transform.position;
-        if (Physics.Raycast(gameObject.transform.position, direction, out hit, normalColliderHeight, layersToReact))
+        Vector3 direction = targetPositon - ColliderCenter.transform.position;
+        if (Physics.Raycast(ColliderCenter.transform.position, direction, out hit, normalColliderHeight, layersToReact))
         {
-            Debug.DrawRay(gameObject.transform.position, direction * normalColliderHeight, Color.yellow);
+            Debug.DrawRay(ColliderCenter.transform.position, direction * normalColliderHeight, Color.yellow);
             return true;
         }
         else
         {
-            Debug.DrawRay(gameObject.transform.position, direction * normalColliderHeight, Color.white);
+            Debug.DrawRay(ColliderCenter.transform.position, direction * normalColliderHeight, Color.white);
             return false;
         }
     }

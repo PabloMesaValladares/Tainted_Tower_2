@@ -33,7 +33,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        PlaySound("Menu", true);
+        PlaySound(currentBGM, true);
     }
 
     // Start is called before the first frame update
