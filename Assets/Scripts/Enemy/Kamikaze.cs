@@ -86,8 +86,7 @@ public class Kamikaze : MonoBehaviour
 
     public void expire()
     {
-        _animator.SetBool("Attack", false);
-        _animator.SetBool("Die", true);
+        _animator.SetInteger("State", 0);
         boom = PoolingManager.Instance.GetPooledObject("Boom");
         boom.transform.position = gameObject.transform.position;
         boom.SetActive(true);
@@ -97,6 +96,7 @@ public class Kamikaze : MonoBehaviour
 
     public void Reseto()
     {
+        _animator.SetInteger("State", 0);
         cooldown = maxCooldown;
         oldPlayerPosition = new Vector3(0, 0, 0);
         inRange = false;
