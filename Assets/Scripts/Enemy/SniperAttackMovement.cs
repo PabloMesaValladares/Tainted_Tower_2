@@ -69,11 +69,15 @@ public class SniperAttackMovement : MonoBehaviour
 
             if (followDist >= maxFollowDist && followDist >= minFollowDist)
             {
+                _animator.SetBool("Idle", false);
+                _animator.SetBool("Walk", true);
                 _movement.MoveVector(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), vel);
             }
 
             else if(followDist <= minFollowDist)
             {
+                _animator.SetBool("Idle", false);
+                _animator.SetBool("Walk", true);
                 _movement.MoveVector(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), -vel / 4);
             }
 
@@ -81,7 +85,7 @@ public class SniperAttackMovement : MonoBehaviour
             {
                 _animator.SetBool("Idle", false);
                 _animator.SetBool("Attack", true);
-                bullet = PoolingManager.Instance.GetPooledObject("Darts");
+                bullet = PoolingManager.Instance.GetPooledObject("Rocky");
                 bullet.transform.LookAt(oldPlayerPosition);
                 bullet.transform.position = gameObject.transform.position;
                 bullet.SetActive(true);
