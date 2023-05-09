@@ -8,9 +8,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] public float health;
     [SerializeField] public float maxHealth;
-    [SerializeField] GameObject hitVFX;
     [SerializeField] float lookAtPlayerSpeed;
-    public GameObject head;
 
 
     [SerializeField] Transform referencePoint;
@@ -24,14 +22,10 @@ public class Enemy : MonoBehaviour
     public UnityEvent DieEvent;
 
     GameObject player;
-    NavMeshAgent agent;
     public Animator animator;
-    float timePassed;
-    float newDestinationCD = 0.5f;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>(); 
         player = GameObject.FindGameObjectWithTag("Player");
         maxHealth = GetComponent<StatController>().health;
         health = maxHealth;
@@ -48,56 +42,18 @@ public class Enemy : MonoBehaviour
             gameObject.transform.parent.gameObject.SetActive(false);
         }
         
-        //animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
-
-        //if (player == null)
-        //{
-        //    return;
-        //}
-
-        //if (timePassed >= attackCD)
-        //{
-        //    if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
-        //    {
-        //        animator.SetTrigger("attack");
-        //        timePassed = 0;
-        //    }
-        //}
-        //timePassed += Time.deltaTime;
-
-        //if (newDestinationCD <= 0 && Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
-        //{
-        //    LookAtPlayer();
-        //    newDestinationCD = 0.5f;
-        //    agent.SetDestination(player.transform.position);
-        //}
-        //newDestinationCD -= Time.deltaTime;
+        
 
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        print(true);
-    //        player = collision.gameObject;
-    //    }
-    //}
-
+    
     void LookAtPlayer()
     {
         Vector3 playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         Vector3 lookPoint = Vector3.Lerp(playerPos, transform.position, lookAtPlayerSpeed);
         transform.LookAt(lookPoint);
     }
-    /*
-    void Die()
-    {
-        //Instantiate(ragdoll, transform.position, transform.rotation);
-        //Destroy(this.gameObject);
-        gameObject.SetActive(false);
-    }
-    */
+
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
@@ -119,11 +75,6 @@ public class Enemy : MonoBehaviour
         //GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
 
-    public void HitVFX(Vector3 hitPosition)
-    {
-        GameObject hit = Instantiate(hitVFX, hitPosition, Quaternion.identity);
-        Destroy(hit, 3f);
-    }
 
     private void OnDrawGizmos()
     {

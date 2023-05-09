@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8676641219102806116}
   - component: {fileID: 5685045639354645543}
   - component: {fileID: 6753506099309071463}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 553694692632877913}
   - component: {fileID: 7592962319523770788}
   - component: {fileID: 7458146549095603071}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: Spell_Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4903,7 +4903,7 @@ GameObject:
   - component: {fileID: 2522756444666930783}
   - component: {fileID: 6545447488678800067}
   - component: {fileID: 8940890290521619546}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9717,7 +9717,7 @@ GameObject:
   - component: {fileID: 6353919051010973798}
   - component: {fileID: 166954261150932470}
   - component: {fileID: 2307699960780883733}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14531,7 +14531,7 @@ GameObject:
   - component: {fileID: 5844683686809196539}
   - component: {fileID: 1194405980410695528}
   - component: {fileID: 122458601519769393}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: SemiCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19345,7 +19345,7 @@ GameObject:
   - component: {fileID: 3516694870095495285}
   - component: {fileID: 5306665353983309601}
   - component: {fileID: 6405701578764207204}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24159,7 +24159,7 @@ GameObject:
   - component: {fileID: 8111571360741252653}
   - component: {fileID: 2634734947318482136}
   - component: {fileID: 4932158492979291409}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28974,7 +28974,7 @@ GameObject:
   - component: {fileID: 691012765868843940}
   - component: {fileID: 5309544071916672338}
   - component: {fileID: 8877994520428508795}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: FireballGraphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29027,7 +29027,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 19edc0b61e206cb44a44c10d867179ba, type: 2}
@@ -29061,7 +29061,7 @@ SphereCollider:
   m_GameObject: {fileID: 7535696819800329779}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
