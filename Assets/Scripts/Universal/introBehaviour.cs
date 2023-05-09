@@ -29,7 +29,10 @@ public class introBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if(isIntro)
+        introVideo.loopPointReached += CheckOver;
+
+        /*
+        if (isIntro)
         {
             introVideo.loopPointReached += CheckOver;
         }
@@ -37,6 +40,7 @@ public class introBehaviour : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        */
         esc = _config.actions["Pause"];
         spc = _config.actions["Jump"];
     }

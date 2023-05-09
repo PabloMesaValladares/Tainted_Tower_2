@@ -12,23 +12,11 @@ EditorBuildSettings:
     path: Assets/Scene/MainMenu.unity
     guid: c733c89aed9aa804f9b9bfbe5418ec61
   - enabled: 1
-    path: Assets/Scene/DungeonMushroom.unity
-    guid: 958922c86db0d97418c7e89f79c0e9a6
-  - enabled: 1
-    path: Assets/Scene/Escenario 1.unity
-    guid: c277c6d17c9329f43aa8172f73c31a25
-  - enabled: 1
     path: Assets/Scene/LoadingScreen.unity
     guid: 13e57a12d345b9a47b75fa4d0783754d
-  - enabled: 0
-    path: Assets/Scene/EscenarioDavid.unity
-    guid: ca30e0afc72ceeb4faed2a3a11594c96
   - enabled: 1
-    path: Assets/Scene/EscenarioPropsDavid.unity
-    guid: 0dc844a2895cc1d448a59f29fb02309d
-  - enabled: 1
-    path: Assets/Artistas/Scenes/Escenario.unity
-    guid: 7e9217bc6deb2014b88a812210527a0c
+    path: Assets/Scene/AntGameplay.unity
+    guid: 381f18bf49e67e74fba59c3599d3867c
   - enabled: 1
     path: Assets/Scene/Game.unity
     guid: e582578fba0d1e247b409e7d9e36e8d5

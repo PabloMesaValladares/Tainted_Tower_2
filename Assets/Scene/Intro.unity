@@ -438,7 +438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &543892742
 RectTransform:
   m_ObjectHideFlags: 0
@@ -746,9 +746,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introVideo: {fileID: 1315185728}
   _bacground: {fileID: 537113278}
-  _videoIntro: {fileID: 543892741}
+  _videoIntro: {fileID: 1315185725}
   _config: {fileID: 543892745}
-  isIntro: 1
+  isIntro: 0
   sceneNumber: 1
 --- !u!1 &1403765678
 GameObject:

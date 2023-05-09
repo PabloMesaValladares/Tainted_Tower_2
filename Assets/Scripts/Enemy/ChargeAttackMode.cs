@@ -14,6 +14,8 @@ public class ChargeAttackMode : MonoBehaviour
     private Enemy enemyController;
     [SerializeField]
     private ParticleSystem _particles;
+    [SerializeField]
+    private Animator _animator;
 
     [SerializeField]
     private Rigidbody _rigid;
@@ -71,6 +73,7 @@ public class ChargeAttackMode : MonoBehaviour
          
             if (timeremaining < 4 && timeremaining > 0)
             {
+                _animator.SetInteger("State", 2);
                 oldPlayerPosition = new Vector3(player.transform.position.x , gameObject.transform.position.y, player.transform.position.z);
                 transform.LookAt(new Vector3(oldPlayerPosition.x, transform.position.y, oldPlayerPosition.z));
                 _rigid.AddForce(transform.forward * force, ForceMode.Force);
@@ -80,6 +83,7 @@ public class ChargeAttackMode : MonoBehaviour
 
             if (timeremaining <= 0)
             {
+                _animator.SetInteger("State", 0);
                 forceObject.SetActive(false);
                 _particles.Stop(true);
                 accelerationEffect.SetActive(false);
@@ -131,6 +135,7 @@ public class ChargeAttackMode : MonoBehaviour
 
     public void Reseto()
     {
+        _animator.SetInteger("State", 0);
         timeremaining = 5;
         forceObject.SetActive(true);
         oldPlayerPosition = new Vector3(0, 0, 0);
