@@ -70,5 +70,7 @@ public class SlashMovement : MonoBehaviour
         if (other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
             player.GetComponentInParent<HealthBehaviour>().Hurt(damage);
         //Debug.Log("Slashed");
+
+        gameObject.SetActive(false);
     }
 }

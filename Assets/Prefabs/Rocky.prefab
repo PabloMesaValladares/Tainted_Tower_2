@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 7074627829888674253}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &803419257570780304
 MeshFilter:
@@ -155,7 +155,6 @@ GameObject:
   - component: {fileID: 7074627829888674253}
   - component: {fileID: 6161481821970523752}
   - component: {fileID: 8243008280411280034}
-  - component: {fileID: 3169038826156264179}
   m_Layer: 8
   m_Name: roca3low (2)
   m_TagString: Untagged
@@ -228,17 +227,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3169038826156264179
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7594740416858764151}
-  m_Material: {fileID: 13400000, guid: 3b80a49c17801fd4fae0cc283d3b5ed7, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5060444177187149915, guid: 2718e280f5a231344b8636536d78f8c6, type: 3}

@@ -20,10 +20,11 @@ public class DartsBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
-        {
-            player.gameObject.transform.GetComponent<HealthBehaviour>().Hurt(damage);
-        }
+        if (other.transform.parent != null)
+            if (other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
+            {
+                player.gameObject.transform.GetComponent<HealthBehaviour>().Hurt(damage);
+            }
 
         gameObject.SetActive(false);
     }

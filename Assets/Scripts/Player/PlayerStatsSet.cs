@@ -11,22 +11,13 @@ public class PlayerStatsSet : MonoBehaviour
     {
         if (!GameManager.instance.Checkpoint)
         {
-            for (int i = 0; i < GameManager.instance.Spawns.Length; i++)
-            {
-                if (GameManager.instance.Spawns[i].SceneName == SceneManager.GetSceneByBuildIndex(level).name)
-                {
-                    Debug.Log(GameManager.instance.Spawns[i].position);
-                    transform.position = GameManager.instance.Spawns[i].position;
-                }
-            }
+            if (SceneManager.GetActiveScene().name == "Game")
+                transform.position = GameManager.instance.Spawns;
         }
         else
         {
-            for (int i = 0; i < GameManager.instance.CheckPointSpawns.Length; i++)
-            {
-                if (GameManager.instance.CheckPointSpawns[i].SceneName == SceneManager.GetSceneByBuildIndex(level).name)
-                    transform.position = GameManager.instance.CheckPointSpawns[i].position;
-            }
+            if (SceneManager.GetActiveScene().name == "Game")
+                transform.position = GameManager.instance.CheckPointSpawns;
         }
     }
     void Start()
@@ -41,11 +32,9 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<StatController>().stamina = GameManager.instance.staminaStat;
             GetComponent<StatController>().defense = GameManager.instance.defense;
             GetComponent<StaminaController>().SetStamina(GameManager.instance.stamina);
-            for (int i = 0; i < GameManager.instance.Spawns.Length; i++)
-            {
-                if (GameManager.instance.Spawns[i].SceneName == SceneManager.GetActiveScene().name)
-                    transform.position = GameManager.instance.Spawns[i].position;
-            }
+
+            if (SceneManager.GetActiveScene().name == "Game")
+                transform.position = GameManager.instance.Spawns;
             //GetComponent<RespawnPoint>().Respawn();
             GetComponent<Grappling>().enabled = GameManager.instance.grapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.drugs;
@@ -61,11 +50,9 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<StatController>().stamina = GameManager.instance.CheckPointStaminaStat;
             GetComponent<StatController>().defense = GameManager.instance.CheckPointDefense;
             GetComponent<StaminaController>().SetStamina(GameManager.instance.CheckPointStamina);
-            for (int i = 0; i < GameManager.instance.CheckPointSpawns.Length; i++)
-            {
-                if (GameManager.instance.CheckPointSpawns[i].SceneName == SceneManager.GetActiveScene().name)
-                    transform.position = GameManager.instance.CheckPointSpawns[i].position;
-            }
+
+            if (SceneManager.GetActiveScene().name == "Game")
+                transform.position = GameManager.instance.CheckPointSpawns;
             //GetComponent<RespawnPoint>().Respawn();
             GetComponent<Grappling>().enabled = GameManager.instance.Cgrapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.Cdrugs;
@@ -83,11 +70,9 @@ public class PlayerStatsSet : MonoBehaviour
                 transform.position = GetComponent<RespawnPoint>().RespawnPosition;
             }
             else
-            {for (int i = 0; i < GameManager.instance.CheckPointSpawns.Length; i++)
             {
-                if (GameManager.instance.CheckPointSpawns[i].SceneName == SceneManager.GetActiveScene().name)
-                    transform.position = GameManager.instance.CheckPointSpawns[i].position;
-            }
+                if (SceneManager.GetActiveScene().name == "Game")
+                    transform.position = GameManager.instance.CheckPointSpawns;
             }
         }
     }

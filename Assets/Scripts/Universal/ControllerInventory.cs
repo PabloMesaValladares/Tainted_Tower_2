@@ -28,9 +28,9 @@ public class ControllerInventory : MonoBehaviour
     public bool hideMouse;
 
 
-    public delegate void Unlock();
+    public delegate void Unlock(bool b);
     public static Unlock mouseUnlock;
-    public delegate void Lock();
+    public delegate void Lock(bool b);
     public static Lock mouseLock;
     private void Start()
     {
@@ -164,7 +164,7 @@ public class ControllerInventory : MonoBehaviour
                     Menu.SetActive(false);
                     SelectedButton = null;
                     BagMenu.SetActive(false);
-                    mouseLock();
+                    mouseLock(false);
                 }
 
                 if (Use.triggered)
@@ -187,13 +187,13 @@ public class ControllerInventory : MonoBehaviour
                     if (SelectedButton != null)
                         SelectedButton.GetComponent<Image>().color = SelectedButton.GetComponent<Button>().colors.normalColor;
                     SelectedButton = null;
-                    mouseLock();
+                    mouseLock(false);
                     break;
                 case false:
                     Menu.SetActive(true);
                     index = 0;
                     menIndex = 0;
-                    mouseUnlock();
+                    mouseUnlock(true);
                     break;
             }
         }
@@ -207,14 +207,14 @@ public class ControllerInventory : MonoBehaviour
                     if (SelectedButton != null)
                         SelectedButton.GetComponent<Image>().color = SelectedButton.GetComponent<Button>().colors.normalColor;
                     SelectedButton = null;
-                    mouseLock();
+                    mouseLock(false);
                     break;
                 case false:
                     Menu.SetActive(true);
                     BagMenu.SetActive(true);
                     index = 0;
                     menIndex = 0;
-                    mouseUnlock();
+                    mouseUnlock(true);
                     break;
             }
         }

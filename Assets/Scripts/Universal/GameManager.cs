@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public int defense;
     public int staminaStat;
     public float stamina;
-    public SpawnPoints[] Spawns;
+    public Vector3 Spawns;
     public string currentBGM;
 
     [Serializable]
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     public int CheckPointDefense;
     public int CheckPointStaminaStat;
     public float CheckPointStamina;
-    public SpawnPoints[] CheckPointSpawns;
+    public Vector3 CheckPointSpawns;
     public List<ItemSave> CheckPointInventoryItems;
     public bool Cgrapple, Cpilar, Cdrugs, Cfireball;
     public string CcurrentBGM;
@@ -79,11 +79,10 @@ public class GameManager : MonoBehaviour
             currentHP = player.GetComponent<StatController>().health;
             stamina = staminaStat;
             player.GetComponent<StaminaController>().SetStamina(staminaStat);
-            foreach(SpawnPoints spawn in Spawns)
-            {
-                if (spawn.SceneName == SceneManager.GetActiveScene().name)
-                    player.GetComponent<RespawnPoint>().RespawnPosition = spawn.position;
-            }
+
+            if (SceneManager.GetActiveScene().name == "Game")
+                player.GetComponent<RespawnPoint>().RespawnPosition = Spawns;
+            
             CheckPoint();
             DontDestroyOnLoad(this.gameObject);
         }
@@ -125,12 +124,10 @@ public class GameManager : MonoBehaviour
         inteligence = player.GetComponent<StatController>().inteligence;
         staminaStat = player.GetComponent<StatController>().stamina;
         defense = player.GetComponent<StatController>().defense;
-        stamina = player.GetComponent<StaminaController>().ReturnStamina(); 
-        for(int i = 0; i < Spawns.Length; i++)
-        {
-            if (Spawns[i].SceneName == SceneManager.GetActiveScene().name)
-                Spawns[i].position = player.GetComponent<RespawnPoint>().RespawnPosition;
-        }
+        stamina = player.GetComponent<StaminaController>().ReturnStamina();
+
+        if (SceneManager.GetActiveScene().name == "Game")
+            Spawns = player.GetComponent<RespawnPoint>().RespawnPosition;
         inventory = GameObject.FindGameObjectWithTag("Inventory");
         currentBGM = SoundManager.instance.currentBGM;
 
@@ -163,12 +160,11 @@ public class GameManager : MonoBehaviour
         CheckPointInteligence = player.GetComponent<StatController>().inteligence;
         CheckPointStaminaStat = player.GetComponent<StatController>().stamina;
         CheckPointDefense = player.GetComponent<StatController>().defense;
-        CheckPointStamina = player.GetComponent<StaminaController>().ReturnStamina(); 
-        for (int i = 0; i < CheckPointSpawns.Length; i++)
-        {
-            if (CheckPointSpawns[i].SceneName == SceneManager.GetActiveScene().name)
-                CheckPointSpawns[i].position = player.GetComponent<RespawnPoint>().RespawnPosition;
-        }
+        CheckPointStamina = player.GetComponent<StaminaController>().ReturnStamina();
+
+        if (SceneManager.GetActiveScene().name == "Game")
+            CheckPointSpawns = player.GetComponent<RespawnPoint>().RespawnPosition;
+
         inventory = GameObject.FindGameObjectWithTag("Inventory");
         CcurrentBGM = SoundManager.instance.currentBGM;
 

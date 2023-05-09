@@ -45,7 +45,19 @@ public class DrugsMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ready == false)
+
+        if (interactX.triggered && ready)
+        {
+            randomNumber = Random.Range(0, maxRange);
+            BerserkerMode();
+            skillCooldown = 0;
+            ready = false;
+
+            Invoke(nameof(NormalMode), maxCooldown / 2);
+            Debug.Log("Activado");
+
+        }
+        else
         {
             cooldown -= Time.deltaTime;
             skillCooldown += Time.deltaTime;
@@ -63,16 +75,6 @@ public class DrugsMode : MonoBehaviour
                 sliderBar.value = maxCooldown;
                 ready = true;
             }
-        }
-
-        if (interactX.triggered && ready)
-        {
-            randomNumber = Random.Range(0, maxRange);
-            BerserkerMode();
-            skillCooldown = 0;
-            ready = false;
-
-            Invoke(nameof(NormalMode), maxCooldown / 2);
         }
     }
 

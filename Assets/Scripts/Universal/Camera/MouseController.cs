@@ -12,6 +12,8 @@ public class MouseController : MonoBehaviour
     public CinemachineVirtualCamera AimCamera;
     public GameObject pauseMenu, BagMenu, deathMenu;
 
+    public bool unlock;
+
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -19,25 +21,25 @@ public class MouseController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        unlock = false;
     }
 
     private void OnEnable()
     {
-        ControllerInventory.mouseUnlock += Unlock;
-        ControllerInventory.mouseLock += Lock;
+        ControllerInventory.mouseUnlock += changeLockState;
+        ControllerInventory.mouseLock += changeLockState;
     }
     private void OnDisable()
     {
-        ControllerInventory.mouseUnlock -= Unlock;
-        ControllerInventory.mouseLock -= Lock;
+        ControllerInventory.mouseUnlock -= changeLockState;
+        ControllerInventory.mouseLock -= changeLockState;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pauseMenu.activeInHierarchy || BagMenu.activeInHierarchy || deathMenu.activeInHierarchy)
+        if (unlock)
         {
             Unlock();
         }
@@ -47,6 +49,10 @@ public class MouseController : MonoBehaviour
         }
     }
 
+    public void changeLockState(bool b)
+    {
+        unlock = b;
+    }
 
 
     public void Unlock()
