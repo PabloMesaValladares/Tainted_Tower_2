@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.52386564, g: 0.56170434, b: 0.47704506, a: 1}
+  m_IndirectSpecularColor: {r: 0.52386224, g: 0.561672, b: 0.47704557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3572,7 +3572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -4058,7 +4058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -4544,7 +4544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Language
+  m_text: Idioma
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -4855,7 +4855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resolution
+  m_text: Resolucion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -5153,20 +5153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTypes:
-  - type: Mario
-    audioSelected: {fileID: 8300000, guid: e07e7b27dd5147c488ac3f041160a41c, type: 3}
-    mixer: {fileID: 6147185970330392971, guid: 6b4815a6c13369044af144f3c16bae35, type: 2}
-    volume: 0.288
-  - type: Jizz
-    audioSelected: {fileID: 8300000, guid: eddd953687ac91b47b90ed913c337224, type: 3}
-    mixer: {fileID: 6147185970330392971, guid: 6b4815a6c13369044af144f3c16bae35, type: 2}
-    volume: 0.311
-  - type: Thomas
+  - type: Test
     audioSelected: {fileID: 8300000, guid: 034765f9a45fe85489071b86437360a3, type: 3}
     mixer: {fileID: 6147185970330392971, guid: 6b4815a6c13369044af144f3c16bae35, type: 2}
-    volume: 0.311
+    volume: 0.375
   audioControllers: []
-  currentBGM: 
+  currentBGM: Test
 --- !u!4 &548820461
 Transform:
   m_ObjectHideFlags: 0
@@ -5503,7 +5495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound
+  m_text: Sonido
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -5999,7 +5991,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Master
+  m_text: Maestro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -6603,7 +6595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -8280,7 +8272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Alpha
+  m_text: Alfa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -8586,7 +8578,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound menu
+  m_text: Menu Sonido
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -10036,7 +10028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -10689,7 +10681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music
+  m_text: Musica
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -10806,7 +10798,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: Opciones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -11910,7 +11902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go out
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -13640,7 +13632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: Opciones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -15088,7 +15080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go out
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -15607,7 +15599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quality
+  m_text: Graficos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -16797,7 +16789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New game
+  m_text: Nueva Partida
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -16971,7 +16963,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Screen
+  m_text: Pantalla
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -17624,7 +17616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Continuar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -20238,7 +20230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yes
+  m_text: Si
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -21150,7 +21142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quality
+  m_text: Graficos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -21537,7 +21529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Are you sure you want to leave?
+  m_text: Estas seguro que quieres salir?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
