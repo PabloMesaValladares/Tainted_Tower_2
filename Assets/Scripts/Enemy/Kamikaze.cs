@@ -16,6 +16,8 @@ public class Kamikaze : MonoBehaviour
     private ParticleSystem _particles;
     [SerializeField]
     private StatController statController;
+    [SerializeField]
+    private Enemy enemyController;
 
     [SerializeField]
     private float vel, distanceBoom, maxDistanceBoom, cooldown, maxCooldown;
@@ -42,12 +44,11 @@ public class Kamikaze : MonoBehaviour
             cooldown -= Time.deltaTime;
             distanceBoom = Vector3.Distance(oldPlayerPosition, gameObject.transform.position);
             transform.LookAt(new Vector3(oldPlayerPosition.x, transform.position.y, oldPlayerPosition.z));
-            _animator.SetBool("Idle", false);
-            _animator.SetBool("Attack", true);
             exclamation.SetActive(true);
 
             if (cooldown <= 0)
             {
+                _animator.SetInteger("State", 2);
                 objectiveConfirmed = true;
                 _movement.MoveLerp(oldPlayerPosition, vel);
                 cooldown = 0;
@@ -86,8 +87,7 @@ public class Kamikaze : MonoBehaviour
 
     public void expire()
     {
-        _animator.SetBool("Attack", false);
-        _animator.SetBool("Die", true);
+        _animator.SetInteger("State", 0);
         boom = PoolingManager.Instance.GetPooledObject("Boom");
         boom.transform.position = gameObject.transform.position;
         boom.SetActive(true);
@@ -97,13 +97,14 @@ public class Kamikaze : MonoBehaviour
 
     public void Reseto()
     {
+        _animator.SetInteger("State", 0);
         cooldown = maxCooldown;
         oldPlayerPosition = new Vector3(0, 0, 0);
         inRange = false;
         enemy.SetActive(true);
         _idle.IdleModeChange();
         statController.health = savedHealth;
-        _animator.SetBool("Die", false);
-        _animator.SetBool("Idle", true);
+        enemyController.maxHealth = savedHealth;
+        enemyController.health = savedHealth;
     }
 }

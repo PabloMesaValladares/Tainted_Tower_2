@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float attackRange = 1f;
     [SerializeField] float aggroRange = 4f;
 
-    public UnityEvent DieEvent;
+    public UnityEvent DieEvent, HitEvent;
 
     GameObject player;
     public Animator animator;
@@ -57,6 +57,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
+        HitEvent.Invoke();
+        Debug.Log(damageAmount);
         //animator.SetTrigger("damage");
         //CameraShake.Instance.ShakeCamera(2f, 0.2f);
         //life.Life = health;

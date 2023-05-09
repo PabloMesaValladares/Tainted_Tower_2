@@ -11,6 +11,8 @@ public class ChargeAttackMode : MonoBehaviour
     [SerializeField]
     private StatController statController;
     [SerializeField]
+    private Enemy enemyController;
+    [SerializeField]
     private ParticleSystem _particles;
 
     [SerializeField]
@@ -136,6 +138,8 @@ public class ChargeAttackMode : MonoBehaviour
         enemy.SetActive(true);
         _idle.IdleModeChange();
         statController.health = savedHealth;
+        enemyController.maxHealth = savedHealth;
+        enemyController.health = savedHealth;
     }
 
 

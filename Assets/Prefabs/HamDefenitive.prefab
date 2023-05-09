@@ -447,6 +447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5403501175004935304}
   - component: {fileID: 5403501175004935307}
+  - component: {fileID: 7498043769211137399}
   m_Layer: 0
   m_Name: Hamdog
   m_TagString: Untagged
@@ -498,6 +499,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7498043769211137399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5403501175004935305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53bd82be574daad4b8952c86d4d1c69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathStart:
+    m_PersistentCalls:
+      m_Calls: []
+  deathFinal:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5403501176254477257}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  fireBallActivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5403501175005891429
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +954,7 @@ MonoBehaviour:
   _movement: {fileID: 5403501175211100296}
   _idle: {fileID: 5403501175211100299}
   statController: {fileID: 5403501175211100295}
+  enemyController: {fileID: 5403501175211100294}
   _animator: {fileID: 5403501175004935307}
   _rigid: {fileID: 5403501175211100297}
   player: {fileID: 0}
@@ -928,6 +963,7 @@ MonoBehaviour:
   enemy: {fileID: 5403501176254477257}
   savedHealth: 300
   vel: 8
+  savedvel: 8
   timeremaining: 0
   distAttack: 0
   maxdistAttack: 40
@@ -936,8 +972,10 @@ MonoBehaviour:
   minFollowDist: 8
   bulletVel: 2.5
   timeBetweenAttacks: 2
+  dieFloat: 2
   inRange: 0
   returning: 0
+  nioMode: 0
   oldPlayerPosition: {x: 1, y: 1, z: 1}
 --- !u!114 &5403501175211100294
 MonoBehaviour:
@@ -976,6 +1014,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  HitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5403501175211100302}
+        m_TargetAssemblyTypeName: SniperAttackMovement, Assembly-CSharp
+        m_MethodName: Hitted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   animator: {fileID: 0}
 --- !u!114 &5403501175211100295
 MonoBehaviour:
@@ -997,7 +1050,7 @@ MonoBehaviour:
   strength: 0
   inteligence: 0
   stamina: 0
-  defense: 0
+  defense: 10
   damage: 0
   damageDone: 0
 --- !u!1 &5403501175242291780
@@ -1498,7 +1551,7 @@ Transform:
   - {fileID: 5403501175247735184}
   - {fileID: 5403501175203853788}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5403501176293869262
 GameObject:
