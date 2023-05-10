@@ -11,6 +11,8 @@ public class SniperAttackMovement : MonoBehaviour
     [SerializeField]
     private StatController statController;
     [SerializeField]
+    private Enemy enemyController;
+    [SerializeField]
     private Animator _animator;
 
     [SerializeField]
@@ -21,9 +23,9 @@ public class SniperAttackMovement : MonoBehaviour
     [SerializeField]
     private int savedHealth;
     [SerializeField]
-    private float vel, timeremaining, distAttack, maxdistAttack, followDist, maxFollowDist, minFollowDist, bulletVel, timeBetweenAttacks;
+    private float vel, savedvel,timeremaining, distAttack, maxdistAttack, followDist, maxFollowDist, minFollowDist, bulletVel, timeBetweenAttacks, dieFloat;
     [SerializeField]
-    private bool inRange, returning;
+    private bool inRange, returning, nioMode;
     [SerializeField]
     private Vector3 oldPlayerPosition;
 
@@ -53,6 +55,8 @@ public class SniperAttackMovement : MonoBehaviour
         {
             if (distAttack != 0)
             {
+                if (nioMode) _animator.SetInteger("State", 4);
+                else if(nioMode == false) _animator.SetInteger("State", 0);
                 _movement.MoveVector(new Vector3(originalPoint.transform.position.x, originalPoint.transform.position.y, originalPoint.transform.position.z), vel * 3);
             }
             else if (distAttack == 0)
@@ -69,22 +73,19 @@ public class SniperAttackMovement : MonoBehaviour
 
             if (followDist >= maxFollowDist && followDist >= minFollowDist)
             {
-                _animator.SetBool("Idle", false);
-                _animator.SetBool("Walk", true);
+                if(nioMode) _animator.SetInteger("State", 4);
                 _movement.MoveVector(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), vel);
             }
 
             else if(followDist <= minFollowDist)
             {
-                _animator.SetBool("Idle", false);
-                _animator.SetBool("Walk", true);
+                if(nioMode)_animator.SetInteger("State", 4);
                 _movement.MoveVector(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), -vel / 4);
             }
 
             if (timeremaining <= 0 && followDist <= maxFollowDist && followDist >= minFollowDist)
             {
-                _animator.SetBool("Idle", false);
-                _animator.SetBool("Attack", true);
+                _animator.SetInteger("State", 2);
                 bullet = PoolingManager.Instance.GetPooledObject("Rocky");
                 bullet.transform.LookAt(oldPlayerPosition);
                 bullet.transform.position = gameObject.transform.position;
@@ -92,6 +93,10 @@ public class SniperAttackMovement : MonoBehaviour
                 oldPlayerPosition = new Vector3(player.transform.position.x - bullet.transform.position.x, player.transform.position.y + 0.5f - bullet.transform.position.y, player.transform.position.z - bullet.transform.position.z);
                 timeremaining = timeBetweenAttacks;
                 //_animator.SetBool("Attack", false);
+            }
+            else
+            {
+                _animator.SetInteger("State", 0);
             }
         }
 
@@ -123,9 +128,15 @@ public class SniperAttackMovement : MonoBehaviour
 
     public void Expire()
     {
-        _animator.SetBool("Attack", false);
-        _animator.SetBool("Die", true);
+        _animator.SetInteger("State", 3);
+        vel = 0;
+        inRange = false;      
+    }
+
+    public void Deactivate()
+    {
         timeremaining = timeBetweenAttacks;
+        _animator.SetInteger("State", 0);
         enemy.SetActive(false);
     }
 
@@ -133,15 +144,42 @@ public class SniperAttackMovement : MonoBehaviour
     {
         Reseto();
     }
+
+    public void Hitted()
+    {
+        _animator.SetInteger("State", 2);
+    }
+
     public void Reseto()
     {
+        _animator.SetInteger("State", 0);
         timeremaining = timeBetweenAttacks;
         oldPlayerPosition = new Vector3(0, 0, 0);
+        vel = savedvel;
         inRange = false;
         enemy.SetActive(true);
         _idle.IdleModeChange();
         statController.health = savedHealth;
-        _animator.SetBool("Die", false);
-        _animator.SetBool("Idle", true);
+        enemyController.maxHealth = savedHealth;
+        enemyController.health = savedHealth;
     }
+
+    public static IEnumerator DieMove(GameObject enemy, float duration)
+    {
+        Debug.Log("Entre");
+        float currentTime = 0;
+        while (currentTime < duration)
+        {
+            Debug.Log("Medio");
+            currentTime += Time.deltaTime;
+            if (currentTime >= duration)
+            {
+                Debug.Log("Abajo");
+                enemy.SetActive(false);
+                yield return null;
+            }
+        }
+        yield break;
+    }
+
 }
