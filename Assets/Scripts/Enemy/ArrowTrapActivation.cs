@@ -17,8 +17,10 @@ public class ArrowTrapActivation : MonoBehaviour
             arr = PoolingManager.Instance.GetPooledObject("arrow");
             arr.transform.position = arrow.transform.position;
             arr.transform.rotation = arrow.transform.rotation;
-            arr.GetComponent<ArrowMovement>().Move();
             arr.SetActive(true);
+            arr.GetComponent<SlashMovement>().MoveDirection(arrow.transform.forward.normalized);
+            arr.transform.rotation = arrow.transform.rotation;
+            //arr.GetComponent<ArrowMovement>().Move();
         }
     }
 }

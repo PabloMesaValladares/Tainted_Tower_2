@@ -18,10 +18,7 @@ public class ArrowMovement : MonoBehaviour
 
     private void Update()
     {
-        if(move)
-        {
-            rb.AddForce(transform.forward * speed, ForceMode.Force);
-        }
+        rb.AddForce(transform.forward * speed, ForceMode.Force);
     }
     public void Move()
     {

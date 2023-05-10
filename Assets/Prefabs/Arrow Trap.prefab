@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  move: 0
 --- !u!1001 &3648124571549545091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -840,6 +841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  move: 0
 --- !u!114 &3648124571838832487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 10fa0445f55803d4bb105c480c54f530, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 10fa0445f55803d4bb105c480c54f530, type: 3}
       propertyPath: m_RootOrder
@@ -1096,6 +1098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  move: 0
 --- !u!114 &3648124572475421430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,6 +1231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  move: 0
 --- !u!114 &3648124572547044782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  move: 0
 --- !u!114 &3648124572632012775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,6 +1787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  move: 0
 --- !u!4 &3648124572960396606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1fac0970bac25574ebb8fa1e625d4a4b,
@@ -2071,6 +2077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  move: 0
 --- !u!114 &3648124573163859467
 MonoBehaviour:
   m_ObjectHideFlags: 0
