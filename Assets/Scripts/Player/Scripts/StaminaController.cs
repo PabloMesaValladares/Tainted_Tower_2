@@ -43,7 +43,7 @@ public class StaminaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!GameManager.instance.firstSet)
+        if (GameManager.instance.reset)
             stamina = MaxStamina;
         StaminaSlider.gameObject.SetActive(false);
         Fill.color = FullFillColor;

@@ -33,10 +33,20 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        currentBGM = GameManager.instance.currentBGM;
+        if (GameManager.instance != null)
+            currentBGM = GameManager.instance.currentBGM;
+
         PlaySound(currentBGM, true);
     }
-
+    private void OnLevelWasLoaded(int level)
+    {
+        if (SceneController.instance.songname != null)
+        {
+            currentBGM = SceneController.instance.songname;
+            SceneController.instance.songname = null;
+            PlaySound(currentBGM, true);
+        }
+    }
     // Start is called before the first frame update
     private void Awake()
     {

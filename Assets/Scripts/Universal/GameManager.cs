@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Skills")]
     public bool grapple, pilar, drugs, fireball;
-    public bool firstSet = true;
+    public bool reset = false;
     //Meter scripts skills para guardar cooldown
 
     [Header("CheckPoint")]
@@ -82,19 +82,36 @@ public class GameManager : MonoBehaviour
 
             if (SceneManager.GetActiveScene().name == "Game")
                 player.GetComponent<RespawnPoint>().RespawnPosition = Spawns;
-            
+
             CheckPoint();
+
             DontDestroyOnLoad(this.gameObject);
         }
         else
             Destroy(this);
+    }
+    private void OnLevelWasLoaded(int level)
+    {
+        if (SceneManager.GetActiveScene().name == "Game" && reset)
+        {
+            SetScripts();
+            maxHP = player.GetComponent<StatController>().health;
+            currentHP = player.GetComponent<StatController>().health;
+            stamina = staminaStat;
+            player.GetComponent<StaminaController>().SetStamina(staminaStat);
+
+            if (SceneManager.GetActiveScene().name == "Game")
+                player.GetComponent<RespawnPoint>().RespawnPosition = Spawns;
+
+            CheckPoint();
+            reset = false;
+        }
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        firstSet = false;
         //    player = GameObject.FindGameObjectWithTag("Player");
         //    player.GetComponent<HealthBehaviour>().currentHP = currentHP; //Seteamos la vida actual
         //    player.GetComponent<LifeManager>().lifeSlider.value = currentHP;
@@ -126,10 +143,10 @@ public class GameManager : MonoBehaviour
         defense = player.GetComponent<StatController>().defense;
         stamina = player.GetComponent<StaminaController>().ReturnStamina();
 
-        if (SceneManager.GetActiveScene().name == "Game")
+        if (SceneManager.GetActiveScene().name == "Game" && !reset)
             Spawns = player.GetComponent<RespawnPoint>().RespawnPosition;
         inventory = GameObject.FindGameObjectWithTag("Inventory");
-        currentBGM = SoundManager.instance.currentBGM;
+        //currentBGM = SoundManager.instance.currentBGM;
 
         for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
         {
@@ -162,11 +179,11 @@ public class GameManager : MonoBehaviour
         CheckPointDefense = player.GetComponent<StatController>().defense;
         CheckPointStamina = player.GetComponent<StaminaController>().ReturnStamina();
 
-        if (SceneManager.GetActiveScene().name == "Game")
+        if (SceneManager.GetActiveScene().name == "Game" && !reset)
             CheckPointSpawns = player.GetComponent<RespawnPoint>().RespawnPosition;
 
         inventory = GameObject.FindGameObjectWithTag("Inventory");
-        CcurrentBGM = SoundManager.instance.currentBGM;
+        //CcurrentBGM = SoundManager.instance.currentBGM;
 
         for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
         {

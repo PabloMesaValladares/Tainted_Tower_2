@@ -441,9 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  hitVFX: {fileID: 0}
   lookAtPlayerSpeed: 0
-  head: {fileID: 0}
   referencePoint: {fileID: 0}
   deSpawnDistance: 101
   attackCD: 0
@@ -597,7 +595,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c0e5a4a399c9b94992a2ed1a90a11f5, type: 2}
+  - {fileID: 2100000, guid: f6fa29c316d9bd64bb09b1792e6411a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -863,8 +861,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c0e5a4a399c9b94992a2ed1a90a11f5, type: 2}
-  - {fileID: 2100000, guid: a152c0bde039c3d4789a6617c8247c5b, type: 2}
+  - {fileID: 2100000, guid: 4a1e3969b3cf90a4a911b1744a06a262, type: 2}
+  - {fileID: 2100000, guid: 32a8c6eb47dd90e448be3e5dce4eccdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1619,7 +1617,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e130b8d7a70ddf4468a8eb250314c8bb, type: 2}
+  - {fileID: 2100000, guid: 8976d99282378044080dab418e2239a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
