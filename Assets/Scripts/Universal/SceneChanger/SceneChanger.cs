@@ -13,6 +13,14 @@ public class SceneChanger : MonoBehaviour
         SceneController.instance.StartLevel(lvlname);
     }
 
+    public void ResetGame()
+    {
+        if(GameManager.instance != null)
+        {
+            GameManager.instance.reset = true;
+        }
+    }
+
     public void ExitGame()
     {
         SceneController.instance.Exit();

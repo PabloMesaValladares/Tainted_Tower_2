@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class UnlockAbility : MonoBehaviour
 {
     private PlayerController playerController;
-    private GameManager playerManager;
 
     [SerializeField]
     private BoxCollider colliderBox;
@@ -24,11 +24,12 @@ public class UnlockAbility : MonoBehaviour
     [SerializeField]
     private float timeFade;
 
+    public UnityEvent activateHUD;
+
     // Start is called before the first frame update
     void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        playerManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         interactE = _config.actions["Interact"];
         activated = false;
     }
@@ -41,7 +42,8 @@ public class UnlockAbility : MonoBehaviour
             playerController.GetComponent<DrugsMode>().enabled = true;
             orb.SetActive(false);
             colliderBox.enabled = false;
-            playerManager.drugs = true;
+            GameManager.instance.drugs = true;
+            activateHUD.Invoke();
             activated = true;
         }
     }
