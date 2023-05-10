@@ -33,7 +33,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        currentBGM = GameManager.instance.currentBGM;
+        if (GameManager.instance != null)
+            currentBGM = GameManager.instance.currentBGM;
         PlaySound(currentBGM, true);
     }
 
