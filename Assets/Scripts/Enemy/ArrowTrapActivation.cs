@@ -13,8 +13,12 @@ public class ArrowTrapActivation : MonoBehaviour
         foreach(GameObject arrow in arrows)
         {
             directionToGo = other.transform.position;
-            arrow.SetActive(true);
-            arrow.GetComponent<ArrowMovement>().Move();
+            GameObject arr;
+            arr = PoolingManager.Instance.GetPooledObject("arrow");
+            arr.transform.position = arrow.transform.position;
+            arr.transform.rotation = arrow.transform.rotation;
+            arr.GetComponent<ArrowMovement>().Move();
+            arr.SetActive(true);
         }
     }
 }

@@ -6,6 +6,7 @@ public class ArrowMovement : MonoBehaviour
 {
     public float speed;
     Rigidbody rb;
+    [SerializeField]
     bool move;
     
     private void Start()
