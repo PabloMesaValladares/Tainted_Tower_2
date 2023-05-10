@@ -33,6 +33,7 @@ public class Kamikaze : MonoBehaviour
     {
         cooldown = maxCooldown;
         player = GameObject.FindGameObjectWithTag("Player");
+        enemyController = GetComponent<Enemy>();
     }
 
     // Update is called once per frame
