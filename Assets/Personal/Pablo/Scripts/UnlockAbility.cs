@@ -38,7 +38,6 @@ public class UnlockAbility : MonoBehaviour
     {
         if (interactE.triggered && inside && activated == false)
         {
-            //Llamar al GameManager
             OpenTheDoors();
             playerController.GetComponent<DrugsMode>().enabled = true;
             orb.SetActive(false);

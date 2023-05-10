@@ -14,7 +14,6 @@ public class LifeTest : MonoBehaviour
     private void Start()
     {
         maxLife = GetComponent<StatController>().health;
-        //Life = maxLife;
         enemyScript = GetComponent<Enemy>();
     }
 
@@ -22,7 +21,6 @@ public class LifeTest : MonoBehaviour
     {
         if (test)
         {
-            Debug.Log("El porcentaje de vida es " + LifePerc * 100 / maxLife);
             enemyScript.health = LifePerc * maxLife / 100;
         }
     }

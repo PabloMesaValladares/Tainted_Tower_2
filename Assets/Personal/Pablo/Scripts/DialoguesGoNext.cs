@@ -24,8 +24,6 @@ public class DialoguesGoNext : MonoBehaviour
     InputAction e_x;
     [SerializeField]
     UnityEngine.InputSystem.PlayerInput _config;
-
-    // Start is called before the first frame update
     void Start()
     {
         e_x = _config.actions["Interact"];

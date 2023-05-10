@@ -21,7 +21,6 @@ public class MobStats : MonoBehaviour
         health = maxHealth;
     }
 
-    // Update is called once per frame
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;

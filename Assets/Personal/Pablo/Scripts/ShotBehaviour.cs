@@ -7,17 +7,6 @@ public class ShotBehaviour : MonoBehaviour
     [SerializeField] private List<GameObject> _bullets;
     [SerializeField] private List<bool> _bulletsActivated;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public GameObject EnableBullet()
     {
         for(int i = 0; i < _bullets.Count; i++)

@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.Users;
 public class InputDetecter : MonoBehaviour
 {
     private static InputDetecter _instance;
-    public static InputDetecter Instance         // => _instance;
+    public static InputDetecter Instance      
     {
         get
         {
@@ -23,10 +23,7 @@ public class InputDetecter : MonoBehaviour
     public PlayerInput input;
     void Awake()
     {
-        //buttonImage = GetComponent<Image>();
-        //updateButtonImage(input.currentControlScheme);
         input = GetComponent<PlayerInput>();
-        Debug.Log(input.currentControlScheme);
     }
 
     void OnEnable()
@@ -49,7 +46,6 @@ public class InputDetecter : MonoBehaviour
 
     void updateButtonImage(string schemeName)
     {
-        // assuming you have only 2 schemes: keyboard and gamepad
         if (schemeName.Equals("Gamepad"))
         {
             gamepad = true;

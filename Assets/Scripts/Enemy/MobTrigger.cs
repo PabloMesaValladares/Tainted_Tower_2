@@ -16,12 +16,10 @@ public class MobTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         ActivateMob.Invoke();
-        Debug.Log("Ha Entrado");
     }
 
     private void OnTriggerExit(Collider collision)
     {
         DesactivateMob.Invoke();
-        Debug.Log("Ha Salido");
     }
 }

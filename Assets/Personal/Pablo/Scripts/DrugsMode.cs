@@ -42,7 +42,6 @@ public class DrugsMode : MonoBehaviour
   
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -54,7 +53,6 @@ public class DrugsMode : MonoBehaviour
             ready = false;
 
             Invoke(nameof(NormalMode), maxCooldown / 2);
-            Debug.Log("Activado");
 
         }
         else
@@ -63,10 +61,6 @@ public class DrugsMode : MonoBehaviour
             skillCooldown += Time.deltaTime;
 
             sliderBar.value = skillCooldown;
-            //if (cooldown <= maxCooldown / 2)
-            //{
-            //    NormalMode();
-            //}
 
             if (cooldown <= 0)
             {
