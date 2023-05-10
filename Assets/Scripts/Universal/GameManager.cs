@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Game")
             Spawns = player.GetComponent<RespawnPoint>().RespawnPosition;
         inventory = GameObject.FindGameObjectWithTag("Inventory");
-        currentBGM = SoundManager.instance.currentBGM;
+        //currentBGM = SoundManager.instance.currentBGM;
 
         for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
         {
@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
             CheckPointSpawns = player.GetComponent<RespawnPoint>().RespawnPosition;
 
         inventory = GameObject.FindGameObjectWithTag("Inventory");
-        CcurrentBGM = SoundManager.instance.currentBGM;
+        //CcurrentBGM = SoundManager.instance.currentBGM;
 
         for (int i = 0; i < inventory.GetComponent<InventoryManager>().getSlotLenght(); i++)
         {

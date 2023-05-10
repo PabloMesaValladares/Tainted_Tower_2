@@ -15,8 +15,6 @@ public class EnemyParticlesHit : MonoBehaviour
     {
         int events = enemyParticleAttack.GetCollisionEvents(other, colEvents);
 
-        Debug.Log("Hit");
-
         other.gameObject.GetComponent<HealthBehaviour>().Hurt(damage);
     }
 }

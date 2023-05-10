@@ -24,14 +24,13 @@ public class DialoguesBehaviour : MonoBehaviour
     [SerializeField]
     private float typingSpeed;
 
-    // Start is called before the first frame update
     public void GetText(int j)
     {
         actualString = dialoguesBox.GetSavedText(j);
         StartCoroutine(DisplayLetters());
     }
 
-    private IEnumerator DisplayLetters() //Corutina para ir poniendo las letras 1 a 1.
+    private IEnumerator DisplayLetters()
     {
         fieldText.text = actualString;
 
@@ -42,8 +41,6 @@ public class DialoguesBehaviour : MonoBehaviour
         while (counter <= totalCharacters)
         {
             fieldText.maxVisibleCharacters = counter;
-
-            //if (counter <= totalCharacters)
                 counter += 1;
             yield return new WaitForSeconds(typingSpeed);
         }

@@ -14,7 +14,6 @@ public class DialoguesBox : MonoBehaviour
     [SerializeField]
     private string wordsID, wordsIDCombinated, fieldText;
 
-    // Start is called before the first frame update
     void Awake()
     {
         GetTerms();

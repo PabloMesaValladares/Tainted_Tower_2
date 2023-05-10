@@ -21,7 +21,6 @@ public class Minigame1 : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         plateCheck.Invoke();
-        Debug.Log("Emblem Engageeeeeeeeeeeeeeeeeeeeeeeeeee");
         boxcollider.enabled = false;
     }
 

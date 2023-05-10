@@ -95,7 +95,6 @@ public class FallState : State
                 character.GetComponent<HealthBehaviour>().Hurt((int)damage - character.minimumFall);
                 character.startOfFall = character.transform.position.y;
             }
-            Debug.Log(damage);
 
             if (!character.dashController.keepMomentum)
                 stateMachine.ChangeState(character.standing);

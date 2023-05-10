@@ -29,18 +29,14 @@ public class SniperAttackMovement : MonoBehaviour
     [SerializeField]
     private Vector3 oldPlayerPosition;
 
-
-    // Start is called before the first frame update
     void Awake()
     {
         timeremaining = timeBetweenAttacks;
-        //inRange = false;
         _rigid.GetComponent<Rigidbody>();
         enemyController = GetComponent<Enemy>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
         DistanceOriginalPoint();
@@ -93,7 +89,6 @@ public class SniperAttackMovement : MonoBehaviour
                 bullet.SetActive(true);
                 oldPlayerPosition = new Vector3(player.transform.position.x - bullet.transform.position.x, player.transform.position.y + 0.5f - bullet.transform.position.y, player.transform.position.z - bullet.transform.position.z);
                 timeremaining = timeBetweenAttacks;
-                //_animator.SetBool("Attack", false);
             }
             else
             {
@@ -167,15 +162,12 @@ public class SniperAttackMovement : MonoBehaviour
 
     public static IEnumerator DieMove(GameObject enemy, float duration)
     {
-        Debug.Log("Entre");
         float currentTime = 0;
         while (currentTime < duration)
         {
-            Debug.Log("Medio");
             currentTime += Time.deltaTime;
             if (currentTime >= duration)
             {
-                Debug.Log("Abajo");
                 enemy.SetActive(false);
                 yield return null;
             }

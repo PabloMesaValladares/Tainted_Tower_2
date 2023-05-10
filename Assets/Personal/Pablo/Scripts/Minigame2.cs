@@ -12,7 +12,6 @@ public class Minigame2 : MonoBehaviour
     private float timeFade, timer, maxTimer;
 
     public UnityEvent plateEngage;
-    // Start is called before the first frame update
 
     public void UpWalls(GameObject w)
     {
