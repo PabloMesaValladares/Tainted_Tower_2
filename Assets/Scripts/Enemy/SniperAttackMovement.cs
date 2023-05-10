@@ -36,6 +36,7 @@ public class SniperAttackMovement : MonoBehaviour
         timeremaining = timeBetweenAttacks;
         //inRange = false;
         _rigid.GetComponent<Rigidbody>();
+        enemyController = GetComponent<Enemy>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
