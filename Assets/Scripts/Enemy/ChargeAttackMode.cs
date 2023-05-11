@@ -40,6 +40,7 @@ public class ChargeAttackMode : MonoBehaviour
         timeremaining = timeBetweenAttacks / 2;
         _rigid = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
+        enemyController = GetComponent<Enemy>();
     }
 
     // Update is called once per frame

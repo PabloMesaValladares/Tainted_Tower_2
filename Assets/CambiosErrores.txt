@@ -1,0 +1,14 @@
+Los errores que salian eran por falta de asignar objetos a scripts:
+sliders a scripts del Player.
+a dos prefabs de enemigos le faltaban asignar el Animator del modelado y el Enemy script dentro de otro.
+Al Inventario le faltaba asignar los botones de inventario rapido buenos, estaban asignados unos pero necesitaban
+sus hijos.
+
+Las particulas no tienen ningún error, se veian mal porque no tenian el material. Las particulas estan default 
+ya que pillamos las de internet, aplicad las vuestras en las que estan actualmente para que funcionen bien.
+
+La música de Thomas el tren puede parecer una broma pero no lo es, es la musica que hemos puesto de prueba lleva ahi
+desde el principio, por eso esta en una carpeta llamada Temp, es temporal, para probar que el audio manager funciona y 
+que el fade in y out funciona, la he dejado para que se vea como se asigna, podeis asignarlo en el boton que lleva
+a una escena, mirad el "New game" dentro del main menu, o en medio del juego, dentro de "Music Stuff" 
+donde ya teneis los bordes para cada parte del escenario.

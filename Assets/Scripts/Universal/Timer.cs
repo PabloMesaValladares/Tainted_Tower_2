@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private float time;
     private float stopw;
+    [SerializeField]
     private bool started;
 
     public UnityEvent timerHasStopped;
