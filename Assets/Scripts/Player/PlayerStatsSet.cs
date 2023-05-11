@@ -11,7 +11,7 @@ public class PlayerStatsSet : MonoBehaviour
     {
         if (!GameManager.instance.Checkpoint)
         {
-            if (SceneManager.GetActiveScene().name == "Game" && !GameManager.instance.reset)
+            if (SceneManager.GetActiveScene().name == "Game")
                 transform.position = GameManager.instance.Spawns;
         }
         else

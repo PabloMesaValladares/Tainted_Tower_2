@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using I2.Loc;
 
 public class GameManager : MonoBehaviour
 {
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
     public List<ItemSave> CheckPointInventoryItems;
     public bool Cgrapple, Cpilar, Cdrugs, Cfireball;
     public string CcurrentBGM;
+
 
     private void Awake()
     {

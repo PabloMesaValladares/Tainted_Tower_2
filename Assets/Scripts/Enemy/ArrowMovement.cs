@@ -6,6 +6,7 @@ public class ArrowMovement : MonoBehaviour
 {
     public float speed;
     Rigidbody rb;
+    [SerializeField]
     bool move;
     
     private void Start()
@@ -17,10 +18,7 @@ public class ArrowMovement : MonoBehaviour
 
     private void Update()
     {
-        if(move)
-        {
-            rb.AddForce(transform.forward * speed, ForceMode.Force);
-        }
+        rb.AddForce(transform.forward * speed, ForceMode.Force);
     }
     public void Move()
     {

@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class DungeonSpawnSet : MonoBehaviour
 {
+    public GameObject position;
     public void setSpawnPos(GameObject other)
     {
-        Vector3 posToResp = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
-        other.GetComponent<RespawnPoint>().SetRespawn(posToResp);
+        other.GetComponent<RespawnPoint>().SetRespawn(position.transform.position);
         GameManager.instance.SetScripts();
-        if (SceneManager.GetActiveScene().name == "Game")
-            GameManager.instance.Spawns = transform.position;
+        GameManager.instance.Spawns = position.transform.position;
 
         //GameManager.instance.Checkpoint = true;
     }

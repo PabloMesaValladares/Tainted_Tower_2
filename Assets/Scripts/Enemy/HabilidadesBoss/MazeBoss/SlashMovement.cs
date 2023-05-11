@@ -28,10 +28,10 @@ public class SlashMovement : MonoBehaviour
             rb.AddForce(transform.forward * speed, ForceMode.Force);
             counter += Time.deltaTime;
 
-            if (counter > 10)
-            {
-                ResetMovement();
-            }
+            //if (counter > 10)
+            //{
+            //    ResetMovement();
+            //}
         }
         
         
@@ -71,6 +71,6 @@ public class SlashMovement : MonoBehaviour
             player.GetComponentInParent<HealthBehaviour>().Hurt(damage);
         //Debug.Log("Slashed");
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

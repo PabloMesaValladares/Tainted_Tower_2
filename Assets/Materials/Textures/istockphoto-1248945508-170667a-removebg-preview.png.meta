@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -128,7 +128,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: istockphoto-1248945508-170667a-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 48
+        width: 65
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36d9bc5bb03d3645ac85b0d6a219c3d
+      internalID: -1025667594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: istockphoto-1248945508-170667a-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 48
+        width: 65
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19752bb186508b349930ad2440b2e4b4
+      internalID: -1454126068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: istockphoto-1248945508-170667a-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 48
+        width: 65
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf67d43a3a7d1c34bbeeebcde937cd2f
+      internalID: -1577916634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: istockphoto-1248945508-170667a-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 48
+        width: 65
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d0a89ef29902f4da79e4aff4197957
+      internalID: 1226220145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: istockphoto-1248945508-170667a-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 47
+        width: 65
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ac93b6baae5604aa1eaeacafd74903
+      internalID: 2113389218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: istockphoto-1248945508-170667a-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 47
+        width: 65
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b83066015434e84f90e4d18e1a07cd2
+      internalID: -1265099652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: istockphoto-1248945508-170667a-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 47
+        width: 65
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2b70ce9c010d64f9bdf47f1eb57d81
+      internalID: 1258193528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -139,7 +286,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      istockphoto-1248945508-170667a-removebg-preview_0: -42624724
+      istockphoto-1248945508-170667a-removebg-preview_3: 1452180589
+      istockphoto-1248945508-170667a-removebg-preview_16: -1577916634
+      istockphoto-1248945508-170667a-removebg-preview_15: -1454126068
+      istockphoto-1248945508-170667a-removebg-preview_17: -1638201908
+      istockphoto-1248945508-170667a-removebg-preview_12: 293192446
+      istockphoto-1248945508-170667a-removebg-preview_11: -38550793
+      istockphoto-1248945508-170667a-removebg-preview_1: 18019046
+      istockphoto-1248945508-170667a-removebg-preview_20: 1226220145
+      istockphoto-1248945508-170667a-removebg-preview_21: 2113389218
+      istockphoto-1248945508-170667a-removebg-preview_23: 920904060
+      istockphoto-1248945508-170667a-removebg-preview_19: 1856897830
+      istockphoto-1248945508-170667a-removebg-preview_9: 209534938
+      istockphoto-1248945508-170667a-removebg-preview_24: -1265099652
+      istockphoto-1248945508-170667a-removebg-preview_4: 1231473258
+      istockphoto-1248945508-170667a-removebg-preview_8: 728815983
+      istockphoto-1248945508-170667a-removebg-preview_25: 1258193528
+      istockphoto-1248945508-170667a-removebg-preview_26: 1449935227
+      istockphoto-1248945508-170667a-removebg-preview_2: -1025667594
+      istockphoto-1248945508-170667a-removebg-preview_10: 320108435
+      istockphoto-1248945508-170667a-removebg-preview_18: 2134639685
+      istockphoto-1248945508-170667a-removebg-preview_14: 1060252875
+      istockphoto-1248945508-170667a-removebg-preview_7: 2099152234
+      istockphoto-1248945508-170667a-removebg-preview_5: 377556575
+      istockphoto-1248945508-170667a-removebg-preview_22: 523573767
+      istockphoto-1248945508-170667a-removebg-preview_6: 137473736
+      istockphoto-1248945508-170667a-removebg-preview_13: 194782072
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
