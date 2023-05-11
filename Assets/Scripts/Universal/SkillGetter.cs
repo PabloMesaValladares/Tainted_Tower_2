@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class SkillGetter : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SkillGetter : MonoBehaviour
     public float duration;
     public UnityEvent Activate;
     Animator anim;
+    public PlayerInput inputs;
+    InputAction activate;
 
     private void Start()
     {
@@ -18,10 +21,23 @@ public class SkillGetter : MonoBehaviour
         {
             Activate.Invoke();
         }
+        activate = inputs.actions["Interact"];
     }
     public void GetSkillGrapple()
     {
         GameManager.instance.grapple = true;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.transform.parent.TryGetComponent<PlayerController>(out PlayerController controller))
+        {
+            if (activate.triggered)
+            {
+                Activate.Invoke();
+                GetComponent<SphereCollider>().enabled = false;
+            }
+        }
     }
 
     public void activateAnimation()
