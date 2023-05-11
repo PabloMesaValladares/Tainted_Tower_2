@@ -15931,8 +15931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTypes:
-  - type: Thomas
-    audioSelected: {fileID: 8300000, guid: 034765f9a45fe85489071b86437360a3, type: 3}
+  - type: Bosque
+    audioSelected: {fileID: 8300000, guid: d0f53c9337e5ffe44afaae39e0bd51fe, type: 3}
     mixer: {fileID: 6147185970330392971, guid: 6b4815a6c13369044af144f3c16bae35, type: 2}
     volume: 0.311
   - type: Lava
@@ -19125,7 +19125,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Game
+          m_StringArgument: OpenWorld
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 212427754}
@@ -19137,7 +19137,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Thomas
+          m_StringArgument: Bosque
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 212427754}
