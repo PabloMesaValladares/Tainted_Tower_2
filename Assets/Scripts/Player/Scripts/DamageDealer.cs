@@ -8,6 +8,7 @@ public class DamageDealer : MonoBehaviour
     List<GameObject> hasDealtDamage;
 
     public StatController stats;
+    public ParticleSystem hitEffect;
 
     public LayerMask layersToReact;
     [SerializeField] float weaponLength;
@@ -29,12 +30,16 @@ public class DamageDealer : MonoBehaviour
             {
                 if (hit.transform.TryGetComponent(out Enemy enemy) && !hasDealtDamage.Contains(hit.transform.gameObject))
                 {
+                    hitEffect.gameObject.transform.position = hit.collider.transform.position;
+                    hitEffect.Play();
                     Debug.Log(enemy.name);
                     enemy.TakeDamage(stats.CalculateDmg(stats.mainHand.damage, enemy.gameObject.GetComponent<StatController>().defense));
                     hasDealtDamage.Add(hit.transform.gameObject);
                 }
                 else if (hit.transform.TryGetComponent(out HealthBehaviour health) && !hasDealtDamage.Contains(hit.transform.gameObject))
                 {
+                    hitEffect.gameObject.transform.position = hit.collider.transform.position;
+                    hitEffect.Play();
                     Debug.Log(health.name);
                     health.Hurt(stats.CalculateDmg(stats.mainHand.damage, health.gameObject.GetComponent<StatController>().defense));
                     hasDealtDamage.Add(hit.transform.gameObject);

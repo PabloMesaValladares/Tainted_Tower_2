@@ -9,7 +9,7 @@ public class LavaPosition : MonoBehaviour
     GameObject player;
     [SerializeField]
     bool move;
-    ParticleSystem effect; 
+    public ParticleSystem[] effect; 
 
     public int followDistance;
     public int followDrugs;
@@ -61,6 +61,10 @@ public class LavaPosition : MonoBehaviour
     public void Move(GameObject p)
     {
         player = p;
+        foreach(ParticleSystem eff in effect)
+        {
+            eff.Play();
+        }
         
     }
 
