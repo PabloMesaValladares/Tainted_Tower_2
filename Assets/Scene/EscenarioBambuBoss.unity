@@ -17825,6 +17825,269 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1625699501}
+  - {fileID: 1032758882}
+  - {fileID: 545697538}
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &145143430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145143428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70fca8ac6044df4fb5df1af7cd89b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slots:
+  - {fileID: 995866935}
+  - {fileID: 824818411}
+  - {fileID: 308878625}
+  - {fileID: 487185184}
+  - {fileID: 680811908}
+  - {fileID: 1987090095}
+  - {fileID: 281239089}
+  - {fileID: 1857517508}
+  - {fileID: 1153509760}
+  - {fileID: 678025113}
+  - {fileID: 205411997}
+  - {fileID: 873892376}
+  - {fileID: 1793209766}
+  - {fileID: 395455129}
+  - {fileID: 635337944}
+  - {fileID: 342444154}
+  - {fileID: 47179853}
+  - {fileID: 371234358}
+  - {fileID: 1349591214}
+  - {fileID: 1477151782}
+  - {fileID: 1879336646}
+  - {fileID: 814666541}
+  - {fileID: 1834792412}
+  - {fileID: 720405848}
+  SlotsItems: []
+  QuickSlots:
+  - {fileID: 1894083548}
+  - {fileID: 579755126}
+  - {fileID: 290543882}
+  - {fileID: 1879250735}
+  itemImage:
+  - {fileID: 1026953104, guid: b224894a353a63441acbd12e1bb4ab31, type: 3}
+  - {fileID: -1883252660, guid: b224894a353a63441acbd12e1bb4ab31, type: 3}
+  - {fileID: 464318276, guid: b224894a353a63441acbd12e1bb4ab31, type: 3}
+  - {fileID: 798697781, guid: b224894a353a63441acbd12e1bb4ab31, type: 3}
+  itemUses:
+  - {fileID: 11400000, guid: 732a41ff47207b548aaee971841e1ec0, type: 2}
+  - {fileID: 11400000, guid: 6bf314968414edd4eac2c6830d96b4de, type: 2}
+  - {fileID: 11400000, guid: 4fcd1ed1423ca0d43a8d2e609151fac2, type: 2}
+  - {fileID: 11400000, guid: 38c9c649de797474da523d3004dc8fda, type: 2}
+  itemName:
+  - Potion
+  - Stamina
+  - LifeMeat
+  - StaminaMeat
+  desc:
+  - Pocion que recupera gran parte de la vida
+  - Pocion que recupera gran parte de la estamina
+  - Carne que recupera poca parte de la vida
+  - Carne que recupera poca parte de la estamina
+  Menu: {fileID: 1627241781}
+  noticeText: {fileID: 0}
+  itemText: {fileID: 0}
+  itemSelected: 0
+  itemSelectedString: 
+  playerControls: {fileID: 1407358822}
+  selectedItem: {fileID: 0}
+  AddQuickInventory: {fileID: 687123751}
+--- !u!114 &145143431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145143428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed00fda73b0ef59458b3c33cdfe4221b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &145143432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145143428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e903ac87e9ad01c4ea120822c2b96fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentItem: {fileID: 0}
+  customCursor: {fileID: 0}
+  craftingSlots:
+  - {fileID: 0}
+  recipes:
+  - pitoagua
+  recipeResults:
+  - {fileID: 0}
+  changeColor:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &145143433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145143428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1cb4ab1b468cd4eab288b8f28fe9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedColor: {r: 0.5381776, g: 0.8867924, b: 0.45733944, a: 1}
+--- !u!114 &145143434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145143428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9a06039083c654bb5b9508dccbc418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Menu: {fileID: 1627241781}
+  BagMenu: {fileID: 1762674273}
+  AddMenu: {fileID: 687123751}
+  DeathMenu: {fileID: 545697537}
+  SelectedButton: {fileID: 0}
+  menIndex: 0
+  index: 0
+  MenuButtons:
+  - {fileID: 1306171816}
+  - {fileID: 1422117254}
+  - {fileID: 581779255}
+  - {fileID: 63683498}
+  BagButtons:
+  - {fileID: 578810245}
+  - {fileID: 431276275}
+  - {fileID: 1044618472}
+  - {fileID: 566709909}
+  - {fileID: 1683262487}
+  - {fileID: 867226381}
+  - {fileID: 1060954848}
+  - {fileID: 2137364788}
+  - {fileID: 746177945}
+  - {fileID: 416085154}
+  - {fileID: 529299198}
+  - {fileID: 1743287152}
+  - {fileID: 1357950974}
+  - {fileID: 1902238881}
+  - {fileID: 2079262957}
+  - {fileID: 2020408886}
+  - {fileID: 411177611}
+  - {fileID: 221474926}
+  - {fileID: 2119887225}
+  - {fileID: 1594892374}
+  - {fileID: 1358446801}
+  - {fileID: 686260286}
+  - {fileID: 976206815}
+  - {fileID: 220861630}
+  AddButtons:
+  - {fileID: 1317025729}
+  - {fileID: 839003528}
+  - {fileID: 1759032743}
+  - {fileID: 1740849126}
+  QuickButtons: []
+  DeathButtons:
+  - {fileID: 1447271599}
+  - {fileID: 2085446466}
+  playerControls: {fileID: 1407358822}
+  hideMouse: 1
+--- !u!1 &170877134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 170877135}
+  - component: {fileID: 170877136}
+  m_Layer: 0
+  m_Name: ArmaGuardada
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &170877135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170877134}
+  m_LocalRotation: {x: -0.44252184, y: -0.55152017, z: -0.44252178, w: 0.5515201}
+  m_LocalPosition: {x: -0.263, y: 0.316, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2136514771}
+  - {fileID: 2055688253}
+  m_Father: {fileID: 264136421}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: -77.485, y: -90, z: 0}
+--- !u!114 &170877136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170877134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e3cadc7d110d646bf21a2cbe486d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerBD: 3
+--- !u!1 &176268939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176268940}
+  - component: {fileID: 176268943}
+  - component: {fileID: 176268942}
+  - component: {fileID: 176268941}
+  m_Layer: 5
+  m_Name: Num
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &176268940
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176268939}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7628359, y: 1.5803514, z: 0.48978245}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1304423170}
   m_RootOrder: -1
@@ -48266,7 +48529,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1054176173
 GameObject:
@@ -64185,7 +64448,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787890034
 GameObject:
