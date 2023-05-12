@@ -30,7 +30,7 @@ public class LavaRayAttack : Action
 
             lavaRay.SetActive(true);
             lavaRay.GetComponent<ParticleSystem>().Play();
-            lavaRay.GetComponent<LavaPosition>().followDistance = secToStop;
+            //lavaRay.GetComponent<LavaPosition>().followDistance = secToStop;
             lavaRay.GetComponent<LavaPosition>().Move(controller.player);
             lava = lavaRay;
             started = true;

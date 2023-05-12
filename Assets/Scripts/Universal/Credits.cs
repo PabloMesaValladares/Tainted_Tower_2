@@ -30,8 +30,8 @@ public class Credits : MonoBehaviour
     {
         if(esc.triggered || space.triggered)
         {
-            scene.StartLevel(scName);
-            scene.SetSongName(soName);
+            SceneController.instance.StartLevel(scName);
+            SceneController.instance.SetSongName(soName);
         }
     }
 }

@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/DesiertoBoss.unity
     guid: 739434faa340cf541a50dab22a194586
+  - enabled: 1
+    path: Assets/Scene/Creditos.unity
+    guid: 85c8e8e2f621c9843b9cb8bedbf070a7
   m_configObjects: {}

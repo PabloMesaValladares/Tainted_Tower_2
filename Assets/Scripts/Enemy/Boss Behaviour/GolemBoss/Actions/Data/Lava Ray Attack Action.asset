@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Lava Ray Attack Action
   m_EditorClassIdentifier: 
   lavaOffset: 1.5
-  secToStop: 5
+  secToStop: 7
