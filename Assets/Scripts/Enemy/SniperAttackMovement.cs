@@ -66,7 +66,7 @@ public class SniperAttackMovement : MonoBehaviour
         {
             timeremaining -= Time.deltaTime;
             DistanceAttackChecker();
-            gameObject.transform.LookAt(player.transform.position);
+            gameObject.transform.LookAt(new Vector3 (player.transform.position.x, gameObject.transform.position.y, player.transform.position.z));
 
             if (followDist >= maxFollowDist && followDist >= minFollowDist)
             {
