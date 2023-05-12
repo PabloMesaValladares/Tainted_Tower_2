@@ -67,8 +67,9 @@ public class SlashMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
-            player.GetComponentInParent<HealthBehaviour>().Hurt(damage);
+        if (other.transform.parent != null)
+            if (other.transform.parent.TryGetComponent<PlayerController>(out PlayerController player))
+                player.GetComponentInParent<HealthBehaviour>().Hurt(damage);
         //Debug.Log("Slashed");
 
         //gameObject.SetActive(false);

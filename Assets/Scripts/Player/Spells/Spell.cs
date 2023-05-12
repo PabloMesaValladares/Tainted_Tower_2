@@ -45,6 +45,11 @@ public class Spell : MonoBehaviour
             //Destruir enemigo
             enemy.TakeDamage(stats.CalculateDmg(stats.mainHand.damage, enemy.gameObject.GetComponent<StatController>().defense));
         }
+        else if (other.gameObject.TryGetComponent(out HealthBehaviour health))
+        {
+            //Destruir enemigo
+            health.Hurt(stats.CalculateDmg(stats.mainHand.damage, health.gameObject.GetComponent<StatController>().defense));
+        }
 
         deactivateObject();
     }
