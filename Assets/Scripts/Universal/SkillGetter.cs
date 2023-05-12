@@ -28,6 +28,11 @@ public class SkillGetter : MonoBehaviour
         GameManager.instance.grapple = true;
     }
 
+    public void GetSkillFire()
+    {
+        GameManager.instance.fireball = true;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.transform.parent.TryGetComponent<PlayerController>(out PlayerController controller))

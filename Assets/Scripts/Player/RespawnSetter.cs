@@ -40,6 +40,6 @@ public class RespawnSetter : MonoBehaviour
                     GameManager.instance.Spawns = transform.position;
             }
         }
-        other.gameObject.GetComponent<HealthBehaviour>().AddHealthPercent(healthAddPerc); //para curar un porcentaje
+        other.gameObject.transform.parent.GetComponent<HealthBehaviour>().AddHealthPercent(healthAddPerc); //para curar un porcentaje
     }
 }

@@ -30,6 +30,9 @@ public class DamageDealer : MonoBehaviour
             {
                 if (hit.transform.TryGetComponent(out Enemy enemy) && !hasDealtDamage.Contains(hit.transform.gameObject))
                 {
+                    GameObject hitE = PoolingManager.Instance.GetPooledObject("AttackEffect");
+                    hitE.SetActive(true);
+                    hitEffect = hitE.GetComponent<ParticleSystem>();
                     hitEffect.gameObject.transform.position = hit.collider.transform.position;
                     hitEffect.Play();
                     Debug.Log(enemy.name);
@@ -38,6 +41,9 @@ public class DamageDealer : MonoBehaviour
                 }
                 else if (hit.transform.TryGetComponent(out HealthBehaviour health) && !hasDealtDamage.Contains(hit.transform.gameObject))
                 {
+                    GameObject hitE = PoolingManager.Instance.GetPooledObject("AttackEffect");
+                    hitE.SetActive(true);
+                    hitEffect = hitE.GetComponent<ParticleSystem>();
                     hitEffect.gameObject.transform.position = hit.collider.transform.position;
                     hitEffect.Play();
                     Debug.Log(health.name);
