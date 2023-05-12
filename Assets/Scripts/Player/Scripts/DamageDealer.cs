@@ -33,6 +33,12 @@ public class DamageDealer : MonoBehaviour
                     enemy.TakeDamage(stats.CalculateDmg(stats.mainHand.damage, enemy.gameObject.GetComponent<StatController>().defense));
                     hasDealtDamage.Add(hit.transform.gameObject);
                 }
+                else if (hit.transform.TryGetComponent(out HealthBehaviour health) && !hasDealtDamage.Contains(hit.transform.gameObject))
+                {
+                    Debug.Log(health.name);
+                    health.Hurt(stats.CalculateDmg(stats.mainHand.damage, health.gameObject.GetComponent<StatController>().defense));
+                    hasDealtDamage.Add(hit.transform.gameObject);
+                }
             }
         }
     }

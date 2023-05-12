@@ -11,7 +11,6 @@ public class PillarAttack : Action
     {
         GameObject pilar = PoolingManager.Instance.GetPooledObject("Pillar");
         pilar.transform.position = controller.player.transform.position;
-        pilar.GetComponent<PillarAbility>().markable = 6;
         pilar.SetActive(true);
     }
 
