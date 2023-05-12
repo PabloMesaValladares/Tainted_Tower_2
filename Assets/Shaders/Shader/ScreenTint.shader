@@ -16,7 +16,7 @@ Shader "CustomPost/ScreenTint"
 #pragma vertex vert
 #prag fragment frag
 
-#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceInput.h";
+#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceInput.h"
 
             Name "ScreenTint"
             
