@@ -46,7 +46,8 @@ public class introBehaviour : MonoBehaviour
         //SceneManager.LoadScene(sceneNumber);
         if(isIntro)
         {
-            _videoIntro.SetActive(true);
+            //_videoIntro.SetActive(true);
+            SceneManager.LoadScene(sceneNumber);
         }      
         else
         {

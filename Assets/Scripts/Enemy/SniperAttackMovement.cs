@@ -83,7 +83,9 @@ public class SniperAttackMovement : MonoBehaviour
             if (timeremaining <= 0 && followDist <= maxFollowDist && followDist >= minFollowDist)
             {
                 _animator.SetInteger("State", 2);
-                bullet = PoolingManager.Instance.GetPooledObject("Rocky");
+
+                if(nioMode) bullet = PoolingManager.Instance.GetPooledObject("Rocky");
+                else if(nioMode == false) bullet = PoolingManager.Instance.GetPooledObject("Spiky");
                 bullet.transform.LookAt(oldPlayerPosition);
                 bullet.transform.position = gameObject.transform.position;
                 bullet.SetActive(true);
