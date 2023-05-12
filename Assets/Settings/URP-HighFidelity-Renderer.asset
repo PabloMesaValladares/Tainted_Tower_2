@@ -40,9 +40,10 @@ MonoBehaviour:
       type: 3}
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
-  m_RendererFeatureMap: adc0de57c6d2eee5
+  - {fileID: 0}
+  m_RendererFeatureMap: adc0de57c6d2eee54b1d36d95ab52524
   m_UseNativeRenderPass: 0
-  postProcessData: {fileID: 0}
+  postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
@@ -81,3 +82,54 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 0
+--- !u!114 &2604687361299586379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b0f3ee0c0a3064796307cf56156349, type: 3}
+  m_Name: TintRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+--- !u!114 &3599099959973236448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75662126be5e6274186a29cdcefe331d, type: 3}
+  m_Name: CustomPostProcessRenderer
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  pass:
+    <renderPassEvent>k__BackingField: 550
+    m_ColorStoreActions: 0000000000000000000000000000000000000000000000000000000000000000
+    m_DepthStoreAction: 0
+    m_OverriddenColorStoreActions: 
+    m_OverriddenDepthStoreAction: 0
+    <overrideCameraTarget>k__BackingField: 0
+    <isBlitRenderPass>k__BackingField: 0
+    <useNativeRenderPass>k__BackingField: 0
+    <renderTargetWidth>k__BackingField: -1
+    <renderTargetHeight>k__BackingField: -1
+    <renderTargetSampleCount>k__BackingField: -1
+    <depthOnly>k__BackingField: 0
+    <isLastPass>k__BackingField: 0
+    <renderPassQueueIndex>k__BackingField: 7
+    <renderTargetFormat>k__BackingField: 0000000000000000000000000000000000000000000000000000000000000000
+    m_UsesRTHandles: 1
+    m_InputAttachmentIsTransient: 
+    m_Input: 0
+    m_ClearFlag: 0
+    m_ClearColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
