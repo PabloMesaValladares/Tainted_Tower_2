@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Scene/Intro.unity
     guid: 5a2bca4d0718c5141a4a9f71bfb1678f
   - enabled: 1
+    path: Assets/Scene/LoadingScreen.unity
+    guid: 13e57a12d345b9a47b75fa4d0783754d
+  - enabled: 1
     path: Assets/Scene/MainMenu.unity
     guid: c733c89aed9aa804f9b9bfbe5418ec61
   - enabled: 1
     path: Assets/Scene/OpenWorld.unity
     guid: 802f2e77e7c62be4dae8eda53422055a
-  - enabled: 1
-    path: Assets/Scene/LoadingScreen.unity
-    guid: 13e57a12d345b9a47b75fa4d0783754d
   - enabled: 1
     path: Assets/Scene/Laberinto.unity
     guid: 196ef5c44c23d9143a06d1a86a70a857

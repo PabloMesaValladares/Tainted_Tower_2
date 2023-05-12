@@ -47,11 +47,13 @@ public class introBehaviour : MonoBehaviour
         if(isIntro)
         {
             //_videoIntro.SetActive(true);
-            SceneManager.LoadScene(sceneNumber);
+            //SceneManager.LoadScene(sceneNumber);
+            SceneController.instance.StartLevel("MainMenu");
         }      
         else
         {
-            SceneManager.LoadScene(sceneNumber);
+            //SceneManager.LoadScene(sceneNumber);
+            SceneController.instance.StartLevel("MainMenu");
         }
     }
 
