@@ -1,0 +1,20 @@
+(10-50)walk
+(60-100)run
+(110-150)sprint
+(160-220)sneak
+(230-330)idle(main)
+(350-367)atack1(combo)
+(367-387)atack2(combo)
+(387-403)atack3(combo)
+(420-446)after run atack
+(480-580)idle(2)
+(600-613)jump start
+(620-720)freefall
+(730-745)landing
+(760-795)after run jump(solid)
+(810-860)landing(hard)
+(880-950)eating
+(950-990)kick(or opening door)))
+(1000-1040)item pick up
+(1050-1065)get hit
+(1070-1095)death
