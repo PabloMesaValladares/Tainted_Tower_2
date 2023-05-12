@@ -39,6 +39,7 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<Grappling>().enabled = GameManager.instance.grapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.drugs;
             GetComponent<PlayerMagicSystem>().enabled = GameManager.instance.fireball;
+            GetComponent<PillarSpell>().enabled = GameManager.instance.pilar;
         }
         else
         {
@@ -57,6 +58,7 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<Grappling>().enabled = GameManager.instance.Cgrapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.Cdrugs;
             GetComponent<PlayerMagicSystem>().enabled = GameManager.instance.Cfireball;
+            GetComponent<PillarSpell>().enabled = GameManager.instance.Cpilar;
         }
         
     }

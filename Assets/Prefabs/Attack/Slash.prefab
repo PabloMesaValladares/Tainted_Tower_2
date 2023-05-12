@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4223878718934182045}
   - component: {fileID: 7854937377804083660}
   - component: {fileID: 4862919175325885515}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: -7272237317631108954}
   - component: {fileID: -1486165156903864324}
   - component: {fileID: 8197173061773143136}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 7780997176021447133}
   - component: {fileID: 7780997176021447131}
   - component: {fileID: 7780997176021447130}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5049,7 +5049,7 @@ GameObject:
   - component: {fileID: 7780997176908658052}
   - component: {fileID: 7780997176908658050}
   - component: {fileID: 7780997176908658053}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9875,7 +9875,7 @@ GameObject:
   - component: {fileID: 7780997177017877453}
   - component: {fileID: 7780997177017877451}
   - component: {fileID: 7780997177017877450}
-  m_Layer: 13
+  m_Layer: 10
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}

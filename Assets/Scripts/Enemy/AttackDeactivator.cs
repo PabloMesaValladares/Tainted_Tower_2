@@ -11,6 +11,10 @@ public class AttackDeactivator : MonoBehaviour
         {
             slash.ResetMovement();
         }
+        else if(other.TryGetComponent<BossLife>(out BossLife boss))
+        {
+            boss.ResetPos();
+        }
         other.gameObject.SetActive(false);
     }
 }

@@ -10,7 +10,7 @@ public class LifeDecision : Decision
     
     public override bool Decide(Controller controller)
     {
-        float perc = controller.GetComponent<Enemy>().health * 100 / controller.GetComponent<Enemy>().maxHealth;
+        float perc = controller.GetComponent<HealthBehaviour>().currentHP * 100 / controller.GetComponent<HealthBehaviour>().maxHP;
         Debug.Log("Porcentaje de vida es " + perc);
         
         if (perc < LifePercentage)
