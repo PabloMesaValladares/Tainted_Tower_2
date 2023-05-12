@@ -12,6 +12,7 @@ public class DrugsMode : MonoBehaviour
     Animator anim;
 
     public bool ready;
+    public bool buffed;
     public float cooldown, maxCooldown, skillCooldown, maxSkillCooldown;
 
     public float walkSpeed, walkSpeedBuff, walkSpeedDebuff;
@@ -94,6 +95,7 @@ public class DrugsMode : MonoBehaviour
 
             statController.strength = damage + damageBuff;
             statController.inteligence = damageInt + damageBuff;
+            buffed = true;
         }
 
         playerController.changeState(playerController.movementSM.currentState);
@@ -112,5 +114,6 @@ public class DrugsMode : MonoBehaviour
         statController.inteligence = damageInt;
 
         playerController.changeState(playerController.movementSM.currentState);
+        buffed = false;
     }
 }

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949f55cd4ba2ef3498f427e06fe7c1c9, type: 3}
   m_Name: Lava Ray Attack Action
   m_EditorClassIdentifier: 
-  lavaOffset: 5
+  lavaOffset: 1.5
+  secToStop: 5

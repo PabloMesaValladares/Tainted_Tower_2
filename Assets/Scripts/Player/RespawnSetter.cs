@@ -7,6 +7,7 @@ public class RespawnSetter : MonoBehaviour
 {
     public Transform positionToRespawn;
     RaycastHit hit;
+    public int healthAddPerc;
     float distance = 1000;
     private void OnTriggerEnter(Collider other)
     {
@@ -39,5 +40,6 @@ public class RespawnSetter : MonoBehaviour
                     GameManager.instance.Spawns = transform.position;
             }
         }
+        other.gameObject.GetComponent<HealthBehaviour>().AddHealthPercent(healthAddPerc); //para curar un porcentaje
     }
 }
