@@ -5,10 +5,10 @@ using UnityEngine;
 public class FireAttackEnemy : MonoBehaviour
 {
     [SerializeField]
-    private GameObject player, attackParticles;
+    private GameObject player;
 
     [SerializeField]
-    private ParticleSystem attackPreview, attackFire;
+    private ParticleSystem attackFire;
 
 
     [SerializeField]
@@ -30,16 +30,12 @@ public class FireAttackEnemy : MonoBehaviour
     {
         if (attack)
         {
-            gameObject.transform.LookAt(player.transform.position);
+            gameObject.transform.LookAt(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.transform.position.z));
 
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
                 playerCheck = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-
-                attackPreview.Stop();
-                attackPreview.transform.position = playerCheck;
-                attackPreview.Play();
 
                 attackFire.Stop();
                 attackFire.transform.position = playerCheck;
