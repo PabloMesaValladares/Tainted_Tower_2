@@ -5,10 +5,26 @@ using UnityEngine.Events;
 
 public class AnimationEvents : MonoBehaviour
 {
+    [Header("Attack Events")]
+    public UnityEvent AttackStart;
+    public UnityEvent AttackEnd;
 
+    [Header("Death Events")]
     public UnityEvent deathStart;
     public UnityEvent deathFinal;
+
+    [Header("Skill Events")]
     public UnityEvent fireBallActivate;
+
+    public void AttackStarted()
+    {
+        AttackStart.Invoke();
+    }
+
+    public void AttackEnded()
+    {
+        AttackEnd.Invoke();
+    }
 
     public void DeathStart()
     {
