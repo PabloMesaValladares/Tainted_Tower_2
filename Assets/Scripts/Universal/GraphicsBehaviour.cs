@@ -92,7 +92,7 @@ public class GraphicsBehaviour : MonoBehaviour
             QualitySettings.masterTextureLimit = 0;
             QualitySettings.skinWeights = SkinWeights.FourBones;
 
-            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 300;
+            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 2000;
         }
         else if (qualityOptions.value == 1)
         {
@@ -100,7 +100,7 @@ public class GraphicsBehaviour : MonoBehaviour
             QualitySettings.SetQualityLevel(1);
             QualitySettings.masterTextureLimit = 1;
             QualitySettings.skinWeights = SkinWeights.TwoBones;
-            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 200;
+            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 1500;
         }
         else if (qualityOptions.value == 2)
         {
@@ -108,7 +108,7 @@ public class GraphicsBehaviour : MonoBehaviour
             QualitySettings.SetQualityLevel(2);
             QualitySettings.masterTextureLimit = 3;
             QualitySettings.skinWeights = SkinWeights.OneBone;
-            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 100;
+            vcam.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>().m_Lens.FarClipPlane = 1000;
         }
     }
 
