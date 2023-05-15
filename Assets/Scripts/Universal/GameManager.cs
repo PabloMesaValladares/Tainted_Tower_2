@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
         defense = player.GetComponent<StatController>().defense;
         stamina = player.GetComponent<StaminaController>().ReturnStamina();
 
-        if (SceneManager.GetActiveScene().name == "Game" && !reset)
+        if (SceneManager.GetActiveScene().name == "OpenWorld" )
             Spawns = player.GetComponent<RespawnPoint>().RespawnPosition;
         inventory = GameObject.FindGameObjectWithTag("Inventory");
         //currentBGM = SoundManager.instance.currentBGM;
@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
         CheckPointDefense = player.GetComponent<StatController>().defense;
         CheckPointStamina = player.GetComponent<StaminaController>().ReturnStamina();
 
-        if (SceneManager.GetActiveScene().name == "Game" && !reset)
+        if (SceneManager.GetActiveScene().name == "OpenWorld")
             CheckPointSpawns = player.GetComponent<RespawnPoint>().RespawnPosition;
 
         inventory = GameObject.FindGameObjectWithTag("Inventory");

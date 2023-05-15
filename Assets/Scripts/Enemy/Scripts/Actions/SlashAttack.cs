@@ -15,6 +15,7 @@ public class SlashAttack : Action
     {
         if(counter < NoSlashes)
         {
+            controller.GetComponentInChildren<Animator>().SetTrigger("Attack");
             enemy = controller.gameObject;
             //enemy.GetComponent<Enemy>().animator.SetTrigger("attack");
             GameObject attack = PoolingManager.Instance.GetPooledObject("Slash");
@@ -28,6 +29,7 @@ public class SlashAttack : Action
     public override void RestartVariables()
     {
         //enemy.GetComponent<Enemy>().animator.ResetTrigger("attack");
+        //enemy.GetComponentInChildren<Animator>().SetTrigger("Idle");
         counter = 0;
     }
 }

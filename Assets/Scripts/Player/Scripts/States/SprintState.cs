@@ -167,7 +167,8 @@ public class SprintState : State
         base.PhysicsUpdate();
         moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         moveDirection.y = 0;
-        stamController.ReduceStamina();
+        if (velocity.sqrMagnitude > 0)
+            stamController.ReduceStamina();
 
         if (OnSlope())
         {

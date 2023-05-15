@@ -9,17 +9,43 @@ public class PlayerStatsSet : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        int scene = sceneIndexFromName("OpenWorld");
+
         if (!GameManager.instance.Checkpoint)
         {
-            if (level == SceneManager.GetSceneByName("Game").buildIndex)
+            if (level == scene)
                 transform.position = GameManager.instance.Spawns;
         }
         else
         {
-            if (level == SceneManager.GetSceneByName("Game").buildIndex)
+            if (level == scene)
                 transform.position = GameManager.instance.CheckPointSpawns;
         }
     }
+
+    private int sceneIndexFromName(string sceneName)
+    {
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string testedScreen = NameFromIndex(i);
+            if (testedScreen == sceneName)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private static string NameFromIndex(int BuildIndex)
+    {
+        string path = SceneUtility.GetScenePathByBuildIndex(BuildIndex);
+        int slash = path.LastIndexOf('/');
+        string name = path.Substring(slash + 1);
+        int dot = name.LastIndexOf('.');
+        return name.Substring(0, dot);
+    }
+
+
     void Start()
     {
         if (!GameManager.instance.Checkpoint)

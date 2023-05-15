@@ -15,29 +15,35 @@ public class RespawnSetter : MonoBehaviour
         {
             if (respawn.GetComponent<GroundCheck>().returnCheck())
             {
-                Vector3 posToResp = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
-                respawn.SetRespawn(posToResp);
                 GameManager.instance.CheckPoint();
-                if (SceneManager.GetActiveScene().name == "Game")
+                if (SceneManager.GetActiveScene().name == "OpenWorld")
+                {
+                    Vector3 posToResp = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
+                    respawn.SetRespawn(posToResp);
+
                     GameManager.instance.Spawns = transform.position;
+                }
             }
             else
             {
-                Vector3 posToResp = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
-
-                if (Physics.Raycast(posToResp, -transform.up, out hit, distance))
-                {
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Scenario"))
-                    {
-                        posToResp = posToResp = new Vector3(other.transform.position.x, hit.point.y, other.transform.position.z);
-                    }
-                }
-
-                respawn.SetRespawn(posToResp);
                 GameManager.instance.CheckPoint();
 
-                if (SceneManager.GetActiveScene().name == "Game")
+                if (SceneManager.GetActiveScene().name == "OpenWorld")
+                {
+
+                    Vector3 posToResp = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+
+                    if (Physics.Raycast(posToResp, -transform.up, out hit, distance))
+                    {
+                        if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Scenario"))
+                        {
+                            posToResp = posToResp = new Vector3(other.transform.position.x, hit.point.y, other.transform.position.z);
+                        }
+                    }
+
+                    respawn.SetRespawn(posToResp);
                     GameManager.instance.Spawns = transform.position;
+                }
             }
         }
         other.gameObject.transform.parent.GetComponent<HealthBehaviour>().AddHealthPercent(healthAddPerc); //para curar un porcentaje

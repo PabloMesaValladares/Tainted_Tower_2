@@ -81,18 +81,18 @@ public class StaminaController : MonoBehaviour
         if (percStamina < lowPoint)
         {
             Fill.color = Color.Lerp(Fill.color, LowFillColor, (lowPoint - stamina) / 10);
-            foreach(shape shap in Shape)
-            {
-                skinnedMesh.SetBlendShapeWeight(shap.blendShape, shap.value);
-            }
+            //foreach(shape shap in Shape)
+            //{
+            //    skinnedMesh.SetBlendShapeWeight(shap.blendShape, shap.value);
+            //}
             tired = true;
         }
         else if (percStamina < mediumPoint)
         {
-            foreach (shape shap in Shape)
-            {
-                skinnedMesh.SetBlendShapeWeight(shap.blendShape, 0);
-            }
+            //foreach (shape shap in Shape)
+            //{
+            //    skinnedMesh.SetBlendShapeWeight(shap.blendShape, 0);
+            //}
             tired = false;
             Fill.color = Color.Lerp(Fill.color, MediumFillColor, (mediumPoint - stamina) / 10);
         }

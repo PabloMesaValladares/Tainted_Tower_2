@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] string[] itemName;
     [SerializeField] string[] desc;
     [SerializeField] Dictionary<string, Item> items;
-    Dictionary<string, Sprite> itemsImageSearch;
+    public Dictionary<string, Sprite> itemsImageSearch;
     Dictionary<string, ItemUses> itemsUseSearch;
 
     private static InventoryManager _instance;
@@ -39,6 +39,10 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+    }
+    private void OnLevelWasLoaded(int level)
+    {
+
     }
 
 

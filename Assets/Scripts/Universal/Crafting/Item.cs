@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class Item : MonoBehaviour
 {
     public string itemName;
@@ -29,6 +31,8 @@ public class Item : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (itemName == "Null")
+            GetComponent<Image>().color = new Color(255, 255, 255, 0);
     }
 
 

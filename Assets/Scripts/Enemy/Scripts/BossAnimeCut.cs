@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BossAnimeCut : MonoBehaviour
 {
@@ -26,7 +27,9 @@ public class BossAnimeCut : MonoBehaviour
     float distEffEn;
     public int damage;
 
-    public float duration;
+    public float maxDist;
+
+    public UnityEvent EndSlashes;
 
     // Start is called before the first frame update
     void Start()
@@ -48,22 +51,30 @@ public class BossAnimeCut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        transform.LookAt(playerPos);
+        //playerPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
 
         if (!look)
         {
-            
-            if(currentTime < duration)
+
+            playerPos = new Vector3(posToGo.x, transform.position.y, posToGo.z);
+
+            transform.LookAt(playerPos);
+            if (Vector3.Distance(playerPos, transform.position) < maxDist)
             {
-                currentTime += Time.deltaTime;
-                rb.MovePosition(Vector3.Lerp(startingPos, posToGo, currentTime / duration));
+                SpeedControl();
+                Vector3 forceToApply = transform.forward * dashForce + transform.up * dashUpwardForce;
+                rb.AddForce(forceToApply, ForceMode.Impulse);
             }
             else
             {
                 LookAround();
                 StopDash();
+                EndSlashes.Invoke();
             }
+        }
+        else
+        {
+            transform.LookAt(playerPos);
         }
 
     }
