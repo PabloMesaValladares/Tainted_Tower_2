@@ -39,7 +39,8 @@ public class SkillGetter : MonoBehaviour
         {
             if (activate.triggered)
             {
-                Activate.Invoke();
+                Activate.Invoke(); 
+                activateAnimation();
                 GetComponent<SphereCollider>().enabled = false;
             }
         }

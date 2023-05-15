@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
             stamina = staminaStat;
             player.GetComponent<StaminaController>().SetStamina(staminaStat);
 
+            grapple = fireball = drugs = pilar = false;
+            Cgrapple = Cfireball = Cdrugs = Cpilar = false; 
+
             if (SceneManager.GetActiveScene().name == "Game")
                 player.GetComponent<RespawnPoint>().RespawnPosition = Spawns;
 
@@ -92,22 +95,10 @@ public class GameManager : MonoBehaviour
         else
             Destroy(this);
     }
-    private void OnLevelWasLoaded(int level)
+
+    public void DeleteSave()
     {
-        if (SceneManager.GetActiveScene().name == "Game" && reset)
-        {
-            SetScripts();
-            maxHP = player.GetComponent<StatController>().health;
-            currentHP = player.GetComponent<StatController>().health;
-            stamina = staminaStat;
-            player.GetComponent<StaminaController>().SetStamina(staminaStat);
-
-            if (SceneManager.GetActiveScene().name == "Game")
-                player.GetComponent<RespawnPoint>().RespawnPosition = Spawns;
-
-            CheckPoint();
-            reset = false;
-        }
+        Destroy(this);
     }
 
 

@@ -17,7 +17,7 @@ public class SceneChanger : MonoBehaviour
     {
         if(GameManager.instance != null)
         {
-            GameManager.instance.reset = true;
+            GameManager.instance.DeleteSave();
         }
     }
 

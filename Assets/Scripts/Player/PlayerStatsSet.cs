@@ -11,12 +11,12 @@ public class PlayerStatsSet : MonoBehaviour
     {
         if (!GameManager.instance.Checkpoint)
         {
-            if (SceneManager.GetActiveScene().name == "Game")
+            if (level == SceneManager.GetSceneByName("Game").buildIndex)
                 transform.position = GameManager.instance.Spawns;
         }
         else
         {
-            if (SceneManager.GetActiveScene().name == "Game")
+            if (level == SceneManager.GetSceneByName("Game").buildIndex)
                 transform.position = GameManager.instance.CheckPointSpawns;
         }
     }

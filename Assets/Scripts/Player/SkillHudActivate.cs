@@ -31,6 +31,7 @@ public class SkillHudActivate : MonoBehaviour
     }
     public void activatePilar()
     {
+        GameManager.instance.pilar = true;
         pilar.SetActive(true);
     }
 }

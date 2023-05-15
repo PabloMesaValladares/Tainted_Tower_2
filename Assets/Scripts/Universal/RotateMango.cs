@@ -13,4 +13,12 @@ public class RotateMango : MonoBehaviour
 
         transform.RotateAround(position, Vector3.up, degreesPerSecond * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.parent.TryGetComponent<HealthBehaviour>(out HealthBehaviour healt))
+        {
+            healt.AddHealthPercent(50);
+        }
+    }
 }
