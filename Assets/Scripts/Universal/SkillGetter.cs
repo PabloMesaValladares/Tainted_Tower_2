@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class SkillGetter : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class SkillGetter : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        if(GameManager.instance.grapple)
+        if(GameManager.instance.grapple && SceneManager.GetActiveScene().name != "OpenWorld")
         {
             Activate.Invoke();
         }
