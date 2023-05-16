@@ -218,6 +218,10 @@ public class ControllerInventory : MonoBehaviour
                     break;
             }
         }
+        if (DeathMenu.activeInHierarchy)
+        {
+            mouseUnlock(true);
+        }
     }
 
     public void ResetInd()

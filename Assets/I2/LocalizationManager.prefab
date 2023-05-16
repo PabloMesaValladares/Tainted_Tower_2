@@ -131,7 +131,7 @@ MonoBehaviour:
       Languages:
       - "\xBFEstas seguro de entrar a esta mazmorra?"
       - Are you sure to enter this dungeon?
-      - "\u3053\u306E\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u5165\u308B\u3053\u3068\u306F\u3067\u304D\u307E\u3059\u304B\uFF1F"
+      - "\u3053\u306E\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u53C2\u52A0\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
       Flags: 000000
       Languages_Touch: []
     - Term: Dialogos/PortalEnterComplete
@@ -140,7 +140,7 @@ MonoBehaviour:
       Languages:
       - No puedes entrar en una mazmorra que ya has hecho
       - You can't enter a dungeon that you have already done
-      - "\u3042\u306A\u305F\u306F\u3059\u3067\u306B\u3084\u3063\u3066\u3044\u308B\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u5165\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u305B\u3093"
+      - "\u3042\u306A\u305F\u306F\u3059\u3067\u306B\u3084\u3063\u305F\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u5165\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u305B\u3093"
       Flags: 000000
       Languages_Touch: []
     - Term: Dialogos/PortalExit
@@ -525,6 +525,48 @@ MonoBehaviour:
       - "\u308F\u304B\u3063\u305F"
       Flags: 000000
       Languages_Touch: []
+    - Term: Dialogos/Dead
+      TermType: 0
+      Description: 
+      Languages:
+      - Has Muerto
+      - You Died
+      - "\u3042\u306A\u305F\u306F\u6B7B\u3093\u3060"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos/Verdeoso0
+      TermType: 0
+      Description: 
+      Languages:
+      - Pulsa el Boton Verde para reiniciar todo el puzzle.
+      - Press the green button to restart the entire puzzle.
+      - "\u7DD1\u8272\u306E\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u3066\u3001\u30D1\u30BA\u30EB\u5168\u4F53\u3092\u518D\u8D77\u52D5\u3057\u307E\u3059\u3002"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Dialogos/Credits
+      TermType: 0
+      Description: 
+      Languages:
+      - "Creditos\n\nProgramadores\n\nPablo Mesa\nDavid Cardenas\nMario Marcos\nAlvaro
+        Silva\n\nArtistas\n\nPablo Gonz\xE1lez\nOscar Ruiz\nPau Tena\nEduardo Rubio\n\nAgradecimientos\n\nXavier
+        Redondo\nAlberto Barrueco\nArturo Escudero\nAlex Rios\nJose Manuel\nDani
+        Sanchez\nBruno Rico\nPatricia Garcia\nJean Moreno\nGalactic Studios\nRender
+        Knight\nIgnitecoders\nChromisu\nLumo-ART-3D\nPolytope Studio\n\nRecursos\n\nUnity
+        Asset Store\nSketchfab\nMixamo"
+      - "Credits\n\nProgrammers\n\nPablo Mesa\nDavid Cardenas\nMario Marcos\nAlvaro
+        Silva\n\nArtists\n\nPablo Gonz\xE1lez\nOscar Ruiz\nPau Tena\nEduardo Rubio\n\nThanks\n\nXavier
+        Redondo\nAlberto Barrueco\nArturo Escudero\nAlex Rios\nJose Manuel\nDani
+        Sanchez\nBruno Rico\nPatricia Garcia\nJean Moreno\nGalactic Studios\nRender
+        Knight\nIgnitecoders\nChromisu\nLumo-ART-3D\nPolytope Studio\n\nResources\n\nUnity
+        Asset Store\nSketchfab\nMixamo"
+      - "Creditos\n\nProgramadores\n\nPablo Mesa\nDavid Cardenas\nMario Marcos\nAlvaro
+        Silva\n\nArtistas\n\nPablo Gonz\xE1lez\nOscar Ruiz\nPau Tena\nEduardo Rubio\n\nAgradecimientos\n\nXavier
+        Redondo\nAlberto Barrueco\nArturo Escudero\nAlex Rios\nJose Manuel\nDani
+        Sanchez\nBruno Rico\nPatricia Garcia\nJean Moreno\nGalactic Studios\nRender
+        Knight\nIgnitecoders\nChromisu\nLumo-ART-3D\nPolytope Studio\n\nRecursos\n\nUnity
+        Asset Store\nSketchfab\nMixamo"
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
@@ -544,7 +586,7 @@ MonoBehaviour:
     Google_SpreadsheetKey: 16pxnmP605zfR_-606mv4ZTiO9rg6NBt5R6rcRmEC6q4
     Google_SpreadsheetName: I2Loc TaintedMenus Assets/Pablo/Scenes/MainMenu.unity
       LocalizationManager
-    Google_LastUpdatedVersion: 1683306496955
+    Google_LastUpdatedVersion: 1684251453439
     Google_Password: change_this
     GoogleUpdateFrequency: 2
     GoogleInEditorCheckFrequency: 2
