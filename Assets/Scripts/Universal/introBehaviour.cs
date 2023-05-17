@@ -64,7 +64,8 @@ public class introBehaviour : MonoBehaviour
     {
         if(esc.triggered || spc.triggered)
         {
-            SceneManager.LoadScene(sceneNumber);
+            SceneController.instance.SetSongName("MainMenu");
+            SceneController.instance.SetSongName("MainMenu");
         }
     }
 }
