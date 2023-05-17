@@ -16,17 +16,18 @@ public class RespawnSetter : MonoBehaviour
             if (respawn.GetComponent<GroundCheck>().returnCheck())
             {
                 GameManager.instance.CheckPoint();
+                GameManager.instance.SetScripts();
                 if (SceneManager.GetActiveScene().name == "OpenWorld")
                 {
                     Vector3 posToResp = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
                     respawn.SetRespawn(posToResp);
-
                     GameManager.instance.Spawns = transform.position;
                 }
             }
             else
             {
                 GameManager.instance.CheckPoint();
+                GameManager.instance.SetScripts();
 
                 if (SceneManager.GetActiveScene().name == "OpenWorld")
                 {
