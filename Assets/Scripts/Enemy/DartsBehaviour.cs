@@ -13,6 +13,7 @@ public class DartsBehaviour : MonoBehaviour
 
         if(miniTinmer <= 0)
         {
+            GetComponent<SlashMovement>().ResetMovement();
             gameObject.SetActive(false);
             miniTinmer = 1.5f;
         }

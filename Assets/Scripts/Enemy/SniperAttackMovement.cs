@@ -86,8 +86,10 @@ public class SniperAttackMovement : MonoBehaviour
 
                 if(nioMode) bullet = PoolingManager.Instance.GetPooledObject("Rocky");
                 else if(nioMode == false) bullet = PoolingManager.Instance.GetPooledObject("Spiky");
-                bullet.transform.LookAt(oldPlayerPosition);
+                //bullet.transform.LookAt(oldPlayerPosition);
                 bullet.transform.position = gameObject.transform.position;
+                //bullet.transform.rotation = transform.rotation;
+                bullet.GetComponent<SlashMovement>().MoveDirection(player.transform.position + new Vector3(0, 0.7f, 0));
                 bullet.SetActive(true);
                 oldPlayerPosition = new Vector3(player.transform.position.x - bullet.transform.position.x, player.transform.position.y + 0.5f - bullet.transform.position.y, player.transform.position.z - bullet.transform.position.z);
                 timeremaining = timeBetweenAttacks;
@@ -100,7 +102,8 @@ public class SniperAttackMovement : MonoBehaviour
 
         if (bullet != null)
         {
-            _movement.MoveGameObject(bullet, oldPlayerPosition, bulletVel);
+            //bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 20, ForceMode.Force);
+            //_movement.MoveGameObject(bullet, oldPlayerPosition, bulletVel);
         }
     }
 

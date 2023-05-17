@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2618043149716992674}
   - component: {fileID: 7819278032804863643}
   - component: {fileID: 2354857767367144878}
+  - component: {fileID: 4729835342536384623}
   m_Layer: 10
   m_Name: Rocky
   m_TagString: Untagged
@@ -31,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 803419257570780311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -453.462, y: 154.04, z: -266.47742}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.3}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7074627829888674253}
   m_Father: {fileID: 0}
@@ -99,7 +100,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2618043149716992674
 Rigidbody:
@@ -142,8 +143,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429c7471b4afbaa428a55b17888bb16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 15
   miniTinmer: 1.5
+--- !u!114 &4729835342536384623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803419257570780311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3f453a3e09e1f4885effd767705259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
+  damage: 0
+  directionToGo: {x: 0, y: 0, z: 0}
 --- !u!1 &7594740416858764151
 GameObject:
   m_ObjectHideFlags: 0

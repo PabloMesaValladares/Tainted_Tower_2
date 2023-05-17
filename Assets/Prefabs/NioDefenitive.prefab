@@ -3520,7 +3520,7 @@ MonoBehaviour:
   maxFollowDist: 30
   minFollowDist: 8
   bulletVel: 2.5
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 1.5
   dieFloat: 2
   inRange: 0
   returning: 0
@@ -3540,9 +3540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  hitVFX: {fileID: 0}
   lookAtPlayerSpeed: 0
-  head: {fileID: 0}
   referencePoint: {fileID: 0}
   deSpawnDistance: 101
   attackCD: 0
@@ -3770,6 +3768,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bd82be574daad4b8952c86d4d1c69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackStart:
+    m_PersistentCalls:
+      m_Calls: []
+  AttackEnd:
+    m_PersistentCalls:
+      m_Calls: []
   deathStart:
     m_PersistentCalls:
       m_Calls: []
