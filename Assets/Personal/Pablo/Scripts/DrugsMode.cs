@@ -76,10 +76,10 @@ public class DrugsMode : MonoBehaviour
     public void BerserkerMode()
     {
         playerController.animator.SetTrigger("drogas");
-        GetComponent<StaminaController>().drugs = true;
         playerController.Rage.Play();
         if (randomNumber < maxRange/2)
         {
+            GetComponent<StaminaController>().drugs = false;
             anim.SetFloat("buffSpeed", 0.5f);
             playerController.walkSpeed = walkSpeedDebuff;
             playerController.sprintSpeed = sprintSpeedDebuff;
@@ -89,6 +89,7 @@ public class DrugsMode : MonoBehaviour
         }
         else
         {
+            GetComponent<StaminaController>().drugs = true;
             anim.SetFloat("buffSpeed", 1.5f);
             playerController.walkSpeed = walkSpeedBuff;
             playerController.sprintSpeed = sprintSpeedBuff;
