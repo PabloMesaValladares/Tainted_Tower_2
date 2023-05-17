@@ -81,7 +81,7 @@ Material:
     - _Outline: 1.3
     - _Parallax: 0.02
     - _PixelSize: 100
-    - _Pixelization: 40
+    - _Pixelization: 12.4
     - _SmoothnessTextureChannel: 0
     - _Spacing: 0.38
     - _SpecularHighlights: 1
