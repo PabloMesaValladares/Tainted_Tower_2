@@ -11,16 +11,19 @@ public class PlayerStatsSet : MonoBehaviour
     {
         int scene = sceneIndexFromName("OpenWorld");
 
-        if (!GameManager.instance.Checkpoint)
+        if (level == scene)
         {
-            if (level == scene)
-                transform.position = GameManager.instance.Spawns;
-        }
-        else
-        {
-            if (level == scene)
+            if (GameManager.instance.Checkpoint)
+            {
                 transform.position = GameManager.instance.CheckPointSpawns;
+                //GameManager.instance.Checkpoint = false;
+            }
+
+            else
+                transform.position = GameManager.instance.Spawns;
+
         }
+           
     }
 
     private int sceneIndexFromName(string sceneName)
@@ -59,7 +62,7 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<StatController>().defense = GameManager.instance.defense;
             GetComponent<StaminaController>().SetStamina(GameManager.instance.stamina);
 
-            if (SceneManager.GetActiveScene().name == "Game")
+            if (SceneManager.GetActiveScene().name == "OpenWorld")
                 transform.position = GameManager.instance.Spawns;
             //GetComponent<RespawnPoint>().Respawn();
             GetComponent<Grappling>().enabled = GameManager.instance.grapple;
@@ -78,13 +81,14 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<StatController>().defense = GameManager.instance.CheckPointDefense;
             GetComponent<StaminaController>().SetStamina(GameManager.instance.CheckPointStamina);
 
-            if (SceneManager.GetActiveScene().name == "Game")
+            if (SceneManager.GetActiveScene().name == "OpenWorld")
                 transform.position = GameManager.instance.CheckPointSpawns;
             //GetComponent<RespawnPoint>().Respawn();
             GetComponent<Grappling>().enabled = GameManager.instance.Cgrapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.Cdrugs;
             GetComponent<PlayerMagicSystem>().enabled = GameManager.instance.Cfireball;
             GetComponent<PillarSpell>().enabled = GameManager.instance.Cpilar;
+            //GameManager.instance.Checkpoint = false;
         }
         
     }
@@ -99,7 +103,7 @@ public class PlayerStatsSet : MonoBehaviour
             }
             else
             {
-                if (SceneManager.GetActiveScene().name == "Game")
+                if (SceneManager.GetActiveScene().name == "OpenWorld")
                     transform.position = GameManager.instance.CheckPointSpawns;
             }
         }

@@ -10,6 +10,8 @@ public class DungeonSpawnSet : MonoBehaviour
     {
         other.GetComponent<RespawnPoint>().SetRespawn(position.transform.position);
         GameManager.instance.SetScripts();
+        GameManager.instance.CheckPoint();
+        GameManager.instance.CheckPointSpawns = position.transform.position;
         GameManager.instance.Spawns = position.transform.position;
 
         //GameManager.instance.Checkpoint = true;

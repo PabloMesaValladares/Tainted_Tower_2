@@ -9,25 +9,25 @@ public class RespawnSetter : MonoBehaviour
     RaycastHit hit;
     public int healthAddPerc;
     float distance = 1000;
+    public ParticleSystem particle;
     private void OnTriggerEnter(Collider other)
     {
         if(other.transform.parent.gameObject.TryGetComponent<RespawnPoint>(out RespawnPoint respawn))
         {
             if (respawn.GetComponent<GroundCheck>().returnCheck())
             {
-                GameManager.instance.CheckPoint();
-                GameManager.instance.SetScripts();
                 if (SceneManager.GetActiveScene().name == "OpenWorld")
                 {
                     Vector3 posToResp = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
                     respawn.SetRespawn(posToResp);
                     GameManager.instance.Spawns = transform.position;
+                    GameManager.instance.CheckPointSpawns = transform.position;
                 }
+                GameManager.instance.CheckPoint();
+                GameManager.instance.SetScripts();
             }
             else
             {
-                GameManager.instance.CheckPoint();
-                GameManager.instance.SetScripts();
 
                 if (SceneManager.GetActiveScene().name == "OpenWorld")
                 {
@@ -45,8 +45,13 @@ public class RespawnSetter : MonoBehaviour
                     respawn.SetRespawn(posToResp);
                     GameManager.instance.Spawns = transform.position;
                 }
+
+                GameManager.instance.CheckPoint();
+                GameManager.instance.SetScripts();
             }
         }
+        particle.gameObject.SetActive(true);
+        particle.Play();
         other.gameObject.transform.parent.GetComponent<HealthBehaviour>().AddHealthPercent(healthAddPerc); //para curar un porcentaje
     }
 }
