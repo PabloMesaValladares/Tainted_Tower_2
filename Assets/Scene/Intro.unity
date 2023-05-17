@@ -752,98 +752,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &490287019
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 1403765681}
-    m_Modifications:
-    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: mSource.Google_LastUpdatedVersion
-      value: 1683306507533
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: mSource.mTerms.Array.data[8].Languages.Array.data[2]
-      value: "\u3053\u306E\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u53C2\u52A0\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233304, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: mSource.mTerms.Array.data[9].Languages.Array.data[2]
-      value: "\u3042\u306A\u305F\u306F\u3059\u3067\u306B\u3084\u3063\u305F\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u5165\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u305B\u3093"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.7882528
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.33794
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.690502
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493916931572233311, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-        type: 3}
-      propertyPath: m_Name
-      value: LocalizationManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6, type: 3}
---- !u!4 &490287020 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4493916931572233305, guid: 268d4c3a1ce6f2b4499bc2d82bf6f5a6,
-    type: 3}
-  m_PrefabInstance: {fileID: 490287019}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &537113278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,8 +2193,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 490287020}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
