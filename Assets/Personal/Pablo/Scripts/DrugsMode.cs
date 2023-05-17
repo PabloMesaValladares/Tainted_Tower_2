@@ -77,7 +77,7 @@ public class DrugsMode : MonoBehaviour
     {
         playerController.animator.SetTrigger("drogas");
         playerController.Rage.Play();
-        if (randomNumber < maxRange/2)
+        if (randomNumber < maxRange/8)
         {
             GetComponent<StaminaController>().drugs = false;
             anim.SetFloat("buffSpeed", 0.5f);

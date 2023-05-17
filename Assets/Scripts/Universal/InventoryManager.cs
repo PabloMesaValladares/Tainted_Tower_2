@@ -42,7 +42,13 @@ public class InventoryManager : MonoBehaviour
     }
     private void OnLevelWasLoaded(int level)
     {
-
+        if(GameManager.instance != null)
+        {
+            for(int i = 0; i < GameManager.instance.inventoryItems.Count; i++)
+            {
+                UpdateSlot(GameManager.instance.inventoryItems[i], i);
+            }
+        }
     }
 
 
@@ -199,6 +205,14 @@ public class InventoryManager : MonoBehaviour
             if (slot.GetComponent<Item>().Num + itemGot.Num <= 99)
             {
                 slot.GetComponent<Item>().Num += itemGot.Num;
+                foreach(GameObject quickslot in QuickSlots)
+                {
+                    if(quickslot.GetComponent<Item>().ind == slot.GetComponent<Item>().ind)
+                    {
+                        quickslot.GetComponent<Item>().Num = slot.GetComponent<Item>().Num;
+                        break;
+                    }
+                }
             }
             else
             {
@@ -270,7 +284,7 @@ public class InventoryManager : MonoBehaviour
             GameObject parent = slot.transform.parent.gameObject;
             InventoryNum child = slot.GetComponentInChildren<InventoryNum>();
             slot.GetComponent<Item>().itemName = itemGot.itemName;
-            slot.GetComponent<Item>().SetUse(itemsUseSearch[itemGot.itemName]);
+            //slot.GetComponent<Item>().SetUse(itemsUseSearch[itemGot.itemName]);
             slot.GetComponent<Item>().Num = itemGot.Num;
             slot.GetComponent<Image>().sprite = itemsImageSearch[itemGot.itemName];
             parent.GetComponent<Slot>().item = slot.GetComponent<Item>();

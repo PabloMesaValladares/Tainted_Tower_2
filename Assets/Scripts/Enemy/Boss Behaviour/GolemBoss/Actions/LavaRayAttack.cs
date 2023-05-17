@@ -8,6 +8,7 @@ using FSM;
 
 public class LavaRayAttack : Action
 {
+    Rigidbody rb;
     LineRenderer lr;
     GameObject lava;
     public float lavaOffset;
@@ -21,7 +22,9 @@ public class LavaRayAttack : Action
     {
         if(!started)
         {
-            controller.GetComponentInChildren<Animator>().SetTrigger("StartLaserAttack");
+            controller.GetComponentInChildren<Animator>().SetTrigger("StartLaser");
+            rb = controller.GetComponent<Rigidbody>();
+            rb.isKinematic = true;
             an = controller.GetComponentInChildren<Animator>();
             lr = controller.GetComponent<LineRenderer>();
             lr.enabled = true;
@@ -44,12 +47,14 @@ public class LavaRayAttack : Action
     public override void RestartVariables()
     {
         count = 0;
-        an.GetComponent<Animator>().SetTrigger("StopLaserAttack");
+        an.GetComponent<Animator>().SetTrigger("StopLaser");
         started = false;
         if (lr != null)
             lr.enabled = false;
         if (lava != null)
             lava.SetActive(false);
+        if (rb != null)
+            rb.isKinematic = false;
 
     }
 

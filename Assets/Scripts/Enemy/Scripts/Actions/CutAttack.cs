@@ -49,7 +49,7 @@ public class CutAttack : Action
     public override void RestartVariables()
     {
         done = false;
-        MoveEffect();
+        //MoveEffect();
         rb.velocity = Vector3.zero;
         cont.gameObject.transform.LookAt(cont.player.transform.position);
         cont.gameObject.GetComponent<BoxCollider>().isTrigger = false;
