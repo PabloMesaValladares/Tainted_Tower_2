@@ -11102,7 +11102,6 @@ MonoBehaviour:
   oldPlayerPosition: {x: 0, y: 0, z: 0}
   originalPoint: {fileID: 8177900778081683772}
   savedHealth: 500
-  _animator: {fileID: 0}
 --- !u!114 &8177900776504219276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11124,7 +11123,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177900776504219266}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 5
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -11501,7 +11500,7 @@ Transform:
   - {fileID: 8177900778081683772}
   - {fileID: 8177900776946733951}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8177900778327786486
 GameObject:

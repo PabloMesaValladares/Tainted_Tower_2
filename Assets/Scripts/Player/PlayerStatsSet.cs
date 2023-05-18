@@ -7,24 +7,24 @@ public class PlayerStatsSet : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private void OnLevelWasLoaded(int level)
-    {
-        int scene = sceneIndexFromName("OpenWorld");
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    int scene = sceneIndexFromName("OpenWorld");
 
-        if (level == scene)
-        {
-            if (GameManager.instance.Checkpoint)
-            {
-                transform.position = GameManager.instance.CheckPointSpawns;
-                //GameManager.instance.Checkpoint = false;
-            }
+    //    if (level == scene)
+    //    {
+    //        if (GameManager.instance.Checkpoint)
+    //        {
+    //            transform.position = GameManager.instance.CheckPointSpawns;
+    //            //GameManager.instance.Checkpoint = false;
+    //        }
 
-            else
-                transform.position = GameManager.instance.Spawns;
+    //        else
+    //            transform.position = GameManager.instance.Spawns;
 
-        }
+    //    }
            
-    }
+    //}
 
     private int sceneIndexFromName(string sceneName)
     {
@@ -49,7 +49,13 @@ public class PlayerStatsSet : MonoBehaviour
     }
 
 
-    void Start()
+    void Awake()
+    {
+
+        SetStats();
+    }
+
+    public void SetStats()
     {
         if (!GameManager.instance.Checkpoint)
         {
@@ -90,7 +96,6 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<PillarSpell>().enabled = GameManager.instance.Cpilar;
             //GameManager.instance.Checkpoint = false;
         }
-        
     }
 
     public void SpawnPos()

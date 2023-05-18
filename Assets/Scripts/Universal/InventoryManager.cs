@@ -44,10 +44,11 @@ public class InventoryManager : MonoBehaviour
     {
         if(GameManager.instance != null)
         {
-            for(int i = 0; i < GameManager.instance.inventoryItems.Count; i++)
-            {
-                UpdateSlot(GameManager.instance.inventoryItems[i], i);
-            }
+            if (SlotsItems.Length > 0)
+                for (int i = 0; i < GameManager.instance.inventoryItems.Count; i++)
+                {
+                    UpdateSlot(GameManager.instance.inventoryItems[i], i);
+                }
         }
     }
 

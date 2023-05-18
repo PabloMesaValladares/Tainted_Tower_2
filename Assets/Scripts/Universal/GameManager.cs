@@ -90,6 +90,8 @@ public class GameManager : MonoBehaviour
 
             CheckPoint();
 
+            player.GetComponent<PlayerStatsSet>().SetStats();
+
             DontDestroyOnLoad(this.gameObject);
         }
         else
