@@ -215,7 +215,7 @@ public class StandingState : State
         if(mark.marking)
         {
             Quaternion targetRotation = Quaternion.Euler(0, character.cameraTransform.eulerAngles.y, 0);
-            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, targetRotation, character.rotationDampTime);
+            character.transform.rotation = targetRotation;
         }
         else
         {

@@ -3318,7 +3318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -3828,7 +3828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -4442,7 +4442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Language
+  m_text: Idioma
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -4753,7 +4753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resolution
+  m_text: Resolucion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -5197,7 +5197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound
+  m_text: Sonido
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -5287,7 +5287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 825778401}
+  mTarget: {fileID: 513901545}
   mAlignment_RTL: 258
   mAlignment_LTR: 258
   mAlignmentWasRTL: 0
@@ -5693,7 +5693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Master
+  m_text: Maestro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -6297,7 +6297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -7974,7 +7974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Alpha
+  m_text: Alfa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -8280,7 +8280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound menu
+  m_text: Menu Sonido
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -9474,7 +9474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: Atras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -9999,7 +9999,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music
+  m_text: Musica
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -10116,7 +10116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: Opciones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -11348,7 +11348,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go out
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -13334,7 +13334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: Opciones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -14782,7 +14782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go out
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -15301,7 +15301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quality
+  m_text: Graficos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -16575,7 +16575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New game
+  m_text: Nueva Partida
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -16749,7 +16749,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Screen
+  m_text: Pantalla
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -17658,7 +17658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Continuar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -18582,7 +18582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.0.2
+  m_text: 0.0.3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -20296,7 +20296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yes
+  m_text: Si
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -21372,7 +21372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quality
+  m_text: Graficos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
@@ -21759,7 +21759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Are you sure you want to leave?
+  m_text: Estas seguro que quieres salir?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1267afbd6b5ebf040b97c4bab6b3581c, type: 2}
   m_sharedMaterial: {fileID: -1663121078021730900, guid: 1267afbd6b5ebf040b97c4bab6b3581c,
