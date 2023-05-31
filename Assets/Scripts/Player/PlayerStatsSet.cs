@@ -55,6 +55,15 @@ public class PlayerStatsSet : MonoBehaviour
         SetStats();
     }
 
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "OpenWorld")
+        {
+            transform.position = GameManager.instance.Checkpoint == true ? GameManager.instance.CheckPointSpawns : GameManager.instance.Spawns;
+
+        }
+    }
+
     public void SetStats()
     {
         if (!GameManager.instance.Checkpoint)
@@ -68,8 +77,6 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<StatController>().defense = GameManager.instance.defense;
             GetComponent<StaminaController>().SetStamina(GameManager.instance.stamina);
 
-            if (SceneManager.GetActiveScene().name == "OpenWorld")
-                transform.position = GameManager.instance.Spawns;
             //GetComponent<RespawnPoint>().Respawn();
             GetComponent<Grappling>().enabled = GameManager.instance.grapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.drugs;
@@ -87,8 +94,6 @@ public class PlayerStatsSet : MonoBehaviour
             GetComponent<StatController>().defense = GameManager.instance.CheckPointDefense;
             GetComponent<StaminaController>().SetStamina(GameManager.instance.CheckPointStamina);
 
-            if (SceneManager.GetActiveScene().name == "OpenWorld")
-                transform.position = GameManager.instance.CheckPointSpawns;
             //GetComponent<RespawnPoint>().Respawn();
             GetComponent<Grappling>().enabled = GameManager.instance.Cgrapple;
             GetComponent<DrugsMode>().enabled = GameManager.instance.Cdrugs;
@@ -100,17 +105,17 @@ public class PlayerStatsSet : MonoBehaviour
 
     public void SpawnPos()
     {
-        if (GameManager.instance != null)
-        {
-            if (!GameManager.instance.Checkpoint)
-            {
-                transform.position = GetComponent<RespawnPoint>().RespawnPosition;
-            }
-            else
-            {
-                if (SceneManager.GetActiveScene().name == "OpenWorld")
-                    transform.position = GameManager.instance.CheckPointSpawns;
-            }
-        }
+        //if (GameManager.instance != null)
+        //{
+        //    if (!GameManager.instance.Checkpoint)
+        //    {
+        //        transform.position = GetComponent<RespawnPoint>().RespawnPosition;
+        //    }
+        //    else
+        //    {
+        //        if (SceneManager.GetActiveScene().name == "OpenWorld")
+        //            transform.position = GameManager.instance.CheckPointSpawns;
+        //    }
+        //}
     }
 }
