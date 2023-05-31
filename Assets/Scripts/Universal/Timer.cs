@@ -45,4 +45,9 @@ public class Timer : MonoBehaviour
     {
         stopw = 0;
     }
+
+    public float ActualTime()
+    {
+        return time;
+    }
 }

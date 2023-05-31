@@ -57,7 +57,7 @@ public class PlayerStatsSet : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "OpenWorld")
+        if (SceneManager.GetActiveScene().name == "OpenWorld" || SceneManager.GetActiveScene().name == "TestWorld")
         {
             transform.position = GameManager.instance.Checkpoint == true ? GameManager.instance.CheckPointSpawns : GameManager.instance.Spawns;
 

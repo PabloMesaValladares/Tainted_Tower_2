@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasOffset: 1
-  timer: 2
+  timer: 1
   duration: 10
   damage: 5
   markable:

@@ -14,14 +14,14 @@ public class RespawnSetter : MonoBehaviour
     {
         if(other.transform.parent.gameObject.TryGetComponent<RespawnPoint>(out RespawnPoint respawn))
         {
-            if (respawn.GetComponent<GroundCheck>().returnCheck())
+            if (other.transform.parent.gameObject.GetComponent<GroundCheck>().returnCheck())
             {
-                if (SceneManager.GetActiveScene().name == "OpenWorld")
+                if (SceneManager.GetActiveScene().name == "OpenWorld" || SceneManager.GetActiveScene().name == "TestWorld")
                 {
-                    Vector3 posToResp = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z);
+                    Vector3 posToResp = new Vector3(other.transform.parent.position.x, other.transform.parent.position.y, other.transform.parent.position.z);
                     respawn.SetRespawn(posToResp);
-                    GameManager.instance.Spawns = transform.position;
-                    GameManager.instance.CheckPointSpawns = transform.position;
+                    GameManager.instance.Spawns = posToResp;
+                    GameManager.instance.CheckPointSpawns = posToResp;
                 }
                 GameManager.instance.CheckPoint();
                 GameManager.instance.SetScripts();
@@ -29,7 +29,7 @@ public class RespawnSetter : MonoBehaviour
             else
             {
 
-                if (SceneManager.GetActiveScene().name == "OpenWorld")
+                if (SceneManager.GetActiveScene().name == "OpenWorld" || SceneManager.GetActiveScene().name == "TestWorld")
                 {
 
                     Vector3 posToResp = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
