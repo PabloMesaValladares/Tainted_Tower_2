@@ -34,6 +34,8 @@ public class SprintState : State
     MarkEnemy mark;
     float downForce;
 
+
+    PlayerMovementBehaviour movement;
     public SprintState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
         character = _character;
@@ -79,6 +81,8 @@ public class SprintState : State
         //character.dashController.keepMomentum = true;
 
         downForce = character.downForce;
+
+        movement = character.GetComponent<PlayerMovementBehaviour>();
     }
 
     public override void HandleInput()
@@ -172,25 +176,27 @@ public class SprintState : State
 
         if (OnSlope())
         {
-            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 15f, ForceMode.Force);
+            //rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 15f, ForceMode.Force);
+
+            movement.MoveRB(GetSlopeMoveDirection(), moveSpeed);
 
             if (rb.velocity.y > 0)
-                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+                movement.MoveRB(Vector3.down, moveSpeed);
+            //rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
 
         //on ground
         else
         {
             if (slopeAngle < maxSlopeAngle)
-                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+                movement.MoveRB(moveDirection, moveSpeed);
             else
             {
                 moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
                 moveDirection.y = -downForce;
-                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+                movement.MoveRB(moveDirection, moveSpeed);
             }
         }
-
 
         if (mark.marking)
         {

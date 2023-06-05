@@ -22,6 +22,7 @@ public class FallState : State
     float airMultiplier;
     float gravity;
 
+    PlayerMovementBehaviour movement;
     public FallState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -41,6 +42,7 @@ public class FallState : State
 
 
         //character.animator.SetFloat("speed", 0);
+        character.animator.ResetTrigger("move");
         character.animator.SetTrigger("fall");
 
         rb = character.rb;
@@ -57,6 +59,7 @@ public class FallState : State
         rb.drag = 0;
         rb.useGravity = true;
 
+        movement = character.GetComponent<PlayerMovementBehaviour>();
     }
 
     public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
@@ -118,9 +121,10 @@ public class FallState : State
 
         moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         moveDirection.y = 0;
-        moveDirection.y = character.gravityValue + moveSpeed * Time.deltaTime;
+        moveDirection.y = character.gravityValue * 2 * Time.deltaTime;
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f , ForceMode.Force);
+        movement.MoveRB(moveDirection, moveSpeed);
+        //rb.AddForce(moveDirection.normalized * moveSpeed * 10f , ForceMode.Force);
         if (velocity.sqrMagnitude > 0)
             character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
 

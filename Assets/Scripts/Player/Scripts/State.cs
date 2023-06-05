@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -38,7 +39,7 @@ public class State
 
     public virtual void Enter()
     {
-
+        Debug.Log("Entrando el estado " + this.ToString());
     }
     public virtual void HandleInput()
     {

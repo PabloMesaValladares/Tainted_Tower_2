@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -101,7 +102,13 @@ public class PlayerController : MonoBehaviour
     [Header("Effects")]
     public ParticleSystem Trail;
     public RageEffects Rage;
+    public ParticleSystem dashEffect;
 
+    [Header("Animation bools")]
+    public bool detectNextInput;
+    public bool startNextState;
+
+    [Header("Other bools")]
     public bool stopInput;
 
     public object Controls { get; internal set; }
@@ -172,5 +179,14 @@ public class PlayerController : MonoBehaviour
     public void StartAttack()
     {
         weapon.GetComponent<DamageDealer>().StartDealDamage();
+    }
+    public void startDetectState()
+    {
+        detectNextInput = true;
+    }
+
+    public void startNextStateAttack()
+    {
+        startNextState = true;
     }
 }

@@ -40,6 +40,9 @@ public class StandingState : State
     float jumpForce;
     float slopeAngle;
     float downForce;
+
+    PlayerMovementBehaviour movement;
+
     public StandingState(PlayerController _character, StateMachine _stateMachine):base(_character, _stateMachine)//Iniciar el estado
     {
         character = _character;
@@ -94,9 +97,11 @@ public class StandingState : State
 
         jumpForce = character.jumpForce;
         downForce = character.downForce;
+
+        movement = character.GetComponent<PlayerMovementBehaviour>();
     }
 
-    public override void HandleInput()//Detectar el input, comprobando si un botón ha sido pulsado
+    public override void HandleInput()//Detectar el input, comprobando si un botï¿½n ha sido pulsado
     {
         base.HandleInput();
 
@@ -157,8 +162,6 @@ public class StandingState : State
             stateMachine.ChangeState(character.sprinting);
         else if (jump)
             Jump(jumpForce);
-        else if (crouch)
-            stateMachine.ChangeState(character.crouching);
         else if (dash)
         {
             stateMachine.ChangeState(character.dashing);
@@ -192,22 +195,25 @@ public class StandingState : State
 
         if (OnSlope())
         {
-            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 15f, ForceMode.Force);
+            //rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 15f, ForceMode.Force);
+
+            movement.MoveRB(GetSlopeMoveDirection(), moveSpeed);
 
             if (rb.velocity.y > 0)
-                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+                movement.MoveRB(Vector3.down, moveSpeed);
+                //rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
 
         //on ground
         else
         {
             if (slopeAngle < maxSlopeAngle)
-                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+                movement.MoveRB(moveDirection, moveSpeed);
             else
             {
                 moveDirection = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
                 moveDirection.y = -downForce;
-                rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+                movement.MoveRB(moveDirection, moveSpeed);
             }
         }
 

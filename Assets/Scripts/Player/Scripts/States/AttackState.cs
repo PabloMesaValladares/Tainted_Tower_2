@@ -33,6 +33,7 @@ public class AttackState : State
         base.Enter();
 
         attack = false;
+        character.animator.ResetTrigger("move");
         moveDirection = character.transform.forward;
         currentVelocity = Vector3.zero;
         dash = false;
@@ -79,16 +80,19 @@ public class AttackState : State
             clipLenght = character.animator.GetCurrentAnimatorClipInfo(1)[0].clip.length;
         clipSpeed = character.animator.GetCurrentAnimatorStateInfo(1).speed;
 
-        if (timePassed >= clipLenght / clipSpeed && attack)
+        if (timePassed >= clipLenght / clipSpeed)
+        { 
+            if(attack)
             stateMachine.ChangeState(character.attacking);
-        
-        else if(timePassed >= clipLenght / clipSpeed)
-        {
-            if (run)
-                stateMachine.ChangeState(character.sprinting);
+       
             else
-                stateMachine.ChangeState(character.standing);
-            character.animator.SetTrigger("move");
+            {
+                if (run)
+                    stateMachine.ChangeState(character.sprinting);
+                else
+                    stateMachine.ChangeState(character.standing);
+                character.animator.SetTrigger("move");
+            }
         }
 
         if(dash)

@@ -63,4 +63,14 @@ public class HealthBehaviour : MonoBehaviour
         }
         yield break;
     }
+
+    public void StartInvencibility()
+    {
+        invencibility = true;
+    }
+
+    public void StopInvencibility()
+    {
+        invencibility = false;
+    }
 }
