@@ -15,6 +15,9 @@ public class LavaRayAttack : Action
     public int secToStop;
     float count;
     Animator an;
+    Vector3 lavaStartPos;
+
+    RaycastHit hit;
 
     bool started = false;
 
@@ -28,7 +31,8 @@ public class LavaRayAttack : Action
             an = controller.GetComponentInChildren<Animator>();
             lr = controller.GetComponent<LineRenderer>();
             lr.enabled = true;
-            lr.SetPosition(0, new Vector3(controller.transform.position.x, controller.transform.position.y + lavaOffset, controller.transform.position.z)); 
+            lavaStartPos = new Vector3(controller.transform.position.x, controller.transform.position.y + lavaOffset, controller.transform.position.z);
+            lr.SetPosition(0, lavaStartPos); 
             GameObject lavaRay = PoolingManager.Instance.GetPooledObject("LavaRay");
 
             lavaRay.SetActive(true);

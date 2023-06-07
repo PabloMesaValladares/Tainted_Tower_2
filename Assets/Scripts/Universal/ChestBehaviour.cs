@@ -23,6 +23,7 @@ public class ChestBehaviour : MonoBehaviour
 
     private void Start()
     {
+        input = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         Interact = input.actions["Interact"];
         chestAnimator = GetComponent<Animator>();
     }

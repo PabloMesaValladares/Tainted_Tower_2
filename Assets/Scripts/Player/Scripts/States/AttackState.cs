@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
@@ -48,9 +49,14 @@ public class AttackState : State
 
         rb.useGravity = true;
 
+        character.weapon.GetComponent<Timer>().enabled = false;
         character.Sheathedweapon.GetComponent<Timer>().enabled = false;
-        character.Sheathedweapon.GetComponent<WeaponDisappearEffect>().StartDissapear();
-        character.weapon.GetComponent<WeaponDisappearEffect>().StartAppear();
+        if (character.Sheathedweapon.GetComponent<WeaponDisappearEffect>().active)
+            character.Sheathedweapon.GetComponent<WeaponDisappearEffect>().StartDissapear();
+        if (!character.weapon.GetComponent<WeaponDisappearEffect>().active)
+            character.weapon.GetComponent<WeaponDisappearEffect>().StartAppear();
+
+        character.weapon.GetComponent<WeaponDisappearEffect>().trailEffect.Play();
         character.weapon.GetComponent<DamageDealer>().StartDealDamage();
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
@@ -123,10 +129,9 @@ public class AttackState : State
     public override void Exit()
     {
         base.Exit();
-        character.weapon.GetComponent<WeaponDisappearEffect>().StartDissapear();
+        character.weapon.GetComponent<WeaponDisappearEffect>().trailEffect.Stop();
+        character.weapon.GetComponent<SheathedWeapon>().StartTimer();
         character.animator.ResetTrigger("attack");
-        character.Sheathedweapon.GetComponent<SheathedWeapon>().StartTimer();
-        character.Sheathedweapon.GetComponent<WeaponDisappearEffect>().StartAppear();
         character.animator.applyRootMotion = false;
         character.weapon.GetComponent<DamageDealer>().EndDealDamage();
     }

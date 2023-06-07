@@ -5,8 +5,11 @@ using UnityEngine;
 public class WeaponDisappearEffect : MonoBehaviour
 {
     public ParticleSystem appearEffect;
+    public ParticleSystem trailEffect;
     public Material swordMaterial;
     public float duration;
+    public bool active = false;
+    public GameObject swordObj;
 
     public void StartDissapear()
     {
@@ -16,32 +19,36 @@ public class WeaponDisappearEffect : MonoBehaviour
 
     public void StartAppear()
     {
+        swordObj.SetActive(true);
         appearEffect.Play();
         StartCoroutine(nameof(StartFadeIn));
     }
 
-    public IEnumerator StartFadeOut()
+    public IEnumerator StartFadeIn()
     {
         float currentTime = 0;
         float start = 1;
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            swordMaterial.SetFloat("Amount", Mathf.Lerp(start, 0, currentTime / duration));
+            swordMaterial.SetFloat("_Amount", Mathf.Lerp(start, 0, currentTime / duration));
             yield return null;
         }
+        active = true;
         yield break;
     }
-    public IEnumerator StartFadeIn()
+    public IEnumerator StartFadeOut()
     {
         float currentTime = 0;
         float start = 0;
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            swordMaterial.SetFloat("Amount", Mathf.Lerp(start, 1, currentTime / duration));
+            swordMaterial.SetFloat("_Amount", Mathf.Lerp(start, 1, currentTime / duration));
             yield return null;
         }
+        active = false;
+        swordObj.SetActive(false);
         yield break;
     }
 }
