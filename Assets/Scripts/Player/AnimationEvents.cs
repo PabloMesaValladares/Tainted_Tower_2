@@ -16,6 +16,11 @@ public class AnimationEvents : MonoBehaviour
     [Header("Skill Events")]
     public UnityEvent fireBallActivate;
 
+    [Header("Other Events")]
+    public UnityEvent StartDash;
+    public UnityEvent StopDash;
+    public UnityEvent StartBerserk;
+    public UnityEvent StopBerserk;
     public void AttackStarted()
     {
         AttackStart.Invoke();
@@ -40,4 +45,24 @@ public class AnimationEvents : MonoBehaviour
     { 
         fireBallActivate.Invoke();
     }
+    public void DashStarted()
+    {
+        StartDash.Invoke();
+    }
+
+    public void DashEnded()
+    {
+        StopDash.Invoke();
+    }
+
+    public void BerserkStart()
+    {
+        StartBerserk.Invoke();
+    }
+
+    public void BerserkStop()
+    {
+        StopBerserk.Invoke();
+    }
+
 }

@@ -48,6 +48,7 @@ public class DashJumpingState : State
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
         character.Trail.Play();
+        character.gameObject.GetComponent<DashEffectController>().StartEffect();
     }
     public override void LogicUpdate()
     {
@@ -103,6 +104,7 @@ public class DashJumpingState : State
         character.GetComponent<HealthBehaviour>().invencibility = false;
         rb.useGravity = true;
         character.Trail.Stop();
+        character.gameObject.GetComponent<DashEffectController>().StopEffect();
     }
 
 

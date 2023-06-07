@@ -46,6 +46,7 @@ public class GrabMoveState : State
 
         lastSqrMag = Mathf.Infinity;
 
+        character.gameObject.GetComponent<DashEffectController>().StartEffect();
         //ExecuteGrapple();
     }
     public override void HandleInput()
@@ -100,6 +101,7 @@ public class GrabMoveState : State
     public override void Exit()
     {
 
+        character.gameObject.GetComponent<DashEffectController>().StopEffect();
     }
 
 

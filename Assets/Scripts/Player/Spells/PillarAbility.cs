@@ -15,6 +15,7 @@ public class PillarAbility : MonoBehaviour
     public LayerMask markable;
     float markedLayer;
 
+
     private void Awake()
     {
         _timer = GetComponents<Timer>();

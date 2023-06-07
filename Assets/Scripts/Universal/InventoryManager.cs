@@ -101,65 +101,19 @@ public class InventoryManager : MonoBehaviour
         {
             if (firstSlot.triggered && QuickSlots[0].activeInHierarchy)
             {
-                if (!itemSelected)
-                {
-                    Debug.Log("Seleccionado");
-                    selectedItem = QuickSlots[0];
-                    itemSelected = true;
-                }
-                else
-                {
-                    itemSelected = false;
-                    selectedItem = null;
-                }
-                selector.ChangeColor(QuickSlots[0]);
+                QuickSlots[0].GetComponent<Item>().Use();
             }
             if (secondSlot.triggered && QuickSlots[1].activeInHierarchy)
             {
-
-                if (!itemSelected)
-                {
-                    selectedItem = QuickSlots[1];
-                    itemSelected = true;
-                }
-                else
-                {
-                    itemSelected = false;
-                    selectedItem = null;
-                }
-                selector.ChangeColor(QuickSlots[1]);
+                QuickSlots[1].GetComponent<Item>().Use();
             }
             if (thirdSlot.triggered && QuickSlots[2].activeInHierarchy)
             {
-                if (!itemSelected)
-                {
-                    selectedItem = QuickSlots[2];
-                    itemSelected = true;
-                }
-                else
-                {
-                    itemSelected = false;
-                    selectedItem = null;
-                }
-                selector.ChangeColor(QuickSlots[2]);
+                QuickSlots[2].GetComponent<Item>().Use();
             }
             if (fourthSlot.triggered && QuickSlots[3].activeInHierarchy)
             {
-                if (!itemSelected)
-                {
-                    selectedItem = QuickSlots[3];
-                    itemSelected = true;
-                }
-                else
-                {
-                    itemSelected = false;
-                    selectedItem = null;
-                }
-                selector.ChangeColor(QuickSlots[3]);
-            }
-            if (Use.triggered && itemSelected)
-            {
-                selectedItem.GetComponent<Item>().Use();
+                QuickSlots[3].GetComponent<Item>().Use();
             }
         }
 

@@ -82,8 +82,8 @@ public class GameManager : MonoBehaviour
             stamina = staminaStat;
             player.GetComponent<StaminaController>().SetStamina(staminaStat);
 
-            grapple = fireball = drugs = pilar = false;
-            Cgrapple = Cfireball = Cdrugs = Cpilar = false; 
+            //grapple = fireball = drugs = pilar = false;
+            //Cgrapple = Cfireball = Cdrugs = Cpilar = false; 
 
             if (SceneManager.GetActiveScene().name == "Game")
                 player.GetComponent<RespawnPoint>().RespawnPosition = Spawns;

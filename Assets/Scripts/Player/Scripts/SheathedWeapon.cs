@@ -6,26 +6,21 @@ public class SheathedWeapon : MonoBehaviour
 {
     public float timerBD;
     float counter;
+    Timer timer;
 
     // Start is called before the first frame update
     void Start()
     {
         counter = 0;
+        timer = GetComponent<Timer>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (counter < timerBD)
-        {
-            counter += Time.deltaTime;
-        }
-        else
-            gameObject.SetActive(false);
-    }
+   
 
     public void StartTimer()
     {
-        counter = 0;
+        timer.StartTimer(timerBD);
+        timer.enabled = true;
     }
 }

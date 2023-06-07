@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PillarSpell : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PillarSpell : MonoBehaviour
 
 
     Timer timer;
+    public Slider skillSlider;
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class PillarSpell : MonoBehaviour
         interact = _config.actions["Pilar"];
 
         cdBool = true;
+        skillSlider.maxValue = coolDown;
     }
 
     void Update()
@@ -30,12 +33,17 @@ public class PillarSpell : MonoBehaviour
         {
             SummonPilar();
         }
+        else
+        {
+            skillSlider.value = coolDown - timer.ActualTime();
+        }
     }
 
     void SummonPilar()
     {
         GameObject pillar = PoolingManager.Instance.GetPooledObject("Pillar");
 
+        GetComponent<PlayerController>().animator.SetTrigger("columna");
         pillar.transform.position = transform.position + transform.forward * distance; 
         pillar.SetActive(true);
         CooldownBool(false);

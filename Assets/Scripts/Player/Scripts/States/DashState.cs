@@ -17,6 +17,11 @@ public class DashState : State
 
     Rigidbody rb;
 
+    bool run;
+
+    GameObject playerModel;
+    ParticleSystem DashEffect;
+
     public DashState(PlayerController _character, StateMachine _stateMachine) : base(_character, _stateMachine)
     {
         character = _character;
@@ -48,7 +53,7 @@ public class DashState : State
         rb.drag = 0;
         rb.useGravity = true;
 
-        character.Trail.Play();
+        character.gameObject.GetComponent<DashEffectController>().StartEffect();
     }
     public override void LogicUpdate()
     {
@@ -68,6 +73,7 @@ public class DashState : State
         else
             velocity = previousInput;
 
+        run = sprintAction.triggered;
 
         velocity = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         velocity.y = 0f;
@@ -111,6 +117,7 @@ public class DashState : State
         character.GetComponent<HealthBehaviour>().invencibility = false;
         character.animator.ResetTrigger("dash");
         character.Trail.Stop();
+        character.gameObject.GetComponent<DashEffectController>().StopEffect();
     }
 
 

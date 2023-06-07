@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Creditos.unity
     guid: 85c8e8e2f621c9843b9cb8bedbf070a7
+  - enabled: 1
+    path: Assets/Scene/TestMenu.unity
+    guid: 1e4a1c0bbebd4b84b9860708083bb14b
+  - enabled: 1
+    path: Assets/Scene/TestWorld.unity
+    guid: 0752c9cba0343df4aacf312ddc7b6050
   m_configObjects: {}
