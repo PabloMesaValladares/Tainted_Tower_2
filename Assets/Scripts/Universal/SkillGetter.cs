@@ -17,6 +17,7 @@ public class SkillGetter : MonoBehaviour
 
     private void Start()
     {
+        inputs = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         anim = GetComponent<Animator>();
         if(GameManager.instance.grapple && SceneManager.GetActiveScene().name != "OpenWorld")
         {
