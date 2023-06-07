@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4501385702662847822}
   - component: {fileID: 4501385702659456366}
   - component: {fileID: 4501385702660423598}
-  m_Layer: 0
+  - component: {fileID: 7330454232599340160}
+  m_Layer: 8
   m_Name: MiniMushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4501385702659456366
 MeshFilter:
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7330454232599340160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501385702662611310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.32, y: 12.589567, z: 2.7}
+  m_Center: {x: 0, y: 6.2947836, z: 0}

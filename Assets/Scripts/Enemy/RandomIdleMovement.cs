@@ -7,6 +7,8 @@ public class RandomIdleMovement : MonoBehaviour
     [SerializeField]
     private MovementBehavior _movement;
     [SerializeField]
+    private Animator _animator;
+    [SerializeField]
     public float idleVel, timeremaining, maxTime, distFromOrignalPoint, maxDistFromOriginalPoint;
     [SerializeField]
     private int maxRange, randomNumber, randomGrade, maxRangeGrade, speedRotation;
@@ -41,12 +43,14 @@ public class RandomIdleMovement : MonoBehaviour
             {
                 gameObject.transform.LookAt(new Vector3(originalPoint.transform.position.x, gameObject.transform.position.y, originalPoint.transform.position.z));
                 _movement.MoveLerp(new Vector3(originalPoint.transform.position.x, gameObject.transform.position.y, originalPoint.transform.position.z), idleVel * 2);
+                _animator.SetInteger("State", 0);
             }
 
             else if (distFromOrignalPoint < maxDistFromOriginalPoint)
             {
                 gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, Quaternion.Euler(0, randomGrade, 0), timeremaining / speedRotation);
                 if(canMove)_movement.MoveGameObject(transform.forward, idleVel);
+                _animator.SetInteger("State", 1);
 
             }
         }
