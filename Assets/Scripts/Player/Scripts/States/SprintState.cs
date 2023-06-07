@@ -55,6 +55,7 @@ public class SprintState : State
         currentVelocity = Vector3.zero;
         gravityVelocity.y = 0;
 
+        character.animator.ResetTrigger("fall");
         character.animator.ResetTrigger("attack");
         character.animator.ResetTrigger("dash");
         character.animator.SetTrigger("move");

@@ -17,6 +17,8 @@ public class DashState : State
 
     Rigidbody rb;
 
+    bool run;
+
     GameObject playerModel;
     ParticleSystem DashEffect;
 
@@ -71,6 +73,7 @@ public class DashState : State
         else
             velocity = previousInput;
 
+        run = sprintAction.triggered;
 
         velocity = character.cameraTransform.forward.normalized * velocity.z + character.cameraTransform.right.normalized * velocity.x;
         velocity.y = 0f;

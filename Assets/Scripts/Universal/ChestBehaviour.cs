@@ -10,6 +10,7 @@ public class ChestBehaviour : MonoBehaviour
     [Header("Chest Config")]
     public Item item;
     public string animationName;
+    public ParticleSystem chestOpen;
 
     Animator chestAnimator;
 
@@ -34,6 +35,7 @@ public class ChestBehaviour : MonoBehaviour
             chestAnimator.SetTrigger(animationName);
             InventoryManager.instance.UpdateSlot(item);
             GetComponent<SphereCollider>().enabled = false;
+            chestOpen.Play();
             this.enabled = false;
         }
     }

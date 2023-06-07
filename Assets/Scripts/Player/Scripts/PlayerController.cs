@@ -143,8 +143,8 @@ public class PlayerController : MonoBehaviour
 
         playerMovement = GetComponent<PlayerMovementBehaviour>();
 
-        weapon.SetActive(false);
-        Sheathedweapon.SetActive(false);
+        //weapon.SetActive(false);
+        //Sheathedweapon.SetActive(false);
 
         movementSM.Initialize(standing);
         //Screen.lockCursor = true;

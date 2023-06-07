@@ -123,8 +123,8 @@ public class FallState : State
         moveDirection.y = 0;
         moveDirection.y = character.gravityValue * 2 * Time.deltaTime;
 
-        movement.MoveRB(moveDirection, moveSpeed);
-        //rb.AddForce(moveDirection.normalized * moveSpeed * 10f , ForceMode.Force);
+        //movement.MoveRB(moveDirection, moveSpeed);
+        rb.AddForce(moveDirection.normalized * moveSpeed * 10f , ForceMode.Force);
         if (velocity.sqrMagnitude > 0)
             character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z)), character.rotationDampTime);
 

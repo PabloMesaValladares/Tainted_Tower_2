@@ -48,8 +48,9 @@ public class AttackState : State
 
         rb.useGravity = true;
 
-        character.Sheathedweapon.SetActive(false);
-        character.weapon.SetActive(true);
+        character.Sheathedweapon.GetComponent<Timer>().enabled = false;
+        character.Sheathedweapon.GetComponent<WeaponDisappearEffect>().StartDissapear();
+        character.weapon.GetComponent<WeaponDisappearEffect>().StartAppear();
         character.weapon.GetComponent<DamageDealer>().StartDealDamage();
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
@@ -122,10 +123,10 @@ public class AttackState : State
     public override void Exit()
     {
         base.Exit();
-        character.weapon.SetActive(false);
+        character.weapon.GetComponent<WeaponDisappearEffect>().StartDissapear();
         character.animator.ResetTrigger("attack");
         character.Sheathedweapon.GetComponent<SheathedWeapon>().StartTimer();
-        character.Sheathedweapon.SetActive(true);
+        character.Sheathedweapon.GetComponent<WeaponDisappearEffect>().StartAppear();
         character.animator.applyRootMotion = false;
         character.weapon.GetComponent<DamageDealer>().EndDealDamage();
     }
