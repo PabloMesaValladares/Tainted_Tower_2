@@ -52,7 +52,7 @@ public class SniperAttackMovement : MonoBehaviour
         {
             if (distAttack != 0)
             {
-                if (nioMode) _animator.SetInteger("State", 4);
+                if (nioMode) _animator.SetInteger("State", 1);
                 else if(nioMode == false) _animator.SetInteger("State", 0);
                 _movement.MoveVector(new Vector3(originalPoint.transform.position.x, originalPoint.transform.position.y, originalPoint.transform.position.z), vel * 3);
             }
@@ -70,14 +70,8 @@ public class SniperAttackMovement : MonoBehaviour
 
             if (followDist >= maxFollowDist && followDist >= minFollowDist)
             {
-                if(nioMode) _animator.SetInteger("State", 4);
+                if(nioMode) _animator.SetInteger("State", 1);
                 _movement.MoveVector(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), vel);
-            }
-
-            else if(followDist <= minFollowDist)
-            {
-                if(nioMode)_animator.SetInteger("State", 4);
-                _movement.MoveVector(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), -vel / 4);
             }
 
             if (timeremaining <= 0 && followDist <= maxFollowDist && followDist >= minFollowDist)
@@ -148,7 +142,7 @@ public class SniperAttackMovement : MonoBehaviour
 
     public void Hitted()
     {
-        _animator.SetInteger("State", 2);
+        _animator.SetInteger("State", 0);
     }
 
     public void Reseto()
