@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 5403501175211100296}
-  _animator: {fileID: 0}
+  _animator: {fileID: 5403501175004935307}
   idleVel: 1
   timeremaining: 3
   maxTime: 8
@@ -988,7 +988,7 @@ MonoBehaviour:
   maxdistAttack: 20
   followDist: 0
   maxFollowDist: 40
-  minFollowDist: 0
+  minFollowDist: 4
   bulletVel: 4
   timeBetweenAttacks: 1
   dieFloat: 2

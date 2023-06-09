@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 704686917530115080}
+  _animator: {fileID: 4648771362445039883}
   idleVel: 0.6
   timeremaining: 3
   maxTime: 8
