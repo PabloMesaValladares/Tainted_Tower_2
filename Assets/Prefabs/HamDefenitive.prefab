@@ -538,6 +538,18 @@ MonoBehaviour:
   fireBallActivate:
     m_PersistentCalls:
       m_Calls: []
+  StartDash:
+    m_PersistentCalls:
+      m_Calls: []
+  StopDash:
+    m_PersistentCalls:
+      m_Calls: []
+  StartBerserk:
+    m_PersistentCalls:
+      m_Calls: []
+  StopBerserk:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5403501175005891429
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,6 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 5403501175211100296}
+  _animator: {fileID: 0}
   idleVel: 1
   timeremaining: 3
   maxTime: 8
@@ -968,21 +981,22 @@ MonoBehaviour:
   bullet: {fileID: 0}
   enemy: {fileID: 5403501176254477257}
   savedHealth: 300
-  vel: 8
-  savedvel: 8
+  vel: 6
+  savedvel: 6
   timeremaining: 0
   distAttack: 0
-  maxdistAttack: 40
+  maxdistAttack: 20
   followDist: 0
-  maxFollowDist: 30
-  minFollowDist: 8
-  bulletVel: 2.5
-  timeBetweenAttacks: 2
+  maxFollowDist: 40
+  minFollowDist: 0
+  bulletVel: 4
+  timeBetweenAttacks: 1
   dieFloat: 2
   inRange: 0
   returning: 0
   nioMode: 0
   oldPlayerPosition: {x: 1, y: 1, z: 1}
+  shootPos: {fileID: 5403501175004935305}
 --- !u!114 &5403501175211100294
 MonoBehaviour:
   m_ObjectHideFlags: 0

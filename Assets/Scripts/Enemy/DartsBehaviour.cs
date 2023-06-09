@@ -26,7 +26,7 @@ public class DartsBehaviour : MonoBehaviour
             {
                 player.gameObject.transform.GetComponent<HealthBehaviour>().Hurt(damage);
             }
-
+        miniTinmer = 1.5f;
         gameObject.SetActive(false);
     }
 }

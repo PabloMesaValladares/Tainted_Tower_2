@@ -43,14 +43,12 @@ public class RandomIdleMovement : MonoBehaviour
             {
                 gameObject.transform.LookAt(new Vector3(originalPoint.transform.position.x, gameObject.transform.position.y, originalPoint.transform.position.z));
                 _movement.MoveLerp(new Vector3(originalPoint.transform.position.x, gameObject.transform.position.y, originalPoint.transform.position.z), idleVel * 2);
-                _animator.SetInteger("State", 0);
             }
 
             else if (distFromOrignalPoint < maxDistFromOriginalPoint)
             {
                 gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, Quaternion.Euler(0, randomGrade, 0), timeremaining / speedRotation);
                 if(canMove)_movement.MoveGameObject(transform.forward, idleVel);
-                _animator.SetInteger("State", 1);
 
             }
         }
@@ -61,9 +59,11 @@ public class RandomIdleMovement : MonoBehaviour
         if (randomNumber == 0)
         {
             canMove = true;
+            _animator.SetInteger("State", 1);
         }
         else if(randomNumber != 0)
         {
+            _animator.SetInteger("State", 0);
             canMove = false;
         }
     }

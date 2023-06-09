@@ -29,6 +29,7 @@ public class SniperAttackMovement : MonoBehaviour
     [SerializeField]
     private Vector3 oldPlayerPosition;
 
+    public GameObject shootPos;
     void Awake()
     {
         timeremaining = timeBetweenAttacks;
@@ -52,12 +53,13 @@ public class SniperAttackMovement : MonoBehaviour
         {
             if (distAttack != 0)
             {
-                if (nioMode) _animator.SetInteger("State", 4);
-                else if(nioMode == false) _animator.SetInteger("State", 0);
+                if (nioMode) _animator.SetTrigger("walk");
+                else _animator.SetTrigger("idle");
                 _movement.MoveVector(new Vector3(originalPoint.transform.position.x, originalPoint.transform.position.y, originalPoint.transform.position.z), vel * 3);
             }
             else if (distAttack == 0)
             {
+                _animator.SetTrigger("idle");
                 returning = false;
             }
         }
@@ -70,33 +72,25 @@ public class SniperAttackMovement : MonoBehaviour
 
             if (followDist >= maxFollowDist && followDist >= minFollowDist)
             {
-                if(nioMode) _animator.SetInteger("State", 4);
+                if(nioMode) _animator.SetTrigger("walk");
                 _movement.MoveVector(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), vel);
-            }
-
-            else if(followDist <= minFollowDist)
-            {
-                if(nioMode)_animator.SetInteger("State", 4);
-                _movement.MoveVector(new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), -vel / 4);
             }
 
             if (timeremaining <= 0 && followDist <= maxFollowDist && followDist >= minFollowDist)
             {
-                _animator.SetInteger("State", 2);
+                _animator.SetTrigger("attack");
 
-                if(nioMode) bullet = PoolingManager.Instance.GetPooledObject("Rocky");
-                else if(nioMode == false) bullet = PoolingManager.Instance.GetPooledObject("Spiky");
-                //bullet.transform.LookAt(oldPlayerPosition);
-                bullet.transform.position = gameObject.transform.position;
-                //bullet.transform.rotation = transform.rotation;
-                bullet.GetComponent<SlashMovement>().MoveDirection(player.transform.position + new Vector3(0, 0.7f, 0));
-                bullet.SetActive(true);
-                oldPlayerPosition = new Vector3(player.transform.position.x - bullet.transform.position.x, player.transform.position.y + 0.5f - bullet.transform.position.y, player.transform.position.z - bullet.transform.position.z);
-                timeremaining = timeBetweenAttacks;
-            }
-            else
-            {
-                _animator.SetInteger("State", 0);
+                if(nioMode == false)
+                {
+                    bullet = PoolingManager.Instance.GetPooledObject("Spiky");
+                    //bullet.transform.LookAt(oldPlayerPosition);
+                    bullet.transform.position = gameObject.transform.position;
+                    //bullet.transform.rotation = transform.rotation;
+                    bullet.GetComponent<SlashMovement>().MoveDirection(player.transform.position + new Vector3(0, 0.7f, 0));
+                    bullet.SetActive(true);
+                    oldPlayerPosition = new Vector3(player.transform.position.x - bullet.transform.position.x, player.transform.position.y + 0.5f - bullet.transform.position.y, player.transform.position.z - bullet.transform.position.z);
+                    timeremaining = timeBetweenAttacks;
+                }
             }
         }
 
@@ -105,6 +99,17 @@ public class SniperAttackMovement : MonoBehaviour
             //bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 20, ForceMode.Force);
             //_movement.MoveGameObject(bullet, oldPlayerPosition, bulletVel);
         }
+    }
+
+    public void ninoShootTheOldMan()
+    {
+        bullet = PoolingManager.Instance.GetPooledObject("Rocky");
+        bullet.transform.position = shootPos.transform.position;
+        //bullet.transform.rotation = transform.rotation;
+        bullet.GetComponent<SlashMovement>().MoveDirection(player.transform.position + new Vector3(0, 0.7f, 0));
+        bullet.SetActive(true);
+        oldPlayerPosition = new Vector3(player.transform.position.x - bullet.transform.position.x, player.transform.position.y + 0.5f - bullet.transform.position.y, player.transform.position.z - bullet.transform.position.z);
+        timeremaining = timeBetweenAttacks;
     }
 
     void DistanceOriginalPoint()
@@ -148,7 +153,7 @@ public class SniperAttackMovement : MonoBehaviour
 
     public void Hitted()
     {
-        _animator.SetInteger("State", 2);
+        _animator.SetInteger("State", 0);
     }
 
     public void Reseto()
