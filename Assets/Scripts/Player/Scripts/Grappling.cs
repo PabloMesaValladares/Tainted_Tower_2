@@ -85,7 +85,7 @@ public class Grappling : MonoBehaviour
             ChangeToMove();
 
 
-            lr.enabled = true;
+            //lr.enabled = true;
 
             lr.SetPosition(1, posToGrab.position);
         }
