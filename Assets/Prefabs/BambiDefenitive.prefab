@@ -16643,7 +16643,7 @@ MonoBehaviour:
   enemy: {fileID: 8177900778297600179}
   accelerationEffect: {fileID: 7389709184885881281}
   vel: 0
-  force: 145
+  force: 400
   timeremaining: 0
   distAttack: 0
   maxdistAttack: 70
