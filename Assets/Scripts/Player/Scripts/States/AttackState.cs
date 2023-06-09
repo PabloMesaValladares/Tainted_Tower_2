@@ -56,7 +56,6 @@ public class AttackState : State
         if (!character.weapon.GetComponent<WeaponDisappearEffect>().active)
             character.weapon.GetComponent<WeaponDisappearEffect>().StartAppear();
 
-        character.weapon.GetComponent<WeaponDisappearEffect>().trailEffect.Play();
         character.weapon.GetComponent<DamageDealer>().StartDealDamage();
         input = moveAction.ReadValue<Vector2>();//detecta el movimiento desde input
 
@@ -129,7 +128,6 @@ public class AttackState : State
     public override void Exit()
     {
         base.Exit();
-        character.weapon.GetComponent<WeaponDisappearEffect>().trailEffect.Stop();
         character.weapon.GetComponent<SheathedWeapon>().StartTimer();
         character.animator.ResetTrigger("attack");
         character.animator.applyRootMotion = false;
